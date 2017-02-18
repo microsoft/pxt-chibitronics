@@ -1,0 +1,70 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@importGoogleFonts: false;
+
+@emSize      : 14px;
+@fontSize    : 13px;
+
+@primaryColor: @red;
+
+@teal: #3891A6;
+@pink: #F46197;
+@grey:#95a5a6;
+@orange: #ff8b27;
+@purple: #6633cc;
+@green: #00ED00;
+
+/* chibitronics colors */
+@red: #fd2600;
+@blue: #17C7d1;
+@yellow: #ffC600;
+@black: #000000;
+
+@pageBackground: #fff;
+
+/*******************************
+         PXT Overrides
+*******************************/
+
+/*-------------------
+   Menu
+--------------------*/
+
+@mainMenuInvertedBackground: @blue;
+@mainMenuTutorialBackground: @orange;
+
+@mainMenuBlocksJsToggleColor: @primaryColor;
+
+@tutorialSelectedMenuColor: @blue;
+
+/*-------------------
+   Layout
+--------------------*/
+
+@sideBarWidth: 22rem;
+@simulatorWidth: 27rem;
+@simulatorWidthSmall: 20rem;
+
+/*-------------------
+   Background
+--------------------*/
+
+@simulatorBackground: #FDFDFF;
+@editorToolsBackground: @simulatorBackground;
+@blocklySvgColor: #ecf0f1;
+
+/*-------------------
+   Side Docs
+--------------------*/
+
+@sidedocsButtonsTop: (@mainMenuHeight + 1rem);
+@sidedocsButtonsRight: 4.25rem;
+
+/*-------------------
+   Editor
+--------------------*/
+
+@blocklyToolboxColor: rgba(0, 0, 0, 0.05);
+@trashIconColor: @primaryColor;

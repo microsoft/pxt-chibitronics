@@ -1,0 +1,113 @@
+/* Import all components */
+@import 'pxtsemantic';
+@import 'pxt';
+@import 'themes/default/globals/site.variables';
+@import 'themes/pxt/globals/site.variables';
+@import 'site/globals/site.variables';
+
+/* Reference import */
+@import (reference) "semantic.less";
+
+/*******************************
+    Add your custom CSS here
+*******************************/
+
+.ui.button.download-button {
+    &:extend(.red all);
+}
+
+.ui.button.editortools-btn {
+    &:extend(.yellow all);
+}
+
+#downloadArea {
+    background: transparent !important;
+}
+
+/*******************************
+             Blockly
+*******************************/
+
+div.blocklyTreeRow {
+    border-bottom: 1px solid #ecf0f1 !important;
+    margin-bottom: 0px !important;
+
+    -webkit-transition-property: background-color; /* Safari */
+    -webkit-transition-duration: 1s; /* Safari */
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+/* Blockly toolbox font size same as the page font */
+span.blocklyTreeLabel {
+    font-family: @pageFont !important;
+    font-weight: 200;
+}
+
+.blocklyToolboxDiv, .monacoToolboxDiv {
+    background-color: white !important;
+    border-left: 1px solid #ecf0f1 !important;
+    box-shadow: 0 1px 20px rgba(0,0,0,.15);
+}
+
+.blocklyFlyoutBackground {
+    fill: #525A67 !important;
+}
+
+/* Remove shadow around blockly blocks */
+.blocklyPathDark, .blocklyPathLight {
+    display: none;
+}
+
+.organization {
+    top: 1.6em;
+}
+
+/* Blockly Toolbox Buttons */
+.ui.button.blocklyAddPackageButton {
+    &:extend(.pink all);
+}
+
+/*******************************
+             Monaco
+*******************************/
+
+.monaco-editor, .monaco-editor .inputarea {
+    background: #ecf0f1;
+}
+
+.monacoDraggableBlock {
+    background: #ecf0f1;
+    border: solid 3px #ecf0f1;
+}
+
+.monaco-editor-background {
+    background: #ecf0f1;
+}
+
+.monacoFlyout {
+    background: rgba(82, 90, 103, 0.5);
+}
+
+
+/* Mobile */
+@media only screen and (max-width: @largestMobileScreen) {
+    #filelist {
+        background: transparent !important;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+    #filelist {
+        background: transparent !important;
+    }
+}
+
+/* Small Monitor */
+@media only screen and (min-width: @computerBreakpoint) and (max-width: @largestSmallMonitor) {
+}
+
+/* Large Monitor */
+@media only screen and (min-width: @largeMonitorBreakpoint) {
+}

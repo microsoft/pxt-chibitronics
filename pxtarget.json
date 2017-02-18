@@ -1,0 +1,73 @@
+{
+    "id": "chibitronics",
+    "nickname": "chibitronics",
+    "name": "chibitronics.pxt.io",
+    "title": "chibitronics.pxt.io - Blocks / Javascript editor for chibitronics",
+    "description": "A Blocks / JavaScript code editor for the chibitronics.",
+    "corepkg": "core",
+    "cloud": {
+        "workspace": false,
+        "packages": false,
+        "sharing": true,
+        "publishing": true
+    },
+    "bundleddirs": [
+        "libs/core"
+    ],
+    "runtime": {
+      "mathBlocks": true,
+      "loopsBlocks": true,
+      "logicBlocks": true,
+      "variablesBlocks": true,
+      "textBlocks": true,
+      "listsBlocks": true 
+    },
+    "simulator": {
+        "autoRun": true
+    },
+    "appTheme": {
+        "accentColor": "#5C005C",
+        "logoUrl": "http://chibitronics.com/",
+        "logo": "./static/chibitronics.logo.white.png",
+        "docsLogo": "./static/logo.square.white.svg",
+        "portraitLogo": "./static/logo.square.white.svg",
+        "footerLogo": "./static/logo.portrait.black.svg",
+        "cardLogo": "./static/icons/apple-touch-icon.png",
+        "appLogo": "./static/icons/apple-touch-icon.png",
+        "organization": "Microsoft",
+        "organizationUrl": "https://pxt.io/",
+        "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
+        "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
+        "homeUrl": "https://chibitronics.pxt.io/",
+        "embedUrl": "https://chibitronics.pxt.io/",
+        "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
+        "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
+        "githubUrl": "https://github.com/Microsoft/pxt-chibitronics",
+        "crowdinProject": "kindscript",
+        "boardName": "chibitronics",
+        "docMenu": [
+            {
+                "name": "About",
+                "path": "/about"
+            },
+            {
+                "name": "Docs",
+                "path": "/docs"
+            }
+        ],
+        "invertedMenu": true,
+        "coloredToolbox": true,
+        "monacoToolbox": true,
+        "hasAudio": false,
+        "blocklyOptions": { 
+            "grid": {
+                "spacing": 45,
+                "length": 7,
+                "colour": "rgba(189, 195, 199, 0.30)",
+                "snap": true
+            }
+        },
+        "simAnimationEnter": "rotate in",
+        "simAnimationExit": "rotate out"
+    }
+}

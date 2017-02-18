@@ -1,0 +1,9 @@
+{
+    "packages": {
+        "approvedOrgs": [
+            "Microsoft"
+        ],
+        "approvedRepos": [
+        ]
+    }
+}
