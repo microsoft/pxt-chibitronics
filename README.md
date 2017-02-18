@@ -1,4 +1,4 @@
-# micro:bit target for PXT
+# chibitronics target for PXT
 
 This target allow to program a [Chibitronics](https://www.chibitronics.com/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).

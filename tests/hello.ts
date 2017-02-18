@@ -1,1 +1,0 @@
-basic.showString("Hello world!")
