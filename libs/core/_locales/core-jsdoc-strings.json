@@ -25,16 +25,11 @@
   "String.substr": "Return substring of the current string.",
   "String.substr|param|length": "number of characters to extract",
   "String.substr|param|start": "first character index; can be negative from counting from the end, eg:0",
-  "console.log": "Print out message",
+  "console.log": "* Print out message",
   "control": "Control flow",
-  "control.forever": "Repeats the code forever in the background. On each iteration, allows other code to run.",
-  "control.forever|param|body": "TODO",
-  "control.pause": "Pause for the specified time in milliseconds",
-  "control.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
+  "control.forever": "* Repeats the code forever in the background. On each iteration, allows other code to run.\r     * @param body TODO",
+  "control.pause": "* Pause for the specified time in milliseconds\r     * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000",
   "turtle": "Basic functionalities.",
-  "turtle.forward": "Moves the sprite forward",
-  "turtle.forward|param|steps": "number of steps to move, eg: 1",
-  "turtle.turn": "Moves the sprite forward",
-  "turtle.turn|param|angle": "degrees to turn, eg:90",
-  "turtle.turn|param|direction": "the direction to turn, eg: Direction.Left"
+  "turtle.forward": "* Moves the sprite forward\r     * @param steps number of steps to move, eg: 1",
+  "turtle.turn": "* Moves the sprite forward\r     * @param direction the direction to turn, eg: Direction.Left\r     * @param angle degrees to turn, eg:90"
 }
