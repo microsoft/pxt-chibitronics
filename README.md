@@ -3,13 +3,7 @@
 This target allow to program a [Chibitronics](https://www.chibitronics.com/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
-* [Try it live](https://chibitronics.pxt.io)
-
-[![Build Status](https://travis-ci.org/Microsoft/pxt-chibitronics.svg?branch=master)](https://travis-ci.org/Microsoft/pxt-chibitronics)
-
-## Issue tracking
-
-All issue tracking for this repo happens at https://github.com/Microsoft/pxt, see you there!
+* Currently hosted at 931f9130-d4ff-4196-ab41-444f427c7145.pxt.io
 
 ## Local server
 
