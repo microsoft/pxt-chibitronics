@@ -124,6 +124,8 @@
                 "colour": "rgba(189, 195, 199, 0.30)",
                 "snap": true
             }
-        }
+        },
+        "simAnimationEnter": "fly down in",
+        "simAnimationExit": "fly up out"
     }
 }
