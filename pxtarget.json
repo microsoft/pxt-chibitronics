@@ -23,7 +23,67 @@
       "listsBlocks": false 
     },
     "simulator": {
-        "autoRun": true
+        "autoRun": true,
+        "streams": false,
+        "aspectRatio": 1.22,
+        "parts": true,
+        "partsAspectRatio": 0.69,
+        "boardDefinition": {
+            "visual": "ltc",
+            "gpioPinBlocks": [
+                [
+                    "D0"
+                ],
+                [
+                    "D1"
+                ],
+                [
+                    "D2"
+                ],
+                [
+                    "D3"
+                ],
+                [
+                    "D4"
+                ],
+                [
+                    "D5"
+                ]
+            ],
+            "gpioPinMap": {
+                "D0": "D0",
+                "D1": "D1",
+                "D2": "D2",
+                "D3": "D3",
+                "D4": "D4",
+                "D5": "D5"
+            },
+            "analogInPins": [
+                "A0",
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5"
+            ],
+            "groundPins": [
+                "GND"
+            ],
+            "threeVoltPins": [
+                "+3v3"
+            ],
+            "attachPowerOnRight": true,
+            "onboardComponents": [
+                "neopixel"
+            ],
+            "useCrocClips": true,
+            "marginWhenBreadboarding": [
+                0,
+                0,
+                80,
+                0
+            ]
+        }
     },
     "appTheme": {
         "accentColor": "#5C005C",
@@ -64,8 +124,6 @@
                 "colour": "rgba(189, 195, 199, 0.30)",
                 "snap": true
             }
-        },
-        "simAnimationEnter": "rotate in",
-        "simAnimationExit": "rotate out"
+        }
     }
 }

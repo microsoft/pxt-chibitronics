@@ -3,13 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>sample simulator</title>
-    <link rel="stylesheet" type="text/css" href="/sim/sim.css">
+    <title>LTC simulator</title>
     <style>
-        body {
-            background: transparent;
-            overflow: hidden;
-        }
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  width:100%;
+  padding: 0;
+  overflow: hidden;
+  margin: 0;
+}
     </style>
     <script src="/cdn/bluebird.min.js"></script>
     <script src="/cdn/pxtsim.js"></script>
@@ -17,7 +25,4 @@
 </head>
 
 <body>
-    <svg id='svgcanvas' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280">
-        <circle id='svgsprite' cx="100" cy="100" r="50" class="sprite" />
-    </svg>
 </body>
