@@ -19,8 +19,8 @@
       "loopsBlocks": true,
       "logicBlocks": true,
       "variablesBlocks": true,
-      "textBlocks": true,
-      "listsBlocks": true 
+      "textBlocks": false,
+      "listsBlocks": false 
     },
     "simulator": {
         "autoRun": true
@@ -28,12 +28,10 @@
     "appTheme": {
         "accentColor": "#5C005C",
         "logoUrl": "http://chibitronics.com/",
-        "logo": "./static/chibitronics.logo.white.png",
+        "logo": "./static/chibitronics_logo_white.svg",
         "docsLogo": "./static/logo.square.white.svg",
         "portraitLogo": "./static/logo.square.white.svg",
-        "footerLogo": "./static/logo.portrait.black.svg",
-        "cardLogo": "./static/icons/apple-touch-icon.png",
-        "appLogo": "./static/icons/apple-touch-icon.png",
+        "footerLogo": "./static/logo.portrait.white.svg",
         "organization": "Microsoft",
         "organizationUrl": "https://pxt.io/",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
