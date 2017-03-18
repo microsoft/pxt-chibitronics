@@ -9,11 +9,28 @@
         "workspace": false,
         "packages": false,
         "sharing": true,
-        "publishing": true
+        "publishing": true,
+        "githubPackages": true
     },
     "bundleddirs": [
         "libs/core"
     ],
+    "compile": {
+        "isNative": false,
+        "hasHex": true,
+        "deployDrives": "(MICROBIT|MBED)",
+        "driveName": "MICROBIT",
+        "hexMimeType": "application/x-microbit-hex",
+        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
+        "upgrades": [
+            {
+                "type": "package",
+                "map": {
+                    "ltc": "core"
+                }
+            }
+        ]
+    },
     "runtime": {
         "mathBlocks": true,
         "loopsBlocks": true,
@@ -85,6 +102,13 @@
                 0
             ]
         }
+    },
+    "compileService": {
+        "yottaTarget": "chibitronics-ltc-gcc",
+        "yottaCorePackage": "chibitronics",
+        "githubCorePackage": "xobs/pxt-ltc-core",
+        "gittag": "v0.0.11-broken-ltc",
+        "serviceId": "foobar9"
     },
     "appTheme": {
         "accentColor": "#5C005C",
