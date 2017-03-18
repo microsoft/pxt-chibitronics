@@ -74,7 +74,7 @@ namespace pxsim.visuals {
         .sim-text-pin {
         text-anchor: middle;
         font-family:"Lucida Console", Monaco, monospace;
-        font-size:20px;
+        font-size:10px;
         fill:#fff;
         pointer-events: none;
         }
@@ -168,8 +168,8 @@ namespace pxsim.visuals {
         "+3V",
         "GND"
     ];
-    const MB_WIDTH = 460;
-    const MB_HEIGHT = 150;
+    const MB_WIDTH = 225;
+    const MB_HEIGHT = 120;
     export interface IBoardTheme {
         accent?: string;
         display?: string;
@@ -301,9 +301,12 @@ namespace pxsim.visuals {
         private updateTheme() {
             let theme = this.props.theme;
 
+            /*
             svg.fill(this.display, theme.display);
             svg.fills(this.leds, theme.ledOn);
             svg.fills(this.ledsOuter, theme.ledOff);
+            */
+            
             /*
             svg.fills(this.buttonsOuter.slice(0, 2), theme.buttonOuter);
             svg.fills(this.buttons.slice(0, 2), theme.buttonUp);
@@ -413,7 +416,7 @@ namespace pxsim.visuals {
 
 
         private buildDom() {
-            this.element = <SVGSVGElement>svg.elt("svg")
+            this.element = new DOMParser().parseFromString(BOARD_SVG, "image/svg+xml").querySelector("svg") as SVGSVGElement;
             svg.hydrate(this.element, {
                 "version": "1.0",
                 "viewBox": `0 0 ${MB_WIDTH} ${MB_HEIGHT}`,
@@ -441,7 +444,8 @@ namespace pxsim.visuals {
 
             // script background
             //this.display = svg.path(this.g, "sim-display", "M333.8,310.3H165.9c-8.3,0-15-6.7-15-15V127.5c0-8.3,6.7-15,15-15h167.8c8.3,0,15,6.7,15,15v167.8C348.8,303.6,342.1,310.3,333.8,310.3z");
-            this.display = svg.child(this.g, "rect", { class: "sim-display", x: 0, y: 0, width: 460, height: 150, rx: 10, ry: 10});
+            
+            //this.display = svg.child(this.g, "rect", { class: "sim-display", x: 0, y: 0, width: 460, height: 150, rx: 10, ry: 10});
 
             /*
             this.logos = [];
@@ -453,6 +457,7 @@ namespace pxsim.visuals {
             */
 
             // leds
+            /*
             this.leds = [];
             this.ledsOuter = [];
             let left = 70, top = 110, ledoffw = 50, ledoffh = 44;
@@ -462,7 +467,7 @@ namespace pxsim.visuals {
                 let k = j;
                 this.ledsOuter.push(svg.child(this.g, "rect", { class: "sim-led-back sim-led-light-back", x: ledleft, y: ledtop, width: 10, height: 10, rx: 2, ry: 2 }));
                 this.leds.push(svg.child(this.g, "rect", { class: "sim-led sim-led-light", x: ledleft - 2, y: ledtop - 2, width: 14, height: 14, rx: 3, ry: 3, title: `D${j}` }));
-            }
+            }*/
 
             // head
             /*
@@ -476,18 +481,20 @@ namespace pxsim.visuals {
 
             // https://www.microbit.co.uk/device/pins
             // GND, D0, D1, D2, D3, D4, D5, GND, 3.3V
+            
             this.pins = [
-                10,
-                60,
-                110,
-                160,
-                210,
-                260,
-                310,
-                370,
-                420
-            ].map((p, pi) => svg.child(this.g, "rect", {x: p, y: 145, width: 30, height: 70, rx: 4, ry: 4, class: "sim-pin sim-pin-touch"}));
+                13,
+                37,
+                61,
+                85,
+                109,
+                133,
+                157,
+                181,
+                202
+            ].map((p, pi) => svg.child(this.g, "rect", {x: p, y: 75, width: 14, height: 34, rx: 1, ry: 1, class: "sim-pin sim-pin-touch"}));
 
+            /*
             this.pinLabels = [
                 10,
                 60,
@@ -500,10 +507,9 @@ namespace pxsim.visuals {
                 420
             ].map((p, pi) => svg.child(this.g, "text", {x: p+15, y: 140, rx: 4, ry: 4, class: "sim-pin sim-pin-touch", font: "fixed-width"}));
             let pinTexts = ["GND", "D0", "D1", "D2", "D3", "D4", "D5", "GND", "+3V"]
-            this.pinLabels.map((p, pi) => p.appendChild(document.createTextNode(pinTexts[pi])));
-
+            this.pinLabels.map((p, pi) => p.appendChild(document.createTextNode(pinTexts[pi])));          
+*/
             this.pins.forEach((p, i) => svg.hydrate(p, { title: pinTitles[i] }));
-
             this.pinGradients = this.pins.map((pin, i) => {
                 let gid = "gradient-pin-" + i
                 let lg = svg.linearGradient(this.defs, gid)
@@ -512,13 +518,13 @@ namespace pxsim.visuals {
             })
 
             this.pinTexts = [
-                60,
-                110,
-                160,
-                210,
-                260,
-                310
-            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x+15, y: 180, textAnchor: "middle" }));
+                37,
+                61,
+                85,
+                109,
+                133,
+                157
+            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x+7, y: 100, textAnchor: "middle" }));
 
 /*
             this.buttonsOuter = []; this.buttons = [];

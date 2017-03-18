@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+namespace pxsim.visuals {
+    export const BOARD_SVG = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg
@@ -5896,4 +5897,5 @@
        height="6.1999998"
        id="rect2125"
        clip-path="url(#SVGID_2_)"
-       style="fill:#543f17" /></g></svg>
+       style="fill:#543f17" /></g></svg>`;
+}
