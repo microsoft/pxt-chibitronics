@@ -1,10 +1,10 @@
 {
-	"masterPicture": "docs/static/microbit.simplified.svg",
+	"masterPicture": "docs/static/chibitronics_logo_white.svg",
 	"iconsPath": "/docs/static/icons",
 	"design": {
 		"ios": {
 			"pictureAspect": "backgroundAndMargin",
-			"backgroundColor": "#ffffff",
+			"backgroundColor": "#3891A6",
 			"margin": "14%",
 			"assets": {
 				"ios6AndPriorIcons": true,
@@ -16,7 +16,7 @@
 		"desktopBrowser": {},
 		"windows": {
 			"pictureAspect": "noChange",
-			"backgroundColor": "#da532c",
+			"backgroundColor": "#3891A6",
 			"onConflict": "override",
 			"assets": {
 				"windows80Ie10Tile": true,
@@ -30,7 +30,7 @@
 		},
 		"androidChrome": {
 			"pictureAspect": "noChange",
-			"themeColor": "#ffffff",
+			"themeColor": "#3891A6",
 			"manifest": {
 				"display": "standalone",
 				"orientation": "notSet",
@@ -44,7 +44,7 @@
 		},
 		"safariPinnedTab": {
 			"pictureAspect": "silhouette",
-			"themeColor": "#5bbad5"
+			"themeColor": "#3891A6"
 		}
 	},
 	"settings": {

@@ -135,6 +135,8 @@
         "docsLogo": "./static/logo.square.white.svg",
         "portraitLogo": "./static/logo.square.white.svg",
         "footerLogo": "./static/logo.portrait.white.svg",
+        "cardLogo": "./static/icons/apple-touch-icon.png",
+        "appLogo": "./static/icons/apple-touch-icon.png",
         "organization": "Microsoft",
         "organizationUrl": "https://makecode.com",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
