@@ -1,6 +1,7 @@
 {
     "name": "core",
-    "description": "A target sample for PXT",
+    "description": "The chibitronics core library",
+    "installedVersion": "tsmdvf",
     "files": [
         "README.md",
         "pxt-core.d.ts",
