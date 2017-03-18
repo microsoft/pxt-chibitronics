@@ -1,10 +1,13 @@
 {
     "id": "chibitronics",
     "nickname": "chibitronics",
-    "name": "chibitronics.pxt.io",
-    "title": "chibitronics.pxt.io - Blocks / Javascript editor for chibitronics",
+    "name": "chibitronics.makecode.com",
+    "title": "chibitronics.makecode.com - Blocks / Javascript editor for chibitronics",
     "description": "A Blocks / JavaScript code editor for the chibitronics.",
     "corepkg": "core",
+    "bundleddirs": [
+        "libs/core"
+    ],
     "cloud": {
         "workspace": false,
         "packages": false,
@@ -12,9 +15,6 @@
         "publishing": true,
         "githubPackages": true
     },
-    "bundleddirs": [
-        "libs/core"
-    ],
     "compile": {
         "isNative": false,
         "hasHex": true,
