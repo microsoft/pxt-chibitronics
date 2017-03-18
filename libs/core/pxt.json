@@ -5,9 +5,13 @@
         "README.md",
         "pxt-core.d.ts",
         "pxt-helpers.ts",
+        "helpers.ts",
+        "basic.cpp",
+        "core.cpp",
+        "pins.cpp",
+        "pins.ts",
         "enums.d.ts",
-        "sims.d.ts",
-        "ns.ts"
+        "shims.d.ts"
     ],
     "testFiles": [
         "test.ts"

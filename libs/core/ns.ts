@@ -1,15 +1,16 @@
 /**
  * Basic functionalities.
  */
-//% color=#00BCD4 weight=100
-namespace turtle {
+//% color=#0078D7 weight=100 icon="\uf00a"
+namespace basic {
 
 }
 
 /**
- * Control flow
+ * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
-//% color=#FF5722 weight=90
-namespace control {
+//% color=#A80000 weight=30 icon="\uf140"
+//% advanced=true
+namespace pins {
 
 }

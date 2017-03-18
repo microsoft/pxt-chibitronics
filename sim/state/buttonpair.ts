@@ -1,8 +1,7 @@
 namespace pxsim.input {
     export function onButtonPressed(button: number, handler: RefAction): void {
         let b = board().buttonPairState;
-        //TODO: Fix this
-        //pxtcore.registerWithDal(button, LTC.LTC_BUTTON_EVT_CLICK, handler);
+        pxtcore.registerWithDal(button, LTC.LTC_BUTTON_EVT_CLICK, handler);
     }
 
     export function buttonIsPressed(button: number): boolean {

@@ -4,8 +4,7 @@ namespace pxsim.input {
         if (!pin) return;
         pin.isTouched();
 
-        //TODO: Fix this
-        //pxtcore.registerWithDal(pin.id, LTC.LTC_BUTTON_EVT_CLICK, handler);
+        pxtcore.registerWithDal(pin.id, LTC.LTC_BUTTON_EVT_CLICK, handler);
     }
 
     export function onPinReleased(pinId: number, handler: RefAction) {
@@ -13,8 +12,7 @@ namespace pxsim.input {
         if (!pin) return;
         pin.isTouched();
         
-        //TODO: Fix this
-        //pxtcore.registerWithDal(pin.id, LTC.LTC_BUTTON_EVT_UP, handler);
+        pxtcore.registerWithDal(pin.id, LTC.LTC_BUTTON_EVT_UP, handler);
     }
 
     export function pinIsPressed(pinId: number): boolean {

@@ -1,4 +1,5 @@
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../libs/core/ltc.d.ts"/>
 
 namespace pxsim {
 
@@ -43,8 +44,6 @@ namespace pxsim {
             super()
 
             // components
-            //TODO: fix this
-            /*
             this.builtinParts["buttonpair"] = this.buttonPairState = new LtcButtonPairState({
                 ID_BUTTON_D0: LTC.LTC_ID_IO_D0,
                 ID_BUTTON_D1: LTC.LTC_ID_IO_D1,
@@ -65,7 +64,6 @@ namespace pxsim {
                     LTC.LTC_ID_IO_D5
                 ]
             });
-            */
             this.builtinParts["neopixel"] = this.neopixelState = new NeoPixelState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
 

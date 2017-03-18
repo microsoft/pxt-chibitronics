@@ -264,8 +264,7 @@ namespace pxsim.visuals {
                 this.board.updateSubscribers.push(() => this.updateState());
                 this.updateState();
                 
-                //TODO: fix this
-                //this.attachEvents();
+                this.attachEvents();
             }
         }
 
@@ -409,8 +408,7 @@ namespace pxsim.visuals {
             let state = this.board;
             if (!state) return;
 
-            // TODO: fix this
-            //state.edgeConnectorState.pins.forEach((pin, i) => this.updatePin(pin, i));
+            state.edgeConnectorState.pins.forEach((pin, i) => this.updatePin(pin, i));
         }
 
 
@@ -622,9 +620,8 @@ namespace pxsim.visuals {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = false;
                     this.updatePin(state.edgeConnectorState.pins[index], index);
-                    //TODO: fix this
-                    //this.board.bus.queue(state.edgeConnectorState.pins[index].id, LTC.LTC_BUTTON_EVT_UP);
-                    //this.board.bus.queue(state.edgeConnectorState.pins[index].id, LTC.LTC_BUTTON_EVT_CLICK);
+                    this.board.bus.queue(state.edgeConnectorState.pins[index].id, LTC.LTC_BUTTON_EVT_UP);
+                    this.board.bus.queue(state.edgeConnectorState.pins[index].id, LTC.LTC_BUTTON_EVT_CLICK);
                 })
             })
 

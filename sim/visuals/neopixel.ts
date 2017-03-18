@@ -1,4 +1,6 @@
 /// <reference path="../../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../../libs/core/ltc.d.ts"/>
+/// <reference path="../../libs/core/shims.d.ts"/>
 /// <reference path="../../libs/core/enums.d.ts"/>
 
 namespace pxsim.visuals {
