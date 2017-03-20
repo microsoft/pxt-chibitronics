@@ -17,7 +17,7 @@
     },
     "compile": {
         "isNative": false,
-        "hasHex": true,
+        "hasHex": false,
         "deployDrives": "(MICROBIT|MBED)",
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
@@ -37,7 +37,7 @@
         "logicBlocks": true,
         "variablesBlocks": true,
         "onStartColor": "#0078D7",
-        "onStartNamespace": "basic",
+        "onStartNamespace": "control",
         "onStartWeight": 54
     },
     "simulator": {
@@ -102,13 +102,6 @@
                 0
             ]
         }
-    },
-    "compileService": {
-        "yottaTarget": "chibitronics-ltc-gcc",
-        "yottaCorePackage": "chibitronics",
-        "githubCorePackage": "xobs/pxt-ltc-core",
-        "gittag": "v0.0.11-broken-ltc",
-        "serviceId": "foobar9"
     },
     "blocksprj": {
         "id": "blocksprj",

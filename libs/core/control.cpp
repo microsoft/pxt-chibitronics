@@ -4,8 +4,8 @@
 /**
  * Provides access to basic chibitronic functionality.
  */
-//% color=#0078D7 weight=100 icon="\uf00a"
-namespace basic {
+//% color=#0078D7 weight=70 icon="\uf110"
+namespace control {
 
     static void forever_stub(void *a) {
       setThreadName("forever_stub");

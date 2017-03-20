@@ -492,7 +492,7 @@ namespace pxsim.visuals {
                 157,
                 181,
                 202
-            ].map((p, pi) => svg.child(this.g, "rect", {x: p, y: 75, width: 14, height: 34, rx: 1, ry: 1, class: "sim-pin sim-pin-touch"}));
+            ].map((p, pi) => svg.child(this.g, "rect", {x: p, y: 74, width: 14, height: 35, rx: 1, ry: 1, class: "sim-pin sim-pin-touch"}));
 
             /*
             this.pinLabels = [

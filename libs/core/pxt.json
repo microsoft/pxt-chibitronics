@@ -7,10 +7,11 @@
         "pxt-core.d.ts",
         "pxt-helpers.ts",
         "helpers.ts",
-        "basic.cpp",
+        "control.cpp",
         "core.cpp",
         "pins.cpp",
         "pins.ts",
+        "ns.ts",
         "enums.d.ts",
         "shims.d.ts"
     ],
