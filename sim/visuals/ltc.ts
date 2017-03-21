@@ -24,7 +24,7 @@ namespace pxsim.visuals {
             stroke:1px solid #704A4A;
         }
         .sim-pin:hover {
-            stroke:#D4AF37;
+            stroke:#ffcc00;
             stroke-width:2px;
         }
         .sim-pin {
@@ -192,7 +192,7 @@ namespace pxsim.visuals {
         return {
             accent: accent,
             display: "#00d0ff",
-            pin: "#D4AF37",
+            pin: "#ffcc00",
             pinTouched: "#FFA500",
             pinActive: "#FF5500",
             ledOn: "#ff7f7f",
@@ -356,7 +356,7 @@ namespace pxsim.visuals {
                 v = "100%";
                 if (text) text.textContent = "";
             }
-            if (v) svg.setGradientValue(this.pinGradients[index + 1], v);
+            if (v) svg.setGradientValue(this.pinGradients[index], v);
         }
 
         private updateTemperature() {
@@ -482,6 +482,21 @@ namespace pxsim.visuals {
             // https://www.microbit.co.uk/device/pins
             // GND, D0, D1, D2, D3, D4, D5, GND, 3.3V
             
+            
+            this.pins = [
+                'pin0',
+                'pin1',
+                'pin2',
+                'pin3',
+                'pin4',
+                'pin5'
+            ].map((p, pi) => {
+                let pin = this.element.getElementById(p) as SVGRectElement;
+                return svg.child(this.g, "rect", {x: pin.getAttribute("x"), y: pin.getAttribute("y"), width: pin.getAttribute("width"), height: pin.getAttribute("height"), rx: 0, ry: 0, class: "sim-pin sim-pin-touch"});
+            });
+            
+
+            /*
             this.pins = [
                 13,
                 37,
@@ -493,7 +508,7 @@ namespace pxsim.visuals {
                 181,
                 202
             ].map((p, pi) => svg.child(this.g, "rect", {x: p, y: 74, width: 14, height: 35, rx: 1, ry: 1, class: "sim-pin sim-pin-touch"}));
-
+*/
             /*
             this.pinLabels = [
                 10,
@@ -524,7 +539,7 @@ namespace pxsim.visuals {
                 109,
                 133,
                 157
-            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x+7, y: 100, textAnchor: "middle" }));
+            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x+7, y: 94, textAnchor: "middle" }));
 
 /*
             this.buttonsOuter = []; this.buttons = [];
