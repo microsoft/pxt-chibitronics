@@ -49,4 +49,7 @@ To update your PXT version and make sure you're running the latest tools, run (a
 pxt update
 ```
 
-More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost 
+More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost
+
+## Jenkins build
+https://ci2.dot.net/job/Private/job/pxt_project_yellow/job/master/
