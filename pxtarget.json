@@ -16,8 +16,8 @@
         "githubPackages": true
     },
     "compile": {
-        "isNative": false,
-        "hasHex": false,
+        "isNative": true,
+        "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
@@ -31,6 +31,16 @@
             }
         ]
     },
+    "compileService": {
+        "platformioIni": [
+            "[env:myenv]",
+            "platform = ltc",
+            "framework = ltc",
+            "board = ltc"
+        ],
+        "buildEngine": "platformio",
+        "serviceId": "ltc"
+    },    
     "runtime": {
         "mathBlocks": true,
         "loopsBlocks": true,
