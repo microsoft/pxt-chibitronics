@@ -2,17 +2,17 @@
 
 
     /**
-     * Provides access to basic chibitronic functionality.
+     * Provides access to basic micro:bit functionality.
      */
-    //% color=#0078D7 weight=70 icon="\uf110"
-declare namespace control {
+    //% color=#0078D7 weight=100 icon="\uf00a"
+declare namespace basic {
 
     /**
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
     //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
-    //% blockId=device_forever block="forever" icon="\uf01e" shim=control::forever
+    //% blockId=device_forever block="forever" icon="\uf01e" shim=basic::forever
     function forever(a: () => void): void;
 
     /**
@@ -21,7 +21,7 @@ declare namespace control {
      */
     //% help=basic/pause weight=54
     //% async block="pause (ms) %pause"
-    //% blockId=device_pause icon="\uf110" shim=control::pause
+    //% blockId=device_pause icon="\uf110" shim=basic::pause
     function pause(ms: number): void;
 }
 declare namespace pins {

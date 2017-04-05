@@ -1,5 +1,5 @@
 // Auto-generated. Do not edit.
-declare namespace control {
+declare namespace basic {
 }
 
 
