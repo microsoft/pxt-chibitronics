@@ -19,6 +19,8 @@ extern uint16_t *bytecode;
 typedef uint32_t Action;
 typedef uint32_t ImageLiteral;
 
+#define PXT_FNPTR(x) ((uint32_t)(void*)x)
+
 /* Define an empty PXT_MAIN.  This prevents PXT from making a main() function.*/
 #define PXT_MAIN
 

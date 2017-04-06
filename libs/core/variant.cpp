@@ -114,7 +114,7 @@ static void exec_binary(int32_t *pc) {
 }
 
 int main(int argc, char **argv) {
-  exec_binary((int32_t*)functionsAndBytecode);
+  exec_binary((int32_t*)functionsAndBytecode); 
 }
 
 // vim: ts=2 sw=2 expandtab
