@@ -8,6 +8,16 @@
     "bundleddirs": [
         "libs/core"
     ],
+    "compileService": {
+        "platformioIni": [
+            "[env:ltc]",
+            "platform = ltc",
+            "framework = ltc",
+            "board = ltc"
+        ],
+        "buildEngine": "platformio",
+        "serviceId": "ltc"
+    },
     "cloud": {
         "workspace": false,
         "packages": false,
@@ -16,8 +26,8 @@
         "githubPackages": true
     },
     "compile": {
-        "isNative": false,
-        "hasHex": false,
+        "isNative": true,
+        "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",

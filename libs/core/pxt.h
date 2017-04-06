@@ -1,71 +1,60 @@
 #ifndef __PXT_H
 #define __PXT_H
 
-//#define DEBUG_MEMLEAKS 1
+// #define intcheck(...) check(__VA_ARGS__)
+#define intcheck(...) do {} while (0)
 
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-
-#include "MicroBit.h"
-#include "MicroBitImage.h"
-#include "ManagedString.h"
-#include "ManagedType.h"
-#include "ManagedBuffer.h"
-
-#define printf(...) uBit.serial.printf(__VA_ARGS__)
-// #define printf(...)
-
-#define intcheck(...) check(__VA_ARGS__)
-//#define intcheck(...) do {} while (0)
-
-#include <stdio.h>
 #include <string.h>
-#include <vector>
 #include <stdint.h>
+#include "utvector.h"
+#include "RefCounted.h"
 
-#ifdef DEBUG_MEMLEAKS
-#include <set>
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-extern MicroBit uBit;
+extern const uint32_t functionsAndBytecode[];
+extern uint32_t *globals;
+extern uint16_t *bytecode;
+typedef uint32_t Action;
+typedef uint32_t ImageLiteral;
 
-namespace pxt {
-  typedef uint32_t Action;
-  typedef uint32_t ImageLiteral;
+/* Define an empty PXT_MAIN.  This prevents PXT from making a main() function.*/
+#define PXT_MAIN
 
-
-  typedef enum {
+typedef enum {
     ERR_INVALID_BINARY_HEADER = 5,
     ERR_OUT_OF_BOUNDS = 8,
     ERR_REF_DELETED = 7,
     ERR_SIZE = 9,
-  } ERROR;
+} ERROR;
 
-  extern const uint32_t functionsAndBytecode[];
-  extern uint32_t *globals;
-  extern uint16_t *bytecode;
-  class RefRecord;
+void error(ERROR code, int subcode
+#ifdef __cplusplus
+    = 0
+#endif
+);
+void panic(const char *str);
 
+
+#ifdef __cplusplus
+};
+
+namespace pxt {
   // Utility functions
-  extern MicroBitEvent lastEvent;
-  void registerWithDal(int id, int event, Action a);
-  void runInBackground(Action a);
   uint32_t runAction3(Action a, int arg0, int arg1, int arg2);
   uint32_t runAction2(Action a, int arg0, int arg1);
   uint32_t runAction1(Action a, int arg0);
   uint32_t runAction0(Action a);
   Action mkAction(int reflen, int totallen, int startptr);
-  void error(ERROR code, int subcode = 0);
-  void exec_binary(uint16_t *pc);
-  void start();
-  void debugMemLeaks();
-  // allocate [sz] words and clear them
-  uint32_t *allocate(uint16_t sz);
-  int templateHash();
-  int programHash();
-  uint32_t programSize();
-  uint32_t afterProgramPage();     
-  int getNumGlobals();
+
+  class RefRecord;
   RefRecord* mkClassInstance(int vtableOffset);
+
+  inline void *ptrOfLiteral(int offset)
+  {
+    return &bytecode[offset];
+  }
 
   // The standard calling convention is:
   //   - when a pointer is loaded from a local/global/field etc, and incr()ed
@@ -76,48 +65,35 @@ namespace pxt {
   int incr(uint32_t e);
   void decr(uint32_t e);
 
-  inline void *ptrOfLiteral(int offset)
-  {
-    return &bytecode[offset];
-  }
-
-  inline ImageData* imageBytes(int offset)
-  {
-    return (ImageData*)(void*)&bytecode[offset];
-  }
-
-  // Checks if object has a VTable, or if its RefCounted* from the runtime.
+// Checks if object has a VTable, or if its RefCounted* from the runtime.
   inline bool hasVTable(uint32_t e)
   {
     return (*((uint32_t*)e) & 1) == 0;
   }
 
-  inline void check(int cond, ERROR code, int subcode = 0)
-  {
-    if (!cond) error(code, subcode);
-  }
+inline void check(int cond, ERROR code, int subcode = 0)
+{
+  if (!cond) error(code, subcode);
+}
 
+class RefObject;
 
-  class RefObject;
-#ifdef DEBUG_MEMLEAKS
-  extern std::set<RefObject*> allptrs;
-#endif
+typedef void (*RefObjectMethod)(RefObject *self);
+typedef void *PVoid;
+typedef void **PPVoid;
 
-  typedef void (*RefObjectMethod)(RefObject *self);
-  typedef void *PVoid;
-  typedef void **PPVoid;
+const PPVoid RefMapMarker = (PPVoid)(void*)43;
 
-  const PPVoid RefMapMarker = (PPVoid)(void*)43;
+struct VTable {
+  uint16_t numbytes;  // in the entire object, including the vtable pointer
+  uint16_t userdata;
+  PVoid *ifaceTable;
+  PVoid methods[2]; // we only use up to two methods here; pxt will generate more
+  // refmask sits at &methods[nummethods]
+};
 
-  struct VTable {
-    uint16_t numbytes;  // in the entire object, including the vtable pointer
-    uint16_t userdata;
-    PVoid *ifaceTable;
-    PVoid methods[2]; // we only use up to two methods here; pxt will generate more
-    // refmask sits at &methods[nummethods]
-  };
+const int vtableShift = 2;
 
-  const int vtableShift = 2;
 
   // A base abstract class for ref-counted objects.
   class RefObject
@@ -130,9 +106,6 @@ namespace pxt {
     {
       refcnt = 2;
       vtable = vt;
-#ifdef DEBUG_MEMLEAKS
-      allptrs.insert(this);
-#endif
     }
 
     inline VTable *getVTable() {
@@ -144,9 +117,6 @@ namespace pxt {
 
     // Call to disable pointer tracking on the current instance (in destructor or some other hack)
     inline void untrack() {
-#ifdef DEBUG_MEMLEAKS
-      allptrs.erase(this);
-#endif
     }
 
     // Increment/decrement the ref-count. Decrementing to zero deletes the current object.
@@ -167,49 +137,11 @@ namespace pxt {
     }
   };
 
-  class Segment {
-  private:    
-      uint32_t* data;
-      uint16_t length;
-      uint16_t size;
-
-      static const uint16_t MaxSize = 0xFFFF;
-      static const uint32_t DefaultValue = 0x0;
-
-      static uint16_t growthFactor(uint16_t size);      
-      void growByMin(uint16_t minSize);
-      void growBy(uint16_t newSize);
-      void ensure(uint16_t newSize);
-
-  public:
-      Segment() : data (nullptr), length(0), size(0) {};
-
-      uint32_t get(uint32_t i);
-      void set(uint32_t i, uint32_t value);      
-
-      uint32_t getLength() { return length;};
-      void setLength(uint32_t newLength);
-
-      void push(uint32_t value);
-      uint32_t pop();
-
-      uint32_t remove(uint32_t i);
-      void insert(uint32_t i, uint32_t value);
-
-      bool isValidIndex(uint32_t i);
-
-      void destroy();
-
-      void print();
-  };
-
   // A ref-counted collection of either primitive or ref-counted objects (String, Image,
   // user-defined record, another collection)
   class RefCollection
     : public RefObject
   {
-  private:
-    Segment head;
   public:
     // 1 - collection of refs (need decr)
     // 2 - collection of strings (in fact we always have 3, never 2 alone)
@@ -217,23 +149,26 @@ namespace pxt {
     inline bool isRef() { return getFlags() & 1; }
     inline bool isString() { return getFlags() & 2; }
 
+    UT_vector *data;
+
     RefCollection(uint16_t f);
+
+    inline bool in_range(int x) {
+      return (0 <= x && x < (int)utvector_len(data));
+    }
+
+    inline int length() { return utvector_len(data); }
 
     void destroy();
     void print();
 
-    uint32_t length() { return head.getLength();}
-    void setLength(uint32_t newLength) { head.setLength(newLength); }
-
     void push(uint32_t x);
-    uint32_t pop();
-    uint32_t getAt(int i);
-    void setAt(int i, uint32_t x);
-    //removes the element at index i and shifts the other elements left
-    uint32_t removeAt(int i);
-    //inserts the element at index i and moves the other elements right.
-    void insertAt(int i, uint32_t x); 
-
+    uint32_t pop(void);
+    void setLength(int newLength);
+    uint32_t getAt(int x);
+    uint32_t removeAt(int x);
+    void setAt(int x, uint32_t y);
+    void insertAt(int x, uint32_t y);
     int indexOf(uint32_t x, int start);
     int removeElement(uint32_t x);
   };
@@ -247,7 +182,7 @@ namespace pxt {
     : public RefObject
   {
   public:
-    std::vector<MapEntry> data;
+    UT_vector *data;
 
     RefMap();
     void destroy();
@@ -334,22 +269,25 @@ namespace pxt {
   };
 }
 
+/* Import pxt:: into pointers.cpp */
 using namespace pxt;
-MicroBitPin *getPin(int id);
-typedef ImageData* Image;
-typedef BufferData* Buffer;
 
-// The ARM Thumb generator in the JavaScript code is parsing
-// the hex file and looks for the magic numbers as present here.
-//
-// Then it fetches function pointer addresses from there.
+#endif /* __cplusplus */
+
+/* The ARM Thumb generator in the JavaScript code is parsing
+ * the hex file and looks for the magic numbers as present here.
+ *
+ * Then it fetches function pointer addresses from there.
+ *
+ * These shims are used in cpp.ts as part of generated code, and not in
+ * this core directory.
+ */
   
 #define PXT_SHIMS_BEGIN \
-namespace pxt { \
-  const uint32_t functionsAndBytecode[] __attribute__((aligned(0x20))) = { \
+  extern "C" const uint32_t functionsAndBytecode[] __attribute__((aligned(0x20), section(".dataend"))) = { \
     0x08010801, 0x42424242, 0x08010801, 0x8de9d83e,
 
-#define PXT_SHIMS_END }; }
+#define PXT_SHIMS_END };
 
 #pragma GCC diagnostic ignored "-Wpmf-conversions"
 
@@ -374,6 +312,6 @@ const VTable classname ## _vtable \
   PXT_VTABLE_BEGIN(classname, 0, 0) PXT_VTABLE_END \
   classname::classname() : PXT_VTABLE_INIT(classname)
 
-#endif
+#endif /* __PXT_H */
 
 // vim: ts=2 sw=2 expandtab
