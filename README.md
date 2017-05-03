@@ -3,7 +3,7 @@
 This target allow to program a [Chibitronics](https://www.chibitronics.com/) using 
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
-* Currently hosted at https://931f9130-d4ff-4196-ab41-444f427c7145.pxt.io
+* Currently hosted at https://makecode.chibitronics.com
 
 ## Local server
 
