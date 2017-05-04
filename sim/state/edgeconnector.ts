@@ -43,11 +43,19 @@ namespace pxsim.pins {
         return pin.value > 100 ? 1 : 0;
     }
 
-    export function digitalWritePin(pinId: number, value: number) {
+    export function digitalWritePinOn(pinId: number) {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.mode = PinFlags.Digital | PinFlags.Output;
-        pin.value = value > 0 ? 1023 : 0;
+        pin.value = 1;
+        runtime.queueDisplayUpdate();
+    }
+
+    export function digitalWritePinOff(pinId: number) {
+        let pin = getPin(pinId);
+        if (!pin) return;
+        pin.mode = PinFlags.Digital | PinFlags.Output;
+        pin.value = 0;
         runtime.queueDisplayUpdate();
     }
 

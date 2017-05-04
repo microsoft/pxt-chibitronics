@@ -48,22 +48,33 @@ namespace pins {
      * @param name pin to read from, eg: DigitalPin.P0
      */
     //% help=pins/digital-read-pin weight=30
-    //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
+    //% blockId=device_get_digital_pin block="is|pin %name ON?" blockGap=8
     int digitalReadPin(DigitalPin name) {
         ::pinMode((int)name, 0);
         return ::digitalRead((int)name);
     }
 
     /**
-      * Set a pin or connector value to either 0 or 1.
+      * Set a pin or connector value to 0
       * @param name pin to write to, eg: DigitalPin.P0
-      * @param value value to set on the pin, 1 eg,0
       */
     //% help=pins/digital-write-pin weight=29
-    //% blockId=device_set_digital_pin block="digital write|pin %name|to %value"
-    void digitalWritePin(DigitalPin name, int value) {
+    //% blockId=device_set_digital_pin_off block="set OFF|pin %name"
+    void digitalWritePinOff(DigitalPin name) {
         ::pinMode((int)name, 1);
-        ::digitalWrite((int)name, value);
+        ::digitalWrite((int)name, 0);
+    }
+
+
+    /**
+      * Set a pin or connector value 1
+      * @param name pin to write to, eg: DigitalPin.P0
+      */
+    //% help=pins/digital-write-pin weight=29
+    //% blockId=device_set_digital_pin_on block="set ON|pin %name"
+    void digitalWritePinOn(DigitalPin name) {
+        ::pinMode((int)name, 1);
+        ::digitalWrite((int)name, 1);
     }
 
     /**
@@ -71,7 +82,7 @@ namespace pins {
      * @param name pin to write to, eg: AnalogPin.P0
      */
     //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="analog read|pin %name" blockGap="8" 
+    //% blockId=device_get_analog_pin block="read analog|pin %name" blockGap="8" 
     int analogReadPin(AnalogPin name) {
         ::pinMode((int)name, 0);
         return ::analogRead((int)name);
@@ -83,7 +94,7 @@ namespace pins {
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
     //% help=pins/analog-write-pin weight=24
-    //% blockId=device_set_analog_pin block="analog write|pin %name|to %value" blockGap=8
+    //% blockId=device_set_analog_pin block="set|pin %name|to %value %" blockGap=8
     void analogWritePin(AnalogPin name, int value) { 
         ::pinMode((int)name, 1);
         ::analogWrite((int)name, value);

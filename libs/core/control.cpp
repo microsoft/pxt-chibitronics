@@ -39,7 +39,7 @@ namespace control {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=basic/pause weight=54
-    //% async block="pause (ms) %pause"
+    //% async block="pause %pause ms"
     //% blockId=device_pause icon="\uf110"
     void pause(int ms) {
       delay(ms);
