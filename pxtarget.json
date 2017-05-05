@@ -165,6 +165,7 @@
             }
         },
         "simAnimationEnter": "fly down in",
-        "simAnimationExit": "fly up out"
+        "simAnimationExit": "fly up out",
+        "useUploadMessage": true
     }
 }
