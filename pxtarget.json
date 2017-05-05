@@ -178,6 +178,7 @@
         "simAnimationExit": "fly up out",
         "blocksVersion": 2,
         "useUploadMessage": true,
-        "downloadIcon": "play"
+        "downloadIcon": "play",
+        "disableBlockIcons": true
     }
 }
