@@ -18,19 +18,7 @@
     "compile": {
         "useModulator": true,
         "isNative": true,
-        "hasHex": true,
-        "deployDrives": "(MICROBIT|MBED)",
-        "driveName": "MICROBIT",
-        "hexMimeType": "application/x-microbit-hex",
-        "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
-        "upgrades": [
-            {
-                "type": "package",
-                "map": {
-                    "ltc": "core"
-                }
-            }
-        ]
+        "hasHex": true
     },
     "runtime": {
         "mathBlocks": true,

@@ -37,6 +37,7 @@
     ],
     "public": true,
     "platformio": {
+        "dependencies": {}
     },
     "dependencies": {}
 }
