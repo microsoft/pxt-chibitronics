@@ -479,6 +479,9 @@ namespace pxsim.visuals {
             this.headText = <SVGTextElement>svg.child(this.g, "text", { x: 310, y: 100, class: "sim-text" })
             */
 
+            // https://www.microbit.co.uk/device/pins
+            // GND, D0, D1, D2, D3, D4, D5, GND, 3.3V
+            
             
             this.pins = [
                 'pin0',
