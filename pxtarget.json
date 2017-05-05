@@ -17,8 +17,8 @@
     },
     "compile": {
         "useModulator": true,
-        "isNative": false,
-        "hasHex": false,
+        "isNative": true,
+        "hasHex": true,
         "deployDrives": "(MICROBIT|MBED)",
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
@@ -103,6 +103,16 @@
                 0
             ]
         }
+    },
+    "compileService": {
+        "buildEngine": "platformio",
+        "platformioIni": [
+            "[env:myenv]",
+            "platform = ltc",
+            "framework = ltc",
+            "board = ltc"
+        ],
+        "serviceId": "ltc"
     },
     "blocksprj": {
         "id": "blocksprj",

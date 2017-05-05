@@ -7,21 +7,36 @@
         "pxt-core.d.ts",
         "pxt-helpers.ts",
         "helpers.ts",
-        "control.cpp",
+        "basic.cpp",
         "core.cpp",
         "pins.cpp",
+        "utmm.cpp",
+        "utvector.cpp",
+        "utmm.h",
+        "utvector.h",
+        "RefCounted.cpp",
+        "RefCounted.h",
+        "variant.cpp",
+        "pxt.cpp",
+        "pxt.h",
         "pins.ts",
-        "ns.ts",
         "enums.d.ts",
-        "shims.d.ts"
+        "shims.d.ts",
+        "_locales/ja/core-jsdoc-strings.json",
+        "_locales/fr/core-jsdoc-strings.json",
+        "_locales/fr/core-strings.json",
+        "_locales/de/core-jsdoc-strings.json",
+        "_locales/de/core-strings.json",
+        "_locales/no/core-strings.json",
+        "_locales/ja/core-strings.json",
+        "_locales/sv-SE/core-jsdoc-strings.json",
+        "_locales/no/core-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": true,
-    "dependencies": {},
-    "yotta": {
-        "optionalConfig": {
-        }
-    }
+    "platformio": {
+    },
+    "dependencies": {}
 }

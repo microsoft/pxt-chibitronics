@@ -1,7 +1,8 @@
 #include "pxt.h"
-#include "Arduino.h"
+#include "ltc.h"
 
 extern "C" long int strtol(const char *nptr, char **endptr, int base);
+
 
 namespace String_ {
     //%

@@ -2,10 +2,10 @@
 #include "ChibiOS.h"
 
 /**
- * Provides access to basic chibitronic functionality.
+ * Provides access to basic micro:bit functionality.
  */
-//% color=#0078D7 weight=70 icon="\uf110"
-namespace control {
+//% color=#0078D7 weight=100 icon="\uf00a"
+namespace basic {
 
     static void forever_stub(void *a) {
       setThreadName("forever_stub");
