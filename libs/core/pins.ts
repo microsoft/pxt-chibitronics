@@ -1,8 +1,7 @@
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
-//% color=#A80000 weight=30 icon="\uf140"
-//% advanced=true
+//% color=#A80000 weight=80 icon="\uf140"
 namespace pins {
     /**
      * Re-maps a number from one range to another. That is, a value of ``from low`` would get mapped to ``to low``, a value of ``from high`` to ``to high``, values in-between to values in-between, etc.
