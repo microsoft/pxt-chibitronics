@@ -1,9 +1,9 @@
 {
     "id": "chibitronics",
     "nickname": "chibitronics",
-    "name": "chibitronics.makecode.com",
-    "title": "chibitronics.makecode.com - Blocks / Javascript editor for chibitronics",
-    "description": "A Blocks / JavaScript code editor for the chibitronics.",
+    "name": "ltc.makecode.com",
+    "title": "ltc.makecode.com - Blocks / Javascript editor for Love-to-code",
+    "description": "A Blocks / JavaScript code editor for the Love-to-code board.",
     "corepkg": "core",
     "bundleddirs": [
         "libs/core"
@@ -145,8 +145,8 @@
         "organizationUrl": "https://makecode.com",
         "organizationLogo": "./static/Microsoft-logo_rgb_c-gray-square.png",
         "organizationWideLogo": "./static/Microsoft-logo_rgb_c-white.png",
-        "homeUrl": "https://chibitronics.makecode.com/",
-        "embedUrl": "https://chibitronics.makecode.com/",
+        "homeUrl": "https://ltc.makecode.com/",
+        "embedUrl": "https://ltc.makecode.com/",
         "privacyUrl": "https://makecode.com/privacy",
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-chibitronics",
