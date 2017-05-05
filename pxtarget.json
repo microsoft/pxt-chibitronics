@@ -16,6 +16,7 @@
         "githubPackages": true
     },
     "compile": {
+        "useModulator": true,
         "isNative": false,
         "hasHex": false,
         "deployDrives": "(MICROBIT|MBED)",
