@@ -27,9 +27,12 @@ namespace pxsim {
     }
 }
 
-namespace pxsim.control {
+namespace pxsim.basic {
     export var pause = thread.pause;
     export var forever = thread.forever;
+}
+
+namespace pxsim.control {
     export var inBackground = thread.runInBackground;
 
     export function reset() {

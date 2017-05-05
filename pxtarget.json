@@ -176,6 +176,7 @@
         },
         "simAnimationEnter": "fly down in",
         "simAnimationExit": "fly up out",
+        "blocksVersion": 2,
         "useUploadMessage": true
     }
 }
