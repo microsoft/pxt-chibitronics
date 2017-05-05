@@ -25,7 +25,7 @@ DEALINGS IN THE SOFTWARE.
 */
  
 /**
-  * Base class for payload for ref-counted objects. Used by ManagedString and MicroBitImage.
+  * Base class for payload for ref-counted objects.
   * There is no constructor, as this struct is typically malloc()ed.
   */
 #include "RefCounted.h"
