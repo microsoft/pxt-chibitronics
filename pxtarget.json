@@ -18,7 +18,15 @@
     "compile": {
         "useModulator": true,
         "isNative": true,
-        "hasHex": true
+        "hasHex": true,
+        "upgrades": [
+            {
+                "type": "package",
+                "map": {
+                    "ltc": "core"
+                }
+            }
+        ]
     },
     "runtime": {
         "mathBlocks": true,
@@ -154,7 +162,7 @@
         "coloredToolbox": true,
         "monacoToolbox": true,
         "hasAudio": false,
-        "blocklyOptions": { 
+        "blocklyOptions": {
             "grid": {
                 "spacing": 45,
                 "length": 7,
