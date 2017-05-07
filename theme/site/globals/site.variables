@@ -32,7 +32,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @blue;
+@mainMenuInvertedBackground: #69D2E7; /*@blue;*/
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
