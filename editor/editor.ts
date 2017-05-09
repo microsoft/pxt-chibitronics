@@ -10,7 +10,7 @@ namespace chibitronics {
         const res: pxt.editor.ExtensionResult = {
             beforeCompile: () => {
                 // Play silence, in order to unblock audio.
-                let audioTag = document.getElementById("audio_output") as HTMLAudioElement;
+                let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
                 audioTag.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==';
                 audioTag.play();
             },
