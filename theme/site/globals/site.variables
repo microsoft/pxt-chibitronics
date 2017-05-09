@@ -28,6 +28,8 @@
          PXT Overrides
 *******************************/
 
+@bubbleUrl: data-uri("../docs/static/bubble.svg");
+
 /*-------------------
    Menu
 --------------------*/
