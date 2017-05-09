@@ -39,18 +39,9 @@ namespace chibitronics {
                     let hexOutput: string[] = [];
 
                     for (let i = 0; i < hex.length; ++i) {
-                        let m = /^:10(....)00(.{16})/.exec(hex[i]);
-                        if (!m) {
-                            m = /^:0C(....)00(.{12})/.exec(hex[i]);
-                            if (!m) {
-                                m = /^:08(....)00(.{8})/.exec(hex[i]);
-                                if (!m) {
-                                    m = /^:04(....)00(.{4})/.exec(hex[i]);
-                                    if (!m)
-                                        continue;
-                                }
-                            }
-                        }
+                        let m = /^:..(....)00(.{4,})/.exec(hex[i]);
+                        if (!m) continue;
+
                         // Skip past the :, count, address, and record type fields, and chop off the checksum
                         let s = hex[i].slice(9, hex[i].length - 2);
                         let step = 2;
