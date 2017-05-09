@@ -1,9 +1,9 @@
 {
     "id": "chibitronics",
     "nickname": "chibitronics",
-    "name": "ltc.makecode.com",
-    "title": "ltc.makecode.com - Blocks / Javascript editor for Love-to-code",
-    "description": "A Blocks / JavaScript code editor for the Love-to-code board.",
+    "name": "MakeCode for Chibitronics Love to Code",
+    "title": "makecode.chibitronics.com - Blocks / Javascript editor for Love to code",
+    "description": "A Blocks / JavaScript code editor for the Love to code board.",
     "corepkg": "core",
     "bundleddirs": [
         "libs/core"
