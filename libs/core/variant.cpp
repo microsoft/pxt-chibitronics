@@ -111,6 +111,8 @@ int main(int argc, char **argv) {
   (void)argc;
   (void)argv;
   exec_binary((int32_t*)functionsAndBytecode);
+
+  exitThread(0);
   return 0;
 }
 
