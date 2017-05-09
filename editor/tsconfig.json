@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "module": "commonjs",
+        "outDir": "../built/editor",
+        "rootDir": ".",
+        "newLine": "LF",
+        "sourceMap": false
+    }
+}

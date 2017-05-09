@@ -175,6 +175,7 @@
         "blocksVersion": 2,
         "useUploadMessage": true,
         "downloadIcon": "play",
-        "disableBlockIcons": true
+        "disableBlockIcons": true,
+        "extendEditor": true
     }
 }
