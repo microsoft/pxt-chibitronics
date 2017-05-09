@@ -25,13 +25,13 @@ namespace chibitronics {
                 let hex = resp.outfiles[pxtc.BINARY_HEX];
 
                 function getCanvas(): HTMLCanvasElement {
-                    return document.getElementById('wavStrip') as HTMLCanvasElement;
+                    return document.getElementById('modulatorWavStrip') as HTMLCanvasElement;
                 }
                 function getAudioElement(): HTMLAudioElement {
-                    return document.getElementById('audio_output') as HTMLAudioElement;
+                    return document.getElementById('modulatorAudioOutput') as HTMLAudioElement;
                 }
                 function getWaveFooter() {
-                    return document.getElementById('modulator');
+                    return document.getElementById('modulatorWrapper');
                 }
 
                 function ltcIhexToBinary(ihex: string): Uint8Array {
@@ -152,7 +152,7 @@ namespace chibitronics {
                     endCallback: function () {
                         getWaveFooter().style.visibility = 'hidden';
                         getWaveFooter().style.opacity = '0';
-                        console.log("Completed");
+                        pxt.log("Completed audio modulation");
                     }
                 });
 
