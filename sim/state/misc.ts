@@ -27,7 +27,7 @@ namespace pxsim {
     }
 }
 
-namespace pxsim.basic {
+namespace pxsim.loops {
     export var pause = thread.pause;
     export var forever = thread.forever;
 }
