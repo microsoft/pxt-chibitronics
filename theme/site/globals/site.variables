@@ -8,6 +8,7 @@
 @fontSize    : 13px;
 
 @primaryColor: @red;
+@secondaryColor: @blue;
 
 @teal: #3891A6;
 @pink: #F46197;
@@ -19,8 +20,9 @@
 /* chibitronics colors */
 @red: #fd2600;
 @blue: #17C7d1;
-@yellow: #ffC600;
+@yellow: #FFC600;
 @black: #000000;
+@grey: #575E75;
 
 @pageBackground: #fff;
 
@@ -34,7 +36,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: #69D2E7; /*@blue;*/
+@mainMenuInvertedBackground: #17C7D1; /*@blue;*/
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;

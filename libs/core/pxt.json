@@ -20,6 +20,7 @@
         "pxt.cpp",
         "pxt.h",
         "pins.ts",
+        "ns.ts",
         "enums.d.ts",
         "shims.d.ts",
         "_locales/ja/core-jsdoc-strings.json",

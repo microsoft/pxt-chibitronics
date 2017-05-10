@@ -9,7 +9,15 @@ namespace control {
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
-//% color=#D83B01 weight=90 icon="\uf140"
-namespace pins {
+//% color=#4C97FF weight=100 icon="\uf140"
+namespace lights {
+
+}
+
+/**
+ * Control currents in Pins for analog/digital signals, servos, i2c, ...
+ */
+//% color=#9966FF weight=90 icon="\uf140"
+namespace sensing {
 
 }

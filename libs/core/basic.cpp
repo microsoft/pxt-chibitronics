@@ -4,8 +4,8 @@
 /**
  * Provides access to basic micro:bit functionality.
  */
-//% color=#0078D7 weight=100 icon="\uf00a"
-namespace basic {
+//% color=#107c10 weight=100 icon="\uf00a"
+namespace loops {
 
     static void forever_stub(void *a) {
       setThreadName("forever_stub");

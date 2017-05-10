@@ -33,8 +33,8 @@
         "loopsBlocks": true,
         "logicBlocks": true,
         "variablesBlocks": true,
-        "onStartColor": "#0078D7",
-        "onStartNamespace": "basic",
+        "onStartColor": "#107c10",
+        "onStartNamespace": "loops",
         "onStartWeight": 54
     },
     "simulator": {

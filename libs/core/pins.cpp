@@ -42,17 +42,7 @@ enum class PinPullMode {
     PullNone = 2
 };
 
-namespace pins {
-    /**
-     * Read the specified pin or connector as either 0 or 1
-     * @param name pin to read from, eg: DigitalPin.P0
-     */
-    //% help=pins/digital-read-pin weight=30
-    //% blockId=device_get_digital_pin block="is|%name ON?" blockGap=8
-    int digitalReadPin(DigitalPin name) {
-        ::pinMode((int)name, 0);
-        return ::digitalRead((int)name);
-    }
+namespace lights {
 
     /**
       * Set a pin or connector value to 0
@@ -78,17 +68,6 @@ namespace pins {
     }
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
-     * @param name pin to write to, eg: AnalogPin.P0
-     */
-    //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="read analog|%name" blockGap="8" 
-    int analogReadPin(AnalogPin name) {
-        ::pinMode((int)name, 0);
-        return ::analogRead((int)name);
-    }
-
-    /**
      * Set the connector value as analog. Value must be comprised between 0 and 1023.
      * @param name pin name to write to, eg: AnalogPin.P0
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
@@ -98,5 +77,30 @@ namespace pins {
     void analogWritePin(AnalogPin name, int value) { 
         ::pinMode((int)name, 1);
         ::analogWrite((int)name, value);
+    }
+}
+
+namespace sensing {
+
+    /**
+     * Read the specified pin or connector as either 0 or 1
+     * @param name pin to read from, eg: DigitalPin.P0
+     */
+    //% help=pins/digital-read-pin weight=30
+    //% blockId=device_get_digital_pin block="is|%name ON?" blockGap=8
+    int digitalReadPin(DigitalPin name) {
+        ::pinMode((int)name, 0);
+        return ::digitalRead((int)name);
+    }
+
+    /**
+     * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
+     * @param name pin to write to, eg: AnalogPin.P0
+     */
+    //% help=pins/analog-read-pin weight=25
+    //% blockId=device_get_analog_pin block="read analog|%name" blockGap="8" 
+    int analogReadPin(AnalogPin name) {
+        ::pinMode((int)name, 0);
+        return ::analogRead((int)name);
     }
 }
