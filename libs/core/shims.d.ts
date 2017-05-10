@@ -4,7 +4,7 @@
     /**
      * Provides access to basic micro:bit functionality.
      */
-    //% color=#107c10 weight=100 icon="\uf00a"
+    //% color=#FFAB19 weight=100 icon="\uf00a"
 declare namespace loops {
 
     /**

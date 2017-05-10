@@ -33,7 +33,7 @@
         "loopsBlocks": true,
         "logicBlocks": true,
         "variablesBlocks": true,
-        "onStartColor": "#107c10",
+        "onStartColor": "#FFAB19",
         "onStartNamespace": "loops",
         "onStartWeight": 54
     },
@@ -176,6 +176,12 @@
         "useUploadMessage": true,
         "downloadIcon": "play",
         "disableBlockIcons": true,
-        "extendEditor": true
+        "extendEditor": true,
+        "blockColors": {
+            "loops": "#FFAB19",
+            "logic": "#FFBF00",
+            "math": "#59C059",
+            "variables": "#FF6680"
+        }
     }
 }
