@@ -17,7 +17,7 @@ namespace chibitronics {
             deployCoreAsync: (resp: pxtc.CompileResult) => {
                 //core.infoNotification(lf("Here's a tune..."));
                 let lbrEnable = false;
-                let modulationVersion = 1;
+                let modulationVersion = 2;
                 let audioFormat = 'wav';
 
                 let bin = ltcIhexToBinary(resp.outfiles[pxtc.BINARY_HEX]);
