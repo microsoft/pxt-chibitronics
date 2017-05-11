@@ -39,6 +39,7 @@
     },
     "simulator": {
         "autoRun": true,
+        "enableTrace": true,
         "streams": false,
         "aspectRatio": 1.22,
         "parts": true,
