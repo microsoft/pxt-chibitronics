@@ -6,32 +6,32 @@ let modController: ModulationController = null;
 
 namespace chibitronics {
      export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
-        pxt.debug('loading chibitronics target extensions...')
+        pxt.debug("loading chibitronics target extensions...")
         const res: pxt.editor.ExtensionResult = {
             beforeCompile: () => {
                 // Play silence, in order to unblock audio.
                 let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
-                audioTag.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==';
+                audioTag.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==";
                 audioTag.play();
             },
             deployCoreAsync: (resp: pxtc.CompileResult) => {
                 //core.infoNotification(lf("Here's a tune..."));
                 let lbrEnable = false;
                 let modulationVersion = 2;
-                let audioFormat = 'wav';
+                let audioFormat = pxt.BrowserUtils.isIE() ? "mp3": "wav";
 
                 let bin = ltcIhexToBinary(resp.outfiles[pxtc.BINARY_HEX]);
 
                 let hex = resp.outfiles[pxtc.BINARY_HEX];
 
                 function getCanvas(): HTMLCanvasElement {
-                    return document.getElementById('modulatorWavStrip') as HTMLCanvasElement;
+                    return document.getElementById("modulatorWavStrip") as HTMLCanvasElement;
                 }
                 function getAudioElement(): HTMLAudioElement {
-                    return document.getElementById('modulatorAudioOutput') as HTMLAudioElement;
+                    return document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
                 }
                 function getWaveFooter() {
-                    return document.getElementById('modulatorWrapper');
+                    return document.getElementById("modulatorWrapper");
                 }
 
                 function ltcIhexToBinary(ihex: string): Uint8Array {
@@ -69,7 +69,7 @@ namespace chibitronics {
                         return;
                     }
 
-                    let strip = canvas.getContext('2d');
+                    let strip = canvas.getContext("2d");
 
                     // Resize the canvas to be the window size.
                     canvas.width = window.innerWidth;
@@ -82,7 +82,7 @@ namespace chibitronics {
                     let y: number;
                     // Draw scale lines at 10% interval
                     strip.lineWidth = 1.0;
-                    strip.strokeStyle = '#55a';
+                    strip.strokeStyle = "#55a";
                     strip.beginPath();
                     y = 1 * (h / 10);
                     strip.moveTo(0, y);
@@ -113,7 +113,7 @@ namespace chibitronics {
                     strip.lineTo(w, y);
                     strip.stroke();
 
-                    strip.strokeStyle = '#fff';
+                    strip.strokeStyle = "#fff";
                     strip.lineWidth = 1.0;
 
                     let buffer = modController.getPcmData();
@@ -141,8 +141,8 @@ namespace chibitronics {
                     canvas: getCanvas(),
                     lbr: lbrEnable,
                     endCallback: function () {
-                        getWaveFooter().style.visibility = 'hidden';
-                        getWaveFooter().style.opacity = '0';
+                        getWaveFooter().style.visibility = "hidden";
+                        getWaveFooter().style.opacity = "0";
                         pxt.log("Completed audio modulation");
                     }
                 });
@@ -156,8 +156,8 @@ namespace chibitronics {
                 resp.saveOnly = true;
 
                 audio.ontimeupdate = renderWave;
-                getWaveFooter().style.visibility = 'visible';
-                getWaveFooter().style.opacity = '1';
+                getWaveFooter().style.visibility = "visible";
+                getWaveFooter().style.opacity = "1";
 
                 return Promise.resolve();
             }
