@@ -2,9 +2,30 @@
 /// <reference path="./modulator.d.ts"/>
 
 import ModControllerConstructor = require("chibitronics-ltc-modulate");
+import lf = pxt.Util.lf;
+
 let modController: ModulationController = null;
 
 namespace chibitronics {
+    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<void>, fn: string, url: string): Promise<void> {
+        if (!confirmAsync) {
+            return Promise.resolve();
+        }
+        const boardName = pxt.appTarget.appTheme.boardName;
+        const htmlBody = `<ul>
+        <li>${lf("Set your {0} to program mode", boardName)}</li>
+        <li>${lf("Click 'Open' to play the .wav file in your computer's default music player")}</li>
+        <li>${lf("If your program doesn't run on your {0}, try replaying the file from the beginning", boardName)}</li>
+        </ul>`;
+        return confirmAsync({
+            header: lf("Upload instructions"),
+            htmlBody,
+            hideCancel: true,
+            agreeLbl: lf("Done!"),
+            timeout: 12000
+        }).then(() => { });
+    }
+
     export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug("loading chibitronics target extensions...")
         const res: pxt.editor.ExtensionResult = {
@@ -166,7 +187,8 @@ namespace chibitronics {
                         resp.userContextWindow,
                         reject
                     );
-                    resolve();
+                    showUploadInstructionsAsync(resp.confirmAsync, fn, url)
+                        .then(() => resolve());
                     return deferred;
                 } else {
                     // For all other browsers, play the sound directly in the browser
