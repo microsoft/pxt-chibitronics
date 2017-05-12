@@ -22,7 +22,7 @@ declare namespace loops {
     //% help=basic/pause weight=54
     //% async block="pause %pause ms"
     //% blockId=device_pause icon="\uf110" shim=loops::pause
-    function pause(ms: number): void;
+    function pause(ms: int32): void;
 }
 declare namespace lights {
 
@@ -49,7 +49,7 @@ declare namespace lights {
      */
     //% help=pins/analog-write-pin weight=24
     //% blockId=device_set_analog_pin block="set|%name|to %value %" blockGap=8 shim=lights::analogWritePin
-    function analogWritePin(name: AnalogPin, value: number): void;
+    function analogWritePin(name: AnalogPin, value: int32): void;
 }
 declare namespace sensing {
 
@@ -59,7 +59,7 @@ declare namespace sensing {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=device_get_digital_pin block="is|%name ON?" blockGap=8 shim=sensing::digitalReadPin
-    function digitalReadPin(name: DigitalPin): number;
+    function digitalReadPin(name: DigitalPin): int32;
 
     /**
      * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
@@ -67,7 +67,7 @@ declare namespace sensing {
      */
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="read analog|%name" blockGap="8" shim=sensing::analogReadPin
-    function analogReadPin(name: AnalogPin): number;
+    function analogReadPin(name: AnalogPin): int32;
 }
 
 // Auto-generated. Do not edit. Really.

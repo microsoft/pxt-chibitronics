@@ -5,6 +5,7 @@ declare class ModulationController {
     getPcmData(): any;
     stop(): void;
     isRunning(): boolean;
+    getRawWavData(array: any, lbr: boolean, version: number): any[];
 }
 
 declare interface ModulationControllerConstructor {

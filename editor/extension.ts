@@ -5,7 +5,7 @@ import ModControllerConstructor = require("chibitronics-ltc-modulate");
 let modController: ModulationController = null;
 
 namespace chibitronics {
-     export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
+    export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug("loading chibitronics target extensions...")
         const res: pxt.editor.ExtensionResult = {
             beforeCompile: () => {
@@ -18,7 +18,7 @@ namespace chibitronics {
                 //core.infoNotification(lf("Here's a tune..."));
                 let lbrEnable = false;
                 let modulationVersion = 2;
-                let audioFormat = pxt.BrowserUtils.isIE() ? "mp3": "wav";
+                let audioFormat = "wav";
 
                 let bin = ltcIhexToBinary(resp.outfiles[pxtc.BINARY_HEX]);
 
@@ -148,18 +148,41 @@ namespace chibitronics {
                 });
 
                 let audio = getAudioElement();
-                modController.transcodeToAudioTag(bin,
-                    audio,
-                    audioFormat,
-                    lbrEnable,
-                    modulationVersion);
-                resp.saveOnly = true;
+                if (pxt.BrowserUtils.isIE()) {
+                    // For IE, download the raw WAV data to a .wav file
+                    let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
+                    let reject: (error: any) => void;
+                    const deferred = new Promise<void>((res, rej) => {
+                        resolve = res;
+                        reject = rej;
+                    });
+                    const data = new Uint8Array(modController.getRawWavData(bin, lbrEnable, modulationVersion));
+                    const fn = resp.downloadFileBaseName + ".wav";
+                    pxt.debug('saving ' + fn)
+                    const url = pxt.BrowserUtils.browserDownloadUInt8Array(
+                        data,
+                        fn,
+                        "audio/wav",
+                        resp.userContextWindow,
+                        reject
+                    );
+                    resolve();
+                    return deferred;
+                } else {
+                    // For all other browsers, play the sound directly in the browser
+                    modController.transcodeToAudioTag(bin,
+                        audio,
+                        audioFormat,
+                        lbrEnable,
+                        modulationVersion);
+                    resp.saveOnly = true;
 
-                audio.ontimeupdate = renderWave;
-                getWaveFooter().style.visibility = "visible";
-                getWaveFooter().style.opacity = "1";
+                    audio.ontimeupdate = renderWave;
+                    getWaveFooter().style.visibility = "visible";
+                    getWaveFooter().style.opacity = "1";
 
-                return Promise.resolve();
+                    return Promise.resolve();
+                }
             }
         };
         return Promise.resolve<pxt.editor.ExtensionResult>(res);
