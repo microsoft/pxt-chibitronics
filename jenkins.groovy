@@ -5,13 +5,7 @@ def project = GithubProject
 def projectName = "pxt-chibitronics"
 
 [true, false].each { isPR ->
-    def newJobName = projectName
-
-    if (isPR) {
-        newJobName += "_PR"
-    } else {
-        newJobName += "_Push"
-    }
+    def newJobName = Utilities.getFullJobName(projectName, isPR)
 
     def newJob = job(newJobName) {
         steps {
