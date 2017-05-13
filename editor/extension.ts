@@ -7,7 +7,7 @@ import lf = pxt.Util.lf;
 let modController: ModulationController = null;
 
 namespace chibitronics {
-    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<void>, fn: string, url: string): Promise<void> {
+    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
         if (!confirmAsync) {
             return Promise.resolve();
         }
