@@ -147,6 +147,7 @@
         "privacyUrl": "https://makecode.com/privacy",
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-chibitronics",
+        "feedbackUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
         "boardName": "Love-to-Code",
         "docMenu": [
