@@ -130,7 +130,7 @@
         }
     },
     "appTheme": {
-        "accentColor": "#5C005C",
+        "accentColor": "#17C7D1",
         "logoUrl": "http://chibitronics.com/",
         "logo": "./static/chibitronics_logo_white.svg",
         "docsLogo": "./static/logo.square.white.svg",
@@ -148,6 +148,7 @@
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-chibitronics",
         "feedbackUrl": "https://www.research.net/r/MCchibi",
+        "betaUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
         "boardName": "Love-to-Code",
         "docMenu": [
