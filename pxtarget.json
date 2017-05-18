@@ -159,6 +159,10 @@
             {
                 "name": "Docs",
                 "path": "/docs"
+            },
+            {
+                "name": "Buy",
+                "path": "https://chibitronics.com/shop/love-to-code-chibi-chip-cable/"
             }
         ],
         "invertedMenu": true,
