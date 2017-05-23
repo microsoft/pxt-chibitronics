@@ -1,9 +1,9 @@
 {
     "id": "chibitronics",
     "nickname": "chibitronics",
-    "name": "MakeCode for Chibitronics Love to Code",
-    "title": "makecode.chibitronics.com - Blocks / Javascript editor for Love to code",
-    "description": "A Blocks / JavaScript code editor for the Love to code board.",
+    "name": "MakeCode for Chibitronics Chibi Chip",
+    "title": "makecode.chibitronics.com - Blocks / Javascript editor for Chibi Chip",
+    "description": "A Blocks / JavaScript code editor for the Chibi Chip board.",
     "corepkg": "core",
     "bundleddirs": [
         "libs/core"
@@ -150,7 +150,7 @@
         "feedbackUrl": "https://www.research.net/r/MCchibi",
         "betaUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
-        "boardName": "Love-to-Code",
+        "boardName": "Chibi Chip",
         "docMenu": [
             {
                 "name": "About",
