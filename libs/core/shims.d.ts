@@ -70,4 +70,21 @@ declare namespace sensing {
     function analogReadPin(name: AnalogPin): int32;
 }
 
+
+    /**
+     * Provides access to basic micro:bit functionality.
+     */
+    //% color=#CF63CF weight=80 icon="\uf00a"
+declare namespace rgb {
+
+    /**
+     * Set the rgb led to a specific red, green, blue color.
+     * @param red the red color
+     * @param green the green color
+     * @param blue the blue color
+     */
+    //% parts="neopixels" shim=rgb::setRGBLed
+    function setRGBLed(r: int32, g: int32, b: int32): void;
+}
+
 // Auto-generated. Do not edit. Really.

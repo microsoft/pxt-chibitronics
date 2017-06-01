@@ -47,5 +47,7 @@ declare namespace loops {
     //% block="none"
     PullNone = 2,
     }
+declare namespace rgb {
+}
 
 // Auto-generated. Do not edit. Really.

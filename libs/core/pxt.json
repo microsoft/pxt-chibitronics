@@ -20,6 +20,8 @@
         "pxt.cpp",
         "pxt.h",
         "pins.ts",
+        "rgb.cpp",
+        "rgb.ts",
         "ns.ts",
         "enums.d.ts",
         "shims.d.ts",
