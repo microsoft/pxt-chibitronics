@@ -23,7 +23,7 @@ namespace rgb {
      * @param green the green color
      * @param blue the blue color
      */
-     //% parts="neopixels"
+     //% parts="rgbled"
     void setRGBLed(int r, int g, int b) {
         struct pixels pixels[1];
         unsigned int i;

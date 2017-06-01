@@ -83,7 +83,7 @@ declare namespace rgb {
      * @param green the green color
      * @param blue the blue color
      */
-    //% parts="neopixels" shim=rgb::setRGBLed
+    //% parts="rgbled" shim=rgb::setRGBLed
     function setRGBLed(r: int32, g: int32, b: int32): void;
 }
 
