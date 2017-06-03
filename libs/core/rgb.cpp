@@ -9,7 +9,7 @@ struct pixels {
     uint8_t b;
 } __attribute__((packed));
 
-extern void ledShow(uint32_t pin, void *pixels, uint32_t num_leds);
+extern "C" void ledShow(uint32_t pin, void *pixels, uint32_t num_leds);
 
 /**
  * Provides access to basic micro:bit functionality.
