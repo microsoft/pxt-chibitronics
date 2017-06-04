@@ -27,6 +27,14 @@ npm install -g pxt
 ```
 npm install
 ```
+* To compile locally, install platformio and dependencies
+```
+pip install -U platformio
+platformio platform install https://github.com/xobs/platformio-ltc
+
+### Developing
+
+To develop, go into one of the lib directories and run ``pxt build``.  For example, to work on the *core* library, go to *libs/core/* and run ``pxt build``.
 
 ### Running
 
