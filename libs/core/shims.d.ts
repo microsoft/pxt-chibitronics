@@ -2,7 +2,7 @@
 
 
     /**
-     * Provides access to basic micro:bit functionality.
+     * Provides access to basic functionality.
      */
     //% color=#FFAB19 weight=100 icon="\uf00a"
 declare namespace loops {
@@ -68,6 +68,23 @@ declare namespace sensing {
     //% help=pins/analog-read-pin weight=25
     //% blockId=device_get_analog_pin block="read analog|%name" blockGap="8" shim=sensing::analogReadPin
     function analogReadPin(name: AnalogPin): int32;
+}
+
+
+    /**
+     * Provides access to basic RGB LED functionality.
+     */
+    //% color=#CF63CF weight=80 icon="\uf00a"
+declare namespace rgb {
+
+    /**
+     * Set the rgb led to a specific red, green, blue color.
+     * @param red the red color
+     * @param green the green color
+     * @param blue the blue color
+     */
+    //% parts="rgbled" shim=rgb::setRGBLed
+    function setRGBLed(r: int32, g: int32, b: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.
