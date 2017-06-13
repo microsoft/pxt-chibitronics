@@ -1,8 +1,9 @@
 #include "pxt.h"
 #include "ChibiOS.h"
+#include "rgb.h"
 
 /**
- * Provides access to basic micro:bit functionality.
+ * Provides access to basic functionality.
  */
 //% color=#FFAB19 weight=100 icon="\uf00a"
 namespace loops {
@@ -31,6 +32,12 @@ namespace loops {
          * on the memory after it exits.
          */
         ((uint8_t *)thr)[0x1d] = 1;
+      } else {
+        // The following forces the compiler / linker to include ledShow() in the base hexfile. Without this, ledShow()
+        // gets optimized away for some reason and is not part of the hexfile, which makes MakeCode programs crash on
+        // the board. We should never reach this point, but even if we do, it will be a no-op inside setRGBLed().
+        // TODO: find out why removing this else{} causes programs to crash on the board
+        rgb::setRGBLed(-1, -1, -1);
       }
     }
 

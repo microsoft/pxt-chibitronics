@@ -20,6 +20,7 @@
         "pxt.cpp",
         "pxt.h",
         "pins.ts",
+        "rgb.h",
         "rgb.cpp",
         "rgb.ts",
         "ns.ts",

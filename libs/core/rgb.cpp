@@ -1,7 +1,6 @@
 #include "pxt.h"
 #include "ltc.h"
-
-#define ARRAY_SIZE(x) (sizeof(x) / sizeof(*x))
+#include "rgb.h"
 
 struct pixels {
     uint8_t g;
@@ -12,9 +11,9 @@ struct pixels {
 extern "C" void ledShow(uint32_t pin, void *pixels, uint32_t num_leds);
 
 /**
- * Provides access to basic micro:bit functionality.
+ * Provides access to basic RGB LED functionality.
  */
-//% color=#CF63CF weight=80 icon="\uf00a" 
+//% color=#CF63CF weight=80 icon="\uf00a"
 namespace rgb {
 
     /**
@@ -25,14 +24,14 @@ namespace rgb {
      */
      //% parts="rgbled"
     void setRGBLed(int r, int g, int b) {
-        struct pixels pixels[1];
-        unsigned int i;
-
-        for (i = 0; i < ARRAY_SIZE(pixels); i++) {
-            pixels[i].r = r;
-            pixels[i].g = g;
-            pixels[i].b = b;
+        if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+            return;
         }
-        ledShow(LED_BUILTIN_RGB, pixels, ARRAY_SIZE(pixels));
+
+        struct pixels pixels[1];
+        pixels[0].r = r;
+        pixels[0].g = g;
+        pixels[0].b = b;
+        ledShow(LED_BUILTIN_RGB, pixels, 1);
     }
 }

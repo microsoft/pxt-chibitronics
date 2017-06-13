@@ -49,5 +49,7 @@ declare namespace loops {
     }
 declare namespace rgb {
 }
+declare namespace rgb {
+}
 
 // Auto-generated. Do not edit. Really.

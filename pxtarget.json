@@ -42,7 +42,7 @@
         "enableTrace": true,
         "streams": false,
         "aspectRatio": 1.22,
-        "parts": true,
+        "parts": false,
         "partsAspectRatio": 0.69,
         "boardDefinition": {
             "visual": "ltc",

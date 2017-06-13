@@ -28,9 +28,9 @@ enum Colors {
 }
 
 /**
- * Provides access to basic micro:bit functionality.
+ * Provides access to basic RGB LED functionality.
  */
-//% color=#FFAB19 weight=100 icon="\uf00a"
+//% color=#CF63CF weight=80 icon="\uf00a"
 namespace rgb {
 
     /**
