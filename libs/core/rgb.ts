@@ -27,10 +27,6 @@ enum Colors {
     Black = 0x000000
 }
 
-/**
- * Provides access to basic RGB LED functionality.
- */
-//% color=#CF63CF weight=80 icon="\uf00a"
 namespace rgb {
 
     /**
