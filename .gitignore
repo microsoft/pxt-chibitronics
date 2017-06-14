@@ -11,3 +11,4 @@ electron-out/
 drop/
 ~$*.docx
 npm-debug.log*
+.vscode/
