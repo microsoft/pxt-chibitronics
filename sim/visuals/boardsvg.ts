@@ -1,5 +1,5 @@
 namespace pxsim.visuals {
-    export const BOARD_SVG = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  export const BOARD_SVG = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg
@@ -23,7 +23,7 @@ namespace pxsim.visuals {
    height="120"><metadata
      id="metadata2255"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs2253" /><sodipodi:namedview
      pagecolor="#ff0000"
      bordercolor="#666666"
@@ -37,13 +37,13 @@ namespace pxsim.visuals {
      inkscape:window-height="874"
      id="namedview2251"
      showgrid="false"
-     inkscape:zoom="4.3738976"
-     inkscape:cx="117.85025"
+     inkscape:zoom="3.0928127"
+     inkscape:cx="5.3313105"
      inkscape:cy="45.187918"
      inkscape:window-x="91"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="CIRCLE_25_" /><style
+     inkscape:current-layer="g2064" /><style
      type="text/css"
      id="style3">
 	.st0{fill:none;stroke:#58595B;stroke-width:0.2835;stroke-miterlimit:10;}
@@ -4402,20 +4402,9 @@ namespace pxsim.visuals {
        style="fill:#484537" /></g><g
      id="g2064"
      transform="translate(-27.892742,-24.950776)"><g
-       id="g2066"
-       style="fill:#ffd42a"><path
-         class="st4"
-         d="m 163.7,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
-         id="path2068"
-         inkscape:connector-curvature="0"
-         style="fill:#ffd42a" /><path
-         class="st5"
-         d="m 163.7,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
-         id="path2070"
-         inkscape:connector-curvature="0"
-         style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2072"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 156.5,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2074"
@@ -4427,7 +4416,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2078"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 149.3,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2080"
@@ -4439,7 +4429,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2084"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 142.1,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2086"
@@ -4451,7 +4442,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2090"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 134.9,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2092"
@@ -4463,7 +4455,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2096"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 127.7,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2098"
@@ -4475,7 +4468,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2102"
-       style="fill:#ffd42a"><path
+       style="fill:#ffd42a"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 120.5,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2104"
@@ -4487,7 +4481,8 @@ namespace pxsim.visuals {
          inkscape:connector-curvature="0"
          style="fill:#ffd42a;stroke:#000000;stroke-width:0.28349999;stroke-miterlimit:10" /></g><g
        id="g2108"
-       style="fill:#ffdd55"><path
+       style="fill:#ffdd55"
+       transform="translate(4,0)"><path
          class="st4"
          d="m 113.3,42.7 -2.8,0 c -0.8,0 -1.4,-0.6 -1.4,-1.4 l 0,-2.8 c 0,-0.8 0.6,-1.4 1.4,-1.4 l 2.8,0 c 0.8,0 1.4,0.6 1.4,1.4 l 0,2.8 c 0,0.7 -0.6,1.4 -1.4,1.4 z"
          id="path2110"
