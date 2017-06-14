@@ -121,7 +121,7 @@ declare const enum LTC {
     // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitCompat.h
     // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitComponent.h
     LTC_ID_IO_PINS = 6,
-    LTC_ID_IO_D0 = 7,
+    LTC_ID_IO_D0 = 0,
     LTC_ID_IO_D1 = 1,
     LTC_ID_IO_D2 = 2,
     LTC_ID_IO_D3 = 3,
