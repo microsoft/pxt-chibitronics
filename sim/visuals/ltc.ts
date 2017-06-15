@@ -236,7 +236,8 @@ namespace pxsim.visuals {
         private pinGradients: SVGLinearGradientElement[];
         private pinTexts: SVGTextElement[];
         private ledsOuter: SVGElement[];
-        private leds: SVGElement[];
+        private leds: SVGRectElement[];
+        private rgbLed: SVGCircleElement;
         private systemLed: SVGCircleElement;
         private antenna: SVGPolylineElement;
         private lightLevelButton: SVGCircleElement;
@@ -263,7 +264,7 @@ namespace pxsim.visuals {
                 this.board = this.props.runtime.board as pxsim.LtcBoard;
                 this.board.updateSubscribers.push(() => this.updateState());
                 this.updateState();
-                
+
                 this.attachEvents();
             }
         }
@@ -306,7 +307,7 @@ namespace pxsim.visuals {
             svg.fills(this.leds, theme.ledOn);
             svg.fills(this.ledsOuter, theme.ledOff);
             */
-            
+
             /*
             svg.fills(this.buttonsOuter.slice(0, 2), theme.buttonOuter);
             svg.fills(this.buttons.slice(0, 2), theme.buttonUp);
@@ -323,15 +324,17 @@ namespace pxsim.visuals {
             if (!state) return;
             let theme = this.props.theme;
 
-/*
+            /*
             let bpState = state.buttonPairState;
             let buttons = [bpState.aBtn, bpState.bBtn, bpState.abBtn];
             buttons.forEach((btn, index) => {
                 svg.fill(this.buttons[index], btn.pressed ? theme.buttonDown : theme.buttonUp);
             });
-*/
+            */
+
             this.updatePins();
             this.updateTemperature();
+            this.updateRgbLed();
 
             if (!runtime || runtime.dead) svg.addClass(this.element, "grayscale");
             else svg.removeClass(this.element, "grayscale");
@@ -348,6 +351,19 @@ namespace pxsim.visuals {
             else if (pin.mode & PinFlags.Digital) {
                 v = pin.value > 0 ? "0%" : "100%";
                 if (text) text.textContent = pin.value > 0 ? "1" : "0";
+                const svgled = this.leds[index];
+                if (svgled) {
+                    if (pin.value > 0) {
+                        svgled.style.stroke = `rgb(235,235,235)`
+                        svgled.style.strokeWidth = "1.5";
+                        svg.fill(svgled, `rgb(255,255,255)`)
+                        svg.filter(svgled, `url(#neopixelglow)`);
+                    } else {
+                        svg.filter(svgled, null);
+                        svgled.style.fill = "#d4ff2a";
+                        svgled.style.strokeWidth = "0.2835173";
+                    }
+                }
             }
             else if (pin.mode & PinFlags.Touch) {
                 v = pin.touched ? "0%" : "100%";
@@ -414,6 +430,32 @@ namespace pxsim.visuals {
             state.edgeConnectorState.pins.forEach((pin, i) => this.updatePin(pin, i));
         }
 
+        private updateRgbLed() {
+            let state = this.board;
+            if (!state) return;
+
+            const rgb = state.neopixelState.getColors(0, NeoPixelMode.RGB)[0];
+
+            if (this.rgbLed) {
+                if (!rgb || (rgb.length >= 3 && rgb[0] === 0 && rgb[1] === 0 && rgb[2] === 0)) {
+                    // Clear the pixel
+                    svg.fill(this.rgbLed, `#e6e6e6`);
+                    svg.filter(this.rgbLed, null);
+                    this.rgbLed.style.strokeWidth = "0.28349999";
+                    this.rgbLed.style.stroke = "#58595b";
+                } else {
+                    let hsl = visuals.rgbToHsl(rgb);
+                    let [h, s, l] = hsl;
+                    let lx = Math.max(l * 1.3, 85);
+                    // at least 10% luminosity
+                    l = l * 90 / 100 + 10;
+                    this.rgbLed.style.stroke = `hsl(${h}, ${s}%, ${Math.min(l * 3, 75)}%)`
+                    this.rgbLed.style.strokeWidth = "1.5";
+                    svg.fill(this.rgbLed, `hsl(${h}, ${s}%, ${lx}%)`)
+                    svg.filter(this.rgbLed, `url(#neopixelglow)`);
+                }
+            }
+        }
 
         private buildDom() {
             this.element = new DOMParser().parseFromString(BOARD_SVG, "image/svg+xml").querySelector("svg") as SVGSVGElement;
@@ -439,12 +481,18 @@ namespace pxsim.visuals {
             let merge = svg.child(glow, "feMerge", {});
             for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" })
 
+            let neopixelglow = svg.child(this.defs, "filter", { id: "neopixelglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
+            svg.child(neopixelglow, "feGaussianBlur", { stdDeviation: "4.3", result: "coloredBlur" });
+            let neopixelmerge = svg.child(neopixelglow, "feMerge", {});
+            svg.child(neopixelmerge, "feMergeNode", { in: "coloredBlur" })
+            svg.child(neopixelmerge, "feMergeNode", { in: "SourceGraphic" })
+
             // outline
             //svg.path(this.g, "sim-board", "M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z");
 
             // script background
             //this.display = svg.path(this.g, "sim-display", "M333.8,310.3H165.9c-8.3,0-15-6.7-15-15V127.5c0-8.3,6.7-15,15-15h167.8c8.3,0,15,6.7,15,15v167.8C348.8,303.6,342.1,310.3,333.8,310.3z");
-            
+
             //this.display = svg.child(this.g, "rect", { class: "sim-display", x: 0, y: 0, width: 460, height: 150, rx: 10, ry: 10});
 
             /*
@@ -488,9 +536,17 @@ namespace pxsim.visuals {
                 'pin5'
             ].map((p, pi) => {
                 let pin = this.element.getElementById(p) as SVGRectElement;
-                return svg.child(this.g, "rect", {x: pin.getAttribute("x"), y: pin.getAttribute("y"), width: pin.getAttribute("width"), height: pin.getAttribute("height"), rx: 0, ry: 0, class: "sim-pin sim-pin-touch"});
+                return svg.child(this.g, "rect", { x: pin.getAttribute("x"), y: pin.getAttribute("y"), width: pin.getAttribute("width"), height: pin.getAttribute("height"), rx: 0, ry: 0, class: "sim-pin sim-pin-touch" });
             });
-            
+            this.leds = [
+                "led_d0",
+                "led_d1",
+                "led_d2",
+                "led_d3",
+                "led_d4",
+                "led_d5"
+            ].map((p, pi) => this.element.getElementById(p) as SVGRectElement);
+            this.rgbLed = this.element.getElementById("led_rgb") as SVGCircleElement;
 
             /*
             this.pins = [
@@ -520,7 +576,7 @@ namespace pxsim.visuals {
             let pinTexts = ["GND", "D0", "D1", "D2", "D3", "D4", "D5", "GND", "+3V"]
             this.pinLabels.map((p, pi) => p.appendChild(document.createTextNode(pinTexts[pi])));          
 */
-            this.pins.forEach((p, i) => svg.hydrate(p, { title: pinTitles[i] }));
+            this.pins.forEach((p, i) => svg.hydrate(p, { title: pinTitles[i + 1] }));
             this.pinGradients = this.pins.map((pin, i) => {
                 let gid = "gradient-pin-" + i
                 let lg = svg.linearGradient(this.defs, gid)
@@ -535,9 +591,9 @@ namespace pxsim.visuals {
                 109,
                 133,
                 157
-            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x+7, y: 94, textAnchor: "middle" }));
+            ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin", x: x + 7, y: 94, textAnchor: "middle" }));
 
-/*
+            /*
             this.buttonsOuter = []; this.buttons = [];
 
             const outerBtn = (left: number, top: number) => {
@@ -579,7 +635,7 @@ namespace pxsim.visuals {
         }
 
         private attachEvents() {
-            this.pins.slice(1, 6).forEach((pin, index) => {
+            this.pins.slice().forEach((pin, index) => {
                 if (!this.board.edgeConnectorState.pins[index]) return;
                 let pt = this.element.createSVGPoint();
                 svg.buttonEvents(pin,
@@ -601,8 +657,6 @@ namespace pxsim.visuals {
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
                         svg.addClass(svgpin, "touched");
-                        let svgled = this.leds[index];
-                        svg.addClass(svgled, "lit");
                         if (pin.mode & PinFlags.Input) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
                             let v = (400 - cursor.y) / 40 * 1023
@@ -616,13 +670,11 @@ namespace pxsim.visuals {
                         let pin = state.edgeConnectorState.pins[index];
                         let svgpin = this.pins[index];
                         svg.removeClass(svgpin, "touched");
-                        let svgled = this.leds[index];
-                        svg.removeClass(svgled, "lit");
                         this.updatePin(pin, index);
                         return false;
                     });
             })
-            this.pins.slice(1, 6).forEach((btn, index) => {
+            this.pins.slice().forEach((btn, index) => {
                 btn.addEventListener(pointerEvents.down, ev => {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = true;

@@ -147,7 +147,7 @@ namespace pxsim.visuals {
      cx="211.30725"
      cy="43.049255"
      r="4.3000002"
-     id="circle9"
+     id="led_rgb"
      style="fill:#e6e6e6;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10" /><g
      id="g13"
      transform="translate(-27.892742,-24.950776)"
@@ -174,7 +174,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.5005198"
      height="4.3002629"
-     id="rect25"
+     id="led_d0"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" /><g
      id="g29"
      transform="translate(-27.892742,-24.950776)"
@@ -198,7 +198,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.5005198"
      height="4.3002629"
-     id="rect35"
+     id="led_d1"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" /><rect
      x="84.907257"
      y="74.34922"
@@ -214,7 +214,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.5005198"
      height="4.3002629"
-     id="rect41"
+     id="led_d2"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" /><rect
      x="108.90726"
      y="74.34922"
@@ -230,7 +230,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.4999189"
      height="4.2999592"
-     id="rect47"
+     id="led_d3"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10" /><path
      class="st0"
      d="M 20.007258,62.049194 8.8072578,73.14919 l 0,0 c 0.5,0.7 1.4000002,1.2 2.3000002,1.2 l 15.2,0 3,-3 c 2.6,-2.599996 2.6,-6.799996 0,-9.399996 -2.6,-2.5 -6.8,-2.5 -9.3,0.1 z"
@@ -252,7 +252,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.5005198"
      height="4.3002629"
-     id="rect55"
+     id="led_d4"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" /><rect
      x="157.00725"
      y="74.34922"
@@ -268,7 +268,7 @@ namespace pxsim.visuals {
      class="st0"
      width="8.5005198"
      height="4.3002629"
-     id="rect61"
+     id="led_d5"
      style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" /><g
      id="g65"
      transform="translate(-27.892742,-24.950776)"
