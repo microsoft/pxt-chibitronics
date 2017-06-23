@@ -14,6 +14,6 @@ namespace Math {
     //% blockId=logic_random block="pick random true or false"
     //% help=math/random-boolean color="#59C059"
     export function randomBoolean(): boolean {
-        return Math.random(2) == 0;
+        return Math.random() >= 0.5;
     }
 }

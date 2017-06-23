@@ -17,6 +17,7 @@
   "Colors.Yellow|block": "yellow",
   "Math.map|block": "map %value|from low %fromLow|from high %fromHigh|to low %toLow|to high %toHigh",
   "Math.randomBoolean|block": "pick random true or false",
+  "Math.randomRange|block": "pick random %min|to %limit",
   "Math|block": "Math",
   "PinPullMode.PullNone|block": "none",
   "PinPullMode.PullUp|block": "up",
