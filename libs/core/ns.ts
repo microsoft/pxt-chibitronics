@@ -21,3 +21,9 @@ namespace lights {
 namespace sensing {
 
 }
+
+declare namespace String {
+
+    //% blockNamespace="Text"
+    export function fromCharCode(code: number): string;
+}

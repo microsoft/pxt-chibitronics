@@ -28,7 +28,91 @@ namespace chibitronics {
 
     export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug("loading chibitronics target extensions...")
+        const baseXml = `
+        <xml id="blocklyToolboxDefinition" style="display: none">
+            <category name="Control" nameid="loops" colour="#FFAB19" category="50" iconclass="blocklyTreeIconlogic">
+                <block type="controls_repeat_ext">
+                    <value name="TIMES">
+                        <shadow type="math_number">
+                            <field name="NUM">4</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="device_while">
+                    <value name="COND">
+                        <shadow type="logic_boolean"></shadow>
+                    </value>
+                </block>
+                <block type="controls_simple_for">
+                    <value name="TO">
+                        <shadow type="math_number">
+                            <field name="NUM">4</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_for_of">
+                    <value name="LIST">
+                        <shadow type="variables_get">
+                            <field name="VAR">list</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_if" gap="8">
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_if" gap="8">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+            <category name="Math" nameid="math" colour="#59C059" category="47" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath"></category>
+            <category name="Variables" nameid="variables" colour="#FF6680" custom="VARIABLE" category="48" iconclass="blocklyTreeIconvariables"></category>
+            <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions"></category>
+            <category colour="#996600" name="Text" nameid="text" category="46" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext"></category>
+            <category colour="#66672C" name="Arrays" nameid="arrays" category="45" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays"></category>
+        </xml>`;
         const res: pxt.editor.ExtensionResult = {
+            toolboxOptions: {
+                blocklyXml: baseXml,
+                monacoToolbox: {
+                    loops: {
+                        name: "Control",
+                        appendBlocks: true,
+                        blocks: [
+                            {
+                                name: "if",
+                                snippet: `if (true) {\n\n}`,
+                                jsDoc: lf("Runs code if the condition is true")
+                            },
+                            {
+                                name: "if",
+                                snippet: `if (true) {\n\n} else {\n\n}`,
+                                jsDoc: lf("Runs code if the condition is true; else run other code")
+                            }
+                        ]
+                    },
+                    logic: {
+                        removed: true
+                    },
+                    variables: {
+                        weight: 50.06
+                    },
+                    maths: {
+                        weight: 50.07
+                    },
+                    functions: {
+                        advanced: false
+                    }
+                }
+            },
             beforeCompile: () => {
                 // Play silence, in order to unblock audio.
                 let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;

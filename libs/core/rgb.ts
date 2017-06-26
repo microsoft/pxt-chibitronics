@@ -49,7 +49,6 @@ namespace rgb {
     //% weight=2 blockGap=8
     //% blockId=rgb_colors block="%color"
     //% shim=TD_ID
-    //% advanced=true
     export function colors(color: Colors): number {
         return color;
     }

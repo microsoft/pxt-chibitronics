@@ -34,6 +34,7 @@
         "loopsBlocks": true,
         "logicBlocks": true,
         "variablesBlocks": true,
+        "functionBlocks": true,
         "onStartColor": "#FFAB19",
         "onStartNamespace": "loops",
         "onStartWeight": 54
