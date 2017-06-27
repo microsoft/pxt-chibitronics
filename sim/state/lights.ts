@@ -1,15 +1,15 @@
 
 namespace pxsim.lights {
 
-    export function digitalWritePinOn(pinId: number) {
-        pxsim.pins.digitalWritePinOn(pinId);
+    export function on(pinId: number) {
+        pxsim.pins.digitalWritePin(pinId, 1);
     }
 
-    export function digitalWritePinOff(pinId: number) {
-        pxsim.pins.digitalWritePinOff(pinId);
+    export function off(pinId: number) {
+        pxsim.pins.digitalWritePin(pinId, 0);
     }
 
-    export function analogWritePin(pinId: number, value: number) {
+    export function set(pinId: number, value: number) {
         pxsim.pins.analogWritePin(pinId, value);
     }
 }

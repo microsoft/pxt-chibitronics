@@ -41,11 +41,15 @@ declare namespace loops {
     }
 
 
-    declare enum PinPullMode {
-    //% block="up"
-    PullUp = 1,
-    //% block="none"
-    PullNone = 2,
+    declare enum PinMode {
+    //% block="input"
+    Input = 0,
+    //% block="output"
+    Output = 1,
+    //% block="pull up"
+    PullUp = 2,
+    //% block="pull down"
+    PullDown = 3,
     }
 declare namespace rgb {
 }

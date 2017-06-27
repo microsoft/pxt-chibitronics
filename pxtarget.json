@@ -167,6 +167,9 @@
                 "path": "https://chibitronics.com/shop/love-to-code-chibi-chip-cable/"
             }
         ],
+        "galleries": {
+            "Examples": "examples"
+        },
         "invertedMenu": true,
         "coloredToolbox": true,
         "monacoToolbox": true,

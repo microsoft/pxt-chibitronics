@@ -24,6 +24,8 @@
         "rgb.cpp",
         "rgb.ts",
         "ns.ts",
+        "sensing.ts",
+        "lights.ts",
         "enums.d.ts",
         "shims.d.ts",
         "_locales/ja/core-jsdoc-strings.json",

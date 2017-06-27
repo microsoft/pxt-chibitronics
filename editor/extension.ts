@@ -73,7 +73,96 @@ namespace chibitronics {
                     </value>
                 </block>
             </category>
-            <category name="Math" nameid="math" colour="#59C059" category="47" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath"></category>
+            <category name="Math" nameid="math" colour="#59C059" category="47" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath">
+                <block type="math_arithmetic" gap="8">
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="math_arithmetic" gap="8">
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <field name="OP">MINUS</field>
+                </block>
+                <block type="math_arithmetic" gap="8">
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <field name="OP">MULTIPLY</field>
+                </block>
+                <block type="math_arithmetic" gap="8">
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <field name="OP">DIVIDE</field>
+                </block>
+                <block type="math_number" gap="8">
+                    <field name="NUM">0</field>
+                </block>
+                <block type="logic_compare" gap="8">
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="logic_compare">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="B">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="logic_operation" gap="8"></block>
+                <block type="logic_operation" gap="8">
+                    <field name="OP">OR</field>
+                </block>
+                <block type="logic_negate"></block>
+                <block type="logic_boolean" gap="8"></block>
+                <block type="logic_boolean">
+                    <field name="BOOL">FALSE</field>
+                </block>
+            </category>
             <category name="Variables" nameid="variables" colour="#FF6680" custom="VARIABLE" category="48" iconclass="blocklyTreeIconvariables"></category>
             <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions"></category>
             <category colour="#996600" name="Text" nameid="text" category="46" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext"></category>

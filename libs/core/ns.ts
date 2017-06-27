@@ -22,6 +22,14 @@ namespace sensing {
 
 }
 
+/**
+ * Control currents in Pins for analog/digital signals, servos, i2c, ...
+ */
+//% color=#ff8c1a weight=60 icon="\uf02a"
+namespace pins {
+
+}
+
 declare namespace String {
 
     //% blockNamespace="Text"
