@@ -37,7 +37,7 @@
     "semantic-ui-less": "^2.2.10"
   },
   "dependencies": {
-    "pxt-core": "1.7.4",
+    "pxt-core": "1.7.6",
     "chibitronics-ltc-modulate": "1.0.5"
   },
   "scripts": {
