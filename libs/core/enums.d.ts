@@ -4,27 +4,33 @@ declare namespace loops {
 
 
     declare enum DigitalPin {
-    //% blockIdentity=lights.pin enumval=0
+    //% blockIdentity=pins.digitalPin enumval=0
     D0 = 0xa0,
-    //% blockIdentity=lights.pin enumval=1
+    //% blockIdentity=pins.digitalPin enumval=1
     D1 = 0xa1,
-    //% blockIdentity=lights.pin enumval=2
+    //% blockIdentity=pins.digitalPin enumval=2
     D2 = 0xa2,
-    //% blockIdentity=lights.pin enumval=3
+    //% blockIdentity=pins.digitalPin enumval=3
     D3 = 0xa3,
-    //% blockIdentity=lights.pin enumval=4
+    //% blockIdentity=pins.digitalPin enumval=4
     D4 = 0xa4,
-    //% blockIdentity=lights.pin enumval=5
+    //% blockIdentity=pins.digitalPin enumval=5
     D5 = 0xa5,
     }
 
 
     declare enum AnalogPin {
+    //% blockIdentity=pins.analogPin enumval=0
     A0 = 0x80,
+    //% blockIdentity=pins.analogPin enumval=1
     A1 = 0x81,
+    //% blockIdentity=pins.analogPin enumval=2
     A2 = 0x82,
+    //% blockIdentity=pins.analogPin enumval=3
     A3 = 0x83,
+    //% blockIdentity=pins.analogPin enumval=4
     A4 = 0x84,
+    //% blockIdentity=pins.analogPin enumval=5
     A5 = 0x85,
     //% block="temperature sensor"
     ATEMP = 0x86,
