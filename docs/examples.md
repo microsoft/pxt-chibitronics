@@ -14,7 +14,8 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Fade",
   "url":"/examples/basics/fade",
-  "cardType": "example"
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/fade.gif"
 }]
 ```
 
