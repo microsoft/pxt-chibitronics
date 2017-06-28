@@ -2,7 +2,7 @@
 
 Here are some fun programs for your @boardname@!
 
-## Fun stuff
+## Basics
 
 ```codecard
 [{
@@ -14,8 +14,23 @@ Here are some fun programs for your @boardname@!
   "name": "Fade",
   "url":"/examples/basics/fade",
   "cardType": "example"
-},
-{
+}]
+```
+
+## Animations
+
+```codecard
+[{
+  "name": "Carousel",
+  "url":"/examples/animations/carousel",
+  "cardType": "example"
+}]
+```
+
+## RGB
+
+```codecard
+[{
   "name": "Simple Color",
   "url":"/examples/rgb/simple-color",
   "cardType": "example"
@@ -28,16 +43,6 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Press for Color",
   "url":"/examples/rgb/press-for-color",
-  "cardType": "example"
-},
-{
-  "name": "Blinky",
-  "url":"/examples/basics/blinky",
-  "cardType": "example"
-},
-{
-  "name": "Blinky",
-  "url":"/examples/basics/blinky",
   "cardType": "example"
 }]
 ```

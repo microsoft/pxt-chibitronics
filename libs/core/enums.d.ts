@@ -4,11 +4,17 @@ declare namespace loops {
 
 
     declare enum DigitalPin {
+    //% blockIdentity=lights.pin enumval=0
     D0 = 0xa0,
+    //% blockIdentity=lights.pin enumval=1
     D1 = 0xa1,
+    //% blockIdentity=lights.pin enumval=2
     D2 = 0xa2,
+    //% blockIdentity=lights.pin enumval=3
     D3 = 0xa3,
+    //% blockIdentity=lights.pin enumval=4
     D4 = 0xa4,
+    //% blockIdentity=lights.pin enumval=5
     D5 = 0xa5,
     }
 
@@ -34,21 +40,21 @@ declare namespace loops {
 
 
     declare enum PulseValue {
-    //% block="high"
+    //% block="HIGH"
     High = 1,
-    //% block="low"
+    //% block="LOW"
     Low = 0,
     }
 
 
     declare enum PinMode {
-    //% block="input"
+    //% block="INPUT"
     Input = 0,
-    //% block="output"
+    //% block="OUTPUT"
     Output = 1,
-    //% block="pull up"
+    //% block="PULL UP"
     PullUp = 2,
-    //% block="pull down"
+    //% block="PULL DOWN"
     PullDown = 3,
     }
 declare namespace rgb {

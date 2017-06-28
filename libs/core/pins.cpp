@@ -1,11 +1,17 @@
 #include "pxt.h"
 
 enum class DigitalPin {
+    //% blockIdentity=lights.pin enumval=0
     D0 = 0xa0,
+    //% blockIdentity=lights.pin enumval=1
     D1 = 0xa1,
+    //% blockIdentity=lights.pin enumval=2
     D2 = 0xa2,
+    //% blockIdentity=lights.pin enumval=3
     D3 = 0xa3,
+    //% blockIdentity=lights.pin enumval=4
     D4 = 0xa4,
+    //% blockIdentity=lights.pin enumval=5
     D5 = 0xa5,
 };
 
@@ -29,20 +35,20 @@ enum class AnalogPin {
 };
 
 enum class PulseValue {
-    //% block="high"
+    //% block="HIGH"
     High = 1,
-    //% block="low"
+    //% block="LOW"
     Low = 0
 };
 
 enum class PinMode {
-    //% block="input"
+    //% block="INPUT"
     Input = 0,
-    //% block="output"
+    //% block="OUTPUT"
     Output = 1,
-    //% block="pull up"
+    //% block="PULL UP"
     PullUp = 2,
-    //% block="pull down"
+    //% block="PULL DOWN"
     PullDown = 3
 };
 
@@ -54,8 +60,8 @@ namespace pins {
       */
     //% help=pins/digital-write-pin weight=29
     //% blockId=device_set_digital_pin block="digital write pin |%name=digital_pin|to %value"
-    void digitalWritePin(DigitalPin name, int value) {
-        ::digitalWrite((int)name, value);
+    void digitalWritePin(int name, int value) {
+        ::digitalWrite(name, value);
     }
 
     /**
@@ -64,9 +70,9 @@ namespace pins {
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
     //% help=pins/analog-write-pin weight=24
-    //% blockId=device_set_analog_pin block="analog write pin |%name|to %value"
-    void analogWritePin(AnalogPin name, int value) { 
-        ::analogWrite((int)name, value);
+    //% blockId=device_set_analog_pin block="analog write pin |%name=analog_pin|to %value"
+    void analogWritePin(int name, int value) { 
+        ::analogWrite(name, value);
     }
 
     /**
@@ -74,9 +80,9 @@ namespace pins {
      * @param name pin to read from, eg: DigitalPin.D0
      */
     //% help=pins/digital-read-pin weight=30
-    //% blockId=device_get_digital_pin block="digital read pin |%name" blockGap=8
-    int digitalReadPin(DigitalPin name) {
-        return ::digitalRead((int)name);
+    //% blockId=device_get_digital_pin block="digital read pin |%name=digital_pin" blockGap=8
+    int digitalReadPin(int name) {
+        return ::digitalRead(name);
     }
 
     /**
@@ -84,9 +90,9 @@ namespace pins {
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="analog read pin |%name" blockGap="8" 
-    int analogReadPin(AnalogPin name) {
-        return ::analogRead((int)name);
+    //% blockId=device_get_analog_pin block="analog read pin |%name=analog_pin" blockGap="8" 
+    int analogReadPin(int name) {
+        return ::analogRead(name);
     }
 
     /**
@@ -94,10 +100,10 @@ namespace pins {
     * @param name pin to set the mode on, eg: DigitalPin.D0
     * @param mode one of the pin modes: Input, Output, PullUp, PullDown
     */
-    //% help=pins/set-mode weight=3
-    //% blockId=device_set_mode block="set pin |mode %pin|to %mode" blockGap="8" 
-    void setPinMode(DigitalPin name, PinMode mode) {
-        ::pinMode((int)name, (int)mode);
+    //% help=pins/set-mode weight=5
+    //% blockId=device_set_mode block="set pin |mode %pin=digital_pin|to %mode" blockGap="8" 
+    void setPinMode(int name, PinMode mode) {
+        ::pinMode(name, (int)mode);
     }
 
     /**
@@ -105,10 +111,10 @@ namespace pins {
     * @param name pin to set the mode on, eg: AnalogPin.A0
     * @param mode one of the pin modes: Input, Output, PullUp, PullDown
     */
-    //% help=pins/set-mode weight=2
-    //% blockId=device_set_analog_mode block="set analog pin |mode %pin|to %mode" blockGap="8" 
-    void setAnalogPinMode(AnalogPin name, PinMode mode) {
-        ::pinMode((int)name, (int)mode);
+    //% help=pins/set-mode weight=4
+    //% blockId=device_set_analog_mode block="set analog pin |mode %pin=analog_pin|to %mode"
+    void setAnalogPinMode(int name, PinMode mode) {
+        ::pinMode(name, (int)mode);
     }
 
 }

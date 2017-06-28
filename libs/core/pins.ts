@@ -15,6 +15,51 @@ namespace Math {
     }
 }
 
+namespace pins {
+
+    /**
+     * Get the id of a DigitalPin.
+     * @param pin the digital pin, eg: DigitalPin.D0
+     */
+    //% weight=2 help=pins/digital-pin
+    //% blockId=digital_pin block="%pin"
+    //% shim=TD_ID
+    //% pin.defl="0"
+    //% useEnumVal=1 blockGap="8"
+    export function digitalPin(pin: DigitalPin): number {
+        switch (pin) {
+            case DigitalPin.D0: return 0;
+            case DigitalPin.D1: return 1;
+            case DigitalPin.D2: return 2;
+            case DigitalPin.D3: return 3;
+            case DigitalPin.D4: return 4;
+            case DigitalPin.D5: return 5;
+        }
+        return 0;
+    }
+
+    /**
+     * Get the id of a AnalogPin.
+     * @param pin the analog pin, eg: AnalogPin.D0
+     */
+    //% weight=1 help=pins/analog-pin
+    //% blockId=analog_pin block="%pin"
+    //% shim=TD_ID
+    //% pin.defl="0"
+    //% useEnumVal=1
+    export function analogPin(pin: AnalogPin): number {
+        switch (pin) {
+            case AnalogPin.A0: return 0;
+            case AnalogPin.A1: return 1;
+            case AnalogPin.A2: return 2;
+            case AnalogPin.A3: return 3;
+            case AnalogPin.A4: return 4;
+            case AnalogPin.A5: return 5;
+        }
+        return 0;
+    }
+}
+
 interface Buffer {
     [index: number]: number;
     // rest defined in buffer.cpp
