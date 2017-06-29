@@ -65,7 +65,7 @@ namespace pins {
       * @param name pin to write to, eg: DigitalPin.D0
       */
     //% help=pins/digital-write weight=29
-    //% blockId=device_set_digital_pin block="digital write pin |%name=digital_pin|to %value"
+    //% blockId=device_set_digital_pin block="digital write |%name=digital_pin|to %value"
     void digitalWrite(int name, int value) {
         ::digitalWrite(name, value);
     }
@@ -76,7 +76,7 @@ namespace pins {
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
     //% help=pins/analog-write weight=24
-    //% blockId=device_set_analog_pin block="analog write pin |%name=analog_pin|to %value"
+    //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
     void analogWrite(int name, int value) { 
         ::analogWrite(name, value);
     }
@@ -86,7 +86,7 @@ namespace pins {
      * @param name pin to read from, eg: DigitalPin.D0
      */
     //% help=pins/digital-read weight=30
-    //% blockId=device_get_digital_pin block="digital read pin |%name=digital_pin" blockGap=8
+    //% blockId=device_get_digital_pin block="digital read |%name=digital_pin" blockGap=8
     int digitalRead(int name) {
         return ::digitalRead(name);
     }
@@ -96,7 +96,7 @@ namespace pins {
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read weight=25
-    //% blockId=device_get_analog_pin block="analog read pin |%name=analog_pin" blockGap="8" 
+    //% blockId=device_get_analog_pin block="analog read |%name=analog_pin" blockGap="8" 
     int analogRead(int name) {
         return ::analogRead(name);
     }
