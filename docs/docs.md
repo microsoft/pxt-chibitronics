@@ -1,14 +1,14 @@
-# Docs for Sample Target
+# Documentation
 
-This is a pure javascript sample target for PXT. For more information about setting your own target, see https://pxt.io/docs .
+### @description Links to the documentation, reference and projects.
 
-You can embed code snippets.
+Welcome to the documentation of the Microsoft MakeCode editor
+for the [Chibitronics Chibi Chip](https://chibitronics.com/shop/love-to-code-chibi-chip-cable/).
 
-```blocks
-control.forever(() => {
-    turtle.turn(Direction.Left, 10);
-    turtle.forward(1);
-});
-```
+## Documentation
 
-Or embed blocks inline, `[control.forever(() => {})]` and many other features in our augmented markdown.
+* [About](/about)
+* [Examples](/examples)
+* [Blocks](/blocks)
+* [JavaScript](/javascript)
+* [Reference](/reference)

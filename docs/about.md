@@ -1,5 +1,3 @@
-# About Sample Target
+# About
 
-Example for [Microsoft Programming Experience Toolkit](https://www.makecode.com).
-
-See [GitHub repo](https://github.com/Microsoft/pxt-chibitronics) for details.
+Welcome to the **Microsoft MakeCode** editor for the **@boardname@**!
