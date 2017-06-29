@@ -9,7 +9,7 @@ namespace sensing {
     //% blockId=sensing_pressed block="is|%name=digital_pin| ON?"
     export function pressed(name: number): number {
         pins.setPinMode(name, PinMode.Input);
-        return pins.digitalReadPin(name);
+        return pins.digitalRead(name);
     }
 
     /**
@@ -20,6 +20,6 @@ namespace sensing {
     //% blockId=sending_read block="read analog|%name=analog_pin"
     export function read(name: number): number {
         pins.setAnalogPinMode(name, PinMode.Input);
-        return pins.analogReadPin(name);
+        return pins.analogRead(name);
     }
 }

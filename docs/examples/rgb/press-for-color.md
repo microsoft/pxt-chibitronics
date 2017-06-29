@@ -18,7 +18,7 @@ let c = 0;
 pins.setPinMode(DigitalPin.D0, PinMode.PullUp)
 
 loops.forever(() => {
-    if (pins.digitalReadPin(DigitalPin.D0) == PulseValue.Low) {
+    if (pins.digitalRead(DigitalPin.D0) == PulseValue.Low) {
         pinHue += pinDir;
         if (pinHue >= HUE_DEGREE) {
             pinDir = -pinDir;

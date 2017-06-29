@@ -2,10 +2,10 @@
 namespace pxsim.sensing {
 
     export function pressed(pinId: number): number {
-        return pxsim.pins.digitalReadPin(pinId);
+        return pxsim.pins.digitalRead(pinId);
     }
 
     export function read(pinId: number): number {
-        return pxsim.pins.analogReadPin(pinId);
+        return pxsim.pins.analogRead(pinId);
     }
 }

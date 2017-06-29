@@ -30,34 +30,34 @@ declare namespace pins {
      * Set a pin or connector value to the value
      * @param name pin to write to, eg: DigitalPin.D0
      */
-    //% help=pins/digital-write-pin weight=29
-    //% blockId=device_set_digital_pin block="digital write pin |%name=digital_pin|to %value" shim=pins::digitalWritePin
-    function digitalWritePin(name: int32, value: int32): void;
+    //% help=pins/digital-write weight=29
+    //% blockId=device_set_digital_pin block="digital write pin |%name=digital_pin|to %value" shim=pins::digitalWrite
+    function digitalWrite(name: int32, value: int32): void;
 
     /**
      * Set the connector value as analog. Value must be comprised between 0 and 1023.
      * @param name pin name to write to, eg: AnalogPin.A0
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
-    //% help=pins/analog-write-pin weight=24
-    //% blockId=device_set_analog_pin block="analog write pin |%name=analog_pin|to %value" shim=pins::analogWritePin
-    function analogWritePin(name: int32, value: int32): void;
+    //% help=pins/analog-write weight=24
+    //% blockId=device_set_analog_pin block="analog write pin |%name=analog_pin|to %value" shim=pins::analogWrite
+    function analogWrite(name: int32, value: int32): void;
 
     /**
      * Read the specified pin or connector as either 0 or 1
      * @param name pin to read from, eg: DigitalPin.D0
      */
-    //% help=pins/digital-read-pin weight=30
-    //% blockId=device_get_digital_pin block="digital read pin |%name=digital_pin" blockGap=8 shim=pins::digitalReadPin
-    function digitalReadPin(name: int32): int32;
+    //% help=pins/digital-read weight=30
+    //% blockId=device_get_digital_pin block="digital read pin |%name=digital_pin" blockGap=8 shim=pins::digitalRead
+    function digitalRead(name: int32): int32;
 
     /**
      * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
      * @param name pin to write to, eg: AnalogPin.A0
      */
-    //% help=pins/analog-read-pin weight=25
-    //% blockId=device_get_analog_pin block="analog read pin |%name=analog_pin" blockGap="8" shim=pins::analogReadPin
-    function analogReadPin(name: int32): int32;
+    //% help=pins/analog-read weight=25
+    //% blockId=device_get_analog_pin block="analog read pin |%name=analog_pin" blockGap="8" shim=pins::analogRead
+    function analogRead(name: int32): int32;
 
     /**
      * Set the pin mode.

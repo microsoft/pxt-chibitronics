@@ -9,7 +9,7 @@ namespace lights {
     //% blockId=lights_digital_on block="set ON|%name=digital_pin" blockGap="8"
     export function on(name: number) {
         pins.setPinMode(name, PinMode.Output);
-        pins.digitalWritePin(name, 1);
+        pins.digitalWrite(name, 1);
     }
 
     /**
@@ -20,7 +20,7 @@ namespace lights {
     //% blockId=lights_digital_off block="set OFF|%name=digital_pin"
     export function off(name: number) {
         pins.setPinMode(name, PinMode.Output);
-        pins.digitalWritePin(name, 0);
+        pins.digitalWrite(name, 0);
     }
 
     /**
@@ -32,6 +32,6 @@ namespace lights {
     //% blockId=lights_analog_set block="set|%name=analog_pin|to %value"
     export function set(name: number, value: number) {
         pins.setAnalogPinMode(name, PinMode.Output);
-        pins.analogWritePin(name, value);
+        pins.analogWrite(name, value);
     }
 }

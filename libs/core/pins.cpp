@@ -64,9 +64,9 @@ namespace pins {
       * Set a pin or connector value to the value
       * @param name pin to write to, eg: DigitalPin.D0
       */
-    //% help=pins/digital-write-pin weight=29
+    //% help=pins/digital-write weight=29
     //% blockId=device_set_digital_pin block="digital write pin |%name=digital_pin|to %value"
-    void digitalWritePin(int name, int value) {
+    void digitalWrite(int name, int value) {
         ::digitalWrite(name, value);
     }
 
@@ -75,9 +75,9 @@ namespace pins {
      * @param name pin name to write to, eg: AnalogPin.A0
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
-    //% help=pins/analog-write-pin weight=24
+    //% help=pins/analog-write weight=24
     //% blockId=device_set_analog_pin block="analog write pin |%name=analog_pin|to %value"
-    void analogWritePin(int name, int value) { 
+    void analogWrite(int name, int value) { 
         ::analogWrite(name, value);
     }
 
@@ -85,9 +85,9 @@ namespace pins {
      * Read the specified pin or connector as either 0 or 1
      * @param name pin to read from, eg: DigitalPin.D0
      */
-    //% help=pins/digital-read-pin weight=30
+    //% help=pins/digital-read weight=30
     //% blockId=device_get_digital_pin block="digital read pin |%name=digital_pin" blockGap=8
-    int digitalReadPin(int name) {
+    int digitalRead(int name) {
         return ::digitalRead(name);
     }
 
@@ -95,9 +95,9 @@ namespace pins {
      * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
      * @param name pin to write to, eg: AnalogPin.A0
      */
-    //% help=pins/analog-read-pin weight=25
+    //% help=pins/analog-read weight=25
     //% blockId=device_get_analog_pin block="analog read pin |%name=analog_pin" blockGap="8" 
-    int analogReadPin(int name) {
+    int analogRead(int name) {
         return ::analogRead(name);
     }
 
