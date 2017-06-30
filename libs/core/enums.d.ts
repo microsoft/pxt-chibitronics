@@ -65,5 +65,7 @@ declare namespace loops {
     }
 declare namespace rgb {
 }
+declare namespace serial {
+}
 
 // Auto-generated. Do not edit. Really.

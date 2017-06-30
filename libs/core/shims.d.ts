@@ -95,4 +95,20 @@ declare namespace rgb {
     function setRGBLed(r: int32, g: int32, b: int32): void;
 }
 
+
+    /**
+     * Provides access to serial functionality.
+     */
+    //% color=#CF63CF weight=80 icon="\uf00a"
+declare namespace serial {
+
+    /**
+     * Write string to serial
+     * @param message the message you want to write to serial, eg: Hello World
+     */
+    //% blockId="serial_write_line" block="say %message"
+    //% weight=90 help="serial/write-line" shim=serial::writeLine
+    function writeLine(s: string): void;
+}
+
 // Auto-generated. Do not edit. Really.

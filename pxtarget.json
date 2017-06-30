@@ -32,6 +32,7 @@
         "mathBlocks": true,
         "loopsBlocks": true,
         "logicBlocks": true,
+        "textBlocks": true,
         "variablesBlocks": true,
         "functionBlocks": true,
         "onStartColor": "#FFAB19",

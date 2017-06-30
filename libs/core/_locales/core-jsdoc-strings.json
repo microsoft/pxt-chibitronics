@@ -118,5 +118,7 @@
   "sensing.pressed": "Read the specified pin or connector as either 0 or 1",
   "sensing.pressed|param|name": "pin to read from, eg: DigitalPin.D0",
   "sensing.read": "Read the connector value as analog, that is, as a value comprised between 0 and 1023.",
-  "sensing.read|param|name": "pin to write to, eg: AnalogPin.A0"
+  "sensing.read|param|name": "pin to write to, eg: AnalogPin.A0",
+  "serial": "Provides access to serial functionality.",
+  "serial.writeLine": "Write string to serial"
 }
