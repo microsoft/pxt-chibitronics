@@ -27,13 +27,13 @@ namespace pxsim.pins {
         runtime.queueDisplayUpdate();
     }
 
-    export function setPinMode(pinId: number, pull: number) {
+    export function pinMode(pinId: number, pull: number) {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.pull = pull;
     }
 
-    export function setAnalogPinMode(pinId: number, pull: number) {
+    export function analogPinMode(pinId: number, pull: number) {
         let pin = getPin(pinId);
         if (!pin) return;
         pin.pull = pull;

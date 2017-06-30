@@ -108,7 +108,7 @@ namespace pins {
     */
     //% help=pins/set-mode weight=5
     //% blockId=device_set_mode block="set pin |mode %pin=digital_pin|to %mode" blockGap="8" 
-    void setPinMode(int name, PinMode mode) {
+    void pinMode(int name, PinMode mode) {
         ::pinMode(name, (int)mode);
     }
 
@@ -119,7 +119,7 @@ namespace pins {
     */
     //% help=pins/set-mode weight=4
     //% blockId=device_set_analog_mode block="set analog pin |mode %pin=analog_pin|to %mode"
-    void setAnalogPinMode(int name, PinMode mode) {
+    void analogPinMode(int name, PinMode mode) {
         ::pinMode(name, (int)mode);
     }
 

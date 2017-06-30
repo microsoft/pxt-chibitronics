@@ -8,7 +8,7 @@ namespace sensing {
     //% help=pins/digital-read-pin weight=30
     //% blockId=sensing_pressed block="is|%name=digital_pin| ON?"
     export function pressed(name: number): number {
-        pins.setPinMode(name, PinMode.Input);
+        pins.pinMode(name, PinMode.Input);
         return pins.digitalRead(name);
     }
 
@@ -19,7 +19,7 @@ namespace sensing {
     //% help=pins/analog-read-pin weight=25
     //% blockId=sending_read block="read analog|%name=analog_pin"
     export function read(name: number): number {
-        pins.setAnalogPinMode(name, PinMode.Input);
+        pins.analogPinMode(name, PinMode.Input);
         return pins.analogRead(name);
     }
 }

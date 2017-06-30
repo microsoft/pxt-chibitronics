@@ -8,7 +8,7 @@ namespace lights {
     //% help=lights/on weight=29
     //% blockId=lights_digital_on block="set ON|%name=digital_pin" blockGap="8"
     export function on(name: number) {
-        pins.setPinMode(name, PinMode.Output);
+        pins.pinMode(name, PinMode.Output);
         pins.digitalWrite(name, 1);
     }
 
@@ -19,7 +19,7 @@ namespace lights {
     //% help=lights/off weight=28
     //% blockId=lights_digital_off block="set OFF|%name=digital_pin"
     export function off(name: number) {
-        pins.setPinMode(name, PinMode.Output);
+        pins.pinMode(name, PinMode.Output);
         pins.digitalWrite(name, 0);
     }
 
@@ -31,7 +31,7 @@ namespace lights {
     //% help=lights/set weight=24
     //% blockId=lights_analog_set block="set|%name=analog_pin|to %value"
     export function set(name: number, value: number) {
-        pins.setAnalogPinMode(name, PinMode.Output);
+        pins.analogPinMode(name, PinMode.Output);
         pins.analogWrite(name, value);
     }
 }

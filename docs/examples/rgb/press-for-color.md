@@ -15,7 +15,7 @@ let pinDir = RATE;
 let hue = 0;
 let c = 0;
 
-pins.setPinMode(DigitalPin.D0, PinMode.PullUp)
+pins.pinMode(DigitalPin.D0, PinMode.PullUp)
 
 loops.forever(() => {
     if (pins.digitalRead(DigitalPin.D0) == PulseValue.Low) {
