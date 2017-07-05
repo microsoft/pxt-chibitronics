@@ -157,12 +157,14 @@ void RefCollection::push(uint32_t x)
 {
   if (isRef())
     incr(x);
-  utvector_push(data, &x);
+  unimplemented(__func__);
+  //  utvector_push(data, &x);
 }
 
 void RefCollection::setLength(int newLength)
 {
-  utvector_reserve(data, newLength);
+  unimplemented(__func__);
+  //  utvector_reserve(data, newLength);
 }
 
 uint32_t RefCollection::pop(void)
@@ -172,6 +174,8 @@ uint32_t RefCollection::pop(void)
 
 uint32_t RefCollection::getAt(int x)
 {
+  unimplemented(__func__);
+#if 0
   if (in_range(x))
   {
     uint32_t tmp = *(uint32_t *)utvector_elt(data, (unsigned)x);
@@ -184,10 +188,13 @@ uint32_t RefCollection::getAt(int x)
     error(ERR_OUT_OF_BOUNDS);
     return 0;
   }
+#endif
 }
 
 uint32_t RefCollection::removeAt(int x)
 {
+  unimplemented(__func__);
+#if 0
   uint32_t *ep = (uint32_t *)utvector_elt(data, x);
   if (!in_range(x))
     return 0;
@@ -201,10 +208,13 @@ uint32_t RefCollection::removeAt(int x)
     decr(e);
   utvector_erase(data, x);
   return e;
+#endif
 }
 
 void RefCollection::setAt(int x, uint32_t y)
 {
+  unimplemented(__func__);
+#if 0
   if (!in_range(x))
     return;
 
@@ -214,10 +224,13 @@ void RefCollection::setAt(int x, uint32_t y)
     incr(y);
   }
   *(uint32_t *)utvector_elt(data, (unsigned)x) = y;
+#endif
 }
 
 void RefCollection::insertAt(int x, uint32_t y)
 {
+  unimplemented(__func__);
+#if 0
   if (x == length())
   {
     push(y);
@@ -236,6 +249,7 @@ void RefCollection::insertAt(int x, uint32_t y)
     incr(y);
   }
   *(uint32_t *)utvector_elt(data, x) = y;
+#endif
 }
 
 int RefCollection::indexOf(uint32_t x, int start)
@@ -293,7 +307,8 @@ PXT_VTABLE_END
 
 RefCollection::RefCollection(uint16_t flags) : RefObject(0)
 {
-
+  unimplemented(__func__);
+#if 0
   data = utvector_new(utmm_int);
   switch (flags)
   {
@@ -310,21 +325,28 @@ RefCollection::RefCollection(uint16_t flags) : RefObject(0)
     error(ERR_SIZE);
     break;
   }
+#endif
 }
 
 void RefCollection::destroy()
 {
+  unimplemented(__func__);
+#if 0
   if (this->isRef())
     for (uint32_t i = 0; i < utvector_len(this->data); ++i)
     {
       decr(*(uint32_t *)utvector_elt(this->data, i));
     }
   utvector_clear(this->data);
+#endif
 }
 
 void RefCollection::print()
 {
+  unimplemented(__func__);
+#if 0
   printf("RefCollection %p r=%d flags=%d size=%d [%p, ...]\n", this, refcnt, getFlags(), utvector_len(data), utvector_len(data) > 0 ? utvector_elt(data, 0) : 0);
+#endif
 }
 
 PXT_VTABLE_CTOR(RefAction) {}
@@ -341,12 +363,12 @@ void RefAction::destroy()
 
 void RefAction::print()
 {
-  printf("RefAction %p r=%d pc=0x%lx size=%d (%d refs)\n", this, refcnt, (const uint8_t *)func - (const uint8_t *)bytecode, len, reflen);
+  //printf("RefAction %p r=%d pc=0x%lx size=%d (%d refs)\n", this, refcnt, (const uint8_t *)func - (const uint8_t *)bytecode, len, reflen);
 }
 
 void RefLocal::print()
 {
-  printf("RefLocal %p r=%d v=%d\n", this, refcnt, v);
+  //printf("RefLocal %p r=%d v=%d\n", this, refcnt, v);
 }
 
 void RefLocal::destroy()
@@ -367,11 +389,14 @@ PXT_VTABLE_BEGIN(RefMap, 0, RefMapMarker)
 PXT_VTABLE_END
 RefMap::RefMap() : PXT_VTABLE_INIT(RefMap)
 {
-  data = utvector_new(utmm_uint64);
+  unimplemented(__func__);
+  //  data = utvector_new(utmm_uint64);
 }
 
 void RefMap::destroy()
 {
+  unimplemented(__func__);
+#if 0
   for (unsigned i = 0; i < utvector_len(data); ++i)
   {
     if (((struct MapEntry *)utvector_elt(data, i))->key & 1)
@@ -381,21 +406,25 @@ void RefMap::destroy()
     ((struct MapEntry *)utvector_elt(data, i))->val = 0;
   }
   utvector_clear(data);
+#endif
 }
 
 int RefMap::findIdx(uint32_t key)
 {
+  unimplemented(__func__);
+#if 0
   for (unsigned i = 0; i < utvector_len(data); ++i)
   {
     if (((struct MapEntry *)utvector_elt(data, i))->key >> 1 == key)
       return i;
   }
+#endif
   return -1;
 }
 
 void RefMap::print()
 {
-  printf("RefMap %p r=%d size=%d\n", this, refcnt, utvector_len(data));
+  //printf("RefMap %p r=%d size=%d\n", this, refcnt, utvector_len(data));
 }
 
 void debugMemLeaks() {}

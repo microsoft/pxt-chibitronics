@@ -1,6 +1,8 @@
 #ifndef __PXT_H
 #define __PXT_H
 
+void unimplemented(const char *s);
+
 // #define intcheck(...) check(__VA_ARGS__)
 #define intcheck(...) \
   do                  \
@@ -297,8 +299,8 @@ using namespace pxt;
  * this core directory.
  */
 
-#define PXT_SHIMS_BEGIN                                                                                    \
-  extern "C" const uint32_t functionsAndBytecode[] __attribute__((aligned(0x20), section(".dataend"))) = { \
+#define PXT_SHIMS_BEGIN                                                                            \
+  extern "C" const uint32_t functionsAndBytecode[] __attribute__((used, section(".bytecode"))) = { \
       0x08010801, 0x42424242, 0x08010801, 0x8de9d83e,
 
 #define PXT_SHIMS_END \

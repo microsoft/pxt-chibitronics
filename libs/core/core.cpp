@@ -3,6 +3,17 @@
 
 extern "C" long int strtol(const char *nptr, char **endptr, int base);
 
+void errorCondition(void)
+{
+  asm("svc #164");
+}
+
+void unimplemented(const char *s)
+{
+  printf("Unimplemented: %s\n", s);
+  errorCondition();
+}
+
 namespace String_
 {
 //%
@@ -20,10 +31,13 @@ int charCodeAt(char *s, int index)
 //%
 char *concat(char *s, char *other)
 {
+  unimplemented(__func__);
+#if 0
   char *newstr = (char *)malloc(strlen(s) + strlen(other) + 1);
   memcpy(newstr, s, strlen(s));
   memcpy(newstr + strlen(s), other, strlen(other));
   return newstr;
+#endif
 }
 
 //%
@@ -65,6 +79,9 @@ char *mkEmpty()
 //%
 char *substr(char *s, int start, int length)
 {
+  unimplemented(__func__);
+  return NULL;
+#if 0
   if (length <= 0)
     return mkEmpty();
   if (start < 0)
@@ -74,6 +91,7 @@ char *substr(char *s, int start, int length)
   memcpy(newstr, s + start, length);
   newstr[length] = '\0';
   return newstr;
+#endif
 }
 }
 
