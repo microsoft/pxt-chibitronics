@@ -276,9 +276,18 @@ namespace chibitronics {
                     let hex = ihex.split("\n");
                     let hexOutput: string[] = [];
 
+                    // Figure out what the base offset is
+                    var startAddr = parseInt(/^:..(....)00(.{4,})/.exec(hex[0])[1], 16);
+
                     for (let i = 0; i < hex.length; ++i) {
-                        let m = /^:..(....)00(.{4,})/.exec(hex[i]);
+                        let m = /^:(..)(....)00(.{4,})/.exec(hex[i]);
                         if (!m) continue;
+
+                        // Ensure we're padded properly.  Add "0xff" if needed to fill in gaps in the hexfile.
+                        var currentOffset = parseInt(m[2], 16);
+                        while (startAddr + hexOutput.length < currentOffset) {
+                            hexOutput.push("FF");
+                        }
 
                         // Skip past the :, count, address, and record type fields, and chop off the checksum
                         let s = hex[i].slice(9, hex[i].length - 2);
