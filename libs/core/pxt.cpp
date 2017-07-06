@@ -86,8 +86,8 @@ RefRecord *mkClassInstance(int vtableOffset)
 {
   VTable *vtable = (VTable *)&bytecode[vtableOffset];
 
-  intcheck(vtable->methods[0] == &RefRecord_destroy, ERR_SIZE, 3);
-  intcheck(vtable->methods[1] == &RefRecord_print, ERR_SIZE, 4);
+  check(vtable->methods[0] == &RefRecord_destroy, ERR_SIZE, 3);
+  check(vtable->methods[1] == &RefRecord_print, ERR_SIZE, 4);
 
   void *ptr = ::operator new(vtable->numbytes);
   RefRecord *r = new (ptr) RefRecord(PXT_VTABLE_TO_INT(vtable));
@@ -97,14 +97,14 @@ RefRecord *mkClassInstance(int vtableOffset)
 
 uint32_t RefRecord::ld(int idx)
 {
-  //intcheck((reflen == 255 ? 0 : reflen) <= idx && idx < len, ERR_OUT_OF_BOUNDS, 1);
+  check((reflen == 255 ? 0 : reflen) <= idx && idx < len, ERR_OUT_OF_BOUNDS, 1);
   return fields[idx];
 }
 
 uint32_t RefRecord::ldref(int idx)
 {
   //printf("LD %p len=%d reflen=%d idx=%d\n", this, len, reflen, idx);
-  //intcheck(0 <= idx && idx < reflen, ERR_OUT_OF_BOUNDS, 2);
+  check(0 <= idx && idx < reflen, ERR_OUT_OF_BOUNDS, 2);
   uint32_t tmp = fields[idx];
   incr(tmp);
   return tmp;
@@ -112,14 +112,14 @@ uint32_t RefRecord::ldref(int idx)
 
 void RefRecord::st(int idx, uint32_t v)
 {
-  //intcheck((reflen == 255 ? 0 : reflen) <= idx && idx < len, ERR_OUT_OF_BOUNDS, 3);
+  check((reflen == 255 ? 0 : reflen) <= idx && idx < len, ERR_OUT_OF_BOUNDS, 3);
   fields[idx] = v;
 }
 
 void RefRecord::stref(int idx, uint32_t v)
 {
   //printf("ST %p len=%d reflen=%d idx=%d\n", this, len, reflen, idx);
-  //intcheck(0 <= idx && idx < reflen, ERR_OUT_OF_BOUNDS, 4);
+  check(0 <= idx && idx < reflen, ERR_OUT_OF_BOUNDS, 4);
   decr(fields[idx]);
   fields[idx] = v;
 }

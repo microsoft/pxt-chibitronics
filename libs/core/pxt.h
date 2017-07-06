@@ -1,13 +1,35 @@
 #ifndef __PXT_H
 #define __PXT_H
 
+#include <stdint.h>
+void errorCondition(void);
 void unimplemented(const char *s);
+void panic(const char *s);
+void error(uint32_t code, int subcode);
 
-// #define intcheck(...) check(__VA_ARGS__)
-#define intcheck(...) \
-  do                  \
-  {                   \
+#ifdef ENABLE_CHECKS
+#define assert(cond, msg)                 \
+  do                                      \
+  {                                       \
+    if (!(cond))                          \
+    {                                     \
+      printf("Check failed: %%s\n", msg); \
+      errorCondition();                   \
+    }                                     \
   } while (0)
+#define check(cond, code, subcode)                      \
+  do                                                    \
+  {                                                     \
+    if (!(cond))                                        \
+    {                                                   \
+      printf("Check failed: %d - %d\n", code, subcode); \
+      errorCondition();                                 \
+    }                                                   \
+  } while (0)
+#else /* !ENABLE_CHECKS */
+#define check(cond, code, subcode)
+#define assert(cond, msg)
+#endif
 
 #ifdef PXT_FNPTR
 #undef PXT_FNPTR
@@ -38,13 +60,6 @@ typedef enum {
   ERR_REF_DELETED = 7,
   ERR_SIZE = 9,
 } ERROR;
-
-void error(ERROR code, int subcode
-#ifdef __cplusplus
-                       = 0
-#endif
-           );
-void panic(const char *str);
 
 #ifdef __cplusplus
 };
@@ -79,12 +94,6 @@ void decr(uint32_t e);
 inline bool hasVTable(uint32_t e)
 {
   return (*((uint32_t *)e) & 1) == 0;
-}
-
-inline void check(int cond, ERROR code, int subcode = 0)
-{
-  if (!cond)
-    error(code, subcode);
 }
 
 class RefObject;
@@ -135,7 +144,7 @@ public:
   // Increment/decrement the ref-count. Decrementing to zero deletes the current object.
   inline void ref()
   {
-    check(refcnt > 0, ERR_REF_DELETED);
+    check(refcnt > 0, ERR_REF_DELETED, 0);
     //printf("INCR "); this->print();
     refcnt += 2;
   }
@@ -249,8 +258,8 @@ public:
   inline void stCore(int idx, uint32_t v)
   {
     //printf("ST [%d] = %d ", idx, v); this->print();
-    intcheck(0 <= idx && idx < len, ERR_OUT_OF_BOUNDS, 10);
-    intcheck(fields[idx] == 0, ERR_OUT_OF_BOUNDS, 11); // only one assignment permitted
+    check(0 <= idx && idx < len, ERR_OUT_OF_BOUNDS, 10);
+    check(fields[idx] == 0, ERR_OUT_OF_BOUNDS, 11); // only one assignment permitted
     fields[idx] = v;
   }
 

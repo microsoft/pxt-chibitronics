@@ -14,6 +14,18 @@ void unimplemented(const char *s)
   errorCondition();
 }
 
+void panic(const char *s)
+{
+  printf("Panic: %s\n", s);
+  errorCondition();
+}
+
+void error(ERROR code, int subcode)
+{
+  printf("Error: %d - %d\n", code, subcode);
+  error(code, subcode);
+}
+
 namespace String_
 {
 //%

@@ -28,9 +28,6 @@ DEALINGS IN THE SOFTWARE.
 
 uint16_t *bytecode;
 uint32_t *globals;
-const char *panic_msg = "";
-int error_code = 0;
-int error_subcode = 0;
 
 void *malloc(size_t size);
 void *memset(void *s, int c, size_t n);
@@ -45,52 +42,13 @@ static uint32_t *allocate(uint16_t sz)
   return arr;
 }
 
-static int templateHash(void)
-{
-  return ((int *)bytecode)[4];
-}
-
 static int getNumGlobals(void)
 {
   return bytecode[16];
 }
 
-__attribute__((noreturn)) void panic(const char *str)
-{
-  panic_msg = str;
-  setSerialSpeed(9600);
-  while (1)
-    printf("PANIC: %s\r\n", str);
-}
-
-__attribute__((noreturn)) void error(ERROR code, int subcode)
-{
-  error_code = code;
-  error_subcode = subcode;
-  setSerialSpeed(9600);
-  while (1)
-    printf("ERROR %d: %d\r\n", code, subcode);
-}
-
-static void assert(int cond, const char *msg)
-{
-  if (!cond)
-    panic(msg);
-}
-
 static void exec_binary(int32_t *pc)
 {
-
-  // XXX re-enable once the calibration code is fixed and [editor/embedded.ts]
-  // properly prepends a call to [internal_main].
-  // ::touch_develop::internal_main();
-
-  // unique group for radio based on source hash
-  // ::touch_develop::micro_bit::radioDefaultGroup = programHash();
-
-  // repeat error 4 times and restart as needed
-  // microbit_panic_timeout(4);
-
   int32_t ver = *pc++;
   assert(ver == 0x4209, ":( Bad runtime version");
 
@@ -99,7 +57,7 @@ static void exec_binary(int32_t *pc)
 
   // just compare the first word
   assert(((uint32_t *)bytecode)[0] == 0x923B8E70 &&
-             templateHash() == *pc,
+             pxt::templateHash() == *pc,
          ":( Failed partial flash");
 
   uint32_t startptr = (uint32_t)bytecode;
