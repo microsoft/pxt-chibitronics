@@ -19,14 +19,13 @@
         "useModulator": true,
         "isNative": true,
         "hasHex": true,
-        "upgrades": [
-            {
-                "type": "package",
-                "map": {
-                    "ltc": "core"
-                }
+        "flashCodeAlign": 16,
+        "upgrades": [{
+            "type": "package",
+            "map": {
+                "ltc": "core"
             }
-        ]
+        }]
     },
     "runtime": {
         "mathBlocks": true,
