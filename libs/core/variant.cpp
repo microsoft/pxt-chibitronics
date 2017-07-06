@@ -42,18 +42,13 @@ static uint32_t *allocate(uint16_t sz)
   return arr;
 }
 
-static int getNumGlobals(void)
-{
-  return bytecode[16];
-}
-
 static void exec_binary(int32_t *pc)
 {
-  int32_t ver = *pc++;
-  assert(ver == 0x4209, ":( Bad runtime version");
+  assert(*pc == 0x4209, ":( Bad runtime version");
+  pc++;
 
   bytecode = *((uint16_t **)pc++); // the actual bytecode is here
-  globals = allocate(getNumGlobals());
+  globals = allocate(pxt::getNumGlobals());
 
   // just compare the first word
   assert(((uint32_t *)bytecode)[0] == 0x923B8E70 &&

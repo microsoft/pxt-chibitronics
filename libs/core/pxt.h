@@ -76,10 +76,8 @@ Action mkAction(int reflen, int totallen, int startptr);
 class RefRecord;
 RefRecord *mkClassInstance(int vtableOffset);
 
-inline void *ptrOfLiteral(int offset)
-{
-  return &bytecode[offset];
-}
+void *ptrOfLiteral(int offset);
+int getNumGlobals(void);
 
 // The standard calling convention is:
 //   - when a pointer is loaded from a local/global/field etc, and incr()ed

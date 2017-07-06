@@ -463,7 +463,12 @@ int programHash()
   return ((int *)bytecode)[6];
 }
 
-int getNumGlobals()
+void *ptrOfLiteral(int offset)
+{
+  return &bytecode[offset];
+}
+
+int getNumGlobals(void)
 {
   return bytecode[16];
 }
