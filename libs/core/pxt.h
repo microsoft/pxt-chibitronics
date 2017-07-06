@@ -91,10 +91,7 @@ int incr(uint32_t e);
 void decr(uint32_t e);
 
 // Checks if object has a VTable, or if its RefCounted* from the runtime.
-inline bool hasVTable(uint32_t e)
-{
-  return (*((uint32_t *)e) & 1) == 0;
-}
+bool hasVTable(uint32_t e);
 
 class RefObject;
 

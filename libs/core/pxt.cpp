@@ -32,6 +32,12 @@ void decr(uint32_t e)
   }
 }
 
+// Checks if object has a VTable, or if its RefCounted* from the runtime.
+bool hasVTable(uint32_t e)
+{
+  return (*((uint32_t *)e) & 1) == 0;
+}
+
 Action mkAction(int reflen, int totallen, int startptr)
 {
   check(0 <= reflen && reflen <= totallen, ERR_SIZE, 1);
