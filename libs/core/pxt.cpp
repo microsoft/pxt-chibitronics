@@ -143,6 +143,8 @@ void RefObject::print()
 
 void RefRecord_destroy(RefRecord *r)
 {
+  unimplemented(__func__);
+#if 0
   auto tbl = r->getVTable();
   uint8_t *refmask = (uint8_t *)&tbl->methods[tbl->userdata & 0xff];
   int len = (tbl->numbytes >> 2) - 1;
@@ -152,11 +154,12 @@ void RefRecord_destroy(RefRecord *r)
       decr(r->fields[i]);
     r->fields[i] = 0;
   }
+#endif
 }
 
 void RefRecord_print(RefRecord *r)
 {
-  printf("RefRecord %p r=%d size=%d bytes\n", r, r->refcnt, r->getVTable()->numbytes);
+  //  printf("RefRecord %p r=%d size=%d bytes\n", r, r->refcnt, r->getVTable()->numbytes);
 }
 
 void RefCollection::push(uint32_t x)
