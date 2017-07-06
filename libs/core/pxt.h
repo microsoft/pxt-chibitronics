@@ -38,7 +38,6 @@ void error(uint32_t code, int subcode);
 
 #include <string.h>
 #include <stdint.h>
-#include "utvector.h"
 #include "RefCounted.h"
 
 #ifdef __cplusplus
@@ -167,16 +166,19 @@ public:
   inline bool isRef() { return getFlags() & 1; }
   inline bool isString() { return getFlags() & 2; }
 
-  UT_vector *data;
-
   RefCollection(uint16_t f);
 
   inline bool in_range(int x)
   {
-    return (0 <= x && x < (int)utvector_len(data));
+    unimplemented(__func__);
+    return -1;
   }
 
-  inline int length() { return utvector_len(data); }
+  inline int length()
+  {
+    unimplemented(__func__);
+    return -1;
+  }
 
   void destroy();
   void print();
@@ -202,9 +204,7 @@ class RefMap
     : public RefObject
 {
 public:
-  UT_vector *data;
-
-  RefMap();
+    RefMap();
   void destroy();
   void print();
   int findIdx(uint32_t key);

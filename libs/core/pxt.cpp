@@ -4,9 +4,6 @@
 #define printf(...)
 #endif
 
-static const UT_mm _utmm_uint64 = {.sz = sizeof(struct pxt::MapEntry), 0, 0, 0, 0};
-const UT_mm *utmm_uint64 = &_utmm_uint64;
-
 namespace pxt
 {
 int incr(uint32_t e)
