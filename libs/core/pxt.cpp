@@ -254,6 +254,8 @@ void RefCollection::insertAt(int x, uint32_t y)
 
 int RefCollection::indexOf(uint32_t x, int start)
 {
+  unimplemented(__func__);
+#if 0
   if (!in_range(start))
     return -1;
 
@@ -274,18 +276,21 @@ int RefCollection::indexOf(uint32_t x, int start)
       if (*((uint32_t *)utvector_elt(data, i)) == x)
         return (int)i;
   }
-
+#endif
   return -1;
 }
 
 int RefCollection::removeElement(uint32_t x)
 {
+  unimplemented(__func__);
+#if 0
   int idx = indexOf(x, 0);
   if (idx >= 0)
   {
     removeAt(idx);
     return 1;
   }
+#endif
   return 0;
 }
 
