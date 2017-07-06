@@ -10,7 +10,7 @@ void errorCondition(void)
 
 void unimplemented(const char *s)
 {
-  printf("Unimplemented: %s\n", s);
+  printf("Unimpl: %s\n", s);
   errorCondition();
 }
 
