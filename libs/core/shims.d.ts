@@ -97,17 +97,17 @@ declare namespace rgb {
 
 
     /**
-     * Provides access to serial functionality.
+     * Provides access to Chibi Scope functionality.
      */
     //% color=#CF63CF weight=80 icon="\uf00a"
-declare namespace serial {
+declare namespace scope {
 
     /**
-     * Write string to serial
-     * @param message the message you want to write to serial, eg: Hello World
+     * Write string to the Chibi Scope
+     * @param message the message you want to write to the Chibi Scope, eg: Hello World
      */
     //% blockId="serial_write_line" block="say %message"
-    //% weight=90 help="serial/write-line" shim=serial::writeLine
+    //% weight=90 help="serial/write-line" shim=scope::writeLine
     function writeLine(s: string): void;
 }
 

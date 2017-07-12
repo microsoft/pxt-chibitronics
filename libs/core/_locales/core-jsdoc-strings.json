@@ -114,11 +114,11 @@
   "rgb.setRGBLed": "Set the rgb led to a specific red, green, blue color.",
   "rgb.wheel": "Converts wheel position into an RGB color",
   "rgb.wheel|param|wheelPos": "value between 0 to 255 to get a color value, eg: 10",
+  "scope": "Provides access to Chibi Scope functionality.",
+  "scope.writeLine": "Write string to the Chibi Scope",
   "sensing": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
   "sensing.pressed": "Read the specified pin or connector as either 0 or 1",
   "sensing.pressed|param|name": "pin to read from, eg: DigitalPin.D0",
   "sensing.read": "Read the connector value as analog, that is, as a value comprised between 0 and 1023.",
-  "sensing.read|param|name": "pin to write to, eg: AnalogPin.A0",
-  "serial": "Provides access to serial functionality.",
-  "serial.writeLine": "Write string to serial"
+  "sensing.read|param|name": "pin to write to, eg: AnalogPin.A0"
 }
