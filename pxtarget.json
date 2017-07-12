@@ -190,6 +190,9 @@
             "twitterHandle": "chibitronics",
             "orgTwitterHandle": "MSMakeCode",
             "hashtags": "MakeCode"
+        },
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
         }
     }
 }
