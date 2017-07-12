@@ -65,8 +65,8 @@ declare namespace pins {
      * @param mode one of the pin modes: Input, Output, PullUp, PullDown
      */
     //% help=pins/set-mode weight=5
-    //% blockId=device_set_mode block="set pin |mode %pin=digital_pin|to %mode" blockGap="8" shim=pins::setPinMode
-    function setPinMode(name: int32, mode: PinMode): void;
+    //% blockId=device_set_mode block="set pin |mode %pin=digital_pin|to %mode" blockGap="8" shim=pins::pinMode
+    function pinMode(name: int32, mode: PinMode): void;
 
     /**
      * Set the pin mode.
@@ -74,8 +74,8 @@ declare namespace pins {
      * @param mode one of the pin modes: Input, Output, PullUp, PullDown
      */
     //% help=pins/set-mode weight=4
-    //% blockId=device_set_analog_mode block="set analog pin |mode %pin=analog_pin|to %mode" shim=pins::setAnalogPinMode
-    function setAnalogPinMode(name: int32, mode: PinMode): void;
+    //% blockId=device_set_analog_mode block="set analog pin |mode %pin=analog_pin|to %mode" shim=pins::analogPinMode
+    function analogPinMode(name: int32, mode: PinMode): void;
 }
 
 
