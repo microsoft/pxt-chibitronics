@@ -3,44 +3,51 @@
 
 extern "C" long int strtol(const char *nptr, char **endptr, int base);
 
-
 namespace String_ {
     //%
-    char charAt(char *s, int pos) {
-      return s[pos];
+    StringData *charAt(StringData *s, int pos) {
+      StringData *c = (StringData *) malloc(6);
+      c->len = 1;
+      c->data[0] = s->data[pos];
+      c->data[1] = '\0';
+      return c;
     }
 
     //%
-    int charCodeAt(char *s, int index) {
-        return s[index];
+    int charCodeAt(StringData *s, int index) {
+        return s->data[index];
     }
 
     //%
-    char *concat(char *s, char *other) {
-      char *newstr = (char *)malloc(strlen(s) + strlen(other) + 1);
-      memcpy(newstr, s, strlen(s));
-      memcpy(newstr + strlen(s), other, strlen(other));
-      return newstr;
+    StringData *concat(StringData *s, StringData *other) {
+      /*char *newstr = (char *)malloc(s->len + other->len + 1);
+      memcpy(newstr, s->data, s->len);
+      memcpy(newstr + s->len, other->data, other->len);
+      StringData *concatStr = new StringData();
+      concatStr->len = strlen(newstr);
+      concatStr->data = newstr;
+      return concatStr;*/
+      return 0;
     }
 
     //%
-    int compare(char *s, char *that) {
-      return strcmp(s, that);
+    int compare(StringData *s, StringData *that) {
+      return strcmp(s->data, that->data);
     }
 
     //%
-    int length(char *s) {
-      return strlen(s);
+    int length(StringData *s) {
+      return s->len;
     }
 
     //%
-    char *fromCharCode(int code)
+    StringData *fromCharCode(int code)
     {
       // XXX NOT UTF-8!
       char *str = (char *)malloc(2);
       str[0] = code;
       str[1] = '\0';
-      return str;
+      return 0;
     }
 
     //%
@@ -49,16 +56,18 @@ namespace String_ {
     }
 
     //%
-    char *mkEmpty()
+    StringData *mkEmpty()
     {
-        char *str = (char *)malloc(1);
-        str[0] = '\0';
-        return str;
+        StringData *c = (StringData *) malloc(6);
+        c->len = 0;
+        c->data[0] = 0;
+        return c;
     }
 
     //%
-    char *substr(char *s, int start, int length)
+    StringData *substr(char *s, int start, int length)
     {
+/*
         if (length <= 0)
             return mkEmpty();
         if (start < 0)
@@ -68,6 +77,8 @@ namespace String_ {
         memcpy(newstr, s + start, length);
         newstr[length] = '\0';
         return newstr;
+        */
+        return 0;
     }
 }
 

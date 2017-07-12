@@ -24,6 +24,13 @@ extern uint16_t *bytecode;
 typedef uint32_t Action;
 typedef uint32_t ImageLiteral;
 
+struct StringData
+{
+    uint16_t bogus;
+    uint16_t len;
+    char data[0];
+};
+
 /* Define an empty PXT_MAIN.  This prevents PXT from making a main() function.*/
 #define PXT_MAIN
 

@@ -1,10 +1,3 @@
-/**
- * Basic functionalities.
- */
-//% color=#0078D7 weight=70 icon="\uf110"
-namespace control {
-
-}
 
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
@@ -19,6 +12,30 @@ namespace lights {
  */
 //% color=#9966FF weight=90 icon="\uf192"
 namespace sensing {
+
+}
+
+/**
+ * Provides access to basic RGB LED functionality.
+ */
+//% color=#CF63CF weight=80 icon="\uf00a"
+namespace rgb {
+
+}
+
+/**
+ * Provides access to Chibi Scope functionality.
+ */
+//% color=#00b295 weight=70 icon="\uf27b"
+namespace scope {
+
+}
+
+/**
+ * Basic functionalities.
+ */
+//% color=#0078D7 weight=70 icon="\uf110"
+namespace control {
 
 }
 
