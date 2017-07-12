@@ -4,7 +4,7 @@
 /**
  * Provides access to Chibi Scope functionality.
  */
-//% color=#CF63CF weight=80 icon="\uf00a"
+//% color=#00b295 weight=70 icon="\uf27b"
 namespace scope {
 
     /**
