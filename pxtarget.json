@@ -184,7 +184,8 @@
             "loops": "#FFAB19",
             "logic": "#FFBF00",
             "math": "#59C059",
-            "variables": "#FF6680"
+            "variables": "#FF6680",
+            "text": "#ffd500"
         },
         "socialOptions": {
             "twitterHandle": "chibitronics",

@@ -209,7 +209,7 @@ namespace chibitronics {
             </category>
             <category name="Variables" nameid="variables" colour="#FF6680" custom="VARIABLE" category="48" iconclass="blocklyTreeIconvariables"></category>
             <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions"></category>
-            <category colour="#996600" name="Text" nameid="text" category="46" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext"></category>
+            <category colour="#996600" name="Text" advanced="true" nameid="text" category="46" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext"></category>
             <category colour="#66672C" name="Arrays" nameid="arrays" category="45" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays"></category>
         </xml>`;
         const res: pxt.editor.ExtensionResult = {
@@ -240,6 +240,9 @@ namespace chibitronics {
                     },
                     maths: {
                         weight: 50.07
+                    },
+                    text: {
+                        advanced: true
                     },
                     functions: {
                         advanced: false
