@@ -28,8 +28,7 @@ namespace chibitronics {
 
     export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug("loading chibitronics target extensions...")
-        
-        /*
+
         const baseXml = `
         <xml id="blocklyToolboxDefinition" style="display: none">
             <category name="Control" nameid="loops" colour="#FFAB19" category="50" iconclass="blocklyTreeIconlogic">
@@ -236,9 +235,8 @@ namespace chibitronics {
             </category>
             <category colour="#66672C" name="Arrays" nameid="arrays" category="45" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays"></category>
         </xml>`;
-        */
         const res: pxt.editor.ExtensionResult = {
-            /*toolboxOptions: {
+            toolboxOptions: {
                 blocklyXml: baseXml,
                 monacoToolbox: {
                     loops: {
@@ -273,7 +271,7 @@ namespace chibitronics {
                         advanced: false
                     }
                 }
-            },*/
+            },
             beforeCompile: () => {
                 // Play silence, in order to unblock audio.
                 let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
