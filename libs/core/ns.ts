@@ -49,6 +49,6 @@ namespace pins {
 
 declare namespace String {
 
-    //% blockNamespace="Text"
+    //% blockNamespace="Text" advanced="false"
     export function fromCharCode(code: number): string;
 }
