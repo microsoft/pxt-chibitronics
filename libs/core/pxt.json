@@ -19,6 +19,7 @@
         "rgb.h",
         "rgb.cpp",
         "rgb.ts",
+        "serial.cpp",
         "ns.ts",
         "sensing.ts",
         "lights.ts",

@@ -32,11 +32,32 @@ namespace pxsim {
         }
     }
 
+    export class LtcSerialState {
+        usesSerial: boolean;
+        lines: string[];
+
+        constructor() {
+            this.lines = [];
+        }
+
+        appendLine(msg: string, newLine?: boolean) {
+            if (msg.length == 0) msg = ' ';
+            const parts = msg.match(/.{1,18}/g); // Split into 18 character long messages
+            parts.forEach((part) => {
+                this.lines.push(part);
+            })
+            while(this.lines.length > 4) {
+                this.lines.shift();
+            }
+        }
+    }
+
     export class LtcBoard extends CoreBoard {
         // state & update logic for component services
         edgeConnectorState: EdgeConnectorState;
         thermometerState: ThermometerState;
         buttonPairState: LtcButtonPairState;
+        serialState: LtcSerialState;
         // TODO: not singletons
         neopixelState: NeoPixelState;
 
@@ -66,6 +87,7 @@ namespace pxsim {
             });
             this.builtinParts["neopixel"] = this.neopixelState = new NeoPixelState();
             this.builtinParts["thermometer"] = this.thermometerState = new ThermometerState();
+            this.builtinParts["serial"] = this.serialState = new LtcSerialState();
 
             this.builtinVisuals["buttonpair"] = () => new visuals.ButtonPairView();
             this.builtinVisuals["neopixel"] = () => new visuals.NeoPixelView();

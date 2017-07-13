@@ -31,6 +31,7 @@
         "mathBlocks": true,
         "loopsBlocks": true,
         "logicBlocks": true,
+        "textBlocks": true,
         "variablesBlocks": true,
         "functionBlocks": true,
         "onStartColor": "#FFAB19",
@@ -43,7 +44,7 @@
         "streams": false,
         "aspectRatio": 1.22,
         "parts": false,
-        "partsAspectRatio": 0.69,
+        "partsAspectRatio": 0.75,
         "boardDefinition": {
             "visual": "ltc",
             "gpioPinBlocks": [
@@ -64,6 +65,11 @@
                 ],
                 [
                     "D5"
+                ],
+                [
+                    "TXT",
+                    "fiveVolt",
+                    "GND2"
                 ]
             ],
             "gpioPinMap": {
@@ -72,7 +78,10 @@
                 "D2": "D2",
                 "D3": "D3",
                 "D4": "D4",
-                "D5": "D5"
+                "D5": "D5",
+                "TXT": "TXT",
+                "fiveVolt": "+5V",
+                "GND2": "GND2"
             },
             "analogInPins": [
                 "A0",
@@ -83,10 +92,11 @@
                 "A5"
             ],
             "groundPins": [
-                "GND"
+                "GND0",
+                "GND1"
             ],
             "threeVoltPins": [
-                "+3v3"
+                "+3v"
             ],
             "attachPowerOnRight": true,
             "onboardComponents": [
@@ -94,9 +104,9 @@
             ],
             "useCrocClips": true,
             "marginWhenBreadboarding": [
+                10,
                 0,
                 0,
-                80,
                 0
             ]
         }
@@ -173,7 +183,16 @@
             "loops": "#FFAB19",
             "logic": "#FFBF00",
             "math": "#59C059",
-            "variables": "#FF6680"
+            "variables": "#FF6680",
+            "text": "#5cb1d6"
+        },
+        "socialOptions": {
+            "twitterHandle": "chibitronics",
+            "orgTwitterHandle": "MSMakeCode",
+            "hashtags": "MakeCode"
+        },
+        "monacoColors": {
+            "editor.background": "#ecf0f1"
         }
     }
 }

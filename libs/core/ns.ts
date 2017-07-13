@@ -1,10 +1,3 @@
-/**
- * Basic functionalities.
- */
-//% color=#0078D7 weight=70 icon="\uf110"
-namespace control {
-
-}
 
 /**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
@@ -23,6 +16,30 @@ namespace sensing {
 }
 
 /**
+ * Provides access to basic RGB LED functionality.
+ */
+//% color=#CF63CF weight=80 icon="\uf00a"
+namespace rgb {
+
+}
+
+/**
+ * Provides access to Chibi Scope functionality.
+ */
+//% color=#00b295 weight=70 icon="\uf27b"
+namespace scope {
+
+}
+
+/**
+ * Basic functionalities.
+ */
+//% color=#0078D7 weight=70 icon="\uf110"
+namespace loops {
+
+}
+
+/**
  * Control currents in Pins for analog/digital signals, servos, i2c, ...
  */
 //% color=#ff8c1a weight=60 icon="\uf02a" advanced=true
@@ -32,6 +49,6 @@ namespace pins {
 
 declare namespace String {
 
-    //% blockNamespace="Text"
+    //% blockNamespace="Text" advanced="false"
     export function fromCharCode(code: number): string;
 }
