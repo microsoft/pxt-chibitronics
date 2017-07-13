@@ -9,11 +9,11 @@ namespace scope {
 
     /**
      * Write string to the Chibi Scope
-     * @param message the message you want to write to the Chibi Scope, eg: Hello World
+     * @param message the message you want to write to the Chibi Scope, eg: "Hello!"
      */
     //% blockId="serial_write_line" block="say %message"
     //% weight=90 help="serial/write-line"
-    void writeLine(StringData *s) {
-        printf("\n%s\n", s->data);
+    void writeLine(StringData *message) {
+        printf("\n%s\n", message->data);
     }
 }

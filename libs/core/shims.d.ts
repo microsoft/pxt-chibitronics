@@ -104,11 +104,11 @@ declare namespace scope {
 
     /**
      * Write string to the Chibi Scope
-     * @param message the message you want to write to the Chibi Scope, eg: Hello World
+     * @param message the message you want to write to the Chibi Scope, eg: "Hello!"
      */
     //% blockId="serial_write_line" block="say %message"
     //% weight=90 help="serial/write-line" shim=scope::writeLine
-    function writeLine(s: string): void;
+    function writeLine(message: string): void;
 }
 
 // Auto-generated. Do not edit. Really.
