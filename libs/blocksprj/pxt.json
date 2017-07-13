@@ -4,6 +4,7 @@
         "core": "file:../core"
     },
     "description": "",
+    "binaryonly": true,
     "files": [
         "main.blocks",
         "main.ts",

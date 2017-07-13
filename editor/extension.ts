@@ -325,6 +325,7 @@ namespace chibitronics {
                         }
                     }
 
+                    console.log("Resulting binary is " + hexOutput.length + " bytes");
                     let output = new Uint8Array(hexOutput.length);
                     for (let i = 0; i < hexOutput.length; i++) {
                         output[i] = parseInt(hexOutput[i], 16);
