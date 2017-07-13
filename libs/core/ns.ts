@@ -35,7 +35,7 @@ namespace scope {
  * Basic functionalities.
  */
 //% color=#0078D7 weight=70 icon="\uf110"
-namespace control {
+namespace loops {
 
 }
 

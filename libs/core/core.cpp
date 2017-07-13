@@ -153,8 +153,8 @@ namespace Math_ {
     }
     
     //%
-    int random(int max) {
-      return ::random(0, max);
+    int randomRange(int min, int max) {
+      return ::random(min, max);
     }
     
     //%
