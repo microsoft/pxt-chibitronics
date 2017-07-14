@@ -1,6 +1,6 @@
 declare class ModulationController {
     constructor(params?: any);
-    transcodeToAudioTag(array: any, tag: any, audioType: any, lbr: boolean, version: number): void;
+    transcodeToAudioTag(array: any, tag: any, audioType?: any, lbr?: boolean, version?: number): void;
 
     getPcmData(): any;
     stop(): void;
