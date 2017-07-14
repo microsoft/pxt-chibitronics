@@ -413,7 +413,7 @@ namespace chibitronics {
 
                 modController = new ModControllerConstructor({
                     canvas: getCanvas(),
-                    lbr: lbrEnable,
+                    repeat: 2,
                     endCallback: function () {
                         getWaveFooter().style.visibility = "hidden";
                         getWaveFooter().style.opacity = "0";
@@ -445,11 +445,7 @@ namespace chibitronics {
                     return deferred;
                 } else {
                     // For all other browsers, play the sound directly in the browser
-                    modController.transcodeToAudioTag(bin,
-                        audio,
-                        audioFormat,
-                        lbrEnable,
-                        modulationVersion);
+                    modController.transcodeToAudioTag(bin, audio);
                     resp.saveOnly = true;
 
                     audio.ontimeupdate = renderWave;
