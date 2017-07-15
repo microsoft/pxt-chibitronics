@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "chibitronics-ltc-modulate": "^1.1.0",
-    "pxt-core": "1.7.13"
+    "pxt-core": "1.8.1"
   },
   "scripts": {
     "test": "node node_modules/pxt-core/built/pxt.js travis"
