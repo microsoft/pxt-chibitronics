@@ -8,13 +8,13 @@ Here are some fun programs for your @boardname@!
 [{
   "name": "Blinky",
   "url":"/examples/basics/blinky",
-  "cardType": "example",
+  "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/blinky.gif"
 },
 {
   "name": "Fade",
   "url":"/examples/basics/fade",
-  "cardType": "example",
+  "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/fade.gif"
 }]
 ```
@@ -25,7 +25,7 @@ Here are some fun programs for your @boardname@!
 [{
   "name": "Carousel",
   "url":"/examples/animations/carousel",
-  "cardType": "example",
+  "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/carousel.gif"
 }]
 ```
@@ -36,13 +36,13 @@ Here are some fun programs for your @boardname@!
 [{
   "name": "Simple Color",
   "url":"/examples/rgb/simple-color",
-  "cardType": "example",
+  "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/simplecolor.gif"
 },
 {
   "name": "Rainbow Tape",
   "url":"/examples/rgb/rainbow-tape",
-  "cardType": "example",
+  "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/rainbowtape.gif"
 },
 {
