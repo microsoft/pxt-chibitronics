@@ -9,7 +9,7 @@ namespace sensing {
     //% blockId=sensing_pressed block="is|%name=digital_pin| ON?"
     export function pressed(name: number): boolean {
         pins.pinMode(name, PinMode.Input);
-        return pins.digitalRead(name) == 1 ? true : false;
+        return pins.digitalRead(name) > 0 ? true : false;
     }
 
     /**
