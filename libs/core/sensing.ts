@@ -7,9 +7,9 @@ namespace sensing {
      */
     //% help=pins/digital-read-pin weight=30
     //% blockId=sensing_pressed block="is|%name=digital_pin| ON?"
-    export function pressed(name: number): number {
+    export function pressed(name: number): boolean {
         pins.pinMode(name, PinMode.Input);
-        return pins.digitalRead(name);
+        return pins.digitalRead(name) == 1 ? true : false;
     }
 
     /**
