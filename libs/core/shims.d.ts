@@ -31,7 +31,8 @@ declare namespace pins {
      * @param name pin to write to, eg: DigitalPin.D0
      */
     //% help=pins/digital-write weight=29
-    //% blockId=device_set_digital_pin block="digital write |%name=digital_pin|to %value" shim=pins::digitalWrite
+    //% blockId=device_set_digital_pin block="digital write |%name=digital_pin|to %value"
+    //% value.min=0 value.max=1 shim=pins::digitalWrite
     function digitalWrite(name: int32, value: int32): void;
 
     /**
@@ -40,7 +41,8 @@ declare namespace pins {
      * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
      */
     //% help=pins/analog-write weight=24
-    //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value" shim=pins::analogWrite
+    //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
+    //% value.min=0 value.max=1023 shim=pins::analogWrite
     function analogWrite(name: int32, value: int32): void;
 
     /**

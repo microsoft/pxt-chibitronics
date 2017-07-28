@@ -30,6 +30,7 @@ namespace lights {
      */
     //% help=lights/set weight=24
     //% blockId=lights_analog_set block="set|%name=analog_pin|to %value"
+    //% value.min=0 value.max=1023
     export function set(name: number, value: number) {
         pins.analogPinMode(name, PinMode.Output);
         pins.analogWrite(name, value);

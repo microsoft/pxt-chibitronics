@@ -66,6 +66,7 @@ namespace pins {
       */
     //% help=pins/digital-write weight=29
     //% blockId=device_set_digital_pin block="digital write |%name=digital_pin|to %value"
+    //% value.min=0 value.max=1
     void digitalWrite(int name, int value) {
         ::digitalWrite(name, value);
     }
@@ -77,6 +78,7 @@ namespace pins {
      */
     //% help=pins/analog-write weight=24
     //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
+    //% value.min=0 value.max=1023
     void analogWrite(int name, int value) { 
         ::analogWrite(name, value);
     }
