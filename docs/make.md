@@ -7,9 +7,9 @@ Here are some projects you can make with your @boardname@!
 ```codecard
 [{
     "name":"Complete the Circuit!", 
-    "url":"/projects/complete-the-circuit", 
+    "url":"/make/complete-the-circuit", 
     "cardType":"blocksExample", 
-    "imageUrl":""
+    "imageUrl":"/static/cp/tutorial/ctc.JPG"
 },
 ]
 ```
