@@ -31,7 +31,7 @@ loops.forever(function () {
 
 The editor works in [most modern browsers](/browsers) and needs no installation. It even works [offline](/offline) once it's loaded.
 
-## [Compile and Flash: Your Program!](/device/usb)
+## Compile and flash: Your program!
 
 Compilation to machine code from [Blocks](/blocks) or [JavaScript](/javascript) happens in the browser.
 
