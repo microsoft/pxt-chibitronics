@@ -158,7 +158,7 @@
             }
         ],
         "galleries": {
-            "Make": "make" 
+            "Make": "make",
             "Examples": "examples"
         },
         "invertedMenu": true,
