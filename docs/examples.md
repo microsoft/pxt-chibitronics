@@ -27,6 +27,12 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/animations/carousel",
   "cardType": "blocksExample",
   "imageUrl":"/static/chibi/examples/carousel.gif"
+}, 
+{
+  "name": "Light Cascade", 
+  "url":"/examples/animations/cascade",
+  "cardType": "blocksExample", 
+  "imageUrl":
 }]
 ```
 
