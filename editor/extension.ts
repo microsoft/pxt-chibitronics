@@ -209,7 +209,7 @@ namespace chibitronics {
                 </block>
             </category>
             <category name="Variables" nameid="variables" colour="#FF6680" custom="VARIABLE" category="48" iconclass="blocklyTreeIconvariables"></category>
-            <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions"></category>
+            <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions" advanced="true"></category>
             <category colour="#996600" name="Text" advanced="true" nameid="text" category="46" web-icon="\uf035" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext">
                 <block type="text"></block>
                 <block type="text_length">
@@ -268,7 +268,7 @@ namespace chibitronics {
                         advanced: true
                     },
                     functions: {
-                        advanced: false
+                        advanced: true
                     }
                 }
             },
