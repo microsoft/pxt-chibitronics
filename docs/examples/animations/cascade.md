@@ -94,7 +94,7 @@ Now that your while loop has been set up, let's work towards what we'll be telli
 ```blocks 
 let brightness_0 = 0 
 loops.forever(function () {
-    while (brightness_0 <= 255){
+    while (brightness_0 <= 255) {
         lights.set(DigitalPin.D0, brightness_0)
     }
 })
@@ -111,7 +111,7 @@ brightness_0 = 0
 ```blocks 
 let brightness_0 = 0 
 loops.forever(function() {
-    while (brightness_0 <= 255){
+    while (brightness_0 <= 255) {
         lights.set(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 + 10
@@ -133,7 +133,7 @@ After following the code steps above, here's what your block should look like! T
 
 ```blocks
 let brightness_0 = 0
-while (brightness_0 >= 0){
+while (brightness_0 >= 0) {
     lights.set(DigitalPin.D0, brightness_0)
     loops.pause(15)
     brightness_0 = brightness_0 - 10 
@@ -234,14 +234,14 @@ Here's what your code from Step 4 should look like!
 
 ```blocks 
 let brightness_1 = 0
-loops.forever(function (){
+loops.forever(function () {
     loops.pause(300)
-    while (brightness_1 <= 255){
+    while (brightness_1 <= 255) {
         lights.set(DigitalPin.D1, brightness_1)
         loops.pause(15)
         brightness_1 = brightness_1 + 10 
     }
-    while (brightness_1 >= 0){
+    while (brightness_1 >= 0) {
         lights.set(DigitalPin.D1, brightness_1)
         loops.pause(15)
         brightness_1 = brightness_1 - 10 
@@ -293,14 +293,14 @@ Like we did in Step 4, your third LED will also require the pauses at the beginn
 
 ```blocks 
 let brightness_2 = 0
-loops.forever(function (){
+loops.forever(function () {
     loops.pause(600)
-    while (brightness_2 <= 255){
+    while (brightness_2 <= 255) {
         lights.set(DigitalPin.D2, brightness_2)
         loops.pause(15)
         brightness_2 = brightness_2 + 10 
     }
-    while (brightness_2 >= 0){
+    while (brightness_2 >= 0) {
         lights.set(DigitalPin.D2, brightness_2)
         loops.pause(15)
         brightness_2 = brightness_2 - 10 
@@ -315,14 +315,14 @@ We'll be following Step 3 again-- let's take a look at the completed code you sh
 
 ```blocks 
 let brightness_3 = 0
-loops.forever(function (){
+loops.forever(function () {
     loops.pause(900)
-    while (brightness_3 <= 255){
+    while (brightness_3 <= 255) {
         lights.set(DigitalPin.D3, brightness_3)
         loops.pause(15)
         brightness_3 = brightness_3 + 10 
     }
-    while (brightness_3 >= 0){
+    while (brightness_3 >= 0) {
         lights.set(DigitalPin.D3, brightness_3)
         loops.pause(15)
         brightness_3 = brightness_3 - 10 
@@ -347,14 +347,14 @@ To light up D4, your 5th LED on the board positioned at 4, we'll be following St
 
 ```blocks 
 let brightness_4 = 0
-loops.forever(function (){
+loops.forever(function () {
     loops.pause(1200)
-    while (brightness_4 <= 255){
+    while (brightness_4 <= 255) {
         lights.set(DigitalPin.D4, brightness_4)
         loops.pause(15)
         brightness_4 = brightness_4 + 10
     }
-    while (brightness_4 >= 4){
+    while (brightness_4 >= 4) {
         lights.set(DigitalPin.D4, brightness_4)
         loops.pause(15)
         brightness_4 = brightness_4 - 10 
@@ -398,8 +398,8 @@ Now that your while loop has been set up, let's work towards what we'll be telli
 
 ```blocks 
 let brightness_5 = 0
-loops.forever(function (){
-    while (brightness_5 <=255){
+loops.forever(function () {
+    while (brightness_5 <=255) {
         lights.set(DigitalPin.D5, brightness_5)
     }
 })
@@ -416,7 +416,7 @@ brightness_5 = 0
 ```blocks 
 let brightness_5 = 0 
 loops.forever(function() {
-    while (brightness_5 <= 255){
+    while (brightness_5 <= 255) {
         lights.set(DigitalPin.D5, brightness_5)
         loops.pause(15)
         brightness_5 = brightness_5 + 10
