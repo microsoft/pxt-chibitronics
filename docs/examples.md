@@ -52,3 +52,13 @@ Here are some fun programs for your @boardname@!
   "imageUrl":"/static/chibi/examples/pressforcolor.gif"
 }]
 ```
+
+## Chibi Scope 
+
+```codecard 
+[{
+  "name": "Hello World!", 
+  "url":"/examples/chibi-scope/hello-world", 
+  "cardType": "blocksExample",
+}]
+```
