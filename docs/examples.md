@@ -32,7 +32,7 @@ Here are some fun programs for your @boardname@!
   "name": "Light Cascade", 
   "url":"/examples/animations/cascade",
   "cardType": "blocksExample", 
-  "imageUrl":
+  "imageUrl":"/static/chibi/examples/cascade.gif"
 }]
 ```
 
