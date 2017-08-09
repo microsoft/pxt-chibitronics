@@ -72,10 +72,12 @@ Now that your variables have been properly defined and set up, let's get to the 
 * From **CONTROL**, drag a **While** loop and nest it inside your forever loop. 
 
 ```blocks 
+let brightness_0 = 0 
 loops.forever(function () {
-    while (brightness_0 <= 255){
+    while (brightness_0 <= 255) {
     }
 })
+brightness_0 = 0 
 ``` 
 
 ## Build the block... 
@@ -90,11 +92,13 @@ Now that your while loop has been set up, let's work towards what we'll be telli
 * From **LIGHTS**, drag a **set A0 to** block into the while loop. 
 
 ```blocks 
-loops.forever(function (){
-    while (brightness_0 <=255){
+let brightness_0 = 0 
+loops.forever(function () {
+    while (brightness_0 <= 255){
         lights.set(DigitalPin.D0, brightness_0)
     }
 })
+brightness_0 = 0 
 ```
 
 ## Build the block... 
@@ -105,7 +109,15 @@ loops.forever(function (){
 * From **VARIABLES**, drag a **set item to** block and place it under your pause block. 
 
 ```blocks 
-brightness_0 = brightness_0 + 10
+let brightness_0 = 0 
+loops.forever(function() {
+    while (brightness_0 <= 255){
+        lights.set(DigitalPin.D0, brightness_0)
+        loops.pause(15)
+        brightness_0 = brightness_0 + 10
+    }
+})
+brightness_0 = 0
 ```
 ## Build the block...  
 * Select ``brightness_0`` from the dropdown of variables to change item into your variable. 
@@ -120,11 +132,13 @@ When you create your second while loop, make sure it's still in your forever loo
 After following the code steps above, here's what your block should look like! There are some differences in the steps above compared to the steps below, so let's see what needs to be modified by looking at our block below and the instructions as well. 
 
 ```blocks
+let brightness_0 = 0
 while (brightness_0 >= 0){
     lights.set(DigitalPin.D0, brightness_0)
     loops.pause(15)
     brightness_0 = brightness_0 - 10 
 }
+brightness_0 = 0 
 ```
 ## Build the block... 
 * Change the sign from ``=`` to ``>=``. 
@@ -133,6 +147,7 @@ while (brightness_0 >= 0){
 Run your code now- does your LED fade in and out? Here's what your compiled code from Step 3 alone should look like! 
 
 ```blocks
+let brightness_0 = 0 
 loops.forever(function () {
     while (brightness_0 <= 255) {
         lights.set(DigitalPin.D0, brightness_0)
@@ -145,6 +160,7 @@ loops.forever(function () {
         brightness_0 = brightness_0 -10 
     }
 })
+brightness_0 = 0 
 ```
 
 We'll be repeating Step 3 for every variable and every LED, so that we can have each light up. However, we'll be making changes to each, as well as adding pause blocks along the way to time the flashing of each LED so that they come in succession. 
@@ -154,6 +170,7 @@ Before moving on to our 2nd LED (D1), let's add one more thing to our code.
 * Inside the forever loop and under your while loops, add a pause block and type in ``1500`` for the value instead of ``100``. 
 
 ```blocks
+let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
         lights.set(DigitalPin.D0, brightness_0)
@@ -167,6 +184,7 @@ loops.forever(function () {
     }
     loops.pause(1500)
 })
+brightness_0 = 0 
 ```
 
 This may seem like a long time to wait, but to make sure it stays off and turns on only after every LED has lit up, we need to have the loop pause temporarily until 1500 milliseconds (1.5 seconds) have passed.  
@@ -177,6 +195,7 @@ Following Step 3, let's create the same forever loop with two while loops. In ou
 
 Here's what your first while loop should look like: 
 ```blocks 
+let brightness_1 = 0
 loops.forever(function () {
     while (brightness_1 <= 255) {
         lights.set(DigitalPin.D1, brightness_1)
@@ -184,6 +203,7 @@ loops.forever(function () {
         brightness_1 = brightness_1 + 10 
     }
 })
+brightness_1 = 0 
 ``` 
 ## Some differences to notice... 
 * The **pin**, unlike Step 3, has been changed to ``D1`` instead of ``D0``. 
@@ -191,11 +211,13 @@ loops.forever(function () {
 
 And your second while loop: 
 ```blocks
+let brightness_1 = 0
 while (brightness_1 >= 0) {
         lights.set(DigitalPin.D1, brightness_1)
         loops.pause(15) 
         brightness_1 = brightness_1 -10 
     }
+brightness_1 = 0 
 ```
 ## Some differences to notice...
 * The **pin** has been changed to ``D1`` instead of ``D0``. 
@@ -211,6 +233,7 @@ The first pause block stops this LED from lighting up at the same time of your f
 Here's what your code from Step 4 should look like! 
 
 ```blocks 
+let brightness_1 = 0
 loops.forever(function (){
     loops.pause(300)
     while (brightness_1 <= 255){
@@ -225,6 +248,7 @@ loops.forever(function (){
     }
     loops.pause(1200)
 })
+brightness_1 = 0
 ```
 ## Step 5: Controlling LED 2 
 
@@ -234,6 +258,7 @@ We'll again show what you need to change!
 
 Here's what your first half of code should look like: 
 ```blocks 
+let brightness_2 = 0 
 loops.forever(function () {
     while (brightness_2 <= 255) {
         lights.set(DigitalPin.D2, brightness_2)
@@ -241,6 +266,7 @@ loops.forever(function () {
         brightness_2 = brightness_2 + 10 
     }
 })
+brightness_2 = 0
 ``` 
 ## Some differences to notice... 
 * The **pin**, unlike Step 3, has been changed to ``D2`` instead of ``D0``. 
@@ -248,11 +274,13 @@ loops.forever(function () {
 
 And your second while loop: 
 ```blocks
+let brightness_2 = 0
 while (brightness_2 >= 0) {
         lights.set(DigitalPin.D2, brightness_2)
         loops.pause(15) 
         brightness_2 = brightness_2 -10 
     }
+brightness_2 = 0
 ```
 ## Some differences to notice...
 * The **pin** has been changed to ``D2`` instead of ``D0``. 
@@ -264,6 +292,7 @@ Like we did in Step 4, your third LED will also require the pauses at the beginn
 * From **CONTROL**, drag a **pause** block to place at the end of your *forever* loop built in this step. Change the value to ``900``. 
 
 ```blocks 
+let brightness_2 = 0
 loops.forever(function (){
     loops.pause(600)
     while (brightness_2 <= 255){
@@ -278,12 +307,14 @@ loops.forever(function (){
     }
     loops.pause(900)
 })
+brightness_2 = 0 
 ```
 ## Step 6: Controlling LED 3 
 
 We'll be following Step 3 again-- let's take a look at the completed code you should have! We'll make note of any changes that need to be made. 
 
 ```blocks 
+let brightness_3 = 0
 loops.forever(function (){
     loops.pause(900)
     while (brightness_3 <= 255){
@@ -298,6 +329,7 @@ loops.forever(function (){
     }
     loops.pause(600)
 })
+brightness_3 = 0 
 ```
 ## Some differences to notice... 
 * The **pin** has changed to ``D3`` from ``D0``. 
@@ -314,6 +346,7 @@ Let's run your code. Your LEDs should fade in and out, one at a time, up until D
 To light up D4, your 5th LED on the board positioned at 4, we'll be following Step 4 again-- here's what your completed code should look like! 
 
 ```blocks 
+let brightness_4 = 0
 loops.forever(function (){
     loops.pause(1200)
     while (brightness_4 <= 255){
@@ -328,6 +361,7 @@ loops.forever(function (){
     }
     loops.pause(300)
 })
+brightness_4 = 0
 ```
 ## Some differences to notice... 
 * The **pin** has been changed to ``D4`` instead of ``D0``. 
@@ -343,10 +377,12 @@ One more LED to light up in succession! To do this, we'll be following Step 3 ag
 * From **CONTROL**, drag a **While** loop and nest it inside your forever loop. 
 
 ```blocks 
+let brightness_5 = 0
 loops.forever(function () {
-    while (brightness_0 <= 255){
+    while (brightness_5 <= 255) {
     }
 })
+brightness_5 = 0 
 ``` 
 
 ## Build the block... 
@@ -361,11 +397,13 @@ Now that your while loop has been set up, let's work towards what we'll be telli
 * From **LIGHTS**, drag a **set A0 to** block into the while loop. 
 
 ```blocks 
+let brightness_5 = 0
 loops.forever(function (){
     while (brightness_5 <=255){
         lights.set(DigitalPin.D5, brightness_5)
     }
 })
+brightness_5 = 0
 ```
 
 ## Build the block... 
@@ -376,7 +414,15 @@ loops.forever(function (){
 * From **VARIABLES**, drag a **set item to** block and place it under your pause block. 
 
 ```blocks 
-brightness_5 = brightness_0 + 10
+let brightness_5 = 0 
+loops.forever(function() {
+    while (brightness_5 <= 255){
+        lights.set(DigitalPin.D5, brightness_5)
+        loops.pause(15)
+        brightness_5 = brightness_5 + 10
+    }
+})
+brightness_5 = 0
 ```
 ## Build the block...  
 * Select ``brightness_5`` from the dropdown of variables to change item into your variable. 
@@ -387,17 +433,20 @@ brightness_5 = brightness_0 + 10
 And here's your second while loop! 
 
 ```blocks
-while (brightness_5 >= 0){
+let brightness_5 = 0
+while (brightness_5 >= 0) {
     lights.set(DigitalPin.D5, brightness_5)
     loops.pause(15)
     brightness_5 = brightness_5 - 10 
 }
+brightness_5 = 0 
 ```
 ## Build the block... 
 * Change the sign from ``=`` to ``>=``. 
 * Change the sign of your addition to subtraction, so that it reads *brightness_5 - 10*. 
 
 ```blocks
+let brightness_5 = 0
 loops.forever(function () {
     while (brightness_5 <= 255) {
         lights.set(DigitalPin.D5, brightness_5)
@@ -410,6 +459,7 @@ loops.forever(function () {
         brightness_5 = brightness_5 -10 
     }
 })
+brightness_5 = 0 
 ```
 One more thing before we finish - let's add a pause loop to the beginning of this forever loop so that it waits for all the other LEDs to light up before lighting up! 
 
@@ -418,6 +468,7 @@ One more thing before we finish - let's add a pause loop to the beginning of thi
 
 Does your code look like this?
 ```blocks
+let brightness_5 = 0 
 loops.forever(function () {
     while (brightness_5 <= 255) {
         lights.set(DigitalPin.D5, brightness_5)
@@ -431,6 +482,7 @@ loops.forever(function () {
     }
     loops.pause(1500)
 })
+brightness_5 = 0 
 ```
 ## Good work! 
 Now that you've completed your code, let's have it run and take a look at what happens. Do you see the fade in and out of each LED? 
