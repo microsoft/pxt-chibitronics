@@ -1,6 +1,6 @@
 # chibitronics target for PXT
 
-This target allow to program a [Chibitronics](https://www.chibitronics.com/) using 
+This target allow to program a [Chibitronics](https://www.chibitronics.com/) using
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
 * Currently hosted at https://makecode.chibitronics.com
@@ -28,13 +28,25 @@ npm install -g pxt
 npm install
 ```
 
+* install platformio command line:
+
+```
+npm install -g platformio
+```
+
+* install the ltc platform:
+
+```
+platformio platform install https://github.com/xobs/platformio-ltc
+```
+
 ### Running
 
 Run this command to open a local web server (add ``sudo`` for Mac/Linux shells)
 ```
 pxt serve
 ```
-If the local server opens in the wrong browser, make sure to copy the URL containing the local token. 
+If the local server opens in the wrong browser, make sure to copy the URL containing the local token.
 Otherwise, the editor will not be able to load the projects.
 
 If you need modify the `.cpp` files, turn on yotta compilation with the ``-yt`` flag (add ``sudo`` for Mac/Linux shells):
