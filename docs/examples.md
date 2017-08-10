@@ -58,7 +58,6 @@ Here are some fun programs for your @boardname@!
 ```codecard 
 [{
   "name": "Hello World!", 
-  "url":"/examples/chibi-scope/hello-world", 
-  "cardType": "blocksExample",
+  "url":"/examples/chibi-scope/hello-world",  
 }]
 ```
