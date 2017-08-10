@@ -30,6 +30,16 @@ Here are some fun programs for your @boardname@!
 }]
 ```
 
+## Chibi Scope 
+
+```codecard 
+[{
+  "name": "Hello World!", 
+  "url":"/examples/chibiscope/hello-world",  
+  "imageUrl":"/static/cp/hello.png"
+}]
+```
+
 ## RGB
 
 ```codecard
@@ -50,14 +60,5 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/rgb/press-for-color",
   "cardType": "example",
   "imageUrl":"/static/chibi/examples/pressforcolor.gif"
-}]
-```
-
-## Chibi Scope 
-
-```codecard 
-[{
-  "name": "Hello World!", 
-  "url":"/examples/chibi-scope/hello-world",  
 }]
 ```
