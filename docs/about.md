@@ -4,7 +4,7 @@ Welcome to the **Microsoft MakeCode** editor for the **@boardname@**!
 
 ## @boardname@
 
-Here's the amazing new **Love to Code** system with the @boardname@ from **[cibitronics.com](https://chibitronics.com/lovetocode/)**!
+Here's the amazing new **Love to Code** system with the @boardname@ from **[chibitronics.com](https://chibitronics.com/lovetocode/)**!
 
 ![](https://chibitronics.com/wp-content/uploads/2017/05/09_doneprogramming.png)
 
