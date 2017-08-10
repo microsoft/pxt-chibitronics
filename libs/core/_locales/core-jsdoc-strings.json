@@ -143,6 +143,8 @@
   "rgb.rgb|param|blue": "value of the blue channel between 0 and 255. eg: 255",
   "rgb.rgb|param|green": "value of the green channel between 0 and 255. eg: 255",
   "rgb.rgb|param|red": "value of the red channel between 0 and 255. eg: 255",
+  "rgb.setBrightness": "Set the brightness of the LED. This flag only applies to future operation.",
+  "rgb.setBrightness|param|brightness": "a measure of LED brightness in 0-255. eg: 20",
   "rgb.setColor": "Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).",
   "rgb.setColor|param|rgb": "RGB color of the LED",
   "rgb.setRGBLed": "Set the rgb led to a specific red, green, blue color.",

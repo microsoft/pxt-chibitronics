@@ -60,6 +60,7 @@
   "rgb.colors|block": "%color",
   "rgb.dim|block": "dim %rgb=rgb_colors |%level",
   "rgb.rgb|block": "red %red|green %green|blue %blue",
+  "rgb.setBrightness|block": "set brightness %brightness",
   "rgb.setColor|block": "set rgb to %rgb=rgb_colors",
   "rgb.wheel|block": "wheel %wheelPos",
   "rgb|block": "rgb",

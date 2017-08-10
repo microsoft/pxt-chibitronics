@@ -29,6 +29,7 @@ enum Colors {
 
 //% groups='["other", "Colors"]'
 namespace rgb {
+    let _brightness: number;
 
     /**
      * Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).
@@ -37,12 +38,31 @@ namespace rgb {
     //% blockId="rgb_set_color" block="set rgb to %rgb=rgb_colors"
     //% weight=90 help="rgb/set-color"
     export function setColor(rgb: number) {
+        if (_brightness == undefined) {
+            _brightness = 20;
+        }
+
+        rgb = fade(rgb, _brightness);
         let red = unpackR(rgb);
         let green = unpackG(rgb);
         let blue = unpackB(rgb);
 
         setRGBLed(red, green, blue);
     }
+
+    /**
+     * Set the brightness of the LED. This flag only applies to future operation.
+     * @param brightness a measure of LED brightness in 0-255. eg: 20
+     */
+    //% blockId="rgb_set_brightness" block="set brightness %brightness"
+    //% weight=1
+    //% blockGap=8
+    //% brightness.min=0 brightness.max=255
+    //% help="rgb/set-brightness"
+    export function setBrightness(brightness: number): void {
+        _brightness = Math.max(0, Math.min(0xff, brightness >> 0));
+    }
+
 
     /**
      * Dim's an RGB color
@@ -57,7 +77,7 @@ namespace rgb {
             level = 0;
         if(level > 5)
             level = 5;
-        return( (((rgb & 0xFF0000) >> level) & 0xFF0000) |
+        return((((rgb & 0xFF0000) >> level) & 0xFF0000) |
             (((rgb & 0x00FF00) >> level) & 0x00FF00) |
             (((rgb & 0x0000FF) >> level) & 0x0000FF) );
     }
@@ -116,5 +136,20 @@ namespace rgb {
     function unpackB(rgb: number): number {
         let b = (rgb >> 0) & 0xFF;
         return b;
+    }
+    function fade(color: number, brightness: number): number {
+        brightness = Math.max(0, Math.min(255, brightness >> 0));
+        if (brightness < 255) {
+            let red = unpackR(color);
+            let green = unpackG(color);
+            let blue = unpackB(color);
+
+            red = (red * brightness) >> 8;
+            green = (green * brightness) >> 8;
+            blue = (blue * brightness) >> 8;
+
+            color = rgb(red, green, blue);
+        }
+        return color;
     }
 }
