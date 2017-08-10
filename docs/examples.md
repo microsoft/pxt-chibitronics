@@ -31,7 +31,6 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Light Cascade", 
   "url":"/examples/animations/cascade",
-  "cardType": "blocksExample", 
   "imageUrl":"/static/chibi/examples/cascade.gif"
 }]
 ```

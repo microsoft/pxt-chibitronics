@@ -8,7 +8,6 @@ Here are some projects you can make with your @boardname@!
 [{
     "name":"Complete the Circuit!", 
     "url":"/make/complete-the-circuit", 
-    "cardType":"blocksExample", 
     "imageUrl":"/static/cp/tutorial/ctc.jpg"
 }]
 ```
