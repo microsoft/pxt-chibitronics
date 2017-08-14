@@ -14,16 +14,15 @@ Let's use the Chibi Scope to create an automatic counter!
 
 ## Step 1: Setting up your Chibi Scope
 
-Refer to this link to set up for Chibi Scope so that you can program with it and allow text strings to form! 
-[Chibi Scope Setup](/docs/chibi-setup)
+Use this link to setup the [Chibi Scope](/scope-setup) so you can program with it and display your text strings!
 
 ## Step 2: Setup! 
 
-* Open @homeurl@ in your browser.
+* Open [MakeCode](@homeurl@) in your browser.
 * From **CONTROL**, drag an **on start** loop and place it inside your workspace. 
-* In **VARIABLES**, click **Create a Variable** and name it *Count*. 
+* In **VARIABLES**, click **Make a Variable** and name it ``count``. 
 * From **VARIABLES**, drag a **set item to** block and place it inside your loop. 
-* Change the variable from ``item`` to ``count``. 
+* Change the variable name from ``item`` to ``count``. 
 
 ```blocks
 let count = 0 
@@ -57,5 +56,7 @@ loops.forever(function () {
 count = 0 
 ```
 
-## Run your code! Does your counter work? Great job on completing this activity! 
+## Give it a try!
+
+Run your code. Does your counter work? Great job on completing this activity! 
 
