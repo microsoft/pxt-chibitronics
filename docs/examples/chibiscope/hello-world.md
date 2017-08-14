@@ -15,7 +15,7 @@ Let's use the Chibi Scope to create a message printout!
 ## Step 1: Setting up your Chibi Scope
 
 Refer to this link to set up for Chibi Scope so that you can program with it and allow text strings to form! 
-[Chibi Scope Setup](/docs/chibi-setup.md)
+[Chibi Scope Setup](/docs/chibi-setup)
 
 ## Step 2: Hello World!  
 
