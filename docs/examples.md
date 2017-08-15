@@ -41,7 +41,7 @@ Here are some fun programs for your @boardname@!
 {
   "name": "Counter", 
   "url":"/examples/chibiscope/counter", 
-  "imageUrl":"/static/cp/counter-min.gif"
+  "imageUrl":"/static/cp/counter.gif"
 }]
 ```
 
