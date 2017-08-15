@@ -2,7 +2,7 @@
 
 ## Step 4: Make the blocks to control each LED
 
-Ok, we already have the ``||loops:forver||`` block for LED 0. It looks like this:
+Ok, we already have the ``||loops:forever||`` block for LED 0. It looks like this:
 
 ```blocks
 let brightness_0 = 0
@@ -20,7 +20,7 @@ loops.forever(function () {
     loops.pause(1500)
 })
 ```
-Instead of repeating the same steps that we did with LED 0 for each of the other LEDs, let's just copy the ``||loops:forver||`` block for LED 0 change a few things inside. You'll do this for each of the LEDs.
+Instead of repeating the same steps that we did with LED 0 for each of the other LEDs, let's just copy the ``||loops:forever||`` block for LED 0 change a few things inside. You'll do this for each of the LEDs.
 
 ### ~hint
 **Copying blocks**
@@ -28,11 +28,11 @@ Instead of repeating the same steps that we did with LED 0 for each of the other
 You can duplicate (copy) a whole block by right-clicking on the block and choosing _duplicate_. An exact copy is created and shows up in your workspace. You drag the new copy to someplace in the editor where you want put it and click to release.
 ### ~
 
-The ``||loops:forver||`` blocks for each LED have some differences from each other. Carefully follow the steps for each so that the LEDs will work in the right way.
+The ``||loops:forever||`` blocks for each LED have some differences from each other. Carefully follow the steps for each so that the LEDs will work in the right way.
 
 ### Controlling LED 1
 
-Make the ``||loops:forver||`` block for LED 1:
+Make the ``||loops:forever||`` block for LED 1:
 
 1. Duplicate the ``||loops:forever||`` block for LED 0 to make a new block for LED 1.
 2. In the new block, change each variable name of ``brightness_0`` to ``brightness_1``.
@@ -60,7 +60,7 @@ loops.forever(function () {
 
 ### Controlling LED 2
 
-Make the ``||loops:forver||`` block for LED 2:
+Make the ``||loops:forever||`` block for LED 2:
 
 1. Duplicate the ``||loops:forever||`` block for LED 1 to make a new block for LED 2.
 2. In the new block, change each variable name of ``brightness_1`` to ``brightness_2``.
@@ -88,7 +88,7 @@ loops.forever(function () {
 
 ### Controlling LED 3
 
-Make the ``||loops:forver||`` block for LED 3:
+Make the ``||loops:forever||`` block for LED 3:
 
 1. Duplicate the ``||loops:forever||`` block for LED 2 to make a new block for LED 3.
 2. In the new block, change each variable name of ``brightness_2`` to ``brightness_3``.
@@ -116,7 +116,7 @@ loops.forever(function () {
 
 ### Controlling LED 4
 
-Make the ``||loops:forver||`` block for LED 4:
+Make the ``||loops:forever||`` block for LED 4:
 
 1. Duplicate the ``||loops:forever||`` block for LED 3 to make a new block for LED 4.
 2. In the new block, change each variable name of ``brightness_3`` to ``brightness_4``.
@@ -143,7 +143,7 @@ loops.forever(function () {
 
 ### Controlling LED 5
 
-Make the ``||loops:forver||`` block for LED 5:
+Make the ``||loops:forever||`` block for LED 5:
 
 1. Duplicate the ``||loops:forever||`` block for LED 4 to make a new block for LED 5.
 2. In the new block, change each variable name of ``brightness_4`` to ``brightness_5``.
