@@ -153,6 +153,10 @@
                 "path": "/docs"
             },
             {
+                "name": "Chibi Scope setup", 
+                "path": "/scope-setup"
+            }, 
+            {
                 "name": "Buy",
                 "path": "https://chibitronics.com/shop/love-to-code-chibi-chip-cable/"
             }
