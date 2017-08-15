@@ -20,6 +20,7 @@
         "hasHex": true,
         "useMkcd": true,
         "isNative": true,
+        "useMkcd": true,
         "flashCodeAlign": 16,
         "upgrades": [{
             "type": "package",
@@ -154,6 +155,10 @@
                 "name": "Docs",
                 "path": "/docs"
             },
+            {
+                "name": "Chibi Scope setup", 
+                "path": "/scope-setup"
+            }, 
             {
                 "name": "Buy",
                 "path": "https://chibitronics.com/shop/love-to-code-chibi-chip-cable/"

@@ -8,13 +8,13 @@ Here are some fun programs for your @boardname@!
 [{
   "name": "Blinky",
   "url":"/examples/basics/blinky",
-  "cardType": "blocksExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/blinky.gif"
 },
 {
   "name": "Fade",
   "url":"/examples/basics/fade",
-  "cardType": "blocksExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/fade.gif"
 }]
 ```
@@ -25,7 +25,7 @@ Here are some fun programs for your @boardname@!
 [{
   "name": "Carousel",
   "url":"/examples/animations/carousel",
-  "cardType": "blocksExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/carousel.gif"
 }, 
 {
@@ -35,25 +35,40 @@ Here are some fun programs for your @boardname@!
 }]
 ```
 
+## Chibi Scope 
+
+```codecard 
+[{
+  "name": "Hello World!", 
+  "url":"/examples/chibiscope/hello-world",  
+  "imageUrl":"/static/cp/hello.png"
+}, 
+{
+  "name": "Counter", 
+  "url":"/examples/chibiscope/counter", 
+  "imageUrl":"/static/cp/counter.gif"
+}]
+```
+
 ## RGB
 
 ```codecard
 [{
   "name": "Simple Color",
   "url":"/examples/rgb/simple-color",
-  "cardType": "blocksExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/simplecolor.gif"
 },
 {
   "name": "Rainbow Tape",
   "url":"/examples/rgb/rainbow-tape",
-  "cardType": "blocksExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/rainbowtape.gif"
 },
 {
   "name": "Press for Color",
   "url":"/examples/rgb/press-for-color",
-  "cardType": "example",
+  "cardType": "codeExample",
   "imageUrl":"/static/chibi/examples/pressforcolor.gif"
 }]
 ```
