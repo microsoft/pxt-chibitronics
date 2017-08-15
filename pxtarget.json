@@ -18,6 +18,7 @@
     "compile": {
         "useModulator": true,
         "isNative": true,
+        "useMkcd": true,
         "flashCodeAlign": 16,
         "upgrades": [{
             "type": "package",
