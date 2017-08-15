@@ -158,8 +158,8 @@
             }
         ],
         "galleries": {
-            "Make": "make",
-            "Examples": "examples"
+            "Examples": "examples", 
+            "Make": "make"
         },
         "invertedMenu": true,
         "coloredToolbox": true,
