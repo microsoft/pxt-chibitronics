@@ -17,6 +17,8 @@
     },
     "compile": {
         "useModulator": true,
+        "hasHex": true,
+        "useMkcd": true,
         "isNative": true,
         "flashCodeAlign": 16,
         "upgrades": [{
