@@ -37,7 +37,7 @@ Here are some fun programs for your @boardname@!
 
 ## Chibi Scope 
 
-```codecard 
+```codecard
 [{
   "name": "Hello World!", 
   "url":"/examples/chibiscope/hello-world",  
