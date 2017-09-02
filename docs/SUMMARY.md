@@ -47,7 +47,6 @@
 
 * [Types](/types)
     * [Number](/types/number)
-    * [Boolean](/types/boolean)
     * [Function](/types/function)
 
 ## #other
