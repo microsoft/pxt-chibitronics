@@ -438,8 +438,6 @@ void RefMap::print()
   //printf("RefMap %p r=%d size=%d\n", this, refcnt, utvector_len(data));
 }
 
-void debugMemLeaks() {}
-
 uint32_t *allocate(uint16_t sz)
 {
   uint32_t *arr;
@@ -448,16 +446,6 @@ uint32_t *allocate(uint16_t sz)
   memset((void *)arr, 0, sz * sizeof(*arr));
 
   return arr;
-}
-
-int templateHash()
-{
-  return ((int *)bytecode)[4];
-}
-
-int programHash()
-{
-  return ((int *)bytecode)[6];
 }
 
 void *ptrOfLiteral(int offset)
