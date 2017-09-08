@@ -438,18 +438,6 @@ void RefMap::print()
   //printf("RefMap %p r=%d size=%d\n", this, refcnt, utvector_len(data));
 }
 
-void debugMemLeaks() {}
-
-int templateHash()
-{
-  return ((int *)bytecode)[4];
-}
-
-int programHash()
-{
-  return ((int *)bytecode)[6];
-}
-
 void *ptrOfLiteral(int offset)
 {
   return &bytecode[offset];
