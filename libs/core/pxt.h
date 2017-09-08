@@ -172,22 +172,23 @@ class RefCollection
 public:
   // 1 - collection of refs (need decr)
   // 2 - collection of strings (in fact we always have 3, never 2 alone)
-  inline uint32_t getFlags() { return getVTable()->userdata; }
-  inline bool isRef() { return getFlags() & 1; }
-  inline bool isString() { return getFlags() & 2; }
+  uint32_t getFlags() { return getVTable()->userdata; }
+  bool isRef() { return getFlags() & 1; }
+  bool isString() { return getFlags() & 2; }
 
   RefCollection(uint16_t f);
 
-  inline bool in_range(int x)
+  void *data_storage;
+  int data_length;
+
+  bool in_range(int x)
   {
-    unimplemented(__func__);
-    return -1;
+    return (0 <= x) && (x <= data_length);
   }
 
   inline int length()
   {
-    unimplemented(__func__);
-    return -1;
+    return data_length;
   }
 
   void destroy();
