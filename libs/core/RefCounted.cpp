@@ -11,7 +11,7 @@ to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
 and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
- 
+ px
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
  
@@ -28,6 +28,7 @@ DEALINGS IN THE SOFTWARE.
   * Base class for payload for ref-counted objects.
   * There is no constructor, as this struct is typically malloc()ed.
   */
+#include "pxt.h"
 #include "RefCounted.h"
 
 extern "C" void free(void *ptr);
@@ -48,7 +49,7 @@ void RefCounted::init()
   *
   * @return true if the object resides in flash memory, false otherwise.
   */
-static inline bool isReadOnlyInline(RefCounted *t)
+static bool isReadOnlyInline(RefCounted *t)
 {
     uint32_t refCount = t->refCount;
  
@@ -56,9 +57,9 @@ static inline bool isReadOnlyInline(RefCounted *t)
         return true; // object in flash
  
     // Do some sanity checking while we're here
-    if (refCount == 1 ||        // object should have been deleted
-        (refCount & 1) == 0)    // refCount doesn't look right
-        asm("bkpt #99");
+    assert((refCount != 1) &&   // object should have been deleted
+     ((refCount & 1) != 0), // refCount doesn't look right
+        "object should have been deleted");
  
     // Not read only
     return false;
