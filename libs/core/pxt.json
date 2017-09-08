@@ -9,6 +9,7 @@
         "helpers.ts",
         "basic.cpp",
         "core.cpp",
+        "string.cpp",
         "pins.cpp",
         "RefCounted.cpp",
         "RefCounted.h",

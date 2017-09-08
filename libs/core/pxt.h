@@ -51,6 +51,7 @@ typedef uint32_t Action;
 typedef uint32_t ImageLiteral;
 
 uint32_t *allocate(uint16_t sz);
+long int strtol(const char *nptr, char **endptr, int base);
 
 struct StringData
 {
