@@ -440,16 +440,6 @@ void RefMap::print()
 
 void debugMemLeaks() {}
 
-uint32_t *allocate(uint16_t sz)
-{
-  uint32_t *arr;
-
-  arr = (uint32_t *)malloc(sz * sizeof(*arr));
-  memset((void *)arr, 0, sz * sizeof(*arr));
-
-  return arr;
-}
-
 int templateHash()
 {
   return ((int *)bytecode)[4];

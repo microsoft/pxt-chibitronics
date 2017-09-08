@@ -37,6 +37,16 @@ void error(ERROR code, int subcode)
   error(code, subcode);
 }
 
+uint32_t *allocate(uint16_t sz)
+{
+  uint32_t *arr;
+
+  arr = (uint32_t *)malloc(sz * sizeof(*arr));
+  memset((void *)arr, 0, sz * sizeof(*arr));
+
+  return arr;
+}
+
 namespace Number_
 {
 //%
@@ -129,8 +139,6 @@ void debugMemLeaks();
 int incr(uint32_t e);
 //%
 void decr(uint32_t e);
-//%
-uint32_t *allocate(uint16_t sz);
 //%
 int templateHash();
 //%

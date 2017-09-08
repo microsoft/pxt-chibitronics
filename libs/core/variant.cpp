@@ -32,16 +32,6 @@ uint32_t *globals;
 void *malloc(size_t size);
 void *memset(void *s, int c, size_t n);
 
-static uint32_t *allocate(uint16_t sz)
-{
-  uint32_t *arr;
-
-  arr = (uint32_t *)malloc(sz * sizeof(*arr));
-  memset(arr, 0, sz * sizeof(*arr));
-
-  return arr;
-}
-
 static void exec_binary(int32_t *pc)
 {
   assert(*pc == 0x4209, ":( Bad runtime version");

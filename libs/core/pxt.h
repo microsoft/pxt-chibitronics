@@ -50,6 +50,8 @@ extern uint16_t *bytecode;
 typedef uint32_t Action;
 typedef uint32_t ImageLiteral;
 
+uint32_t *allocate(uint16_t sz);
+
 struct StringData
 {
     uint16_t bogus;
