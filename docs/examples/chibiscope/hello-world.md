@@ -1,9 +1,9 @@
 # Hello World 
-### @description Using Chibi Scope to print out a simple message string for @boardname@ 
+## @description Using Chibi Scope to print out a simple message string for @boardname@ 
 
-### ~avatar avatar 
+## ~avatar avatar 
 Let's use the Chibi Scope to create a message printout! 
-### ~
+## ~
 
 ## Materials: 
 * 1 Chibi Scope 
