@@ -37,7 +37,7 @@ Some functions return a Boolean value, which you can store in a Boolean variable
 
 Boolean operators take Boolean inputs and evaluate to a Boolean output:
 
-## Conjunction: `A and B`
+### Conjunction: `A and B`
 
 `A and B` evaluates to `true` if-and-only-if both A and B are true:
 
@@ -48,7 +48,7 @@ let off3 = true && false;
 let on = true && true;
 ```
 
-## Disjunction: `A or B`
+### Disjunction: `A or B`
 
 `A or B` evaluates to `true` if-and-only-if either A is true or B is true:
 
@@ -59,7 +59,7 @@ let on2 =true || false;
 let on3 = true || true;
 ```
 
-## Negation: `not A`
+### Negation: `not A`
 
 `not A` evaluates to the opposite (negation) of A:
 
