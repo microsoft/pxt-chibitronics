@@ -122,15 +122,9 @@ void RefRecord_destroy(RefRecord *r);
 //%
 void RefRecord_print(RefRecord *r);
 //%
-void debugMemLeaks();
-//%
 int incr(uint32_t e);
 //%
 void decr(uint32_t e);
-//%
-int templateHash();
-//%
-int programHash();
 //%
 int getNumGlobals();
 //%
