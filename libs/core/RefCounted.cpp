@@ -30,8 +30,6 @@ DEALINGS IN THE SOFTWARE.
   */
 #include "pxt.h"
 #include "RefCounted.h"
-
-extern "C" void free(void *ptr);
  
 /**
   * Initializes for one outstanding reference.

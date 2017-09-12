@@ -73,7 +73,7 @@ StringData *substr(StringData *s, int start, int length)
         return mkEmpty();
     if (start < 0)
         start = max(strlen(s->data) + start, 0);
-    length = min(length, strlen(s->data) - start);
+    length = min(length, (int)strlen(s->data) - start);
 
     StringData *newstr = (StringData *)malloc(sizeof(StringData) + length + 1);
     memcpy(newstr->data, s + start, length);
