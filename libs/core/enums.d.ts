@@ -3,7 +3,7 @@ declare namespace loops {
 }
 
 
-    declare const enum DigitalPin {
+    declare enum DigitalPin {
     //% blockIdentity=pins.digitalPin enumval=0
     D0 = 0xa0,
     //% blockIdentity=pins.digitalPin enumval=1
@@ -19,7 +19,7 @@ declare namespace loops {
     }
 
 
-    declare const enum AnalogPin {
+    declare enum AnalogPin {
     //% blockIdentity=pins.analogPin enumval=0
     A0 = 0x80,
     //% blockIdentity=pins.analogPin enumval=1
@@ -45,7 +45,7 @@ declare namespace loops {
     }
 
 
-    declare const enum PulseValue {
+    declare enum PulseValue {
     //% block="HIGH"
     High = 1,
     //% block="LOW"
@@ -53,7 +53,7 @@ declare namespace loops {
     }
 
 
-    declare const enum PinMode {
+    declare enum PinMode {
     //% block="INPUT"
     Input = 0,
     //% block="OUTPUT"
