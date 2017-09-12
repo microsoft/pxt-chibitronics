@@ -85,26 +85,21 @@ void RefCollection::setAt(int idx, uint32_t y)
 
 void RefCollection::insertAt(int idx, uint32_t y)
 {
-    // Special case: If we're inserting at the end, turn it into a push()
-    if (idx == length())
-    {
-        push(y);
+    data_length++;
+    // If it's out of bounds, we can't do anything.
+    if (!in_range(idx)) {
+        data_length--;
         return;
     }
 
-    // If it's out of bounds, we can't do anything.
-    if (!in_range(idx))
-        return;
+    // Space-saving trick: We push the new item onto the end, then
+    // re-arrange the elements afterwards.
 
-    // Append a dummy value to the end, and shift everything down.
-    data_length++;
-    data_storage = (uint32_t *)realloc((void *)data_storage, data_length);
+    push(y); // takes care of incr() if necessary
 
     for (int i = data_length - 1; i >= idx; i--)
         data_storage[i] = data_storage[i - 1];
-
-    if (isRef())
-        incr(y);
+    data_storage[idx] = y;
 }
 
 int RefCollection::indexOf(uint32_t x, int start)
