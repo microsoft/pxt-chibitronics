@@ -86,7 +86,8 @@ int pow(int x, int y)
 }
 
 //%
-int randomRange(int min, int max) {
+int randomRange(int min, int max)
+{
   return ::random(min, max);
 }
 
