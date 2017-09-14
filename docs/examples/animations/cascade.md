@@ -1,12 +1,12 @@
 # Light cascade
 
-### @description Create a cascade effect of LEDs from left to right
+## @description Create a cascade effect of LEDs from left to right
 
-### ~avatar avatar
+## ~avatar avatar
 
 Using variables and while loops to create a cascade effect on your LEDs!
 
-### ~
+## ~
 
 # Duration: 1 hour
 
