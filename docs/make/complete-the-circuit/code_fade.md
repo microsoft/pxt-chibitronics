@@ -1,9 +1,9 @@
 # Fading LED 
-## @description Making your LED fade in and our for @boardname@ 
+### @description Making your LED fade in and our for @boardname@ 
 
-## ~avatar avatar 
+### ~avatar avatar 
     Let's code our LED to make the light fade in and out! 
-## ~ 
+### ~ 
 
 # Duration: 30 minutes
 

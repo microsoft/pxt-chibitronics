@@ -37,6 +37,6 @@ if (warming) {
 }
 ```
 
-## See Also
+### See Also
 
 [boolean (blocks)](/blocks/logic/boolean)

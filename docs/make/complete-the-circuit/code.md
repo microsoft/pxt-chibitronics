@@ -1,9 +1,9 @@
 # Coding your Circuit 
-## @description Coding your circuit for @boardname@ 
+### @description Coding your circuit for @boardname@ 
 
-## ~avatar avatar 
+### ~avatar avatar 
     Let's use @boardname@'s pin connection to create an electric flow to power your circuit! 
-## ~ 
+### ~ 
 
 # Duration: 15 minutes 
 

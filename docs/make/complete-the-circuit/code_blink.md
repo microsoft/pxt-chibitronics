@@ -1,9 +1,9 @@
 # Blinking Circuit
-## @description Making your LED blink for @boardname@ 
+### @description Making your LED blink for @boardname@ 
 
-## ~avatar avatar 
+### ~avatar avatar 
     Let's create a blinking LED using the map function on MakeCode! 
-## ~ 
+### ~ 
 
 # Duration: 20 minutes
 

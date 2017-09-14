@@ -1,9 +1,9 @@
 # Counter 
-## @description Use Chibi Scope to count up! 
+### @description Use Chibi Scope to count up! 
 
-## ~avatar avatar 
+### ~avatar avatar 
 Let's use the Chibi Scope to create an automatic counter! 
-## ~ 
+### ~ 
 
 ## Materials 
 * 1 Chibi Scope 

@@ -1,10 +1,10 @@
 # Creating your paper circuit 
-## @description Creating a paper circuit for @boardname@ 
+### @description Creating a paper circuit for @boardname@ 
 
-## ~avatar avatar
+### ~avatar avatar
     Let's use copper tape and LED's to build a circuit for @boardname@! 
 
-## ~ 
+### ~ 
 
 # Duration: ~30 minutes 
 
