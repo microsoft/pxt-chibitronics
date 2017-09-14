@@ -1,8 +1,8 @@
 # Complete the Circuit! 
 
-### ~ avatar avatar 
+## ~ avatar avatar 
 Using copper tape, let's create a circuit to turn on and off some LED lights with your @boardname@! 
-### ~ 
+## ~ 
 
 https://youtu.be/Fl0ZfR26OB8
 
