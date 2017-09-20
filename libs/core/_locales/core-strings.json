@@ -52,7 +52,7 @@
   "rgb.rgb|block": "red %red|green %green|blue %blue",
   "rgb.setBrightness|block": "set brightness %brightness",
   "rgb.setColor|block": "set rgb to %rgb=rgb_colors",
-  "rgb.wheel|block": "wheel %wheelPos",
+  "rgb.wheel|block": "color wheel %wheelPos",
   "rgb|block": "rgb",
   "scope.writeLine|block": "say message %message",
   "scope.writeNumber|block": "say number %num",

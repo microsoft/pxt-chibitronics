@@ -31,7 +31,7 @@ namespace chibitronics {
 
         const baseXml = `
         <xml id="blocklyToolboxDefinition" style="display: none">
-            <category name="Control" nameid="loops" colour="#FFAB19" category="50" iconclass="blocklyTreeIconlogic">
+            <category name="Control" nameid="loops" colour="#FFAB19" category="50" web-icon="\uf01e" iconclass="blocklyTreeIconlogic">
                 <block type="controls_repeat_ext">
                     <value name="TIMES">
                         <shadow type="math_number">
@@ -74,7 +74,7 @@ namespace chibitronics {
                     </value>
                 </block>
             </category>
-            <category name="Math" nameid="math" colour="#59C059" category="47" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath">
+            <category name="Math" nameid="math" colour="#59C059" category="47" web-icon="\uf1ec" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath">
                 <block type="math_arithmetic" gap="8">
                     <value name="A">
                         <shadow type="math_number">
