@@ -35,7 +35,7 @@ namespace rgb {
      * Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).
      * @param rgb RGB color of the LED
      */
-    //% blockId="rgb_set_color" block="set rgb to %rgb=rgb_colors"
+    //% blockId="rgb_set_color" block="set rgb to %rgb=colorNumberPicker"
     //% weight=90 help="rgb/set-color"
     export function setColor(rgb: number) {
         if (_brightness == undefined) {
@@ -115,20 +115,6 @@ namespace rgb {
         }
         wheelPos -= 170;
         return rgb(wheelPos * 3, 255 - wheelPos * 3, 0);
-    }
-
-    /**
-     * Get the color wheel field editor
-     * @param value value between 0 to 255 to get a color value, eg: 10
-     */
-    //% blockId=colorWheelPicker block="%value"
-    //% blockHidden=true
-    //% shim=TD_ID colorSecondary="#FFFFFF"
-    //% value.fieldEditor="colorwheel" value.fieldOptions.decompileLiterals=true
-    //% value.fieldOptions.sliderWidth='200'
-    //% value.fieldOptions.min=0 value.fieldOptions.max=255
-    export function colorWheelPicker(value: number) {
-        return value;
     }
 
     /**
