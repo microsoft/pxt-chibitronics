@@ -91,6 +91,9 @@ namespace rgb {
     //% blockId="rgb_rgbcolor" block="red %red|green %green|blue %blue"
     //% red.min=0 red.max=255 green.min=0 green.max=255 blue.min=0 blue.max=255
     //% weight=20 help="rgb/rgbcolor" blockGap=8 group="Colors"
+    //% red.shadowOptions.color="#FF6680"
+    //% green.shadowOptions.color="#59C059"
+    //% blue.shadowOptions.color="#4C97FF"
     export function rgb(red: number, green: number, blue: number): number {
         return ((red & 0xFF) << 16) | ((green & 0xFF) << 8) | (blue & 0xFF);
     }
@@ -99,8 +102,8 @@ namespace rgb {
      * Converts wheel position into an RGB color
      * @param wheelPos value between 0 to 255 to get a color value, eg: 10
      */
-    //% blockId="rgb_wheel" block="color wheel %wheelPos"
-    //% wheelPos.min=0 wheelPos.max=255 group="Colors"
+    //% blockId="rgb_wheel" block="color wheel %wheelPos=colorWheelPicker"
+    //% group="Colors"
     //% weight=19 help="rgb/rgbwheel" blockGap=8
     export function wheel(wheelPos: number): number {
         wheelPos = 255 - wheelPos;
@@ -113,6 +116,19 @@ namespace rgb {
         }
         wheelPos -= 170;
         return rgb(wheelPos * 3, 255 - wheelPos * 3, 0);
+    }
+
+    /**
+     * Get the color wheel field editor
+     * @param value value between 0 to 255 to get a color value, eg: 10
+     */
+    //% blockId=colorWheelPicker block="%value"
+    //% blockHidden=true
+    //% shim=TD_ID colorSecondary="#FFFFFF"
+    //% value.fieldEditor="colorwheel" value.fieldOptions.decompileLiterals=true
+    //% value.fieldOptions.sliderWidth='200'
+    export function colorWheelPicker(value: number) {
+        return value;
     }
 
     /**
