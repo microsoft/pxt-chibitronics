@@ -46,7 +46,7 @@ namespace loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=basic/pause weight=54
-    //% async block="pause %pause ms"
+    //% async block="pause %ms=timePicker|ms"
     //% blockId=device_pause icon="\uf110"
     void pause(int ms) {
       delay(ms);

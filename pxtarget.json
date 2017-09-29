@@ -145,6 +145,7 @@
         "betaUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
         "boardName": "Chibi Chip",
+        "showHomeScreen": true,
         "sideDoc": "tutorials/getting-started",
         "docMenu": [
             {
