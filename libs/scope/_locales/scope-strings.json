@@ -1,0 +1,6 @@
+{
+  "scope.writeLine|block": "say message %message",
+  "scope.writeNumber|block": "say number %num",
+  "scope|block": "scope",
+  "{id:category}Scope": "Scope"
+}

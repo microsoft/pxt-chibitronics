@@ -24,14 +24,6 @@ namespace rgb {
 }
 
 /**
- * Provides access to Chibi Scope functionality.
- */
-//% color=#00b295 weight=70 icon="\uf27b" advanced=true
-namespace scope {
-
-}
-
-/**
  * Basic functionalities.
  */
 //% color=#0078D7 weight=70 icon="\uf110"

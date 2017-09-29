@@ -1,0 +1,3 @@
+# scope
+
+The SCOPE library.
