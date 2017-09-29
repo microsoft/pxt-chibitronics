@@ -6,11 +6,12 @@
     "description": "A Blocks / JavaScript code editor for the Chibi Chip board.",
     "corepkg": "core",
     "bundleddirs": [
-        "libs/core"
+        "libs/core",
+        "libs/scope"
     ],
     "cloud": {
         "workspace": false,
-        "packages": false,
+        "packages": true,
         "sharing": true,
         "publishing": true,
         "githubPackages": true
