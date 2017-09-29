@@ -3,7 +3,6 @@
 
 import ModControllerConstructor = require("chibitronics-ltc-modulate");
 import lf = pxt.Util.lf;
-
 let modController: ModulationController = null;
 
 namespace chibitronics {
