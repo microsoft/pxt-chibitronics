@@ -1,8 +1,6 @@
 /// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
 /// <reference path="./modulator.d.ts"/>
 
-import FieldToggle = require("./field_toggle");
-import FieldColorWheel = require("./field_color_wheel");
 import ModControllerConstructor = require("chibitronics-ltc-modulate");
 import lf = pxt.Util.lf;
 let modController: ModulationController = null;
@@ -237,13 +235,6 @@ namespace chibitronics {
             <category colour="#66672C" name="Arrays" nameid="arrays" category="45" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays"></category>
         </xml>`;
         const res: pxt.editor.ExtensionResult = {
-            fieldEditors: [{
-                selector: "toggle",
-                editor: FieldToggle
-            },{
-                selector: "colorwheel",
-                editor: FieldColorWheel
-            }],
             toolboxOptions: {
                 blocklyXml: baseXml,
                 monacoToolbox: {

@@ -63,7 +63,6 @@ namespace rgb {
         _brightness = Math.max(0, Math.min(0xff, brightness >> 0));
     }
 
-
     /**
      * Dim's an RGB color
      * @param rgb RGB color of the LED
@@ -127,6 +126,7 @@ namespace rgb {
     //% shim=TD_ID colorSecondary="#FFFFFF"
     //% value.fieldEditor="colorwheel" value.fieldOptions.decompileLiterals=true
     //% value.fieldOptions.sliderWidth='200'
+    //% value.fieldOptions.min=0 value.fieldOptions.max=255
     export function colorWheelPicker(value: number) {
         return value;
     }
