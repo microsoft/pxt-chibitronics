@@ -409,6 +409,12 @@ namespace chibitronics {
                 if (modController) {
                     modController.stop();
                 }
+                let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
+                let reject: (error: any) => void;
+                const deferred = new Promise<void>((res, rej) => {
+                    resolve = res;
+                    reject = rej;
+                });
 
                 modController = new ModControllerConstructor({
                     canvas: getCanvas(),
@@ -417,18 +423,13 @@ namespace chibitronics {
                         getWaveFooter().style.visibility = "hidden";
                         getWaveFooter().style.opacity = "0";
                         pxt.log("Completed audio modulation");
+                        resolve();
                     }
                 });
 
                 let audio = getAudioElement();
                 if (pxt.BrowserUtils.isIE()) {
                     // For IE, download the raw WAV data to a .wav file
-                    let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
-                    let reject: (error: any) => void;
-                    const deferred = new Promise<void>((res, rej) => {
-                        resolve = res;
-                        reject = rej;
-                    });
                     const data = new Uint8Array(modController.getRawWavData(bin, lbrEnable, modulationVersion));
                     const fn = resp.downloadFileBaseName + ".wav";
                     pxt.debug('saving ' + fn)
@@ -451,7 +452,7 @@ namespace chibitronics {
                     getWaveFooter().style.visibility = "visible";
                     getWaveFooter().style.opacity = "1";
 
-                    return Promise.resolve();
+                    return deferred;
                 }
             }
         };
