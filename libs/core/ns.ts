@@ -54,6 +54,8 @@ namespace rgb {
     //% shim=TD_ID colorSecondary="#FFFFFF"
     //% value.fieldEditor="colornumber" value.fieldOptions.decompileLiterals=true
     //% value.defl='#ff0000'
+    //% value.fieldOptions.colours='["#FF0000", "#ff8000", "#ffff00", "#00ff00", "#00ffff", "#007fff", "#0000ff", "#7f00ff", "#ff0080", "#ff00ff", "#ffffff", "#999999"]'
+    //% value.fieldOptions.columns=3 value.fieldOptions.className='rgbColorPicker'
     export function colorNumberPicker(value: number) {
         return value;
     }
