@@ -11,7 +11,7 @@ namespace chibitronics {
             return Promise.resolve();
         }
         const boardName = pxt.appTarget.appTheme.boardName;
-        const cdn = pxt.getOnlineCdnUrl();
+        const cdn = pxt.getOnlineCdnUrl() || '.';
         const htmlBody = `
         <div class="ui three column grid">
             <div class="column">
