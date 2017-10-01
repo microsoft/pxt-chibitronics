@@ -6,7 +6,62 @@ import lf = pxt.Util.lf;
 let modController: ModulationController = null;
 
 namespace chibitronics {
-    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
+    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>): Promise<void> {
+        if (!confirmAsync) {
+            return Promise.resolve();
+        }
+        const boardName = pxt.appTarget.appTheme.boardName;
+        const cdn = pxt.webConfig.commitCdnUrl
+        const htmlBody = `
+        <div class="ui three column grid">
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="${cdn}/static/download/plugin.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">1</span>
+                            ${lf("Plug the cable into your {0}", boardName)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="${cdn}/static/download/plugincomp.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">2</span>
+                            ${lf("Plug the USB and audio cables into your programming device")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="${cdn}/static/download/reset.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">3</span>
+                            ${lf("Press and hold the PROG button until the PROG light is steady red")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        return confirmAsync({
+            header: lf("Upload instructions"),
+            htmlBody,
+            hideCancel: true,
+            agreeLbl: lf("Ready?")
+        }).then(() => { });
+    }
+    function showIEUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
         if (!confirmAsync) {
             return Promise.resolve();
         }
@@ -418,6 +473,7 @@ namespace chibitronics {
 
                 modController = new ModControllerConstructor({
                     canvas: getCanvas(),
+                    uriType: 'blob',
                     repeat: 2,
                     endCallback: function () {
                         getWaveFooter().style.visibility = "hidden";
@@ -440,18 +496,22 @@ namespace chibitronics {
                         resp.userContextWindow,
                         reject
                     );
-                    showUploadInstructionsAsync(resp.confirmAsync, fn, url)
+                    showIEUploadInstructionsAsync(resp.confirmAsync, fn, url)
                         .then(() => resolve());
                     return deferred;
                 } else {
-                    // For all other browsers, play the sound directly in the browser
-                    modController.transcodeToAudioTag(bin, audio);
-                    resp.saveOnly = true;
+                    showUploadInstructionsAsync(resp.confirmAsync)
+                        .then((confirm) => {
+                            console.log(confirm);
+                            // For all other browsers, play the sound directly in the browser
+                            modController.transcodeToAudioTag(bin, audio);
+                            resp.saveOnly = true;
 
-                    audio.ontimeupdate = renderWave;
-                    getWaveFooter().style.visibility = "visible";
-                    getWaveFooter().style.opacity = "1";
+                            audio.ontimeupdate = renderWave;
+                            getWaveFooter().style.visibility = "visible";
+                            getWaveFooter().style.opacity = "1";
 
+                        });
                     return deferred;
                 }
             }
