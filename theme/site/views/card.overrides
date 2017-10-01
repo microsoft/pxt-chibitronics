@@ -1,3 +1,11 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+
+
+.ui.card.example {
+    .content {
+        background: rgba(87, 87, 87, 0.6);
+    }
+}

@@ -146,6 +146,7 @@
         "crowdinProject": "kindscript",
         "boardName": "Chibi Chip",
         "showHomeScreen": true,
+        "homeScreenHero": "./static/getting-started/getting-started.png",
         "sideDoc": "tutorials/getting-started",
         "docMenu": [
             {
