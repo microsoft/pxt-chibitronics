@@ -60,7 +60,7 @@
   "Math.log": "Returns the natural logarithm (base e) of a number.",
   "Math.log|param|x": "A number",
   "Math.map": "Re-maps a number from one range to another. That is, a value of ``from low`` would get mapped to ``to low``, a value of ``from high`` to ``to high``, values in-between to values in-between, etc.",
-  "Math.map|param|fromHigh": "the upper bound of the value's current range, eg: 1023",
+  "Math.map|param|fromHigh": "the upper bound of the value's current range, eg: 100",
   "Math.map|param|fromLow": "the lower bound of the value's current range",
   "Math.map|param|toHigh": "the upper bound of the value's target range, eg: 4",
   "Math.map|param|toLow": "the lower bound of the value's target range",
@@ -163,6 +163,6 @@
   "sensing": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
   "sensing.pressed": "Read the specified pin or connector as either 0 or 1",
   "sensing.pressed|param|name": "pin to read from, eg: DigitalPin.D0",
-  "sensing.read": "Read the connector value as analog, that is, as a value comprised between 0 and 1023.",
+  "sensing.read": "Read the connector value as analog, that is, as a value comprised between 0 and 100.",
   "sensing.read|param|name": "pin to write to, eg: AnalogPin.A0"
 }

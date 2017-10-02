@@ -101,7 +101,7 @@ namespace rgb {
      * Converts wheel position into an RGB color
      * @param wheelPos value between 0 to 255 to get a color value, eg: 10
      */
-    //% blockId="rgb_wheel" block="color wheel %wheelPos=colorWheelPicker"
+    //% blockId="rgb_wheel" block="color slider %wheelPos=colorWheelPicker"
     //% group="Colors"
     //% weight=19 help="rgb/rgbwheel" blockGap=8
     export function wheel(wheelPos: number): number {
