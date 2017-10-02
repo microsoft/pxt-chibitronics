@@ -61,7 +61,7 @@ namespace pxsim.visuals {
      id="CIRCLE_25_"
      transform="translate(-27.892742,-24.950776)"
      style="fill:#ffc815"><rect
-       style="fill:#ff7f2a;fill-opacity:1;stroke:none;stroke-opacity:0"
+       style="fill:#a5682b;fill-opacity:1;stroke:none;stroke-opacity:0"
        id="rect6438"
        width="200.50766"
        height="35.666122"
