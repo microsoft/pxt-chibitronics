@@ -463,7 +463,7 @@ namespace pxsim.visuals {
                     svg.filter(this.rgbLed, `url(#neopixelglow)`);
                     let transform = l / 100 * 0.5;
                     this.rgbLed.style.transform = `scale(${0.9 + transform})`;
-                    this.rgbLed.style.transformOrigin = "50% 50%";
+                    this.rgbLed.style.transformOrigin = "211.30725px 43.049255px";
                 }
             }
         }
