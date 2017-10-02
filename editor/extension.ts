@@ -11,13 +11,12 @@ namespace chibitronics {
             return Promise.resolve();
         }
         const boardName = pxt.appTarget.appTheme.boardName;
-        const cdn = pxt.getOnlineCdnUrl() || '.';
         const htmlBody = `
         <div class="ui three column grid">
             <div class="column">
                 <div class="ui">
                     <div class="image">
-                        <img class="ui medium rounded image" src="${cdn}/static/download/plugin.png" style="height:150px">
+                        <img class="ui medium rounded image" src="./static/download/plugin.png" style="height:150px">
                     </div>
                     <div class="content">
                         <div class="description">
@@ -30,7 +29,7 @@ namespace chibitronics {
             <div class="column">
                 <div class="ui">
                     <div class="image">
-                        <img class="ui medium rounded image" src="${cdn}/static/download/plugincomp.png" style="height:150px">
+                        <img class="ui medium rounded image" src="./static/download/plugincomp.png" style="height:150px">
                     </div>
                     <div class="content">
                         <div class="description">
@@ -43,7 +42,7 @@ namespace chibitronics {
             <div class="column">
                 <div class="ui">
                     <div class="image">
-                        <img class="ui medium rounded image" src="${cdn}/static/download/reset.png" style="height:150px">
+                        <img class="ui medium rounded image" src="./static/download/reset.png" style="height:150px">
                     </div>
                     <div class="content">
                         <div class="description">
