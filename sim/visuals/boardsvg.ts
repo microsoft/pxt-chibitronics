@@ -112,10 +112,6 @@ namespace pxsim.visuals {
     <g id="g6414" style="fill:#f9f9f9">
       <rect y="36.014954" x="204.30432" height="14.064871" width="14.024456" id="rect6412" style="fill:#f9f9f9;fill-opacity:1"
       />
-      <g style="fill:#f9f9f9" transform="translate(-27.892742,-24.950776)" id="LINE_660_">
-        <path d="M 232.2,60.900002 232.2,75 m 0,0 14.1,0 m 0,0 0,-14.099998 m 0,0 -14.1,0" style="fill:#f9f9f9;stroke:#000000;stroke-width:0.28349999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
-          id="line1648" />
-      </g>
     </g>
     <circle class="st0" cx="211.30725" cy="43.049255" r="4.3000002" id="led_rgb" style="fill:#e6e6e6;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
     />

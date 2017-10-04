@@ -365,7 +365,7 @@ namespace pxsim.visuals {
                         svgled.style.stroke = `rgb(235,235,235)`
                         svgled.style.strokeWidth = "1.5";
                         svg.fill(svgled, `rgb(255,255,255)`)
-                        svg.filter(svgled, `url(#neopixelglow)`);
+                        svg.filter(svgled, `url(#ledglow)`);
                     } else {
                         svg.filter(svgled, null);
                         svgled.style.fill = "#d4ff2a";
@@ -630,10 +630,18 @@ namespace pxsim.visuals {
             for (let i = 0; i < 3; ++i) svg.child(merge, "feMergeNode", { in: "glow" })
 
             let neopixelglow = svg.child(this.defs, "filter", { id: "neopixelglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
-            svg.child(neopixelglow, "feGaussianBlur", { stdDeviation: "2", result: "coloredBlur" });
+            svg.child(neopixelglow, "feGaussianBlur", { stdDeviation: "4", result: "coloredBlur" });
             let neopixelmerge = svg.child(neopixelglow, "feMerge", {});
             svg.child(neopixelmerge, "feMergeNode", { in: "coloredBlur" })
+            svg.child(neopixelmerge, "feMergeNode", { in: "coloredBlur" })
+            svg.child(neopixelmerge, "feMergeNode", { in: "coloredBlur" })
             svg.child(neopixelmerge, "feMergeNode", { in: "SourceGraphic" })
+
+            let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
+            svg.child(ledglow, "feGaussianBlur", { stdDeviation: "3", result: "coloredBlur" });
+            let ledglowmerge = svg.child(ledglow, "feMerge", {});
+            svg.child(ledglowmerge, "feMergeNode", { in: "coloredBlur" })
+            svg.child(ledglowmerge, "feMergeNode", { in: "SourceGraphic" })
 
             this.pins = [
                 'pin0',
