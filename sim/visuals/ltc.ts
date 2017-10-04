@@ -212,7 +212,7 @@ namespace pxsim.visuals {
             display: "#00d0ff",
             pin: "#ffcc00",
             pinTouched: "#FFA500",
-            pinActive: "#FF5500",
+            pinActive: "#4ddc64",
             ledOn: "#ff7f7f",
             ledOff: "#202020",
             buttonOuter: "#979797",
@@ -358,7 +358,7 @@ namespace pxsim.visuals {
             }
             else if (pin.mode & PinFlags.Digital) {
                 v = pin.value > 0 ? "0%" : "100%";
-                if (text) text.textContent = pin.value > 0 ? "ON" : "0FF";
+                if (text) text.textContent = pin.value > 0 ? "ON" : "OFF";
                 const svgled = this.leds[index];
                 if (svgled) {
                     if (pin.value > 0) {
