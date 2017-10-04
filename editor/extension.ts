@@ -326,6 +326,27 @@ namespace chibitronics {
                 }
             },
             beforeCompile: () => {
+                function createModulatorDOM() {
+                    let modulatorOutput = document.getElementById('modulatorAudioOutput');
+                    if (!modulatorOutput) {
+                        const customContent = document.getElementById('custom-content');
+                        const modulatorOutput = document.createElement('audio') as HTMLAudioElement;
+                        modulatorOutput.id = 'modulatorAudioOutput';
+                        customContent.appendChild(modulatorOutput);
+                        const modulatorView = document.createElement('div') as HTMLDivElement;
+                        modulatorView.id = 'modulatorWrapper';
+                        const modulatorBubble = document.createElement('div') as HTMLDivElement;
+                        modulatorBubble.id = 'modulatorBubble';
+                        const modulatorCanvas = document.createElement('canvas') as HTMLCanvasElement;
+                        modulatorCanvas.id = 'modulatorWavStrip';
+                        modulatorBubble.appendChild(modulatorCanvas);
+                        modulatorView.appendChild(modulatorBubble);
+                        customContent.appendChild(modulatorView);
+                    }
+                }
+
+                createModulatorDOM();
+
                 // Play silence, in order to unblock audio.
                 let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
                 audioTag.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==";
