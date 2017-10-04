@@ -99,7 +99,7 @@ namespace rgb {
 
     /**
      * Converts wheel position into an RGB color
-     * @param wheelPos value between 0 to 255 to get a color value, eg: 10
+     * @param wheelPos value between 0 to 255 to get a color value, eg: 99
      */
     //% blockId="rgb_wheel" block="color slider %wheelPos=colorWheelPicker"
     //% group="Colors"
@@ -107,14 +107,14 @@ namespace rgb {
     export function wheel(wheelPos: number): number {
         wheelPos = 255 - wheelPos;
         if(wheelPos < 85) {
-            return rgb(255 - wheelPos * 3, 0, wheelPos * 3);
+            return rgb(wheelPos * 3, 255, 255 - wheelPos * 3);
         }
         if(wheelPos < 170) {
             wheelPos -= 85;
-            return rgb(0, wheelPos * 3, 255 - wheelPos * 3);
+            return rgb(255, 255 - wheelPos * 3, wheelPos * 3);
         }
         wheelPos -= 170;
-        return rgb(wheelPos * 3, 255 - wheelPos * 3, 0);
+        return rgb(255 - wheelPos * 3, wheelPos * 3, 255);
     }
 
     /**

@@ -159,7 +159,7 @@
   "rgb.setColor|param|rgb": "RGB color of the LED",
   "rgb.setRGBLed": "Set the rgb led to a specific red, green, blue color.",
   "rgb.wheel": "Converts wheel position into an RGB color",
-  "rgb.wheel|param|wheelPos": "value between 0 to 255 to get a color value, eg: 10",
+  "rgb.wheel|param|wheelPos": "value between 0 to 255 to get a color value, eg: 99",
   "sensing": "Control currents in Pins for analog/digital signals, servos, i2c, ...",
   "sensing.pressed": "Read the specified pin or connector as either 0 or 1",
   "sensing.pressed|param|name": "pin to read from, eg: DigitalPin.D0",
