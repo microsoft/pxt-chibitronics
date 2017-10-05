@@ -52,12 +52,11 @@ namespace rgb {
 
     /**
      * Set the brightness of the LED. This flag only applies to future operation.
-     * @param brightness a measure of LED brightness in 0-255. eg: 20
+     * @param brightness a measure of LED brightness in 0-100. eg: 15
      */
     //% blockId="rgb_set_brightness" block="set brightness %brightness"
-    //% weight=1
-    //% blockGap=8
-    //% brightness.min=0 brightness.max=255
+    //% weight=1 blockGap=8
+    //% brightness.min=0 brightness.max=100
     //% help="rgb/set-brightness"
     export function setBrightness(brightness: number): void {
         _brightness = Math.max(0, Math.min(0xff, brightness >> 0));
@@ -140,8 +139,9 @@ namespace rgb {
         return b;
     }
     function fade(color: number, brightness: number): number {
-        brightness = Math.max(0, Math.min(255, brightness >> 0));
-        if (brightness < 255) {
+        brightness = Math.max(0, Math.min(100, brightness >> 0));
+        brightness = Math.map(brightness, 0, 100, 0, 255);
+        if (brightness < 100) {
             let red = unpackR(color);
             let green = unpackG(color);
             let blue = unpackB(color);
