@@ -141,7 +141,7 @@ namespace rgb {
     function fade(color: number, brightness: number): number {
         brightness = Math.max(0, Math.min(100, brightness >> 0));
         brightness = Math.map(brightness, 0, 100, 0, 255);
-        if (brightness < 100) {
+        if (brightness < 255) {
             let red = unpackR(color);
             let green = unpackG(color);
             let blue = unpackB(color);
