@@ -1,9 +1,6 @@
 {
-  "AnalogPin.AAUDIO|block": "audio",
   "AnalogPin.ATEMP|block": "temperature sensor",
   "AnalogPin.AV1p0|block": "1.0V sensor",
-  "AnalogPin.AVCC|block": "vcc voltage",
-  "AnalogPin.AVDD|block": "vdd voltage",
   "Array.indexOf|block": "%list| find index of %value",
   "Array.insertAt|block": "%list| insert at %index| value %value",
   "Array.length|block": "length of %VALUE",

@@ -92,6 +92,21 @@ namespace chibitronics {
                         </shadow>
                     </value>
                 </block>
+                <block type="controls_if" gap="8">
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_if" gap="8">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
                 <block type="device_while">
                     <value name="COND">
                         <shadow type="logic_boolean"></shadow>
@@ -108,21 +123,6 @@ namespace chibitronics {
                     <value name="LIST">
                         <shadow type="variables_get">
                             <field name="VAR">list</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <mutation else="1"></mutation>
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
                         </shadow>
                     </value>
                 </block>

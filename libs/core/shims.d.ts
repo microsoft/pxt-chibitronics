@@ -11,7 +11,7 @@ declare namespace loops {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
+    //% help=basic/forever weight=55 blockAllowMultiple=1
     //% blockId=device_forever block="forever" icon="\uf01e" shim=loops::forever
     function forever(a: () => void): void;
 
