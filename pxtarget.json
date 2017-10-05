@@ -167,6 +167,7 @@
             }
         ],
         "galleries": {
+            "Tutorials": "tutorials",
             "Make": "make",
             "Examples": "examples"
         },
@@ -184,7 +185,7 @@
         },
         "simAnimationEnter": "fly down in",
         "simAnimationExit": "fly up out",
-        "blocksVersion": 2,
+        "highContrast": true,
         "useUploadMessage": true,
         "downloadIcon": "play",
         "disableBlockIcons": true,
