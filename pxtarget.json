@@ -168,7 +168,6 @@
         ],
         "galleries": {
             "Tutorials": "tutorials",
-            "Make": "make",
             "Examples": "examples"
         },
         "invertedMenu": true,

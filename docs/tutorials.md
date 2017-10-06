@@ -13,3 +13,13 @@ Here are some tutorials to get you started with your @boardname@!
     "labelClass": "red ribbon large tutorial"
 }]
 ```
+
+## Copper Tape 
+
+```codecard
+[{
+    "name":"Complete the Circuit!", 
+    "url":"/make/complete-the-circuit", 
+    "imageUrl":"/static/cp/tutorial/ctc.jpg"
+}]
+```
