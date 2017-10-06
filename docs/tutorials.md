@@ -8,6 +8,8 @@ Here are some tutorials to get you started with your @boardname@!
 [{
     "name":"Get Started!", 
     "url":"/tutorials/getting-started", 
-    "imageUrl":"/static/chibi/tutorials/getting-started.png"
+    "imageUrl":"/static/chibi/tutorials/getting-started.png",
+    "label": "New? Start Here!",
+    "labelClass": "red ribbon large tutorial"
 }]
 ```
