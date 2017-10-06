@@ -88,13 +88,16 @@ namespace lights {
         export function effect(value: number, name: number, tempo?: number) {
             switch(value) {
                 case 0: // Twinkle
-                    twinkle(name, tempo);
+                    if (tempo) twinkle(name, tempo);
+                    else twinkle(name);
                     break;
                 case 1: // Heartbeat
-                    heartbeat(name, tempo);
+                    if (tempo) heartbeat(name, tempo);
+                    else heartbeat(name);
                     break;
                 case 2: // Blink
-                    blink(name, tempo);
+                    if (tempo) blink(name, tempo);
+                    else blink(name);
                     break;
             }
         }
