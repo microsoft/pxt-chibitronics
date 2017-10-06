@@ -44,8 +44,7 @@ void RefRecord_destroy(RefRecord *r)
   }
 }
 
-void RefRecord_print(RefRecord *r)
+void RefRecord_print(RefRecord *)
 {
-    printf("RefRecord %p r=%d size=%d bytes\n", r, r->refcnt, r->getVTable()->numbytes);
 }
 }
