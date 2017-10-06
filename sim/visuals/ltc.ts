@@ -355,6 +355,20 @@ namespace pxsim.visuals {
             if (pin.mode & PinFlags.Analog) {
                 v = Math.floor(100 - (pin.value || 0) / 1023 * 100) + "%";
                 if (text) text.textContent = (pin.period ? "~" : "") + Math.floor((pin.value || 0) / 1023 * 100) + "%";
+                const svgled = this.leds[index];
+                if (svgled) {
+                    if (pin.value > 0) {
+                        let pinVal = Math.floor(pin.value / 1023 * 60) + 40;
+                        svgled.style.stroke = `rgb(235,235,235)`;
+                        svgled.style.strokeWidth = `${pinVal / 100 * 2}`;
+                        svg.fill(svgled, `hsl(72, 100%, ${pinVal}%)`);
+                        svg.filter(svgled, `url(#ledglow)`);
+                    } else {
+                        svg.filter(svgled, null);
+                        svgled.style.fill = "#EEFF44";
+                        svgled.style.strokeWidth = "0.2835173";
+                    }
+                }
             }
             else if (pin.mode & PinFlags.Digital) {
                 v = pin.value > 0 ? "0%" : "100%";
@@ -362,13 +376,13 @@ namespace pxsim.visuals {
                 const svgled = this.leds[index];
                 if (svgled) {
                     if (pin.value > 0) {
-                        svgled.style.stroke = `rgb(235,235,235)`
+                        svgled.style.stroke = `rgb(235,235,235)`;
                         svgled.style.strokeWidth = "1.5";
                         svg.fill(svgled, `rgb(255,255,255)`)
                         svg.filter(svgled, `url(#ledglow)`);
                     } else {
                         svg.filter(svgled, null);
-                        svgled.style.fill = "#d4ff2a";
+                        svgled.style.fill = "#EEFF44";
                         svgled.style.strokeWidth = "0.2835173";
                     }
                 }
@@ -640,6 +654,7 @@ namespace pxsim.visuals {
             let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
             svg.child(ledglow, "feGaussianBlur", { stdDeviation: "3", result: "coloredBlur" });
             let ledglowmerge = svg.child(ledglow, "feMerge", {});
+            svg.child(ledglowmerge, "feMergeNode", { in: "coloredBlur" })
             svg.child(ledglowmerge, "feMergeNode", { in: "coloredBlur" })
             svg.child(ledglowmerge, "feMergeNode", { in: "SourceGraphic" })
 
