@@ -129,7 +129,7 @@ namespace lights {
 
         export function twinkle(pin: AnalogPin, tempo = 5) {
             let current = 128;
-            while (1) {
+            for (let i = 0; i < tempo * 2; i++) {
                 current = fade_to(current, Math.randomRange(0, 255), tempo, pin, 3);
             }
         }
