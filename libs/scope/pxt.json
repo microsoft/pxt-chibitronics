@@ -1,0 +1,22 @@
+{
+    "name": "scope",
+    "description": "The chibitronics SCOPE library.",
+    "icon": "./static/libs/scope.jpg",
+    "files": [
+        "README.md",
+        "serial.cpp",
+        "ns.ts",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "platformio": {
+        "dependencies": {}
+    },
+    "dependencies": {
+        "core": "file:../core"
+    }
+}

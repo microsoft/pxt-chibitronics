@@ -35,7 +35,7 @@ namespace rgb {
      * Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).
      * @param rgb RGB color of the LED
      */
-    //% blockId="rgb_set_color" block="set rgb to %rgb=rgb_colors"
+    //% blockId="rgb_set_color" block="set rgb to %rgb=colorNumberPicker"
     //% weight=90 help="rgb/set-color"
     export function setColor(rgb: number) {
         if (_brightness == undefined) {
@@ -52,17 +52,15 @@ namespace rgb {
 
     /**
      * Set the brightness of the LED. This flag only applies to future operation.
-     * @param brightness a measure of LED brightness in 0-255. eg: 20
+     * @param brightness a measure of LED brightness in 0-100. eg: 15
      */
     //% blockId="rgb_set_brightness" block="set brightness %brightness"
-    //% weight=1
-    //% blockGap=8
-    //% brightness.min=0 brightness.max=255
+    //% weight=1 blockGap=8
+    //% brightness.min=0 brightness.max=100
     //% help="rgb/set-brightness"
     export function setBrightness(brightness: number): void {
         _brightness = Math.max(0, Math.min(0xff, brightness >> 0));
     }
-
 
     /**
      * Dim's an RGB color
@@ -91,28 +89,31 @@ namespace rgb {
     //% blockId="rgb_rgbcolor" block="red %red|green %green|blue %blue"
     //% red.min=0 red.max=255 green.min=0 green.max=255 blue.min=0 blue.max=255
     //% weight=20 help="rgb/rgbcolor" blockGap=8 group="Colors"
+    //% red.shadowOptions.color="#FF6680"
+    //% green.shadowOptions.color="#59C059"
+    //% blue.shadowOptions.color="#4C97FF"
     export function rgb(red: number, green: number, blue: number): number {
         return ((red & 0xFF) << 16) | ((green & 0xFF) << 8) | (blue & 0xFF);
     }
 
     /**
      * Converts wheel position into an RGB color
-     * @param wheelPos value between 0 to 255 to get a color value, eg: 10
+     * @param wheelPos value between 0 to 255 to get a color value, eg: 99
      */
-    //% blockId="rgb_wheel" block="color wheel %wheelPos"
-    //% wheelPos.min=0 wheelPos.max=255 group="Colors"
+    //% blockId="rgb_wheel" block="color slider %wheelPos=colorWheelPicker"
+    //% group="Colors"
     //% weight=19 help="rgb/rgbwheel" blockGap=8
     export function wheel(wheelPos: number): number {
         wheelPos = 255 - wheelPos;
         if(wheelPos < 85) {
-            return rgb(255 - wheelPos * 3, 0, wheelPos * 3);
+            return rgb(wheelPos * 3, 255, 255 - wheelPos * 3);
         }
         if(wheelPos < 170) {
             wheelPos -= 85;
-            return rgb(0, wheelPos * 3, 255 - wheelPos * 3);
+            return rgb(255, 255 - wheelPos * 3, wheelPos * 3);
         }
         wheelPos -= 170;
-        return rgb(wheelPos * 3, 255 - wheelPos * 3, 0);
+        return rgb(255 - wheelPos * 3, wheelPos * 3, 255);
     }
 
     /**
@@ -138,7 +139,8 @@ namespace rgb {
         return b;
     }
     function fade(color: number, brightness: number): number {
-        brightness = Math.max(0, Math.min(255, brightness >> 0));
+        brightness = Math.max(0, Math.min(100, brightness >> 0));
+        brightness = Math.map(brightness, 0, 100, 0, 255);
         if (brightness < 255) {
             let red = unpackR(color);
             let green = unpackG(color);

@@ -31,13 +31,7 @@ enum class AnalogPin {
     //% block="temperature sensor"
     ATEMP = 0x86,
     //% block="1.0V sensor"
-    AV1p0 = 0x87,
-    //% block="vdd voltage"
-    AVDD = 0x88,
-    //% block="vcc voltage"
-    AVCC = 0x89,
-    //% block="audio"
-    AAUDIO = 0x8a,
+    AV1p0 = 0x87
 };
 
 enum class PulseValue {
@@ -72,13 +66,13 @@ namespace pins {
     }
 
     /**
-     * Set the connector value as analog. Value must be comprised between 0 and 1023.
+     * Set the connector value as analog. Value must be comprised between 0 and 255.
      * @param name pin name to write to, eg: AnalogPin.A0
-     * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
+     * @param value value to write to the pin between ``0`` and ``255``. eg:255,0
      */
     //% help=pins/analog-write weight=24
     //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
-    //% value.min=0 value.max=1023
+    //% value.min=0 value.max=255
     void analogWrite(int name, int value) { 
         ::analogWrite(name, value);
     }
@@ -94,7 +88,7 @@ namespace pins {
     }
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
+     * Read the connector value as analog, that is, as a value comprised between 0 and 255.
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read weight=25

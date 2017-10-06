@@ -83,7 +83,7 @@ From **LIGHTS**, drag a ``||lights:set to||`` block into the while loop.
 let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
-        lights.set(AnalogPin.A0, 1023)
+        lights.set(AnalogPin.A0, 255)
     }
 })
 brightness_0 = 0

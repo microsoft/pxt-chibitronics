@@ -11,7 +11,7 @@ declare namespace loops {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
+    //% help=basic/forever weight=55 blockAllowMultiple=1
     //% blockId=device_forever block="forever" icon="\uf01e" shim=loops::forever
     function forever(a: () => void): void;
 
@@ -20,7 +20,7 @@ declare namespace loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=basic/pause weight=54
-    //% async block="pause %pause ms"
+    //% async block="pause %ms=timePicker|ms"
     //% blockId=device_pause icon="\uf110" shim=loops::pause
     function pause(ms: int32): void;
 }
@@ -36,13 +36,13 @@ declare namespace pins {
     function digitalWrite(name: int32, value: int32): void;
 
     /**
-     * Set the connector value as analog. Value must be comprised between 0 and 1023.
+     * Set the connector value as analog. Value must be comprised between 0 and 255.
      * @param name pin name to write to, eg: AnalogPin.A0
-     * @param value value to write to the pin between ``0`` and ``1023``. eg:1023,0
+     * @param value value to write to the pin between ``0`` and ``255``. eg:255,0
      */
     //% help=pins/analog-write weight=24
     //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
-    //% value.min=0 value.max=1023 shim=pins::analogWrite
+    //% value.min=0 value.max=255 shim=pins::analogWrite
     function analogWrite(name: int32, value: int32): void;
 
     /**
@@ -54,7 +54,7 @@ declare namespace pins {
     function digitalRead(name: int32): int32;
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
+     * Read the connector value as analog, that is, as a value comprised between 0 and 255.
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read weight=25
@@ -95,30 +95,6 @@ declare namespace rgb {
      */
     //% parts="rgbled" shim=rgb::setRGBLed
     function setRGBLed(r: int32, g: int32, b: int32): void;
-}
-
-
-    /**
-     * Provides access to Chibi Scope functionality.
-     */
-    //% color=#00b295 weight=70 icon="\uf27b"
-declare namespace scope {
-
-    /**
-     * Write string to the Chibi Scope
-     * @param message the message you want to write to the Chibi Scope, eg: "Hello!"
-     */
-    //% blockId="serial_write_line" block="say message %message"
-    //% weight=90 help="scope/write-line" shim=scope::writeLine
-    function writeLine(message: string): void;
-
-    /**
-     * Write number to the Chibi Scope
-     * @param num the number you want to write to the Chibi Scope, eg: 0
-     */
-    //% blockId="serial_write_number" block="say number %num"
-    //% weight=85 help="scope/write-number" shim=scope::writeNumber
-    function writeNumber(num: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.
