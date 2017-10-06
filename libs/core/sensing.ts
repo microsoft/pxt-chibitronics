@@ -20,6 +20,6 @@ namespace sensing {
     //% blockId=sending_read block="read analog|%name=analog_pin"
     export function read(name: number): number {
         pins.analogPinMode(name, PinMode.Input);
-        return Math.map(pins.analogRead(name), 0, 1023, 0, 100);
+        return Math.map(pins.analogRead(name), 0, 255, 0, 100);
     }
 }

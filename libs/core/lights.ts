@@ -75,7 +75,7 @@ namespace lights {
         //% value.min=0 value.max=100
         export function set(name: number, value: number) {
             pins.analogPinMode(name, PinMode.Output);
-            pins.analogWrite(name, Math.map(value, 0, 100, 0, 1023));
+            pins.analogWrite(name, Math.map(value, 0, 100, 0, 255));
         }
 
         /**
