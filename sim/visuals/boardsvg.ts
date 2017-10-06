@@ -121,7 +121,7 @@ namespace pxsim.visuals {
     <rect x="36.807255" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin0" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#rect23" />
     <rect x="-4.5615625" y="79.444572" transform="matrix(0.70705678,-0.70715678,0.70715678,0.70705678,0,0)" class="st0" width="8.5005198"
-      height="4.3002629" id="led_d0" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
+      height="4.3002629" id="led_d0" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
     <g id="g29" transform="translate(-27.892742,-24.950776)" style="fill:#2b1100">
       <path class="st0" d="m 76.9,88.2 c 0.6,0.2 1.2,0.6 1.8,1.2 0.7,0.7 1.1,1.3 1.2,1.8 0.2,0.6 0,1.1 -0.5,1.6 -0.5,0.5 -1,0.7 -1.6,0.5 -0.6,-0.2 -1.2,-0.6 -1.8,-1.2 -0.7,-0.7 -1.1,-1.3 -1.2,-1.8 -0.2,-0.6 0,-1.1 0.5,-1.6 0.5,-0.5 1.1,-0.6 1.6,-0.5 z m 1.1,4.1 c 0.3,0.2 0.6,0.1 0.8,-0.1 0.2,-0.2 0.3,-0.5 0.1,-0.8 -0.2,-0.3 -0.5,-0.7 -0.9,-1.2 -0.5,-0.5 -0.9,-0.8 -1.2,-1 -0.3,-0.2 -0.6,-0.1 -0.8,0.1 -0.2,0.2 -0.3,0.5 -0.1,0.8 0.2,0.3 0.5,0.7 1,1.2 0.4,0.6 0.8,0.9 1.1,1 z"
         id="path31" inkscape:connector-curvature="0" style="fill:#2b1100;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
@@ -130,26 +130,26 @@ namespace pxsim.visuals {
     <rect x="60.907261" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin1" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#rect33" />
     <rect x="12.498686" y="96.442062" transform="matrix(0.70705678,-0.70715678,0.70715678,0.70705678,0,0)" class="st0" width="8.5005198"
-      height="4.3002629" id="led_d1" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
+      height="4.3002629" id="led_d1" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
     <rect x="84.907257" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin2" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10;fill-opacity:1"
       inkscape:label="#rect39" />
     <rect x="29.459" y="113.43945" transform="matrix(0.70705678,-0.70715678,0.70715678,0.70705678,0,0)" class="st0" width="8.5005198"
-      height="4.3002629" id="led_d2" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
+      height="4.3002629" id="led_d2" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
     <rect x="108.90726" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin3" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#rect45" />
     <rect x="46.41864" y="130.42595" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" class="st0" width="8.4999189"
-      height="4.2999592" id="led_d3" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10" />
+      height="4.2999592" id="led_d3" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10" />
     <path class="st0" d="M 20.007258,62.049194 8.8072578,73.14919 l 0,0 c 0.5,0.7 1.4000002,1.2 2.3000002,1.2 l 15.2,0 3,-3 c 2.6,-2.599996 2.6,-6.799996 0,-9.399996 -2.6,-2.5 -6.8,-2.5 -9.3,0.1 z"
       id="pinGND_circle" inkscape:connector-curvature="0" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#path51" />
     <rect x="133.00725" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin4" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#rect53" />
     <rect x="63.479202" y="147.43501" transform="matrix(0.70705678,-0.70715678,0.70715678,0.70705678,0,0)" class="st0" width="8.5005198"
-      height="4.3002629" id="led_d4" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
+      height="4.3002629" id="led_d4" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
     <rect x="157.00725" y="74.34922" class="st0" width="13.5" height="34.400002" id="pin5" style="fill:#ffcc00;stroke:#58595b;stroke-width:0.28349999;stroke-miterlimit:10"
       inkscape:label="#rect59" />
     <rect x="80.439445" y="164.43245" transform="matrix(0.70705678,-0.70715678,0.70715678,0.70705678,0,0)" class="st0" width="8.5005198"
-      height="4.3002629" id="led_d5" style="fill:#d4ff2a;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
+      height="4.3002629" id="led_d5" style="fill:#EEFF44;stroke:#58595b;stroke-width:0.2835173;stroke-miterlimit:10" />
     <g id="g65" transform="translate(-27.892742,-24.950776)" style="fill:#ffd42a" />
     <g id="g71" transform="translate(-27.892742,-24.950776)" style="fill:#2b1100">
       <path class="st0" d="m 125.5,93.2 c -0.2,-0.4 -0.2,-0.9 -0.1,-1.6 0.1,-0.6 0.2,-1 0.1,-1.3 0,-0.3 -0.1,-0.6 -0.3,-0.8 -0.2,-0.2 -0.4,-0.3 -0.6,-0.3 -0.2,0 -0.4,0.1 -0.6,0.2 -0.2,0.2 -0.3,0.5 -0.2,0.8 0.1,0.2 0.2,0.3 0.4,0.6 l -0.8,0.8 c -0.3,-0.4 -0.5,-0.7 -0.6,-1 -0.2,-0.6 0,-1.2 0.5,-1.7 0.4,-0.4 0.9,-0.6 1.4,-0.7 0.5,0 0.9,0.2 1.3,0.6 0.3,0.3 0.5,0.6 0.5,1.1 0,0.3 0,0.6 -0.1,1.1 l -0.1,0.5 c -0.1,0.3 -0.1,0.6 -0.1,0.7 0,0.1 0,0.3 0,0.4 l 1.7,-1.7 0.7,0.7 -2.7,2.7 c -0.1,-0.4 -0.3,-0.7 -0.4,-1.1 z"
