@@ -31,17 +31,6 @@ void RefRecord::stref(int idx, uint32_t v)
   fields[idx] = v;
 }
 
-void RefObject::destroy()
-{
-  ((RefObjectMethod)getVTable()->methods[0])(this);
-  delete this;
-}
-
-void RefObject::print()
-{
-  ((RefObjectMethod)getVTable()->methods[1])(this);
-}
-
 void RefRecord_destroy(RefRecord *r)
 {
   auto tbl = r->getVTable();

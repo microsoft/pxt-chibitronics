@@ -21,6 +21,7 @@
         "RefLocal.h",
         "RefMap.cpp",
         "RefMap.h",
+        "RefObject.cpp",
         "RefObject.h",
         "RefRecord.cpp",
         "RefRecord.h",
