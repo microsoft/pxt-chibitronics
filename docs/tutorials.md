@@ -7,7 +7,8 @@ Here are some tutorials to get you started with your @boardname@!
 ```codecard
 [{
     "name":"Get Started!", 
-    "url":"/tutorials/getting-started", 
+    "url":"/tutorials/getting-started",
+    "cardType": "tutorial",
     "imageUrl":"/static/chibi/tutorials/getting-started.png",
     "label": "New? Start Here!",
     "labelClass": "red ribbon large tutorial"
