@@ -12,7 +12,7 @@ namespace chibitronics {
         }
         const boardName = pxt.appTarget.appTheme.boardName;
         const htmlBody = `
-        <div class="ui three column grid">
+        <div class="ui three column grid stackable">
             <div class="column">
                 <div class="ui">
                     <div class="image">
