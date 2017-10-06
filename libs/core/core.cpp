@@ -3,6 +3,22 @@
 
 extern "C" long int strtol(const char *nptr, char **endptr, int base);
 
+namespace String_ {
+  //%		
+  StringData *mkEmpty()		
+  {		
+    StringData *c = (StringData *) malloc(6);
+    c->len = 0;
+    c->data[0] = 0;
+    return c;
+  }
+}
+
+namespace Boolean_ {
+    //%
+    bool bang(uint32_t v) { return v == 0; }
+}
+
 void errorCondition(void)
 {
   asm("svc #164");

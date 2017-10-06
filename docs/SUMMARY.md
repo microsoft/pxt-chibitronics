@@ -1,33 +1,4 @@
-# Summary
-
-## #support
-
-## #projects
-
-## #examples
-
-## #reference
-
-## #packages
-
-## Blocks #blocks
-
-* [Blocks](/blocks)
-    * [On Start](/blocks/on-start)
-    * [Loops](/blocks/loops)
-        * [repeat](/blocks/loops/repeat)
-        * [for](/blocks/loops/for)
-        * [while](/blocks/loops/while)
-    * [Logic](/blocks/logic)
-        * [if](/blocks/logic/if)
-        * [Boolean](/blocks/logic/boolean)
-    * [Variables](/blocks/variables)
-        * [assign](/blocks/variables/assign)
-        * [change var](/blocks/variables/change)
-        * [var](/blocks/variables/var)
-    * [Math](/blocks/math)
-    * [JavaScript blocks](/blocks/javascript-blocks)
-    * [Custom blocks](/blocks/custom)
+# @extends
 
 ## JavaScript #javaScript
 
@@ -39,7 +10,6 @@
     * [Statements](/javascript/statements)
     * [Functions](/javascript/functions)
     * [Types](/javascript/types)
-    * [Classes](/javascript/classes)
     * [Interfaces](/javascript/interfaces)
     * [Generics](/javascript/generics)
 
@@ -47,24 +17,5 @@
 
 * [Types](/types)
     * [Number](/types/number)
+    * [Boolean](/types/boolean)
     * [Function](/types/function)
-
-## #other
-
-## Miscellanous #misc
-
-* Miscellanous
-    * [Support](/support)
-    * [FAQ](/faq)
-    * [Translate](/translate)
-    * [Sharing projects](/share)
-    * [Offline support](/offline)
-    * [Streaming](/streaming)
-
-## Developers #devs
-
-* Developers
-    * [Command Line Interface](/cli)
-    * [Visual Studio Code support](/code)
-    * [Coding on Raspberry Pi](/raspberry-pi)
-

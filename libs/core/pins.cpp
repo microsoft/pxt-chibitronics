@@ -31,13 +31,7 @@ enum class AnalogPin {
     //% block="temperature sensor"
     ATEMP = 0x86,
     //% block="1.0V sensor"
-    AV1p0 = 0x87,
-    //% block="vdd voltage"
-    AVDD = 0x88,
-    //% block="vcc voltage"
-    AVCC = 0x89,
-    //% block="audio"
-    AAUDIO = 0x8a,
+    AV1p0 = 0x87
 };
 
 enum class PulseValue {

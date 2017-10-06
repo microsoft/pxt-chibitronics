@@ -6,11 +6,12 @@
     "description": "A Blocks / JavaScript code editor for the Chibi Chip board.",
     "corepkg": "core",
     "bundleddirs": [
-        "libs/core"
+        "libs/core",
+        "libs/scope"
     ],
     "cloud": {
         "workspace": false,
-        "packages": false,
+        "packages": true,
         "sharing": true,
         "publishing": true,
         "githubPackages": true
@@ -144,6 +145,8 @@
         "betaUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
         "boardName": "Chibi Chip",
+        "showHomeScreen": true,
+        "homeScreenHero": "./static/getting-started/getting-started.png",
         "sideDoc": "tutorials/getting-started",
         "docMenu": [
             {
@@ -164,6 +167,7 @@
             }
         ],
         "galleries": {
+            "Tutorials": "tutorials",
             "Make": "make",
             "Examples": "examples"
         },
@@ -181,7 +185,7 @@
         },
         "simAnimationEnter": "fly down in",
         "simAnimationExit": "fly up out",
-        "blocksVersion": 2,
+        "highContrast": true,
         "useUploadMessage": true,
         "downloadIcon": "play",
         "disableBlockIcons": true,

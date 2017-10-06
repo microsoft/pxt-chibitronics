@@ -1,12 +1,21 @@
 
+
+
+
+/*******************************
+             Modulator
+*******************************/
+
 #modulatorWrapper {
     position: absolute;
     display: block;
-    top: calc(@mainMenuHeight - 0.5);
-    left: 50px;
-    width: 120px;
-    height: 56px;
-    background: @bubbleUrl no-repeat;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: auto;
+    height: @editorToolsCollapsedHeight;
+    background: #FFAB17;
     z-index: 110;
     visibility: hidden;
     opacity: 0;
@@ -14,12 +23,10 @@
 }
 
 #modulatorBubble {
-    position: absolute;
-    margin: 0px;
-    left: 5px;
-    top: 18px;
-    width: 110px;
-    height: 34px;
+    margin: 0;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     -webkit-border-radius: 25px;
 }
@@ -73,10 +80,6 @@
 
 /* <= Tablet (Mobile + Tablet) */
 @media only screen and (max-width: @largestTabletScreen) {
-    #modulatorWrapper {
-        left: 10px;
-        top: calc(@mobileMenuHeight - 0.5);
-    }
 }
 
 /* Mobile */
