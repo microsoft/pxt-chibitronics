@@ -11,7 +11,10 @@ enum Effect {
     Heartbeat = 1,
     //% blockImage=1
     //% blockIdentity=lights.effectPicker
-    Blink = 2
+    Blink = 2,
+    //% blockImage=1
+    //% blockIdentity=lights.effectPicker
+    SOS = 3
 }
 
 namespace lights {
@@ -99,6 +102,10 @@ namespace lights {
                     if (tempo) blink(name, tempo);
                     else blink(name);
                     break;
+                case 3: // SOS
+                    if (tempo) sos(name, tempo);
+                    else sos(name);
+                    break;
             }
         }
 
@@ -146,5 +153,27 @@ namespace lights {
                 loops.pause(pause);
             }
             return current;
+        }
+
+        export function sos(pin: AnalogPin, tempo = 5) {
+            for (let i = 0; i < 3; i++) {
+                pins.analogWrite(pin, 255);
+                loops.pause(tempo * 20);
+                pins.analogWrite(pin, 0);
+                loops.pause(tempo * 20);
+            }
+            for (let i = 0; i < 3; i++) {
+                pins.analogWrite(pin, 255);
+                loops.pause(tempo * 50);
+                pins.analogWrite(pin, 0);
+                loops.pause(tempo * 20);
+            }
+            for (let i = 0; i < 3; i++) {
+                pins.analogWrite(pin, 255);
+                loops.pause(tempo * 20);
+                pins.analogWrite(pin, 0);
+                loops.pause(tempo * 20);
+            }
+            loops.pause(tempo * 100);
         }
     }

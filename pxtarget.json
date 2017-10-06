@@ -142,7 +142,6 @@
         "termsOfUseUrl": "https://makecode.com/termsofuse",
         "githubUrl": "https://github.com/Microsoft/pxt-chibitronics",
         "feedbackUrl": "https://www.research.net/r/MCchibi",
-        "betaUrl": "https://www.research.net/r/MCchibi",
         "crowdinProject": "kindscript",
         "boardName": "Chibi Chip",
         "showHomeScreen": true,
@@ -166,10 +165,6 @@
                 "path": "https://chibitronics.com/shop/love-to-code-chibi-chip-cable/"
             }
         ],
-        "galleries": {
-            "Tutorials": "tutorials",
-            "Examples": "examples"
-        },
         "invertedMenu": true,
         "coloredToolbox": true,
         "monacoToolbox": true,
