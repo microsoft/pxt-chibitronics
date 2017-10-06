@@ -168,8 +168,10 @@
         ],
         "galleries": {
             "Tutorials": "tutorials",
-            "Make": "make",
-            "Examples": "examples"
+            "Basic Examples": "examples-basic",
+            "Animation Examples": "examples-animations",
+            "RGB Examples": "examples-rgb",
+            "Chibi Scope": "examples-scope"
         },
         "invertedMenu": true,
         "coloredToolbox": true,
