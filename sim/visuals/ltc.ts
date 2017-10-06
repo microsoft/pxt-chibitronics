@@ -353,12 +353,12 @@ namespace pxsim.visuals {
             let text = this.pinTexts[index];
             let v = "";
             if (pin.mode & PinFlags.Analog) {
-                v = Math.floor(100 - (pin.value || 0) / 1023 * 100) + "%";
-                if (text) text.textContent = (pin.period ? "~" : "") + Math.floor((pin.value || 0) / 1023 * 100) + "%";
+                v = Math.floor(100 - (pin.value || 0) / 255 * 100) + "%";
+                if (text) text.textContent = (pin.period ? "~" : "") + Math.floor((pin.value || 0) / 255 * 100) + "%";
                 const svgled = this.leds[index];
                 if (svgled) {
                     if (pin.value > 0) {
-                        let pinVal = Math.floor(pin.value / 1023 * 60) + 40;
+                        let pinVal = Math.floor(pin.value / 255 * 60) + 40;
                         svgled.style.stroke = `rgb(235,235,235)`;
                         svgled.style.strokeWidth = `${pinVal / 100 * 2}`;
                         svg.fill(svgled, `hsl(72, 100%, ${pinVal}%)`);
@@ -709,8 +709,8 @@ namespace pxsim.visuals {
                         let svgpin = this.pins[index];
                         if (pin.mode & PinFlags.Input) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let v = (cursor.y - 74) / 34 * 1023;
-                            pin.value = Math.max(0, Math.min(1023, Math.floor(1023 - v)));
+                            let v = (cursor.y - 74) / 34 * 255;
+                            pin.value = Math.max(0, Math.min(255, Math.floor(255 - v)));
                         }
                         this.updatePin(pin, index);
                     },
@@ -722,11 +722,11 @@ namespace pxsim.visuals {
                         svg.addClass(svgpin, "touched");
                         if (pin.mode & PinFlags.Input) {
                             let cursor = svg.cursorPoint(pt, this.element, ev);
-                            let v = (cursor.y - 74) / 34 * 1023;
+                            let v = (cursor.y - 74) / 34 * 255;
                             if (pin.mode & PinFlags.Digital) {
                                 pin.value = pin.value == 0 ? 1 : 0;
                             } else {
-                                pin.value = Math.max(0, Math.min(1023, Math.floor(1023 - v)));
+                                pin.value = Math.max(0, Math.min(255, Math.floor(255 - v)));
                             }
                         }
                         this.updatePin(pin, index);
