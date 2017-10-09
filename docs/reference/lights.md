@@ -1,5 +1,7 @@
 # Lights
 
+Control the LEDs at the pins.
+
 ```cards
 lights.turn(DigitalPin.D0, 1)
 lights.set(AnalogPin.A0, 100)
