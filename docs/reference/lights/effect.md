@@ -10,7 +10,7 @@ You can choose to have a light effect, like blink or pulse, happen on the LED at
 
 ## Parameters
 
-* **value**: the effecy you want for the LED. You can choose:
+* **value**: the effect you want for the LED. You can choose:
 >`Twinkle`, `Heartbeat`, `Blink`, or `SOS`
 * **name**: the pin with the LED you want to see the effect on, like `A2`.
 * **tempo**: the rate of how the effect changes in milliseconds. This is optional.
