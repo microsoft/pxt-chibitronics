@@ -102,7 +102,7 @@ namespace pins {
     * @param name pin to set the mode on, eg: DigitalPin.D0
     * @param mode one of the pin modes: Input, Output, PullUp, PullDown
     */
-    //% help=pins/set-mode weight=5
+    //% help=pins/pin-mode weight=5
     //% blockId=device_set_mode block="set pin |mode %pin=digital_pin|to %mode" blockGap="8" 
     void pinMode(int name, PinMode mode) {
         ::pinMode(name, (int)mode);
@@ -113,7 +113,7 @@ namespace pins {
     * @param name pin to set the mode on, eg: AnalogPin.A0
     * @param mode one of the pin modes: Input, Output, PullUp, PullDown
     */
-    //% help=pins/set-mode weight=4
+    //% help=pins/analog-pin-mode weight=4
     //% blockId=device_set_analog_mode block="set analog pin |mode %pin=analog_pin|to %mode"
     void analogPinMode(int name, PinMode mode) {
         ::pinMode(name, (int)mode);

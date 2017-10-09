@@ -48,7 +48,7 @@ namespace lights {
           * @param name pin to write to, eg: DigitalPin.D0
           * @param value 1 for on, 0 for off, eg: 1
           */
-        //% help=lights/off weight=28
+        //% help=lights/turn weight=28
         //% value.defl="1"
         //% blockId=lights_digital_turn block="turn %name=digital_pin|%value=on_off"
         export function turn(name: number, value: number) {
@@ -86,7 +86,7 @@ namespace lights {
          * @param name pin name to write to, eg: AnalogPin.A0
          * @param value effect to show, eg: Effect.Twinkle
          */
-        //% help=lights/animate weight=22
+        //% help=lights/effect weight=22
         //% blockId=lights_effect block="show %value=lights_effectPicker| effect on %name=analog_pin"
         export function effect(value: number, name: number, tempo?: number) {
             switch(value) {
