@@ -44,7 +44,7 @@ namespace lights {
         }
     
         /**
-          * Turn a pin or connector on or off, value 0 or 1
+          * Turn a pin and on or off.
           * @param name pin to write to, eg: DigitalPin.D0
           * @param value 1 for on, 0 for off, eg: 1
           */
@@ -69,7 +69,7 @@ namespace lights {
         }
     
         /**
-         * Set the connector value as analog. Value must be comprised between 0 and 100.
+         * Set an analog pin value as a percentage.
          * @param name pin name to write to, eg: AnalogPin.A0
          * @param value value to write to the pin between ``0`` and ``100``. eg:100,0
          */
@@ -82,7 +82,7 @@ namespace lights {
         }
 
         /**
-         * Show a predefined effect on the specified pin
+         * Show a built-in effect on a pin.
          * @param name pin name to write to, eg: AnalogPin.A0
          * @param value effect to show, eg: Effect.Twinkle
          */
