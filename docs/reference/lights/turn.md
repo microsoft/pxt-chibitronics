@@ -13,7 +13,7 @@ lights.turn(DigitalPin.D0, 1)
 
 ## Example
 
-Toggle the LEDs on pins `D0` and `D6` forever.
+Toggle the LEDs on pins `D0` and `D5` forever.
 
 ```blocks
 loops.forever(function () {
