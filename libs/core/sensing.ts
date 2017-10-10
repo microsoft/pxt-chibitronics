@@ -2,7 +2,7 @@
 namespace sensing {
 
     /**
-     * Read the specified pin or connector as either 0 or 1
+     * Check a pin or connector is touched or connected.
      * @param name pin to read from, eg: DigitalPin.D0
      */
     //% help=sensing/pressed weight=30
@@ -13,7 +13,7 @@ namespace sensing {
     }
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 100.
+     * Read a pin or connector as an analog value between 0 and 100.
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=sensing/read weight=25
