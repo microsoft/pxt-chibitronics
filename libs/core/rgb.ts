@@ -32,7 +32,7 @@ namespace rgb {
     let _brightness: number;
 
     /**
-     * Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).
+     * Make the on-board RGB LED show an RGB color (range 0-255 for r, g, b).
      * @param rgb RGB color of the LED
      */
     //% blockId="rgb_set_color" block="set rgb to %rgb=colorNumberPicker"
@@ -51,7 +51,7 @@ namespace rgb {
     }
 
     /**
-     * Set the brightness of the LED. This flag only applies to future operation.
+     * Set the brightness of the LED. This change the brightness for the next operation.
      * @param brightness a measure of LED brightness in 0-100. eg: 15
      */
     //% blockId="rgb_set_brightness" block="set brightness %brightness"
@@ -63,7 +63,7 @@ namespace rgb {
     }
 
     /**
-     * Dim's an RGB color
+     * Dim an RGB color to make a new color.
      * @param rgb RGB color of the LED
      * @param level dim level between 0 and 5 eg: 1
      */
@@ -81,7 +81,7 @@ namespace rgb {
     }
 
     /**
-     * Converts red, green, blue channels into an RGB color
+     * Convert the red, green, blue color channels into an RGB color
      * @param red value of the red channel between 0 and 255. eg: 255
      * @param green value of the green channel between 0 and 255. eg: 255
      * @param blue value of the blue channel between 0 and 255. eg: 255
@@ -117,7 +117,7 @@ namespace rgb {
     }
 
     /**
-     * Gets the RGB value of a known color
+     * Get the RGB value of a known color
     */
     //% weight=10 blockGap=8
     //% blockId=rgb_colors block="%color"
