@@ -1,5 +1,5 @@
 {
-  "scope": "Provides access to Chibi Scope functionality.\r\n\nProvides access to Chibi Scope functionality.",
+  "scope": "Provides access to Chibi Scope functionality.",
   "scope.writeLine": "Write string to the Chibi Scope",
   "scope.writeLine|param|message": "the message you want to write to the Chibi Scope, eg: \"Hello!\"",
   "scope.writeNumber": "Write number to the Chibi Scope",
