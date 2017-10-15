@@ -33,7 +33,7 @@ namespace rgb {
 
     /**
      * Shows the on-board RGB LED to a given color (range 0-255 for r, g, b).
-     * @param rgb RGB color of the LED
+     * @param rgb RGB color of the LED, eg: Colors.Red
      */
     //% blockId="rgb_set_color" block="set rgb to %rgb=colorNumberPicker"
     //% weight=90 help="rgb/set-color"

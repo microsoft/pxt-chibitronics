@@ -75,5 +75,15 @@
    Editor
 --------------------*/
 
-@blocklyToolboxColor: rgba(0, 0, 0, 0.05);
+@blocklyToolboxColor: white;
 @trashIconColor: @primaryColor;
+
+
+/*-------------------
+   Flyout
+--------------------*/
+
+@flyoutLabelColor: white;
+@blocklyFlyoutColor: #525A67;
+@blocklyFlyoutColorOpacity: 0.9;
+@monacoFlyoutColor: fade(@blocklyFlyoutColor, 90%);
