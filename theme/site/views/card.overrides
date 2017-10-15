@@ -3,8 +3,14 @@
 *******************************/
 
 
-.ui.card.example {
-    .content {
-        background: rgba(87, 87, 87, 0.6);
+.projectsdialog {
+    .ui.cardimage {
+        height: 12rem;
     }
+    .ui.card.example {
+        .content {
+            background: rgba(0,0,0,0.75);
+        }
+    }
+
 }
