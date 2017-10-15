@@ -98,7 +98,7 @@ namespace pins {
     }
 
     /**
-    * Set the digigal pin mode.
+    * Set the digital pin mode.
     * @param name pin to set the mode on, eg: DigitalPin.D0
     * @param mode one of the pin modes: Input, Output, PullUp, PullDown
     */

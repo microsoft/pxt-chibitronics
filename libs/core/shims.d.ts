@@ -63,7 +63,7 @@ declare namespace pins {
     function analogRead(name: int32): int32;
 
     /**
-     * Set the pin mode.
+     * Set the digital pin mode.
      * @param name pin to set the mode on, eg: DigitalPin.D0
      * @param mode one of the pin modes: Input, Output, PullUp, PullDown
      */
@@ -72,7 +72,7 @@ declare namespace pins {
     function pinMode(name: int32, mode: PinMode): void;
 
     /**
-     * Set the pin mode.
+     * Set the analog pin mode.
      * @param name pin to set the mode on, eg: AnalogPin.A0
      * @param mode one of the pin modes: Input, Output, PullUp, PullDown
      */
