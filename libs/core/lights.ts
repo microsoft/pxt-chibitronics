@@ -63,8 +63,8 @@ namespace lights {
         //% blockId=on_off block="%value"
         //% blockHidden=true
         //% shim=TD_ID colorSecondary="#FFFFFF"
-        //% value.fieldEditor="toggle" value.fieldOptions.decompileLiterals=true
-        export function onOff(value: number) {
+        //% value.fieldEditor="toggleonoff" value.fieldOptions.decompileLiterals=true
+        export function onOff(value: number): number {
             return value;
         }
     
@@ -110,7 +110,7 @@ namespace lights {
         }
 
         //% blockId=lights_effectPicker block="%value"
-        //% value.fieldEditor="imagedropdown" value.fieldOptions.columns=3
+        //% value.fieldEditor="imagedropdown" value.fieldOptions.columns=4
         //% value.fieldOptions.decompileLiterals=true
         //% shim=TD_ID blockHidden=1
         export function effectPicker(value: Effect): number {

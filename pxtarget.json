@@ -182,7 +182,6 @@
         "highContrast": true,
         "useUploadMessage": true,
         "downloadIcon": "play",
-        "disableBlockIcons": true,
         "extendEditor": true,
         "blockColors": {
             "loops": "#FFAB19",
