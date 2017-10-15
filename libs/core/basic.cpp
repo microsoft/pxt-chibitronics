@@ -6,6 +6,7 @@
  * Provides access to basic functionality.
  */
 //% color=#FFAB19 weight=100 icon="\uf00a"
+//% blockNamespace="control"
 namespace loops {
 
     static void forever_stub(void *a) {
@@ -20,7 +21,7 @@ namespace loops {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=basic/forever weight=55 blockGap=8 blockAllowMultiple=1
+    //% help=control/forever weight=55 blockAllowMultiple=1
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
       if (a != 0) {
@@ -45,8 +46,8 @@ namespace loops {
      * Pause for the specified time in milliseconds
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
-    //% help=basic/pause weight=54
-    //% async block="pause %pause ms"
+    //% help=control/pause weight=54
+    //% async block="pause %ms=timePicker|ms"
     //% blockId=device_pause icon="\uf110"
     void pause(int ms) {
       delay(ms);

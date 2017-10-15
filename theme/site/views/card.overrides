@@ -1,3 +1,16 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+
+.projectsdialog {
+    .ui.cardimage {
+        height: 12rem;
+    }
+    .ui.card.example {
+        .content {
+            background: rgba(0,0,0,0.75);
+        }
+    }
+
+}

@@ -3,11 +3,64 @@
 
 import ModControllerConstructor = require("chibitronics-ltc-modulate");
 import lf = pxt.Util.lf;
-
 let modController: ModulationController = null;
 
 namespace chibitronics {
-    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
+    function showUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>): Promise<void> {
+        if (!confirmAsync) {
+            return Promise.resolve();
+        }
+        const boardName = pxt.appTarget.appTheme.boardName;
+        const htmlBody = `
+        <div class="ui three column grid stackable">
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="./static/download/plugin.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">1</span>
+                            ${lf("Plug the cable into your {0}", boardName)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="./static/download/plugincomp.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">2</span>
+                            ${lf("Plug the USB and audio cables into your programming device")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui">
+                    <div class="image">
+                        <img class="ui medium rounded image" src="./static/download/reset.png" style="height:150px">
+                    </div>
+                    <div class="content">
+                        <div class="description">
+                            <span class="ui blue circular label">3</span>
+                            ${lf("Press and hold the PROG button until the PROG light is steady red")}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        return confirmAsync({
+            header: lf("Upload instructions"),
+            htmlBody,
+            hideCancel: true,
+            agreeLbl: lf("Ready?")
+        }).then(() => { });
+    }
+    function showIEUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
         if (!confirmAsync) {
             return Promise.resolve();
         }
@@ -39,6 +92,21 @@ namespace chibitronics {
                         </shadow>
                     </value>
                 </block>
+                <block type="controls_if" gap="8">
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_if" gap="8">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                        <shadow type="logic_boolean">
+                            <field name="BOOL">TRUE</field>
+                        </shadow>
+                    </value>
+                </block>
                 <block type="device_while">
                     <value name="COND">
                         <shadow type="logic_boolean"></shadow>
@@ -55,21 +123,6 @@ namespace chibitronics {
                     <value name="LIST">
                         <shadow type="variables_get">
                             <field name="VAR">list</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <mutation else="1"></mutation>
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
                         </shadow>
                     </value>
                 </block>
@@ -273,6 +326,27 @@ namespace chibitronics {
                 }
             },
             beforeCompile: () => {
+                function createModulatorDOM() {
+                    let modulatorOutput = document.getElementById('modulatorAudioOutput');
+                    if (!modulatorOutput) {
+                        const customContent = document.getElementById('custom-content');
+                        const modulatorOutput = document.createElement('audio') as HTMLAudioElement;
+                        modulatorOutput.id = 'modulatorAudioOutput';
+                        customContent.appendChild(modulatorOutput);
+                        const modulatorView = document.createElement('div') as HTMLDivElement;
+                        modulatorView.id = 'modulatorWrapper';
+                        const modulatorBubble = document.createElement('div') as HTMLDivElement;
+                        modulatorBubble.id = 'modulatorBubble';
+                        const modulatorCanvas = document.createElement('canvas') as HTMLCanvasElement;
+                        modulatorCanvas.id = 'modulatorWavStrip';
+                        modulatorBubble.appendChild(modulatorCanvas);
+                        modulatorView.appendChild(modulatorBubble);
+                        customContent.appendChild(modulatorView);
+                    }
+                }
+
+                createModulatorDOM();
+
                 // Play silence, in order to unblock audio.
                 let audioTag = document.getElementById("modulatorAudioOutput") as HTMLAudioElement;
                 audioTag.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==";
@@ -410,26 +484,28 @@ namespace chibitronics {
                 if (modController) {
                     modController.stop();
                 }
+                let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
+                let reject: (error: any) => void;
+                const deferred = new Promise<void>((res, rej) => {
+                    resolve = res;
+                    reject = rej;
+                });
 
                 modController = new ModControllerConstructor({
                     canvas: getCanvas(),
+                    uriType: 'blob',
                     repeat: 2,
                     endCallback: function () {
                         getWaveFooter().style.visibility = "hidden";
                         getWaveFooter().style.opacity = "0";
                         pxt.log("Completed audio modulation");
+                        resolve();
                     }
                 });
 
                 let audio = getAudioElement();
                 if (pxt.BrowserUtils.isIE()) {
                     // For IE, download the raw WAV data to a .wav file
-                    let resolve: (thenableOrResult?: void | PromiseLike<void>) => void;
-                    let reject: (error: any) => void;
-                    const deferred = new Promise<void>((res, rej) => {
-                        resolve = res;
-                        reject = rej;
-                    });
                     const data = new Uint8Array(modController.getRawWavData(bin, lbrEnable, modulationVersion));
                     const fn = resp.downloadFileBaseName + ".wav";
                     pxt.debug('saving ' + fn)
@@ -440,19 +516,23 @@ namespace chibitronics {
                         resp.userContextWindow,
                         reject
                     );
-                    showUploadInstructionsAsync(resp.confirmAsync, fn, url)
+                    showIEUploadInstructionsAsync(resp.confirmAsync, fn, url)
                         .then(() => resolve());
                     return deferred;
                 } else {
-                    // For all other browsers, play the sound directly in the browser
-                    modController.transcodeToAudioTag(bin, audio);
-                    resp.saveOnly = true;
+                    showUploadInstructionsAsync(resp.confirmAsync)
+                        .then((confirm) => {
+                            console.log(confirm);
+                            // For all other browsers, play the sound directly in the browser
+                            modController.transcodeToAudioTag(bin, audio);
+                            resp.saveOnly = true;
 
-                    audio.ontimeupdate = renderWave;
-                    getWaveFooter().style.visibility = "visible";
-                    getWaveFooter().style.opacity = "1";
+                            audio.ontimeupdate = renderWave;
+                            getWaveFooter().style.visibility = "visible";
+                            getWaveFooter().style.opacity = "1";
 
-                    return Promise.resolve();
+                        });
+                    return deferred;
                 }
             }
         };

@@ -16,7 +16,7 @@ namespace pxsim.pins {
         if (!pin) return -1;
         pin.mode = PinFlags.Digital | PinFlags.Input;
         //console.log("Reading value from pin " + pin.id + ": " + pin.value);
-        return pin.value > 100 ? 1 : 0;
+        return pin.value > 0 ? 1 : 0;
     }
 
     export function digitalWrite(pinId: number, value: number) {

@@ -10,7 +10,7 @@
 ## Blocks 
 
 ```cards 
-lights.set(AnalogPin.A0, 1023) 
+lights.set(AnalogPin.A0, 100) 
 ```
 ## Step 1: Setting up your loop 
 
@@ -19,11 +19,11 @@ lights.set(AnalogPin.A0, 1023)
 
 ## Step 2: Coding your pin connection 
 
-From **LIGHTS**, drag a **set A0 to 1023** block out and place it into your forever loop. 
+From **LIGHTS**, drag a **set A0 to 100** block out and place it into your forever loop. 
 
 ```block
 loops.forever(function () {
-    lights.set(AnalogPin.A0, 1023)
+    lights.set(AnalogPin.A0, 100)
 })
 ```
 ### Build the Block... 
@@ -31,32 +31,17 @@ loops.forever(function () {
 Change the pin value of the **set** block from ``A0`` to ``A1``.
 
 ```block
-lights.set(AnalogPin.A1, 1023)
+lights.set(AnalogPin.A1, 100)
 ```
 
 So, now we have:
 
 ```blocks
 loops.forever(function () {
-    lights.set(AnalogPin.A1, 1023)
+    lights.set(AnalogPin.A1, 100)
 })
 ```
 
 ## Finished!
 
-Good work! By setting the value to a high number such as 1023, it means that the current of power will be strong enough to light up a LED. Using your paper fold switch, try to turn your LED on and off. Does it work?
-
-## A Challenge... 
-Are you ready to code your @boardname@ so that your LED blinks? Fades away? 
-
-### ~button /make/complete-the-circuit/code_blink 
-
-Make your LED blink! 
-
-### ~ 
-
-### ~button /make/complete-the-circuit/code_fade
-
-Make your LED fade in and out! 
-
-### ~ 
+Good work! By setting the value to a high number such as 100, it means that the current of power will be strong enough to light up a LED. Using your paper fold switch, try to turn your LED on and off. Does it work?

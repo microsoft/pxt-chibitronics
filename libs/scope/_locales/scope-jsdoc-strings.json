@@ -1,0 +1,7 @@
+{
+  "scope": "Provides access to Chibi Scope functionality.",
+  "scope.writeLine": "Write string to the Chibi Scope",
+  "scope.writeLine|param|message": "the message you want to write to the Chibi Scope, eg: \"Hello!\"",
+  "scope.writeNumber": "Write number to the Chibi Scope",
+  "scope.writeNumber|param|num": "the number you want to write to the Chibi Scope, eg: 0"
+}

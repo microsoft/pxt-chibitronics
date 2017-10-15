@@ -1,5 +1,14 @@
 # @extends
 
+## Reference #reference
+
+* [Reference](/reference)
+    * [Lights](/reference/lights)
+    * [Sensing](/reference/sensing)
+    * [Rgb](/reference/rgb)
+    * [Control](/reference/control)
+    * [Pins](/reference/pins)
+
 ## JavaScript #javaScript
 
 * [JavaScript](/javascript)
