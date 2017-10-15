@@ -63,8 +63,8 @@ namespace lights {
         //% blockId=on_off block="%value"
         //% blockHidden=true
         //% shim=TD_ID colorSecondary="#FFFFFF"
-        //% value.fieldEditor="toggle" value.fieldOptions.decompileLiterals=true
-        export function onOff(value: number) {
+        //% value.fieldEditor="toggleonoff" value.fieldOptions.decompileLiterals=true
+        export function onOff(value: number): number {
             return value;
         }
     

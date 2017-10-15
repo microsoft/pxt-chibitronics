@@ -150,6 +150,8 @@ namespace pxsim.visuals {
             -webkit-user-drag: none;
             -webkit-user-select: none;
             -ms-user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
         }
     `;
     const pins4onXs = [66.7, 79.1, 91.4, 103.7, 164.3, 176.6];
@@ -667,7 +669,7 @@ namespace pxsim.visuals {
                 'pin5'
             ].map((p, pi) => {
                 let pin = this.element.getElementById(p) as SVGRectElement;
-                return svg.child(this.g, "rect", { x: pin.getAttribute("x"), y: pin.getAttribute("y"), width: pin.getAttribute("width"), height: pin.getAttribute("height"), rx: 0, ry: 0, class: "sim-pin sim-pin-touch" });
+                return svg.child(this.g, "rect", { x: pin.getAttribute("x"), y: pin.getAttribute("y"), width: pin.getAttribute("width"), height: pin.getAttribute("height"), rx: 0, ry: 0, class: "sim-pin sim-pin-touch no-drag" });
             });
             this.leds = [
                 "led_d0",
