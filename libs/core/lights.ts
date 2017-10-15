@@ -110,7 +110,7 @@ namespace lights {
         }
 
         //% blockId=lights_effectPicker block="%value"
-        //% value.fieldEditor="imagedropdown" value.fieldOptions.columns=3
+        //% value.fieldEditor="imagedropdown" value.fieldOptions.columns=4
         //% value.fieldOptions.decompileLiterals=true
         //% shim=TD_ID blockHidden=1
         export function effectPicker(value: Effect): number {
