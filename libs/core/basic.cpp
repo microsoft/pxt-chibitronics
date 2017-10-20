@@ -21,7 +21,7 @@ namespace loops {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=control/forever weight=55 blockAllowMultiple=1
+    //% help=control/forever weight=55 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e"
     void forever(Action a) {
       if (a != 0) {
