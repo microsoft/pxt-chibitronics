@@ -1,19 +1,6 @@
 #include "pxt.h"
 #include "ltc.h"
 
-extern "C" long int strtol(const char *nptr, char **endptr, int base);
-
-namespace String_ {
-  //%		
-  StringData *mkEmpty()		
-  {		
-    StringData *c = (StringData *) malloc(6);
-    c->len = 0;
-    c->data[0] = 0;
-    return c;
-  }
-}
-
 namespace Boolean_ {
     //%
     bool bang(uint32_t v) { return v == 0; }
@@ -40,6 +27,16 @@ void error(ERROR code, int subcode)
 {
   printf("Error: %d - %d\n", code, subcode);
   error(code, subcode);
+}
+
+uint32_t *allocate(uint16_t sz)
+{
+  uint32_t *arr;
+
+  arr = (uint32_t *)malloc(sz * sizeof(*arr));
+  memset((void *)arr, 0, sz * sizeof(*arr));
+
+  return arr;
 }
 
 namespace Number_
@@ -94,7 +91,8 @@ int pow(int x, int y)
 }
 
 //%
-int randomRange(int min, int max) {
+int randomRange(int min, int max)
+{
   return ::random(min, max);
 }
 
@@ -129,17 +127,9 @@ void RefRecord_destroy(RefRecord *r);
 //%
 void RefRecord_print(RefRecord *r);
 //%
-void debugMemLeaks();
-//%
 int incr(uint32_t e);
 //%
 void decr(uint32_t e);
-//%
-uint32_t *allocate(uint16_t sz);
-//%
-int templateHash();
-//%
-int programHash();
 //%
 int getNumGlobals();
 //%
