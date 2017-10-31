@@ -1,3 +1,6 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@exampleCardFullHeight: true;
+@exampleCardFullHeightBackground: rgba(23,199,209,.80);
