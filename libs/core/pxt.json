@@ -9,6 +9,8 @@
         "helpers.ts",
         "basic.cpp",
         "core.cpp",
+        "input.cpp",
+        "input.ts",
         "string.cpp",
         "pins.cpp",
         "RefAction.cpp",
