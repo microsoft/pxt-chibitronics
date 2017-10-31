@@ -5,13 +5,25 @@
 
 #define POLL_PIN_STACK_SIZE 256
 
-namespace sensing
-{
-
 #define EVENT_TYPE_NONE 0
 #define EVENT_TYPE_LOW 1
 #define EVENT_TYPE_HIGH 2
 #define EVENT_TYPE_BOTH 3
+
+/**
+* User interaction on pins
+*/
+enum class PinEvent {
+    //% block="pressed"
+    Pressed = 1,
+    //% block="released"
+    Released = 2,
+    //% block="changed"
+    Changed = 3
+};
+
+namespace sensing
+{
 
 struct InputEvent
 {
@@ -127,40 +139,16 @@ static void registerEvent(DigitalPin dpin, uint8_t type, Action body)
     events[event_count - 1].event_mask = make_event_mask(pin, 0, type, 0);
 }
 
+   
 /**
      * Do something when a pin is touched (while also touching the GND pin).
      * @param name the pin that needs to be pressed, eg: DigitalPin.P0
      * @param body the code to run when the pin is pressed
      */
 //% help=input/on-pin-pressed weight=90
-//% blockId=device_pin_event block="on pin %name|pressed"
-void onPinPressed(DigitalPin dpin, Action body)
+//% blockId=device_pin_event block="on pin %name|%event"
+void onPinEvent(DigitalPin dpin, PinEvent ev, Action body)
 {
-    registerEvent(dpin, EVENT_TYPE_LOW, body);
-}
-
-/**
-     * Do something when a pin is released (while also touching the GND pin).
-     * @param name the pin that needs to be released, eg: DigitalPin.P0
-     * @param body the code to run when the pin is released
-     */
-//% help=input/on-pin-released weight=84
-//% blockId=device_pin_released block="on pin %name|released"
-void onPinReleased(DigitalPin dpin, Action body)
-{
-    registerEvent(dpin, EVENT_TYPE_HIGH, body);
-}
-
-
-/**
-     * Do something when a pin is touched or released again (while also touching the GND pin).
-     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
-     * @param body the code to run when the pin is pressed or released
-     */
-//% help=input/on-pin-changed weight=83
-//% blockId=device_pin_changed block="on pin %name|changed"
-void onPinChanged(DigitalPin dpin, Action body)
-{
-    registerEvent(dpin, EVENT_TYPE_BOTH, body);
+    registerEvent(dpin, (int)ev, body);
 }
 }

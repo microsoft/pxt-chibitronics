@@ -9,15 +9,7 @@ namespace pxsim.sensing {
         return pxsim.pins.analogRead(pinId);
     }
 
-    export function onPinPressed(pin: number, handler: RefAction): void {
-        pxtcore.registerWithDal(pin, LTC.LTC_BUTTON_EVT_DOWN, handler);
-    }
-
-    export function onPinReleased(pin: number, handler: RefAction): void {
-        pxtcore.registerWithDal(pin, LTC.LTC_BUTTON_EVT_UP, handler);
-    }
-
-    export function onPinChanged(pin: number, handler: RefAction): void {
-        pxtcore.registerWithDal(pin, LTC.LTC_BUTTON_EVT_CLICK, handler);
+    export function onPinEvent(pin: number, evid: number, handler: RefAction): void {
+        pxtcore.registerWithDal(pin, evid, handler);
     }
 }

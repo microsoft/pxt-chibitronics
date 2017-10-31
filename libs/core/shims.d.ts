@@ -33,26 +33,8 @@ declare namespace sensing {
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=90
-    //% blockId=device_pin_event block="on pin %name|pressed" shim=sensing::onPinPressed
-    function onPinPressed(dpin: DigitalPin, body: () => void): void;
-
-    /**
-     * Do something when a pin is released (while also touching the GND pin).
-     * @param name the pin that needs to be released, eg: DigitalPin.P0
-     * @param body the code to run when the pin is released
-     */
-    //% help=input/on-pin-released weight=84
-    //% blockId=device_pin_released block="on pin %name|released" shim=sensing::onPinReleased
-    function onPinReleased(dpin: DigitalPin, body: () => void): void;
-
-    /**
-     * Do something when a pin is touched or released again (while also touching the GND pin).
-     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
-     * @param body the code to run when the pin is pressed or released
-     */
-    //% help=input/on-pin-changed weight=83
-    //% blockId=device_pin_changed block="on pin %name|changed" shim=sensing::onPinChanged
-    function onPinChanged(dpin: DigitalPin, body: () => void): void;
+    //% blockId=device_pin_event block="on pin %name|%event" shim=sensing::onPinEvent
+    function onPinEvent(dpin: DigitalPin, ev: PinEvent, body: () => void): void;
 }
 declare namespace pins {
 

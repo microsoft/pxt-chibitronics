@@ -3,6 +3,20 @@ declare namespace loops {
 }
 
 
+    /**
+     * User interaction on pins
+     */
+
+    declare const enum PinEvent {
+    //% block="pressed"
+    Pressed = 1,
+    //% block="released"
+    Released = 2,
+    //% block="changed"
+    Changed = 3,
+    }
+
+
     declare const enum DigitalPin {
     //% blockIdentity=pins.digitalPin enumval=0
     D0 = 0xa0,
