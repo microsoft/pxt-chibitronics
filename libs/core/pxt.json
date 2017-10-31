@@ -32,6 +32,7 @@
         "pxt.cpp",
         "pxt.h",
         "pins.ts",
+        "pins.h",
         "rgb.h",
         "rgb.cpp",
         "rgb.ts",
