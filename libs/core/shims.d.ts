@@ -33,8 +33,8 @@ declare namespace sensing {
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=90
-    //% blockId=device_pin_event block="on pin %name|%event" shim=sensing::onPinEvent
-    function onPinEvent(dpin: DigitalPin, ev: PinEvent, body: () => void): void;
+    //% blockId=device_pin_event block="on pin %name=digital_pin|%event" shim=sensing::onPinEvent
+    function onPinEvent(name: int32, ev: PinEvent, body: () => void): void;
 }
 declare namespace pins {
 

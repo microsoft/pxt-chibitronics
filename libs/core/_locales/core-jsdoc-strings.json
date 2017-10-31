@@ -168,6 +168,7 @@
   "sensing": "Events and data from sensors\r\n\nControl currents in Pins for analog/digital signals, servos, i2c, ...",
   "sensing.onPinEvent": "Do something when a pin is touched (while also touching the GND pin).",
   "sensing.onPinEvent|param|body": "the code to run when the pin is pressed",
+  "sensing.onPinEvent|param|name": "the pin that needs to be pressed, eg: DigitalPin.P0",
   "sensing.pressed": "Check a pin or connector is touched or connected.",
   "sensing.pressed|param|name": "pin to read from, eg: DigitalPin.D0",
   "sensing.read": "Read a pin or connector as an analog value between 0 and 100.",

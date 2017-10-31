@@ -104,12 +104,12 @@ static void spawnPinPollThread(void)
     ((uint8_t *)thr)[0x1d] = 1;
 }
 
-static void registerEvent(DigitalPin dpin, uint8_t type, Action body)
+static void registerEvent(int dpin, uint8_t type, Action body)
 {
     if (!body)
         return;
 
-    int pin = (int)dpin;
+    int pin = dpin;
     if ((pin >= (int)DigitalPin::D0) && (pin <= (int)DigitalPin::D5))
     {
         pin &= ~0x7;
@@ -146,9 +146,9 @@ static void registerEvent(DigitalPin dpin, uint8_t type, Action body)
      * @param body the code to run when the pin is pressed
      */
 //% help=input/on-pin-pressed weight=90
-//% blockId=device_pin_event block="on pin %name|%event"
-void onPinEvent(DigitalPin dpin, PinEvent ev, Action body)
+//% blockId=device_pin_event block="on pin %name=digital_pin|%event"
+void onPinEvent(int name, PinEvent ev, Action body)
 {
-    registerEvent(dpin, (int)ev, body);
+    registerEvent(name, (int)ev, body);
 }
 }
