@@ -133,6 +133,7 @@ declare const enum LTC {
 
     LTC_BUTTON_EVT_CLICK = 6,
     LTC_BUTTON_EVT_UP = 7,
+    LTC_BUTTON_EVT_DOWN = 8,
 
     MICROBIT_COMPONENT_RUNNING = 0x01,
     // built/yt/yotta_modules/microbit-dal/inc/core/MicroBitDevice.h

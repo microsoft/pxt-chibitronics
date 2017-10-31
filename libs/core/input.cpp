@@ -5,8 +5,7 @@
 
 #define POLL_PIN_STACK_SIZE 256
 
-//% color=#B4009E weight=99 icon="\uf192"
-namespace input
+namespace sensing
 {
 
 #define EVENT_TYPE_NONE 0
@@ -133,7 +132,7 @@ static void registerEvent(DigitalPin dpin, uint8_t type, Action body)
      * @param name the pin that needs to be pressed, eg: DigitalPin.P0
      * @param body the code to run when the pin is pressed
      */
-//% help=input/on-pin-pressed weight=83
+//% help=input/on-pin-pressed weight=90
 //% blockId=device_pin_event block="on pin %name|pressed"
 void onPinPressed(DigitalPin dpin, Action body)
 {
@@ -145,8 +144,8 @@ void onPinPressed(DigitalPin dpin, Action body)
      * @param name the pin that needs to be released, eg: DigitalPin.P0
      * @param body the code to run when the pin is released
      */
-//% help=input/on-pin-pressed weight=83
-//% blockId=device_pin_event block="on pin %name|pressed"
+//% help=input/on-pin-released weight=84
+//% blockId=device_pin_released block="on pin %name|released"
 void onPinReleased(DigitalPin dpin, Action body)
 {
     registerEvent(dpin, EVENT_TYPE_HIGH, body);
@@ -159,7 +158,7 @@ void onPinReleased(DigitalPin dpin, Action body)
      * @param body the code to run when the pin is pressed or released
      */
 //% help=input/on-pin-changed weight=83
-//% blockId=device_pin_event block="on pin %name|changed"
+//% blockId=device_pin_changed block="on pin %name|changed"
 void onPinChanged(DigitalPin dpin, Action body)
 {
     registerEvent(dpin, EVENT_TYPE_BOTH, body);

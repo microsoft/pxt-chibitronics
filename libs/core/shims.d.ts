@@ -12,7 +12,7 @@ declare namespace loops {
      * Repeats the code forever in the background. On each iteration, allows other codes to run.
      * @param body code to execute
      */
-    //% help=control/forever weight=55 blockAllowMultiple=1
+    //% help=control/forever weight=55 blockAllowMultiple=1 afterOnStart=true
     //% blockId=device_forever block="forever" icon="\uf01e" shim=loops::forever
     function forever(a: () => void): void;
 
@@ -24,6 +24,35 @@ declare namespace loops {
     //% async block="pause %ms=timePicker|ms"
     //% blockId=device_pause icon="\uf110" shim=loops::pause
     function pause(ms: int32): void;
+}
+declare namespace sensing {
+
+    /**
+     * Do something when a pin is touched (while also touching the GND pin).
+     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
+     * @param body the code to run when the pin is pressed
+     */
+    //% help=input/on-pin-pressed weight=90
+    //% blockId=device_pin_event block="on pin %name|pressed" shim=sensing::onPinPressed
+    function onPinPressed(dpin: DigitalPin, body: () => void): void;
+
+    /**
+     * Do something when a pin is released (while also touching the GND pin).
+     * @param name the pin that needs to be released, eg: DigitalPin.P0
+     * @param body the code to run when the pin is released
+     */
+    //% help=input/on-pin-released weight=84
+    //% blockId=device_pin_released block="on pin %name|released" shim=sensing::onPinReleased
+    function onPinReleased(dpin: DigitalPin, body: () => void): void;
+
+    /**
+     * Do something when a pin is touched or released again (while also touching the GND pin).
+     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
+     * @param body the code to run when the pin is pressed or released
+     */
+    //% help=input/on-pin-changed weight=83
+    //% blockId=device_pin_changed block="on pin %name|changed" shim=sensing::onPinChanged
+    function onPinChanged(dpin: DigitalPin, body: () => void): void;
 }
 declare namespace pins {
 
