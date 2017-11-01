@@ -6,8 +6,8 @@
 #define POLL_PIN_STACK_SIZE 256
 
 #define EVENT_TYPE_NONE 0
-#define EVENT_TYPE_LOW 1
-#define EVENT_TYPE_HIGH 2
+#define EVENT_TYPE_FALLING 1
+#define EVENT_TYPE_RISING 2
 #define EVENT_TYPE_BOTH 3
 
 /**
@@ -78,7 +78,7 @@ static void pinPollThread(void *ptr)
                 state = !state;
                 counter = 0;
 
-                if ((state && (type & EVENT_TYPE_LOW)) || (!state && (type & EVENT_TYPE_HIGH)))
+                if ((state && (type & EVENT_TYPE_FALLING)) || (!state && (type & EVENT_TYPE_RISING)))
                     runAction0(events[eventNo].body);
             }
             events[eventNo].event_mask = make_event_mask(pin, counter, type, state);
