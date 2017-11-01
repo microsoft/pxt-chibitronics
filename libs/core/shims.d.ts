@@ -28,7 +28,7 @@ declare namespace loops {
 declare namespace sensing {
 
     /**
-     * Do something when a pin is touched (while also touching the GND pin).
+     * Do something when a pin is touched (while also touching the +3.3V pin).
      * @param name the pin that needs to be pressed, eg: DigitalPin.P0
      * @param body the code to run when the pin is pressed
      */
