@@ -6,6 +6,9 @@
         "approvedRepos": [
         ]
     },
+    "languages": [
+        "en"
+    ],
     "galleries": {
         "Tutorials": "tutorials",
         "Examples": "examples"
