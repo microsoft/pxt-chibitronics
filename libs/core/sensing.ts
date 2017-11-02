@@ -6,10 +6,10 @@ namespace sensing {
      * @param name pin to read from, eg: DigitalPin.D0
      */
     //% help=sensing/pressed weight=30
-    //% blockId=sensing_pressed block="is|%name=digital_pin|ON?"
-    export function pressed(name: number): boolean {
+    //% blockId=sensing_pressed block="is|%name=digital_pin|%value"
+    export function pressed(name: number, value: PulseValue = PulseValue.High): boolean {
         pins.pinMode(name, PinMode.Input);
-        return pins.digitalRead(name) > 0 ? true : false;
+        return pins.digitalRead(name) == value ? true : false;
     }
 
     /**

@@ -146,7 +146,7 @@ static void registerEvent(int dpin, uint8_t type, Action body)
      * @param body the code to run when the pin is pressed
      */
 //% help=input/on-pin-pressed weight=90
-//% blockId=device_pin_event block="when pin %name=digital_pin|is %event"
+//% blockId=device_pin_event block="when %name=digital_pin|is %event"
 void onPinEvent(int name, PinEvent ev, Action body)
 {
     registerEvent(name, (int)ev, body);
