@@ -8,4 +8,8 @@ namespace pxsim.sensing {
     export function read(pinId: number): number {
         return pxsim.pins.analogRead(pinId);
     }
+
+    export function onPinEvent(pin: number, evid: number, handler: RefAction): void {
+        pxtcore.registerWithDal(pin, evid, handler);
+    }
 }

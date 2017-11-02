@@ -25,6 +25,17 @@ declare namespace loops {
     //% blockId=device_pause icon="\uf110" shim=loops::pause
     function pause(ms: int32): void;
 }
+declare namespace sensing {
+
+    /**
+     * Do something when a pin is touched (while also touching the +3.3V pin).
+     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
+     * @param body the code to run when the pin is pressed
+     */
+    //% help=input/on-pin-pressed weight=90
+    //% blockId=device_pin_event block="on pin %name=digital_pin|%event" shim=sensing::onPinEvent
+    function onPinEvent(name: int32, ev: PinEvent, body: () => void): void;
+}
 declare namespace pins {
 
     /**
