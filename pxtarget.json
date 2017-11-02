@@ -168,6 +168,7 @@
         "invertedMenu": true,
         "coloredToolbox": true,
         "monacoToolbox": true,
+        "selectLanguage": true,
         "hasAudio": false,
         "blocklyOptions": {
             "grid": {
