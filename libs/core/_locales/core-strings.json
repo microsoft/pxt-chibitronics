@@ -27,6 +27,8 @@
   "Math.randomRange|block": "pick random %min|to %limit",
   "Math|block": "Math",
   "PinEvent.Changed|block": "changed",
+  "PinEvent.HIGH|block": "HIGH",
+  "PinEvent.LOW|block": "LOW",
   "PinEvent.Pressed|block": "pressed",
   "PinEvent.Released|block": "released",
   "PinMode.Input|block": "INPUT",

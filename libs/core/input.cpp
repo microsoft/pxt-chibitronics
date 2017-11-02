@@ -19,7 +19,11 @@ enum class PinEvent {
     //% block="released"
     Released = 2,
     //% block="changed"
-    Changed = 3
+    Changed = 3,
+    //% block="HIGH"
+    HIGH = 1,
+    //% block="LOW"
+    LOW = 2
 };
 
 namespace sensing
