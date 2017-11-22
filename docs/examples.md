@@ -19,6 +19,28 @@ Here are some fun programs for your @boardname@!
 }]
 ```
 
+## Love to Code
+```codecard
+[{
+  "name": "Set Level",
+  "url":"/examples/basics/setlevel",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/blinky.gif"
+},
+{
+  "name": "Fade with While Loop",
+  "url":"/examples/basics/whilefade",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/fade.gif"
+}],
+{
+  "name": "Basic Multithreading",
+  "url":"/examples/basics/multithread-fade",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/fade.gif"
+}]
+```
+
 ## Animations
 
 ```codecard
