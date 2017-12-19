@@ -9,7 +9,7 @@ Here are some fun programs for your @boardname@!
   "name": "Blinky",
   "url":"/examples/basics/blinky",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky-live.gif"
+  "imageUrl":"/static/chibi/examples/blinky-live-480.gif"
 },
 {
   "name": "Fade",
