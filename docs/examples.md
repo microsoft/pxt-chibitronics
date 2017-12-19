@@ -9,7 +9,7 @@ Here are some fun programs for your @boardname@!
   "name": "Blinky",
   "url":"/examples/basics/blinky",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky-live.gif"
+  "imageUrl":"/static/chibi/examples/blinky-live-480.gif"
 },
 {
   "name": "Fade",
@@ -48,7 +48,7 @@ Here are some fun programs for your @boardname@!
   "name": "Carousel",
   "url":"/examples/animations/carousel",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/carousel.gif"
+  "imageUrl":"/static/chibi/examples/carousel-live.gif"
 }, 
 {
   "name": "Light Cascade", 
