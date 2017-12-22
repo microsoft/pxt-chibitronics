@@ -9,13 +9,13 @@ Here are some fun programs for your @boardname@!
   "name": "Blinky",
   "url":"/examples/basics/blinky",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky-live-480.gif"
+  "imageUrl":"/static/chibi/examples/mc-blinky-final.gif"
 },
 {
   "name": "Fade",
   "url":"/examples/basics/fade",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
+  "imageUrl":"/static/chibi/examples/mc-fade-final.gif"
 }]
 ```
 
@@ -25,19 +25,19 @@ Here are some fun programs for your @boardname@!
   "name": "Set Level",
   "url":"/examples/basics/setlevel",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky.gif"
+  "imageUrl":"/static/chibi/examples/mc-step-final.gif"
 },
 {
   "name": "Fade with While Loop",
   "url":"/examples/basics/whilefade",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
+  "imageUrl":"/static/chibi/examples/mc-fade2-final.gif"
 },
 {
   "name": "Basic Multithreading",
   "url":"/examples/basics/multithread-fade",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
+  "imageUrl":"/static/chibi/examples/mc-multithread-final.gif"
 }]
 ```
 
@@ -48,12 +48,12 @@ Here are some fun programs for your @boardname@!
   "name": "Carousel",
   "url":"/examples/animations/carousel",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/carousel-live.gif"
+  "imageUrl":"/static/chibi/examples/mc-carousel-final.gif"
 }, 
 {
   "name": "Light Cascade", 
   "url":"/examples/animations/cascade",
-  "imageUrl":"/static/chibi/examples/cascade.gif"
+  "imageUrl":"/static/chibi/examples/mc-cascade-final.gif"
 }]
 ```
 
