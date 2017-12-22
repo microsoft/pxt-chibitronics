@@ -34,6 +34,7 @@
         "loopsBlocks": true,
         "logicBlocks": true,
         "textBlocks": false,
+        "listsBlocks": true,
         "variablesBlocks": true,
         "functionBlocks": true,
         "onStartColor": "#FFAB19",
@@ -189,7 +190,8 @@
             "logic": "#FFBF00",
             "math": "#59C059",
             "variables": "#FF6680",
-            "text": "#5cb1d6"
+            "text": "#5cb1d6",
+            "arrays": "#FF8C1A"
         },
         "socialOptions": {
             "twitterHandle": "chibitronics",
