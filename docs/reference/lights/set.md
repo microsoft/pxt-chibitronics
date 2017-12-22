@@ -29,4 +29,4 @@ for (let i = 0; i <= 10; i++) {
 
 ## See also
 
-[turn](/reference/lights/turn)
+[set-pin](/reference/lights/set-pin)
