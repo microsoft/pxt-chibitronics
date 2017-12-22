@@ -11,6 +11,8 @@
     ],
     "galleries": {
         "Tutorials": "tutorials",
-        "Examples": "examples"
+        "Examples": "examples",
+	"Love to Code": "ltc",
+	"Advanced": "advanced",
     }
 }

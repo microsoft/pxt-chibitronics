@@ -1,0 +1,25 @@
+# Love to Code
+
+Here are the examples referenced in Love to Code Vol 1!
+
+## Love to Code
+```codecard
+[{
+  "name": "Set Level",
+  "url":"/examples/basics/setlevel",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/mc-step-final.gif"
+},
+{
+  "name": "Fade with While Loop",
+  "url":"/examples/basics/whilefade",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/mc-fade2-final.gif"
+},
+{
+  "name": "Basic Multithreading",
+  "url":"/examples/basics/multithread-fade",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/mc-multithread-final.gif"
+}]
+```
