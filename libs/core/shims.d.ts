@@ -29,7 +29,7 @@ declare namespace sensing {
 
     /**
      * Do something when a pin is touched (while also touching the +3.3V pin).
-     * @param name the pin that needs to be pressed, eg: DigitalPin.P0
+     * @param name the pin that needs to be pressed, eg: DigitalPin.D0
      * @param body the code to run when the pin is pressed
      */
     //% help=input/on-pin-pressed weight=90
