@@ -4,16 +4,16 @@
  */
 enum Effect {
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Twinkle = 0,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Heartbeat = 1,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Blink = 2,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     SOS = 3
 }
 
