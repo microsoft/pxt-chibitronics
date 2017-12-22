@@ -56,7 +56,7 @@ namespace rgb {
     //% value.defl='#ff0000'
     //% value.fieldOptions.colours='["#FF0000", "#ff8000", "#ffff00", "#00ff00", "#00ffff", "#007fff", "#0000ff", "#7f00ff", "#ff0080", "#ff00ff", "#ffffff", "#999999"]'
     //% value.fieldOptions.columns=3 value.fieldOptions.className='rgbColorPicker'
-    export function colorNumberPicker(value: number) {
+    export function __colorNumberPicker(value: number) {
         return value;
     }
 
@@ -70,7 +70,7 @@ namespace rgb {
     //% value.fieldEditor="colorwheel" value.fieldOptions.decompileLiterals=true
     //% value.fieldOptions.sliderWidth='200'
     //% value.fieldOptions.min=0 value.fieldOptions.max=255
-    export function colorWheelPicker(value: number) {
+    export function __colorWheelPicker(value: number) {
         return value;
     }
 }
