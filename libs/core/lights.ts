@@ -4,16 +4,16 @@
  */
 enum Effect {
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Twinkle = 0,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Heartbeat = 1,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     Blink = 2,
     //% blockImage=1
-    //% blockIdentity=lights.effectPicker
+    //% blockIdentity=lights.__effectPicker
     SOS = 3
 }
 
@@ -26,7 +26,7 @@ namespace lights {
         //% help=lights/on weight=29
         //% deprecated=true
         //% blockId=lights_digital_on block="set ON|%name=digital_pin" blockGap="8"
-        export function on(name: number) {
+        export function __on(name: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, 1);
         }
@@ -38,7 +38,7 @@ namespace lights {
         //% help=lights/off weight=28
         //% deprecated=true
         //% blockId=lights_digital_off block="set OFF|%name=digital_pin"
-        export function off(name: number) {
+        export function __off(name: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, 0);
         }
@@ -64,7 +64,7 @@ namespace lights {
         //% blockHidden=true
         //% shim=TD_ID colorSecondary="#FFFFFF"
         //% value.fieldEditor="toggleonoff" value.fieldOptions.decompileLiterals=true
-        export function onOff(value: number): number {
+        export function __onOff(value: number): number {
             return value;
         }
     
@@ -113,7 +113,7 @@ namespace lights {
         //% value.fieldEditor="imagedropdown" value.fieldOptions.columns=4
         //% value.fieldOptions.decompileLiterals=true
         //% shim=TD_ID blockHidden=1
-        export function effectPicker(value: Effect): number {
+        export function __effectPicker(value: Effect): number {
             return value;
         }
 
