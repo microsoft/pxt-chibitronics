@@ -44,14 +44,28 @@ namespace lights {
         }
     
         /**
+          * Set a pin and on or off.
+          * @param name pin to write to, eg: DigitalPin.D0
+          * @param value 1 for on, 0 for off, eg: 1
+          */
+        //% help=lights/set-pin weight=28
+        //% value.defl="1"
+        //% blockId=lights_digital_setPin block="set pin %name=digital_pin|%value=on_off"
+        export function setPin(name: number, value: number) {
+            pins.pinMode(name, PinMode.Output);
+            pins.digitalWrite(name, value > 0 ? 1 : 0);
+        }
+
+        /**
           * Turn a pin and on or off.
           * @param name pin to write to, eg: DigitalPin.D0
           * @param value 1 for on, 0 for off, eg: 1
           */
         //% help=lights/turn weight=28
         //% value.defl="1"
+        //% deprecated=true
         //% blockId=lights_digital_turn block="turn %name=digital_pin|%value=on_off"
-        export function turn(name: number, value: number) {
+        export function __turn(name: number, value: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, value > 0 ? 1 : 0);
         }
