@@ -3,7 +3,7 @@
 Set a digital pin on or off.
 
 ```sig
-lights.turn(DigitalPin.D0, 1)
+lights.setPin(DigitalPin.D0, 1)
 ```
 
 ## Parameters
