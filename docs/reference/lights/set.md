@@ -1,4 +1,4 @@
-# set pin
+# set
  
 Set a digital pin on or off.
 
