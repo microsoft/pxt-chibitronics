@@ -5,12 +5,6 @@ Here are some fun programs for your @boardname@!
 ## Basics
 
 ```codecard
-[{
-  "name": "Blinky",
-  "url":"/examples/basics/blinky",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/mc-blinky-final.gif"
-},
 {
   "name": "Fade",
   "url":"/examples/basics/fade",

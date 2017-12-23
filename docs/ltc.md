@@ -5,6 +5,12 @@ Here are the examples referenced in Love to Code Vol 1!
 ## Love to Code
 ```codecard
 [{
+  "name": "Blinky",
+  "url":"/examples/basics/blinky",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/mc-blinky-final.gif"
+},
+[{
   "name": "Set Level",
   "url":"/examples/basics/setlevel",
   "cardType": "example",
