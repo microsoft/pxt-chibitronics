@@ -16,7 +16,7 @@ Using variables and while loops to create a cascade effect on your LEDs!
 while (true) {
 }
 loops.pause(0)
-lights.set(AnalogPin.A0, 0)
+lights.setLevel(AnalogPin.A0, 0)
 ```
 
 ## Step 1: Creating your variables
@@ -83,7 +83,7 @@ From **LIGHTS**, drag a ``||lights:set to||`` block into the while loop.
 let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
-        lights.set(AnalogPin.A0, 255)
+        lights.setLevel(AnalogPin.A0, 255)
     }
 })
 brightness_0 = 0
@@ -101,7 +101,7 @@ let brightness_0 = 0
 let item = 0
 loops.forever(function() {
     while (brightness_0 <= 255) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         item = 0
     }
@@ -120,7 +120,7 @@ brightness_0 = 0
 let brightness_0 = 0
 loops.forever(function() {
     while (brightness_0 <= 255) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 + 10
     }
@@ -143,7 +143,7 @@ Using nearly the same steps as above, we'll code the next block. There are some 
 ```blocks
 let brightness_0 = 0
 while (brightness_0 >= 0) {
-    lights.set(DigitalPin.D0, brightness_0)
+    lights.setLevel(DigitalPin.D0, brightness_0)
     loops.pause(15)
     brightness_0 = brightness_0 - 10
 }
@@ -155,12 +155,12 @@ Run your code now. Does your LED fade in and out? Here's what the complete contr
 let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 + 10
     }
     while (brightness_0 >= 0) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 - 10
     }
@@ -178,12 +178,12 @@ Inside the forever loop and under your ``||loops:while||`` loops, add a ``||loop
 let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 + 10
     }
     while (brightness_0 >= 0) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 -10 
     }

@@ -22,12 +22,20 @@
         "useMkcd": true,
         "isNative": true,
         "flashCodeAlign": 16,
-        "upgrades": [{
-            "type": "package",
-            "map": {
-                "ltc": "core"
+        "upgrades": [
+            {
+                "type": "package",
+                "map": {
+                    "ltc": "core"
+                }
+            },
+            {
+                "type": "api",
+                "map": {
+                    "lights\\.(__)?turn": "lights.set"
+                }
             }
-        }]
+        ]
     },
     "runtime": {
         "mathBlocks": true,

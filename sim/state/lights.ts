@@ -10,6 +10,10 @@ namespace pxsim.lights {
     }
 
     export function set(pinId: number, value: number) {
+        pxsim.pins.digitalWrite(pinId, value);
+    }
+
+    export function setLevel(pinId: number, value: number) {
         pxsim.pins.analogWrite(pinId, value);
     }
 }
