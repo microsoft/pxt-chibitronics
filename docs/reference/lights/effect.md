@@ -30,4 +30,4 @@ loops.forever(function () {
 
 ## See also
 
-[set-pin](/reference/lights/set-pin)
+[set](/reference/lights/set)

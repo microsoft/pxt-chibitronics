@@ -12,7 +12,7 @@ The Chibi Chip is a computer, so we tell it brightnesses on a scale of 0-255.
 let brightness = 0
 let fadeAmount = 0
 loops.forever(() => {
-    lights.set(AnalogPin.A5, brightness)
+    lights.setLevel(AnalogPin.A5, brightness)
     brightness = brightness + fadeAmount
     if (brightness <= 0 || brightness >= 255) {
         fadeAmount = 0 - fadeAmount
