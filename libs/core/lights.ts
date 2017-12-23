@@ -50,7 +50,7 @@ namespace lights {
           */
         //% help=lights/set weight=28
         //% value.defl="1"
-        //% blockId=lights_digital_setPin block="set pin %name=digital_pin|%value=on_off"
+        //% blockId=lights_digital_setPin block="set|%name=digital_pin|to %value=on_off"
         export function set(name: number, value: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, value > 0 ? 1 : 0);
@@ -88,7 +88,7 @@ namespace lights {
          * @param value value to write to the pin between ``0`` and ``100``. eg:100,0
          */
         //% help=lights/set-level weight=24
-        //% blockId=lights_analog_set block="set|%name=analog_pin|to %value"
+        //% blockId=lights_analog_set block="set|%name=analog_pin|level to %value"
         //% value.min=0 value.max=100
         export function setLevel(name: number, value: number) {
             pins.analogPinMode(name, PinMode.Output);
