@@ -3,8 +3,7 @@
         "approvedOrgs": [
             "Microsoft"
         ],
-        "approvedRepos": [
-        ]
+        "approvedRepos": []
     },
     "languages": [
         "en"
@@ -12,7 +11,7 @@
     "galleries": {
         "Tutorials": "tutorials",
         "Examples": "examples",
-	"Love to Code": "ltc",
-	"Advanced": "advanced",
+        "Love to Code": "ltc",
+        "Advanced": "advanced"
     }
 }
