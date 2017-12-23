@@ -10,7 +10,7 @@
 ## Blocks 
 
 ```cards 
-lights.set(AnalogPin.A0, 100) 
+lights.setLevel(AnalogPin.A0, 100) 
 ```
 ## Step 1: Setting up your loop 
 
@@ -23,7 +23,7 @@ From **LIGHTS**, drag a **set A0 to 100** block out and place it into your forev
 
 ```block
 loops.forever(function () {
-    lights.set(AnalogPin.A0, 100)
+    lights.setLevel(AnalogPin.A0, 100)
 })
 ```
 ### Build the Block... 
@@ -31,14 +31,14 @@ loops.forever(function () {
 Change the pin value of the **set** block from ``A0`` to ``A1``.
 
 ```block
-lights.set(AnalogPin.A1, 100)
+lights.setLevel(AnalogPin.A1, 100)
 ```
 
 So, now we have:
 
 ```blocks
 loops.forever(function () {
-    lights.set(AnalogPin.A1, 100)
+    lights.setLevel(AnalogPin.A1, 100)
 })
 ```
 

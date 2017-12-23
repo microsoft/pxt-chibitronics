@@ -31,24 +31,24 @@ loops.forever(function () {
 })
 loops.forever(function () {
     while (brightness4 < 100) {
-        lights.set(AnalogPin.A4, brightness4)
+        lights.setLevel(AnalogPin.A4, brightness4)
         loops.pause(10)
         brightness4 += 1
     }
     while (brightness4 > 0) {
-        lights.set(AnalogPin.A4, brightness4)
+        lights.setLevel(AnalogPin.A4, brightness4)
         loops.pause(10)
         brightness4 += -1
     }
 })
 loops.forever(function () {
     while (brightness5 > 0) {
-        lights.set(AnalogPin.A5, brightness5)
+        lights.setLevel(AnalogPin.A5, brightness5)
         loops.pause(10)
         brightness5 += -1
     }
     while (brightness5 < 100) {
-        lights.set(AnalogPin.A5, brightness5)
+        lights.setLevel(AnalogPin.A5, brightness5)
         loops.pause(10)
         brightness5 += 1
     }

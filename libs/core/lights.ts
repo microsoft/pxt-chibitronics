@@ -44,14 +44,28 @@ namespace lights {
         }
     
         /**
+          * Set a pin and on or off.
+          * @param name pin to write to, eg: DigitalPin.D0
+          * @param value 1 for on, 0 for off, eg: 1
+          */
+        //% help=lights/set weight=28
+        //% value.defl="1"
+        //% blockId=lights_digital_setDigital block="set|%name=digital_pin|to %value=on_off"
+        export function set(name: number, value: number) {
+            pins.pinMode(name, PinMode.Output);
+            pins.digitalWrite(name, value > 0 ? 1 : 0);
+        }
+
+        /**
           * Turn a pin and on or off.
           * @param name pin to write to, eg: DigitalPin.D0
           * @param value 1 for on, 0 for off, eg: 1
           */
         //% help=lights/turn weight=28
         //% value.defl="1"
+        //% deprecated=true
         //% blockId=lights_digital_turn block="turn %name=digital_pin|%value=on_off"
-        export function turn(name: number, value: number) {
+        export function __turn(name: number, value: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, value > 0 ? 1 : 0);
         }
@@ -73,10 +87,10 @@ namespace lights {
          * @param name pin name to write to, eg: AnalogPin.A0
          * @param value value to write to the pin between ``0`` and ``100``. eg:100,0
          */
-        //% help=lights/set weight=24
-        //% blockId=lights_analog_set block="set|%name=analog_pin|to %value"
+        //% help=lights/set-level weight=24
+        //% blockId=lights_analog_set block="set|%name=analog_pin|level to %value"
         //% value.min=0 value.max=100
-        export function set(name: number, value: number) {
+        export function setLevel(name: number, value: number) {
             pins.analogPinMode(name, PinMode.Output);
             pins.analogWrite(name, Math.map(value, 0, 100, 0, 255));
         }
