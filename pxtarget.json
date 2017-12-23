@@ -32,7 +32,7 @@
             {
                 "type": "api",
                 "map": {
-                    "lights\\.(__)?turn": "lights.setPin"
+                    "lights\\.(__)?turn": "lights.set"
                 }
             }
         ]

@@ -50,7 +50,7 @@ namespace lights {
           */
         //% help=lights/set weight=28
         //% value.defl="1"
-        //% blockId=lights_digital_setPin block="set|%name=digital_pin|to %value=on_off"
+        //% blockId=lights_digital_setDigital block="set|%name=digital_pin|to %value=on_off"
         export function set(name: number, value: number) {
             pins.pinMode(name, PinMode.Output);
             pins.digitalWrite(name, value > 0 ? 1 : 0);
