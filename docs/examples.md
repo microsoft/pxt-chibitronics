@@ -5,7 +5,7 @@ Here are some fun programs for your @boardname@!
 ## Basics
 
 ```codecard
-{
+[{
   "name": "Fade",
   "url":"/examples/basics/fade",
   "cardType": "example",
