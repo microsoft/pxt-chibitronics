@@ -6,7 +6,7 @@ Welcome to the @boardname@! Let's start with your first coding challenge on the 
 
 ```blocks
 loops.forever(function() {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
 })
 ```
 
@@ -20,7 +20,7 @@ Find the **pause** block located in **CONTROL**, and drag it under your **turn D
 
 ```blocks
 loops.forever(function() {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(900)
 })
 ```
@@ -31,9 +31,9 @@ Now that we have a pause, what could we do next? We can ask the board to turn of
 
 ```blocks
 loops.forever(function() {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(900)
-    lights.turn(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D0, 0)
 })
 ```
 
@@ -43,9 +43,9 @@ Alright, we just need to add one more thing: a last pause block to create a blin
 
 ```blocks
 loops.forever(function() {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(900)
-    lights.turn(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(900)
 })
 ```
