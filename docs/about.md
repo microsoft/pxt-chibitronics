@@ -14,17 +14,17 @@ You can program the @boardname@ using [Blocks](/blocks) or [JavaScript](/javascr
 
 ```block
 loops.forever(function () {
-    lights.on(DigitalPin.D0)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(300)
-    lights.off(DigitalPin.D0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(300)
 })
 ```
 ```typescript
 loops.forever(function () {
-    lights.on(DigitalPin.D0)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(300)
-    lights.off(DigitalPin.D0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(300)
 })
 ```
@@ -43,19 +43,19 @@ You can run your code using the **@boardname@** simulator. It all works nicely i
 
 ```sim
 loops.forever(function () {
-    lights.on(DigitalPin.D0)
-    lights.off(DigitalPin.D1)
-    lights.on(DigitalPin.D2)
-    lights.off(DigitalPin.D3)
-    lights.on(DigitalPin.D4)
-    lights.off(DigitalPin.D5)
+    lights.set(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D1, 0)
+    lights.set(DigitalPin.D2, 1)
+    lights.set(DigitalPin.D3, 0)
+    lights.set(DigitalPin.D4, 1)
+    lights.set(DigitalPin.D5, 0)
     loops.pause(700)
-    lights.off(DigitalPin.D0)
-    lights.on(DigitalPin.D1)
-    lights.off(DigitalPin.D2)
-    lights.on(DigitalPin.D3)
-    lights.off(DigitalPin.D4)
-    lights.on(DigitalPin.D5)
+    lights.set(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D1, 1)
+    lights.set(DigitalPin.D2, 0)
+    lights.set(DigitalPin.D3, 1)
+    lights.set(DigitalPin.D4, 0)
+    lights.set(DigitalPin.D5, 1)
     loops.pause(700)
 })
 
