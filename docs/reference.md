@@ -3,7 +3,7 @@
 
 ```namespaces
 loops.forever(function () {})
-lights.turn(DigitalPin.D0, 1)
+lights.set(DigitalPin.D0, 1)
 sensing.pressed(DigitalPin.D0)
 rgb.setColor(0)
 ```

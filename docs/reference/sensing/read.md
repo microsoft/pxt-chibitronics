@@ -22,9 +22,9 @@ If the value at pin `A0` is greater than 50, light the LED at pin `D4`.
 ```blocks
 loops.forever(function() {
     if (sensing.read(AnalogPin.A0) > 50) {
-        lights.turn(DigitalPin.D4, 1)
+        lights.set(DigitalPin.D4, 1)
     } else {
-        lights.turn(DigitalPin.D4, 0)
+        lights.set(DigitalPin.D4, 0)
     }
     loops.pause(100)
 })

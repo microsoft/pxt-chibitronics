@@ -6,27 +6,27 @@ Chapter 4 example code: fading multiple pins using multithreading
 let brightness5 = 0
 let brightness4 = 0
 loops.forever(function () {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(300)
-    lights.turn(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(300)
 })
 loops.forever(function () {
-    lights.turn(DigitalPin.D1, 1)
+    lights.set(DigitalPin.D1, 1)
     loops.pause(500)
-    lights.turn(DigitalPin.D1, 0)
+    lights.set(DigitalPin.D1, 0)
     loops.pause(500)
 })
 loops.forever(function () {
-    lights.turn(DigitalPin.D2, 1)
+    lights.set(DigitalPin.D2, 1)
     loops.pause(800)
-    lights.turn(DigitalPin.D2, 0)
+    lights.set(DigitalPin.D2, 0)
     loops.pause(800)
 })
 loops.forever(function () {
-    lights.turn(DigitalPin.D3, 1)
+    lights.set(DigitalPin.D3, 1)
     loops.pause(1000)
-    lights.turn(DigitalPin.D3, 0)
+    lights.set(DigitalPin.D3, 0)
     loops.pause(1000)
 })
 loops.forever(function () {
