@@ -2,7 +2,7 @@
 
 ## Step 1
 
-Welcome to the @boardname@! Let's start with your first coding challenge on the board. Grab a **forever** loop found in **CONTROL** and place a **turn D0 ON** block from **LIGHTS** inside of it.
+Welcome to the @boardname@! Let's start with your first coding challenge on the board. Grab a **forever** loop found in **CONTROL** and place a **set D0 ON** block from **LIGHTS** inside of it.
 
 ```blocks
 loops.forever(function() {
@@ -16,7 +16,7 @@ Well, we don't want it shining forever, so, let's add more code to make your fir
 
 ## Step 2
 
-Find the **pause** block located in **CONTROL**, and drag it under your **turn D0 ON** block. Let's create a pause in this function so that after it turns on, it has a little time to think! Let's change the value of the block to ``900``. This means 900 milliseconds, just a little less than a whole second.
+Find the **pause** block located in **CONTROL**, and drag it under your **set D0 ON** block. Let's create a pause in this function so that after it turns on, it has a little time to think! Let's change the value of the block to ``900``. This means 900 milliseconds, just a little less than a whole second.
 
 ```blocks
 loops.forever(function() {
@@ -27,7 +27,7 @@ loops.forever(function() {
 
 ## Step 3
 
-Now that we have a pause, what could we do next? We can ask the board to turn off the LED after turning it on and pausing! Take a **turn D0 ON** block from **LIGHTS** and place it in your **forever** loop. Change the **ON** to **OFF** by clicking on the toggle.
+Now that we have a pause, what could we do next? We can ask the board to turn off the LED after turning it on and pausing! Take a **set D0 ON** block from **LIGHTS** and place it in your **forever** loop. Change the **ON** to **OFF** by clicking on the toggle.
 
 ```blocks
 loops.forever(function() {
