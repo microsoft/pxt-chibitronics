@@ -95,10 +95,10 @@ namespace pxsim.visuals {
     <circle class="cls-3" cx="68.94" cy="109.09" r="3.97" />
     <circle class="cls-3" cx="90.39" cy="109.09" r="3.97" />
     <rect class="cls-7" x="28" y="35.62" width="85" height="45" />
-    <text id="SCOPE_text0" class="cls-textNode" x="29" y="45" width="63.38" height="37.46" />
-    <text id="SCOPE_text1" class="cls-textNode" x="29" y="55" width="63.38" height="37.46" />
-    <text id="SCOPE_text2" class="cls-textNode" x="29" y="65" width="63.38" height="37.46" />
-    <text id="SCOPE_text3" class="cls-textNode" x="29" y="75" width="63.38" height="37.46" />
+    <text id="SCOPE_text0" class="cls-textNode no-drag" x="29" y="45" width="63.38" height="37.46" />
+    <text id="SCOPE_text1" class="cls-textNode no-drag" x="29" y="55" width="63.38" height="37.46" />
+    <text id="SCOPE_text2" class="cls-textNode no-drag" x="29" y="65" width="63.38" height="37.46" />
+    <text id="SCOPE_text3" class="cls-textNode no-drag" x="29" y="75" width="63.38" height="37.46" />
     <path class="cls-6" d="M173.56,121.5v15.7a27.29,27.29,0,0,1-.26,5.23l.09.77.26.86.51.69.69.69.86.43.86.17h.77l.77-.09c67.18-24.71,22.21-120.31-36.38-122.78-58.63,2.42-103.6,98-36.47,122.78,2.67.39,4.41-.86,4.8-3.52-.17-1.72-.25-3.49-.26-5.23V121.5l0,13.64s29.82,8.9,63.46.2l-5.41,1.06V127.1a2.44,2.44,0,0,0-2.43-2.43H153.69l-.87,3.66,3.77-.94-3.44,11.06-3.93.21.23-5.3-5,1.7,4.26-10.4H136.13a2.44,2.44,0,0,0-2.43,2.43v11.55l-3-.16V127.1a2.44,2.44,0,0,0-2.43-2.43H117.69a2.44,2.44,0,0,0-2.43,2.43V134"
         transform="translate(-71.2 -22.53)" />
 </svg>`;
