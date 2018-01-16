@@ -169,7 +169,7 @@ namespace pxsim.visuals {
     const pinsUponXs = [174.0, 190.0, 217.0];
     const pinTXTmid = pinsUponXs[0] - bigPinWidth / 2.0;
     const pin5Vmid = pinsUponXs[1] - bigPinWidth / 2.0;
-    const pinGND3mid = pinsUponXs[2] - bigPinWidth / 2.0;   
+    const pinGND3mid = pinsUponXs[2] - bigPinWidth / 2.0;
     const pinMids = [pin0mid, pin1mid, pin2mid, pin3mid].concat(pins4onMids).concat([pinGNDmid, pin3Vmid, pinGND2mid]);
     const pinNames = ["GND0", "D0", "D1", "D2", "D3", "D4", "D5", "GND1", "+3V"];
     const pinMidsUp = [pinTXTmid, pin5Vmid, pinGND3mid];
@@ -397,6 +397,16 @@ namespace pxsim.visuals {
                 if (text) text.textContent = "";
             }
             if (v) svg.setGradientValue(this.pinGradients[index], v);
+
+            if (pin.mode !== PinFlags.Unused) {
+                accessibility.makeFocusable(this.pins[index]);
+                accessibility.setAria(this.pins[index], "slider", this.pins[index].firstChild.textContent);
+                this.pins[index].setAttribute("aria-valuemin", "0");
+                this.pins[index].setAttribute("aria-valuemax", pin.mode & PinFlags.Analog ? "100" : "1");
+                this.pins[index].setAttribute("aria-orientation", "vertical");
+                this.pins[index].setAttribute("aria-valuenow", text ? text.textContent : v);
+                accessibility.setLiveContent(text ? text.textContent : v);
+            }
         }
 
         private updateTemperature() {
@@ -491,9 +501,9 @@ namespace pxsim.visuals {
             if (state.serialState.usesSerial && !this.scopeElement) {
                 // Show Scope
                 svg.hydrate(this.element, {
-                    "version": "1.0", 
+                    "version": "1.0",
                     "viewBox": `0 -140 230 250`,
-                    "class": "sim", 
+                    "class": "sim",
                     "x": "112.5px",
                     "y": "200px",
                     "width": "100%",
@@ -509,7 +519,7 @@ namespace pxsim.visuals {
                     "class": "sim",
                     "x": "80px",
                     "y": "-140px",
-                    "width": "200px", 
+                    "width": "200px",
                     "height": "220px",
                 });
                 scopeG.appendChild(this.scopeElement);
@@ -554,12 +564,12 @@ namespace pxsim.visuals {
             let r = Math.max(e1.x + e1.w, e2.x + e2.w);
             let t = Math.min(e1.y, e2.y);
             let b = Math.max(e1.y + e1.h, e2.y + e2.h);
-            return {el: g, x: l, y: t, w: r - l, h: b - t};
+            return { el: g, x: l, y: t, w: r - l, h: b - t };
         }
 
         private mkWirePartSeg(p1: [number, number], p2: [number, number], clr: string): visuals.SVGAndSize<SVGPathElement> {
             //TODO: merge with mkCurvedWireSeg
-            const coordStr = (xy: [number, number]): string => {return `${xy[0]}, ${xy[1]}`};
+            const coordStr = (xy: [number, number]): string => { return `${xy[0]}, ${xy[1]}` };
             let [x1, y1] = p1;
             let [x2, y2] = p2
             let yLen = (y2 - y1);
@@ -567,7 +577,7 @@ namespace pxsim.visuals {
             let c2: [number, number] = [x2, y2 - yLen * .8];
             let e = <SVGPathElement>svg.mkPath("sim-bb-wire", `M${coordStr(p1)} C${coordStr(c1)} ${coordStr(c2)} ${coordStr(p2)}`);
             (<any>e).style["stroke"] = clr;
-            return {el: e, x: Math.min(x1, x2), y: Math.min(y1, y2), w: Math.abs(x1 - x2), h: Math.abs(y1 - y2)};
+            return { el: e, x: Math.min(x1, x2), y: Math.min(y1, y2), w: Math.abs(x1 - x2), h: Math.abs(y1 - y2) };
         }
 
         private mkCrocEnd(p: [number, number], top: boolean, clr: string): SVGElAndSize {
@@ -605,7 +615,7 @@ namespace pxsim.visuals {
                     [x1 + w1 * botScalar, y1 + h1], //BL
                     [x1, y1 + h1 * midScalar]) //ML
             });
-            svg.hydrate(el, {rx: 0.5, ry: 0.5, class: "sim-bb-wire-end"});
+            svg.hydrate(el, { rx: 0.5, ry: 0.5, class: "sim-bb-wire-end" });
             (<any>el).style["stroke-width"] = `${strokeWidth}px`;
 
             let el2 = svg.elt("rect");
@@ -614,11 +624,11 @@ namespace pxsim.visuals {
             let cy2 = cy + o * (h1 / 2 + h2 / 2);
             let x2 = cx - w2 / 2;
             let y2 = cy2 - (h2 / 2);
-            svg.hydrate(el2, {x: x2, y: y2, width: w2, height: h2, class: "sim-bb-wire-bare-end"});
+            svg.hydrate(el2, { x: x2, y: y2, width: w2, height: h2, class: "sim-bb-wire-bare-end" });
 
             g.appendChild(el2);
             g.appendChild(el);
-            return {el: g, x: x1 - strokeWidth, y: Math.min(y1, y2), w: w1 + strokeWidth * 2, h: h1 + h2};
+            return { el: g, x: x1 - strokeWidth, y: Math.min(y1, y2), w: w1 + strokeWidth * 2, h: h1 + h2 };
         }
 
         private buildDom() {
@@ -741,6 +751,26 @@ namespace pxsim.visuals {
                         svg.removeClass(svgpin, "touched");
                         this.updatePin(pin, index);
                         return false;
+                    },
+                    // keydown
+                    (ev: KeyboardEvent) => {
+                        let charCode = (typeof ev.which == "number") ? ev.which : ev.keyCode
+                        let state = this.board;
+                        let pin = state.edgeConnectorState.pins[index];
+
+                        if (charCode === 40 || charCode === 37) { // Down/Left arrow
+                            pin.value -= 10;
+                            if (pin.value < 0) {
+                                pin.value = 1023;
+                            }
+                            this.updatePin(pin, index);
+                        } else if (charCode === 38 || charCode === 39) { // Up/Right arrow
+                            pin.value += 10;
+                            if (pin.value > 1023) {
+                                pin.value = 0;
+                            }
+                            this.updatePin(pin, index);
+                        }
                     });
             })
             this.pins.slice().forEach((btn, index) => {

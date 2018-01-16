@@ -25,9 +25,9 @@ loops.forever(() => {
     if (lightSpot == 6) {
         lightSpot = 0;
     }
-    lights.turn(lightSpot, 1)
+    lights.set(lightSpot, 1)
     loops.pause(500)
-    lights.turn(lightSpot, 0)
+    lights.set(lightSpot, 0)
     lightSpot++
 })
 ```
