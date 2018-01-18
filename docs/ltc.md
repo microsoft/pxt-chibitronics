@@ -11,6 +11,12 @@ Here are the examples referenced in Love to Code Vol 1!
   "imageUrl":"/static/chibi/examples/mc-blinky-final.gif"
 },
 {
+  "name": "Six Pin Blink",
+  "url":"/examples/basics/sixpin",
+  "cardType": "example",
+  "imageUrl":"/static/chibi/examples/mc-cascade-final.gif"
+},
+{
   "name": "Basic Switch",
   "url":"/examples/basics/switch",
   "cardType": "example",
