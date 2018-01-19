@@ -11,7 +11,8 @@ Here are some tutorials to get you started with your @boardname@!
     "cardType": "tutorial",
     "imageUrl":"/static/chibi/tutorials/getting-started.png",
     "label": "New? Start Here!",
-    "labelClass": "red ribbon large tutorial"
+    "labelClass": "red ribbon large tutorial",
+    "description": "Start coding your @boardname@ with this simple tutorial."
 }]
 ```
 
@@ -21,6 +22,7 @@ Here are some tutorials to get you started with your @boardname@!
 [{
     "name":"Complete the Circuit!", 
     "url":"/make/complete-the-circuit", 
-    "imageUrl":"/static/cp/tutorial/ctc.jpg"
+    "imageUrl":"/static/cp/tutorial/ctc.jpg",
+    "description": "Using copper tape, create a circuit to turn on and off some LED lights on your @boardname@!"
 }]
 ```
