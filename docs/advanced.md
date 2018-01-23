@@ -39,9 +39,8 @@ Here are some advanced examples, for intrepid code explorers!
 {
   "name": "Press for Color",
   "url":"/examples/rgb/press-for-color",
-  "cardType": "codeExample",
+  "cardType": "example",
   "imageUrl":"/static/chibi/examples/pressforcolor.gif",
   "description": "Change the colors of the RGB LED by connecting a pin to ground."
-
 }]
 ```
