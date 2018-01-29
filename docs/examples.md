@@ -6,38 +6,11 @@ Here are some fun programs for your @boardname@!
 
 ```codecard
 [{
-  "name": "Blinky",
-  "url":"/examples/basics/blinky",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky-live-480.gif"
-},
-{
   "name": "Fade",
   "url":"/examples/basics/fade",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
-}]
-```
-
-## Love to Code
-```codecard
-[{
-  "name": "Set Level",
-  "url":"/examples/basics/setlevel",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/blinky.gif"
-},
-{
-  "name": "Fade with While Loop",
-  "url":"/examples/basics/whilefade",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
-},
-{
-  "name": "Basic Multithreading",
-  "url":"/examples/basics/multithread-fade",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/fade.gif"
+  "imageUrl":"/static/chibi/examples/mc-fade-final.gif",
+  "description": "See how @boardname@ can change the brightness of an LED."
 }]
 ```
 
@@ -48,49 +21,15 @@ Here are some fun programs for your @boardname@!
   "name": "Carousel",
   "url":"/examples/animations/carousel",
   "cardType": "example",
-  "imageUrl":"/static/chibi/examples/carousel-live.gif"
+  "imageUrl":"/static/chibi/examples/mc-carousel-final.gif",
+  "description": "Rotate through all the LEDs turning them on and off."
+
 }, 
 {
   "name": "Light Cascade", 
   "url":"/examples/animations/cascade",
-  "imageUrl":"/static/chibi/examples/cascade.gif"
+  "imageUrl":"/static/chibi/examples/mc-cascade-final.gif",
+  "description": "Change the brightness of each LED separately making a cascade effect."
 }]
 ```
 
-## Chibi Scope 
-
-```codecard
-[{
-  "name": "Hello World!", 
-  "url":"/examples/chibiscope/hello-world",  
-  "imageUrl":"/static/cp/hello.png"
-}, 
-{
-  "name": "Counter", 
-  "url":"/examples/chibiscope/counter", 
-  "imageUrl":"/static/cp/counter.gif"
-}]
-```
-
-## RGB
-
-```codecard
-[{
-  "name": "Simple Color",
-  "url":"/examples/rgb/simple-color",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/simplecolor.gif"
-},
-{
-  "name": "Rainbow Tape",
-  "url":"/examples/rgb/rainbow-tape",
-  "cardType": "example",
-  "imageUrl":"/static/chibi/examples/rainbowtape.gif"
-},
-{
-  "name": "Press for Color",
-  "url":"/examples/rgb/press-for-color",
-  "cardType": "codeExample",
-  "imageUrl":"/static/chibi/examples/pressforcolor.gif"
-}]
-```

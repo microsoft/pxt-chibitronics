@@ -1,6 +1,6 @@
 # chibitronics target for PXT
 
-This target allow to program a [Chibitronics](https://www.chibitronics.com/) using
+This target allow to program a [Chibi Chip](https://chibitronics.com/lovetocode/) using
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
 * Currently hosted at https://makecode.chibitronics.com

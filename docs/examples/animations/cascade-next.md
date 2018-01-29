@@ -8,12 +8,12 @@ Ok, we already have the ``||loops:forever||`` block for LED 0. It looks like thi
 let brightness_0 = 0
 loops.forever(function () {
     while (brightness_0 <= 255) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 + 10 
     }
     while (brightness_0 >= 0) {
-        lights.set(DigitalPin.D0, brightness_0)
+        lights.setLevel(DigitalPin.D0, brightness_0)
         loops.pause(15)
         brightness_0 = brightness_0 - 10
     }
@@ -44,12 +44,12 @@ let brightness_1 = 0
 loops.forever(function () {
     loops.pause(300)
     while (brightness_1 <= 255) {
-        lights.set(DigitalPin.D1, brightness_1)
+        lights.setLevel(DigitalPin.D1, brightness_1)
         loops.pause(15)
         brightness_1 = brightness_1 + 10 
     }
     while (brightness_1 >= 0) {
-        lights.set(DigitalPin.D1, brightness_1)
+        lights.setLevel(DigitalPin.D1, brightness_1)
         loops.pause(15)
         brightness_1 = brightness_1 - 10
     }
@@ -72,12 +72,12 @@ let brightness_2 = 0
 loops.forever(function () {
     loops.pause(600)
     while (brightness_2 <= 255) {
-        lights.set(DigitalPin.D2, brightness_2)
+        lights.setLevel(DigitalPin.D2, brightness_2)
         loops.pause(15)
         brightness_2 = brightness_2 + 10 
     }
     while (brightness_2 >= 0) {
-        lights.set(DigitalPin.D2, brightness_2)
+        lights.setLevel(DigitalPin.D2, brightness_2)
         loops.pause(15)
         brightness_2 = brightness_2 - 10
     }
@@ -100,12 +100,12 @@ let brightness_3 = 0
 loops.forever(function () {
     loops.pause(900)
     while (brightness_3 <= 255) {
-        lights.set(DigitalPin.D3, brightness_3)
+        lights.setLevel(DigitalPin.D3, brightness_3)
         loops.pause(15)
         brightness_3 = brightness_3 + 10 
     }
     while (brightness_3 >= 0) {
-        lights.set(DigitalPin.D3, brightness_3)
+        lights.setLevel(DigitalPin.D3, brightness_3)
         loops.pause(15)
         brightness_3 = brightness_3 - 10
     }
@@ -128,12 +128,12 @@ let brightness_4 = 0
 loops.forever(function () {
     loops.pause(1200)
     while (brightness_4 <= 255) {
-        lights.set(DigitalPin.D4, brightness_4)
+        lights.setLevel(DigitalPin.D4, brightness_4)
         loops.pause(15)
         brightness_4 = brightness_4 + 10 
     }
     while (brightness_4 >= 0) {
-        lights.set(DigitalPin.D4, brightness_4)
+        lights.setLevel(DigitalPin.D4, brightness_4)
         loops.pause(15)
         brightness_4 = brightness_4 - 10
     }
@@ -155,12 +155,12 @@ let brightness_5 = 0
 loops.forever(function () {
     loops.pause(1500)
     while (brightness_5 <= 255) {
-        lights.set(DigitalPin.D5, brightness_5)
+        lights.setLevel(DigitalPin.D5, brightness_5)
         loops.pause(15)
         brightness_5 = brightness_5 + 10 
     }
     while (brightness_5 >= 0) {
-        lights.set(DigitalPin.D5, brightness_5)
+        lights.setLevel(DigitalPin.D5, brightness_5)
         loops.pause(15)
         brightness_5 = brightness_5 - 10
     }

@@ -116,15 +116,15 @@ static void registerEvent(int dpin, uint8_t type, Action body)
     int pin = dpin;
     if ((pin >= (int)DigitalPin::D0) && (pin <= (int)DigitalPin::D5))
     {
-        pin &= ~0x7;
+        pin &= 0x7;
     }
     else if ((pin >= (int)AnalogPin::A0) && (pin <= (int)AnalogPin::A5))
     {
-        pin &= ~0x7;
+        pin &= 0x7;
     }
     else if ((pin >= 0) && (pin <= 5))
     {
-        pin &= ~0x7;
+        pin &= 0x7;
     }
     else
     {

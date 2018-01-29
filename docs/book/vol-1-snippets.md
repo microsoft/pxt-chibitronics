@@ -12,9 +12,9 @@ If you want to get these snippets compiled as part of the build, add a link to t
 
 ```blocks
 loops.forever(function () {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(500)
-    lights.turn(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(500)
 })
 ```
@@ -23,9 +23,9 @@ loops.forever(function () {
 
 ```blocks
 loops.forever(function () {
-    lights.turn(DigitalPin.D0, 1)
+    lights.set(DigitalPin.D0, 1)
     loops.pause(500)
-    lights.turn(DigitalPin.D0, 0)
+    lights.set(DigitalPin.D0, 0)
     loops.pause(100)
 })
 ```

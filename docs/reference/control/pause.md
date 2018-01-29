@@ -20,7 +20,7 @@ Light up th3 `5` LEDs but wait one-half second before lighting each LED.
 
 ```blocks
 for (let i = 0; i < 6; i++) {
-    lights.turn(i, 1)
+    lights.set(i, 1)
     loops.pause(500)
 }
 ```

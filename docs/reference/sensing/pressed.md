@@ -14,11 +14,11 @@ If pin `D0` is pressed, show a phaser on all the other pin LEDs.
 loops.forever(function () {
     if (sensing.pressed(DigitalPin.D0)) {
         for (let i = 0; i <= 4; i++) {
-            lights.turn(i + 1, 1)
+            lights.set(i + 1, 1)
             loops.pause(50)
         }
         for (let i = 0; i <= 4; i++) {
-            lights.turn(i + 1, 0)
+            lights.set(i + 1, 0)
         }
     }
     loops.pause(100)

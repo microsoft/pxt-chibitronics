@@ -9,7 +9,12 @@ namespace sensing {
     //% blockId=sensing_pressed block="is|%name=digital_pin|%value"
     export function pressed(name: number, value: PulseValue = PulseValue.High): boolean {
         pins.pinMode(name, PinMode.Input);
-        return pins.digitalRead(name) == value ? true : false;
+        const readValue = pins.digitalRead(name);
+        switch(value) {
+            case PulseValue.High: return readValue > 0;
+            case PulseValue.Low: return readValue == 0;
+        }
+        return false;
     }
 
     /**

@@ -4,9 +4,9 @@ Flash the LEDs every half second.
 
 ```blocks
 loops.forever(() => {
-    lights.set(DigitalPin.D0, 1)
+    lights.on(DigitalPin.D0)
     loops.pause(1000)
-    lights.set(DigitalPin.D0, 0)
+    lights.off(DigitalPin.D0)
     loops.pause(1000)
 })
 ```
