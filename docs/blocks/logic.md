@@ -4,7 +4,7 @@
 if(true) {}
 true;
 true && false;
-1 != 0;
+1 != 1;
 ```
 ## See also #seealso
 
