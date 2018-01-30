@@ -75,7 +75,7 @@
   "Math.pow|param|y": "The exponent value of the expression.",
   "Math.random": "Returns a pseudorandom number between 0 and 1.",
   "Math.randomBoolean": "Generates a `true` or `false` value randomly, just like flipping a coin.",
-  "Math.randomRange": "Returns a pseudorandom number between min and max included. \nIf both numbers are integral, the result is integral.",
+  "Math.randomRange": "Returns a pseudorandom number between min and max included.\nIf both numbers are integral, the result is integral.",
   "Math.randomRange|param|max": "the upper inclusive bound, eg: 10",
   "Math.randomRange|param|min": "the lower inclusive bound, eg: 0",
   "Math.round": "Returns a supplied numeric expression rounded to the nearest number.",

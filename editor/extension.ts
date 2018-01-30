@@ -286,7 +286,54 @@ namespace chibitronics {
                     </value>
                 </block>
             </category>
-            <category colour="#66672C" name="Arrays" nameid="arrays" category="45" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays"></category>
+            <category colour="#66672C" name="Arrays" nameid="arrays" category="45" web-icon="\uf0cb" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays" advanced="true">
+            <block type="lists_create_with">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_create_with">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+                <value name="ADD1">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_index_get">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">${lf("{id:var}list")}</field>
+                    </block>
+                </value>
+                <value name="INDEX">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_index_set">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">${lf("{id:var}list")}</field>
+                    </block>
+                </value>
+                <value name="INDEX">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>            
         </xml>`;
         const res: pxt.editor.ExtensionResult = {
             toolboxOptions: {
