@@ -35,7 +35,7 @@ The editor works in [most modern browsers](/browsers) and needs no installation.
 
 Compilation to machine code from [Blocks](/blocks) or [JavaScript](/javascript) happens in the browser.
 
-When you have your code ready, you connect your @boardname@ to a computer using a [USB-to-audio cable](https://chibitronics.com/programming-chibi-chip/). Check to see if the **PROG light** on your board is red.  If it isn’t, press the **PROG button** until the light stays red. Press the **Upload** at the bottom of the page to move your code onto the @boardname@.
+When you have your code ready, you connect your @boardname@ to a computer using a [USB-to-audio cable](https://chibitronics.com/programming-chibi-chip/). Check to see if the **PROG light** on your board is red.  If it isn’t, press the **PROG button** until the light stays red. Press the [**Upload**](/upload) at the bottom of the page to move your code onto the @boardname@.
 
 ## Simulator: Test your code
 

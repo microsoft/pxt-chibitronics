@@ -1,5 +1,9 @@
 # @extends
 
+## Support #support
+
+* [Upload help](/upload)
+
 ## Reference #reference
 
 * [Reference](/reference)
