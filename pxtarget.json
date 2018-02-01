@@ -155,6 +155,7 @@
         "boardName": "Chibi Chip",
         "showHomeScreen": true,
         "homeScreenHero": "./static/getting-started/getting-started.png",
+        "usbDocs": "/upload",
         "sideDoc": "tutorials/getting-started",
         "docMenu": [
             {
