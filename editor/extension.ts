@@ -11,6 +11,7 @@ namespace chibitronics {
             return Promise.resolve();
         }
         const boardName = pxt.appTarget.appTheme.boardName;
+        const docUrl = pxt.appTarget.appTheme.usbDocs;
         const htmlBody = `
         <div class="ui three column grid stackable">
             <div class="column">
@@ -57,8 +58,14 @@ namespace chibitronics {
             header: lf("Upload instructions"),
             htmlBody,
             hideCancel: true,
-            agreeLbl: lf("Ready?")
-        }).then(() => { });
+            agreeLbl: lf("Ready?"),
+            buttons: [docUrl ? {
+                label: lf("Help"),
+                icon: "help",
+                class: "lightgrey focused",
+                url: docUrl
+            } : undefined]
+}).then(() => { });
     }
     function showIEUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
         if (!confirmAsync) {
