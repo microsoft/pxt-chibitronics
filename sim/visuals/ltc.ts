@@ -774,12 +774,12 @@ namespace pxsim.visuals {
                     });
             })
             this.pins.slice().forEach((btn, index) => {
-                btn.addEventListener(pointerEvents.down, ev => {
+                pointerEvents.down.forEach(evid => btn.addEventListener(evid, ev => {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = true;
                     this.updatePin(state.edgeConnectorState.pins[index], index);
                     this.board.bus.queue(state.edgeConnectorState.pins[index].id, LTC.LTC_BUTTON_EVT_DOWN);
-                })
+                }))
                 btn.addEventListener(pointerEvents.leave, ev => {
                     let state = this.board;
                     state.edgeConnectorState.pins[index].touched = false;

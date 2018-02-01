@@ -58,9 +58,5 @@ loops.forever(function () {
     lights.set(DigitalPin.D5, 1)
     loops.pause(700)
 })
-
 ```
 
-```package
-light
-```
