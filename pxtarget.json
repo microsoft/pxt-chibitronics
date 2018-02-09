@@ -199,7 +199,8 @@
             "logic": "#FFBF00",
             "math": "#59C059",
             "variables": "#FF6680",
-            "text": "#5cb1d6"
+            "text": "#5cb1d6",
+            "arrays": "#ff661A"
         },
         "socialOptions": {
             "twitterHandle": "chibitronics",
