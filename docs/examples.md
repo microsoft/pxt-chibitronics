@@ -10,7 +10,7 @@ Here are some fun programs for your @boardname@!
   "url":"/examples/basics/fade",
   "cardType": "example",
   "imageUrl":"/static/chibi/examples/mc-fade-final.gif",
-  "description": "See how @boardname@ can change the brightness of an LED."
+  "description": "See how Chibi Chip can change the brightness of an LED."
 }]
 ```
 
