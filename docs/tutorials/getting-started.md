@@ -16,12 +16,12 @@ Well, we don't want it shining forever, so, let's add more code to make your fir
 
 ## Step 2
 
-Find the **pause** block located in **CONTROL**, and drag it under your **set D0 ON** block. Let's create a pause in this function so that after it turns on, it has a little time to think! Let's change the value of the block to ``900``. This means 900 milliseconds, just a little less than a whole second.
+Find the **pause** block located in **CONTROL**, and drag it under your **set D0 ON** block. Let's create a pause in this function so that after it turns on, it has a little time to think! Let's change the value of the block to ``1 second``. This will appear as ``1000`` milliseconds (ms) after you select it.
 
 ```blocks
 loops.forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(900)
+    loops.pause(1000)
 })
 ```
 
@@ -32,21 +32,21 @@ Now that we have a pause, what could we do next? We can ask the board to turn of
 ```blocks
 loops.forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(900)
+    loops.pause(1000)
     lights.set(DigitalPin.D0, 0)
 })
 ```
 
 ## Step 4
 
-Alright, we just need to add one more thing: a last pause block to create a blinking effect. Take another **pause** block and add it to your loop at the end. Set the value of the block to ``900`` just like before.
+Alright, we just need to add one more thing: a last pause block to create a blinking effect. Take another **pause** block and add it to your loop at the end. Set the value of the block to ``1 second`` just like before.
 
 ```blocks
 loops.forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(900)
+    loops.pause(1000)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(900)
+    loops.pause(1000)
 })
 ```
 
