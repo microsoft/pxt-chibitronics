@@ -48,13 +48,13 @@ declare namespace pins {
     function digitalWrite(name: int32, value: int32): void;
 
     /**
-     * Set the connector value as analog. Value must be comprised between 0 and 255.
+     * Set the connector value as analog. Value must be comprised between 0 and 1024.
      * @param name pin name to write to, eg: AnalogPin.A0
-     * @param value value to write to the pin between ``0`` and ``255``. eg:255,0
+     * @param value value to write to the pin between ``0`` and ``1024``. eg:1024,0
      */
     //% help=pins/analog-write weight=24
     //% blockId=device_set_analog_pin block="analog write |%name=analog_pin|to %value"
-    //% value.min=0 value.max=255 shim=pins::analogWrite
+    //% value.min=0 value.max=1024 shim=pins::analogWrite
     function analogWrite(name: int32, value: int32): void;
 
     /**
@@ -66,7 +66,7 @@ declare namespace pins {
     function digitalRead(name: int32): int32;
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 255.
+     * Read the connector value as analog, that is, as a value comprised between 0 and 1024.
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read weight=25

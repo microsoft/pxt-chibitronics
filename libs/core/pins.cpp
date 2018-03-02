@@ -37,7 +37,7 @@ namespace pins {
     }
 
     /**
-     * Read the connector value as analog, that is, as a value comprised between 0 and 255.
+     * Read the connector value as analog, that is, as a value comprised between 0 and 1023.
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=pins/analog-read weight=25
