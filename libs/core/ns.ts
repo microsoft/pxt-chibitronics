@@ -8,7 +8,7 @@ namespace lights {
 }
 
 /**
- * Control currents in Pins for analog/digital signals, servos, i2c, ...
+ * Events and data from sensors
  */
 //% color=#9966FF weight=90 icon="\uf192"
 namespace sensing {
