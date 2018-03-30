@@ -22,9 +22,9 @@ namespace sensing {
      * @param name pin to write to, eg: AnalogPin.A0
      */
     //% help=sensing/read weight=25
-    //% blockId=sending_read block="read analog|%name=analog_pin"
+    //% blockId=sending_read block="read level|%name=analog_pin"
     export function read(name: number): number {
         pins.analogPinMode(name, PinMode.Input);
-        return Math.map(pins.analogRead(name), 0, 255, 0, 100);
+        return Math.map(pins.analogRead(name), 0, 1023, 0, 100);
     }
 }
