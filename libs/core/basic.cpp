@@ -6,7 +6,6 @@
  * Provides access to basic functionality.
  */
 //% color=#FFAB19 weight=100 icon="\uf00a"
-//% blockNamespace="control"
 namespace loops {
 
     static void forever_stub(void *a) {
