@@ -31,7 +31,7 @@ npm install
 * install platformio command line:
 
 ```
-npm install -g platformio
+python2 -m pip install -U platformio
 ```
 
 * install the ltc platform:
