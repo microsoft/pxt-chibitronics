@@ -21,8 +21,8 @@ declare namespace loops {
      */
     //% help=control/pause weight=54
     //% async block="pause %ms=timePicker|ms"
-    //% blockId=device_pause icon="\uf110" shim=loops::pause
-    function pause(ms: int32): void;
+    //% blockId=device_pause icon="\uf110" ms.defl="500" ms.defl=500 shim=loops::pause
+    function pause(ms?: int32): void;
 }
 declare namespace sensing {
 
