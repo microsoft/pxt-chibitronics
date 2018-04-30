@@ -47,7 +47,7 @@ namespace loops {
      */
     //% help=control/pause weight=54
     //% async block="pause %ms=timePicker|ms"
-    //% blockId=device_pause icon="\uf110" ms.defl="500"
+    //% blockId=device_pause icon="\uf110"
     void pause(int ms) {
       delay(ms);
     }
