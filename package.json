@@ -1,6 +1,6 @@
 {
   "name": "pxt-chibitronics",
-  "version": "0.1.58",
+  "version": "0.1.59",
   "description": "chibitronics target for PXT",
   "keywords": [
     "JavaScript",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "chibitronics-ltc-modulate": "^1.2.1",
-    "pxt-core": "3.12.9"
+    "pxt-core": "3.12.28"
   },
   "scripts": {
     "test": "node node_modules/pxt-core/built/pxt.js travis"
