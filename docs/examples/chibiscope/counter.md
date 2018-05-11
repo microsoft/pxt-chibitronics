@@ -60,3 +60,6 @@ count = 0
 
 Run your code. Does your counter work? Great job on completing this activity! 
 
+```package
+scope
+```
