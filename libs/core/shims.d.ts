@@ -12,7 +12,7 @@ declare namespace loops {
      * @param body code to execute
      */
     //% help=control/forever weight=55 blockAllowMultiple=1 afterOnStart=true
-    //% blockId=device_forever_deprecated block="forever" icon="\uf01e" shim=loops::forever
+    //% blockId=device_forever_deprecated block="forever" icon="\uf01e" deprecated=true shim=loops::forever
     function forever(a: () => void): void;
 
     /**
@@ -20,7 +20,7 @@ declare namespace loops {
      * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
      */
     //% help=control/pause weight=54
-    //% async block="pause %ms=timePicker|ms"
+    //% async block="pause %ms=timePicker|ms" deprecated=true
     //% blockId=device_pause_deprecated icon="\uf110" shim=loops::pause
     function pause(ms: int32): void;
 }
