@@ -138,13 +138,13 @@ namespace lights {
 
             current = fade_to(current, 0xc0, 2, pin, 1);
             current = fade_to(current, 0x4, 2, pin, 1);
-            loops.pause(80); // fastest rate
-            loops.pause((13 - tempo) * 15);
+            pause(80); // fastest rate
+            pause((13 - tempo) * 15);
             //delay(180);
             current = fade_to(current, 0xff, 2, pin, 1);
             current = fade_to(current, 0x00, 2, pin, 1);
-            loops.pause(214); // fastest rate
-            loops.pause((13 - tempo) * 37);
+            pause(214); // fastest rate
+            pause((13 - tempo) * 37);
             //delay(420);
         }
 
@@ -164,7 +164,7 @@ namespace lights {
             while (Math.abs(current - target) > rate) {
                 pins.analogWrite(pin, current);
                 current = current + ((target - current) > 0 ? rate : - rate);
-                loops.pause(pause);
+                pause(pause);
             }
             return current;
         }
@@ -172,22 +172,22 @@ namespace lights {
         export function sos(pin: AnalogPin, tempo = 5) {
             for (let i = 0; i < 3; i++) {
                 pins.analogWrite(pin, 255);
-                loops.pause(tempo * 20);
+                pause(tempo * 20);
                 pins.analogWrite(pin, 0);
-                loops.pause(tempo * 20);
+                pause(tempo * 20);
             }
             for (let i = 0; i < 3; i++) {
                 pins.analogWrite(pin, 255);
-                loops.pause(tempo * 50);
+                pause(tempo * 50);
                 pins.analogWrite(pin, 0);
-                loops.pause(tempo * 20);
+                pause(tempo * 20);
             }
             for (let i = 0; i < 3; i++) {
                 pins.analogWrite(pin, 255);
-                loops.pause(tempo * 20);
+                pause(tempo * 20);
                 pins.analogWrite(pin, 0);
-                loops.pause(tempo * 20);
+                pause(tempo * 20);
             }
-            loops.pause(tempo * 100);
+            pause(tempo * 100);
         }
     }

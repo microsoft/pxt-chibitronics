@@ -29,7 +29,7 @@ Slowly dim the blue light of the RGB LED by each dim level.
 ```blocks
 for (let level = 0; level <= 5; level++) {
     rgb.setColor(rgb.dim(Colors.Blue, level))
-    loops.pause(2000)
+    pause(2000)
 }
 ```
 

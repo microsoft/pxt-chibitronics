@@ -21,7 +21,7 @@ namespace loops {
      * @param body code to execute
      */
     //% help=control/forever weight=55 blockAllowMultiple=1 afterOnStart=true
-    //% blockId=device_forever block="forever" icon="\uf01e"
+    //% blockId=device_forever_deprecated block="forever" icon="\uf01e"
     void forever(Action a) {
       if (a != 0) {
         incr(a);
@@ -47,7 +47,7 @@ namespace loops {
      */
     //% help=control/pause weight=54
     //% async block="pause %ms=timePicker|ms"
-    //% blockId=device_pause icon="\uf110"
+    //% blockId=device_pause_deprecated icon="\uf110"
     void pause(int ms) {
       delay(ms);
     }

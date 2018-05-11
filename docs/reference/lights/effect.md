@@ -20,8 +20,8 @@ You can choose to have a light effect, like blink or pulse, happen on the LED at
 If pin `A0` is pressed, then show the `SOS` effect at pin `A2`,
 
 ```blocks
-loops.forever(function () {
-    loops.pause(100)
+forever(function () {
+    pause(100)
     if (sensing.pressed(DigitalPin.D0)) {
         lights.effect(Effect.SOS, AnalogPin.A2)
     }

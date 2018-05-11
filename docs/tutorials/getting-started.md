@@ -5,7 +5,7 @@
 Welcome to the @boardname@! Let's start with your first coding challenge on the board. Grab a **forever** loop found in **CONTROL** and place a **set D0 ON** block from **LIGHTS** inside of it.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     lights.set(DigitalPin.D0, 1)
 })
 ```
@@ -19,9 +19,9 @@ Well, we don't want it shining forever, so, let's add more code to make your fir
 Find the **pause** block located in **CONTROL**, and drag it under your **set D0 ON** block. Let's create a pause in this function so that after it turns on, it has a little time to think! Let's change the value of the block to ``1 second``. This will appear as ``1000`` milliseconds (ms) after you select it.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(1000)
+    pause(1000)
 })
 ```
 
@@ -30,9 +30,9 @@ loops.forever(function() {
 Now that we have a pause, what could we do next? We can ask the board to turn off the LED after turning it on and pausing! Take a **set D0 ON** block from **LIGHTS** and place it in your **forever** loop. Change the **ON** to **OFF** by clicking on the toggle.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(1000)
+    pause(1000)
     lights.set(DigitalPin.D0, 0)
 })
 ```
@@ -42,11 +42,11 @@ loops.forever(function() {
 Alright, we just need to add one more thing: a last pause block to create a blinking effect. Take another **pause** block and add it to your loop at the end. Set the value of the block to ``1 second`` just like before.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(1000)
+    pause(1000)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(1000)
+    pause(1000)
 })
 ```
 

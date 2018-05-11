@@ -22,7 +22,7 @@ lights.setLevel(AnalogPin.A0, 100)
 From **LIGHTS**, drag a **set A0 to 100** block out and place it into your forever loop. 
 
 ```block
-loops.forever(function () {
+forever(function () {
     lights.setLevel(AnalogPin.A0, 100)
 })
 ```
@@ -37,7 +37,7 @@ lights.setLevel(AnalogPin.A1, 100)
 So, now we have:
 
 ```blocks
-loops.forever(function () {
+forever(function () {
     lights.setLevel(AnalogPin.A1, 100)
 })
 ```

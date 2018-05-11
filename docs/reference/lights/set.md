@@ -16,13 +16,13 @@ lights.set(DigitalPin.D0, 1)
 Toggle the LEDs on pins `D0` and `D5` forever.
 
 ```blocks
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
     lights.set(DigitalPin.D5, 0)
-    loops.pause(500)
+    pause(500)
     lights.set(DigitalPin.D0, 0)
     lights.set(DigitalPin.D5, 1)
-    loops.pause(500)
+    pause(500)
 })
 ```
 

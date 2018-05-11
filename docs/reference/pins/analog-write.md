@@ -24,11 +24,11 @@ Create a sawtooth wave signal on pin `A0`.
 
 ```blocks
 let i = 0
-loops.forever(function() {
+forever(function() {
     i = 0
     while (i <= 255) {
         pins.analogWrite(AnalogPin.A0, i)
-        loops.pause(100)
+        pause(100)
         if (i > 0) {
             i += 128
         } else {

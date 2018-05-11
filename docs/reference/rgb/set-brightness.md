@@ -20,11 +20,11 @@ Set the RBG LED to have a `pink` color. Then, pulse the `pink` color by changing
 
 ```blocks
 rgb.setColor(Colors.Pink)
-loops.forever(function() {
-    loops.pause(1000)
+forever(function() {
+    pause(1000)
     rgb.setBrightness(30)
     rgb.setColor(Colors.Pink)
-    loops.pause(1000)
+    pause(1000)
     rgb.setBrightness(100)
     rgb.setColor(Colors.Pink)
 })

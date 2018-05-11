@@ -36,7 +36,7 @@ count = 0
 
 ```blocks
 let count = 0 
-loops.forever (function () {
+forever (function () {
     scope.writeNumber(count)
 })
 count = 0 
@@ -48,10 +48,10 @@ count = 0
 
 ```blocks
 let count = 0
-loops.forever(function () {
+forever(function () {
     scope.writeNumber(count)
     count += 1 
-    loops.pause(75)
+    pause(75)
 })
 count = 0 
 ```

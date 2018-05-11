@@ -3,7 +3,7 @@
 Pause a part of the program for some number of milliseconds.
 
 ```sig
-loops.pause(400)
+pause(400)
 ```
 
 When code in a block comes to a ``||pause||``, it will wait the amount of time you tell it to. Code
@@ -21,7 +21,7 @@ Light up th3 `5` LEDs but wait one-half second before lighting each LED.
 ```blocks
 for (let i = 0; i < 6; i++) {
     lights.set(i, 1)
-    loops.pause(500)
+    pause(500)
 }
 ```
 

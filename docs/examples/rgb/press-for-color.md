@@ -19,7 +19,7 @@ let c = 0;
 
 pins.pinMode(DigitalPin.D0, PinMode.PullUp);
 
-loops.forever(() => {
+forever(() => {
     if (pins.digitalRead(DigitalPin.D0) == 0) {
         pinHue += pinDir;
         if (pinHue >= HUE_DEGREE) {
@@ -38,7 +38,7 @@ loops.forever(() => {
     hsv2rgb();
 
     rgb.setColor(c)
-    loops.pause(10);
+    pause(10);
 })
 
 // from https://gist.github.com/mity/6034000

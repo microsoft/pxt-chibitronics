@@ -44,7 +44,7 @@ let myYellow = rgb.rgb(255, 228, 181)
 let myBlack = rgb.rgb(0, 0, 0)
 let showColor = myYellow
 
-loops.forever(function () {
+forever(function () {
     if (sensing.pressed(DigitalPin.D0)) {
         rgb.setColor(showColor)
         if (showColor == myYellow) {
@@ -52,7 +52,7 @@ loops.forever(function () {
         } else {
             showColor = myYellow
         }
-        loops.pause(250)
+        pause(250)
     }
 })
 ```

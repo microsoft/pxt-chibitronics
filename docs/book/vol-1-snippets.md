@@ -11,21 +11,21 @@ If you want to get these snippets compiled as part of the build, add a link to t
 ### Blink
 
 ```blocks
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(500)
+    pause(500)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(500)
+    pause(500)
 })
 ```
 
 ### Long short blink
 
 ```blocks
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(500)
+    pause(500)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(100)
+    pause(100)
 })
 ```

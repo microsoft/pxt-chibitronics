@@ -21,13 +21,13 @@ Get the RGB values for `yellow` and `blue` Set the colors on the RGB LED.
 
 ```blocks
 let nowColor = rgb.colors(Colors.Black)
-loops.forever(function() {
+forever(function() {
     nowColor = rgb.colors(Colors.Yellow)
     setNowColor()
-    loops.pause(1000)
+    pause(1000)
     nowColor = rgb.colors(Colors.Blue)
     setNowColor()
-    loops.pause(1000)
+    pause(1000)
 
 })
 

@@ -20,10 +20,10 @@ is something between `0` and `255`.  A `0` is no signal and `255` is a full sign
 Use the RGB LED as a signal meter. Read from pin `A2` and light the RBG LED with a color wheel value that relates to the signal value.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     let signal = pins.analogRead(AnalogPin.A2)
     rgb.setColor(rgb.wheel(signal))
-    loops.pause(1000)
+    pause(1000)
 }) 
 ```
 

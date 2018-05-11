@@ -13,19 +13,19 @@ Here's the amazing new **Love to Code** system with the @boardname@ from **[chib
 You can program the @boardname@ using [Blocks](/blocks) or [JavaScript](/javascript) in your web browser:
 
 ```block
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(300)
+    pause(300)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(300)
+    pause(300)
 })
 ```
 ```typescript
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
-    loops.pause(300)
+    pause(300)
     lights.set(DigitalPin.D0, 0)
-    loops.pause(300)
+    pause(300)
 })
 ```
 
@@ -42,21 +42,21 @@ When you have your code ready, you connect your @boardname@ to a computer using 
 You can run your code using the **@boardname@** simulator. It all works nicely inside the web browser. The simulator has support for the LED's, buttons, and digital I/O pins.
 
 ```sim
-loops.forever(function () {
+forever(function () {
     lights.set(DigitalPin.D0, 1)
     lights.set(DigitalPin.D1, 0)
     lights.set(DigitalPin.D2, 1)
     lights.set(DigitalPin.D3, 0)
     lights.set(DigitalPin.D4, 1)
     lights.set(DigitalPin.D5, 0)
-    loops.pause(700)
+    pause(700)
     lights.set(DigitalPin.D0, 0)
     lights.set(DigitalPin.D1, 1)
     lights.set(DigitalPin.D2, 0)
     lights.set(DigitalPin.D3, 1)
     lights.set(DigitalPin.D4, 0)
     lights.set(DigitalPin.D5, 1)
-    loops.pause(700)
+    pause(700)
 })
 ```
 

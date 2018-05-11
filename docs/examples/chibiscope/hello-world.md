@@ -64,9 +64,9 @@ If you try running it now, what happens? The code prints out REALLY fast without
 * From **CONTROL**, grab a **pause** block and place it under your message block. Change the value to ``2000``. 
 
 ```blocks 
-loops.forever(function () {
+forever(function () {
     scope.writeLine("Test...")
-    loops.pause(2000)
+    pause(2000)
 })
 scope.writeLine("Hello World!")
 scope.writeLine(" ")

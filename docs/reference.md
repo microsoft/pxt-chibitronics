@@ -2,7 +2,7 @@
 
 
 ```namespaces
-loops.forever(function () {})
+forever(function () {})
 lights.set(DigitalPin.D0, 1)
 sensing.pressed(DigitalPin.D0)
 rgb.setColor(0)

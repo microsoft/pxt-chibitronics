@@ -23,7 +23,7 @@ Set the analog pin value on `A0` from `0` to `100` percent in ten steps. The LED
 ```blocks
 for (let i = 0; i <= 10; i++) {
     lights.setLevel(AnalogPin.A0, i * 10)
-    loops.pause(1000)
+    pause(1000)
 }
 ```
 

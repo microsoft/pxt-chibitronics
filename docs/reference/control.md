@@ -11,8 +11,8 @@ for(let i= 0; i < 5; i++) {}
 ## Basic control
 
 ```cards
-loops.forever(function() {});
-loops.pause(0)
+forever(function() {});
+pause(0)
 ```
 
 ## See also

@@ -3,7 +3,7 @@
 Run a part of the program in the background and keep running it over again.
 
 ```sig
-loops.forever(function() {
+forever(function() {
 })
 ```
 
@@ -21,12 +21,12 @@ Rotate a the LEDs by turning them on and off in sequence.
 
 ```blocks
 let lightSpot = 0;
-loops.forever(() => {
+forever(() => {
     if (lightSpot == 6) {
         lightSpot = 0;
     }
     lights.set(lightSpot, 1)
-    loops.pause(500)
+    pause(500)
     lights.set(lightSpot, 0)
     lightSpot++
 })

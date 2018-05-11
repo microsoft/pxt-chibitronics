@@ -12,7 +12,7 @@ declare namespace loops {
      * @param body code to execute
      */
     //% help=control/forever weight=55 blockAllowMultiple=1 afterOnStart=true
-    //% blockId=device_forever block="forever" icon="\uf01e" shim=loops::forever
+    //% blockId=device_forever_deprecated block="forever" icon="\uf01e" shim=loops::forever
     function forever(a: () => void): void;
 
     /**
@@ -21,7 +21,7 @@ declare namespace loops {
      */
     //% help=control/pause weight=54
     //% async block="pause %ms=timePicker|ms"
-    //% blockId=device_pause icon="\uf110" shim=loops::pause
+    //% blockId=device_pause_deprecated icon="\uf110" shim=loops::pause
     function pause(ms: int32): void;
 }
 declare namespace sensing {

@@ -27,13 +27,13 @@ rgb.setColor(rgb.rgb(128, 45, 89))
 Make a pretend stop light with the RGB LED.
 
 ```blocks
-loops.forever(function() {
+forever(function() {
     rgb.setColor(Colors.Green)
-    loops.pause(5000)
+    pause(5000)
     rgb.setColor(Colors.Yellow)
-    loops.pause(1500)
+    pause(1500)
     rgb.setColor(Colors.Red)
-    loops.pause(5000)
+    pause(5000)
 })
 ```
 

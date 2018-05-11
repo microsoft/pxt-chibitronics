@@ -29,9 +29,9 @@ if (wheelColor == rgb.colors(Colors.Yellow))
 {
     for (let i = 0; i <= 3; i++) {
         rgb.setColor(wheelColor)
-        loops.pause(1000)
+        pause(1000)
         rgb.setColor(rgb.colors(Colors.Black))
-        loops.pause(1000)
+        pause(1000)
     }
 }
 ```
