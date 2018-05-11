@@ -62,7 +62,7 @@ namespace chibitronics {
             buttons: [docUrl ? {
                 label: lf("Help"),
                 icon: "help",
-                className: "lightgrey focused",
+                class: "lightgrey focused",
                 url: docUrl
             } : undefined]
         }).then(() => { });
