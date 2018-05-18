@@ -370,7 +370,6 @@ namespace chibitronics {
                 } else {
                     showUploadInstructionsAsync(resp.confirmAsync)
                         .then((confirm) => {
-                            console.log(confirm);
                             // For all other browsers, play the sound directly in the browser
                             modController.transcodeToAudioTag(bin, audio);
                             resp.saveOnly = true;
