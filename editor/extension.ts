@@ -95,7 +95,7 @@ namespace chibitronics {
             toolboxOptions: {
                 blocklyToolbox: {
                     loops: {
-                        name: "Control",
+                        name: lf("{id:category}Control"),
                         icon: "logic",
                         blocks:
                             opts.blocklyToolbox.loops.blocks.concat(
@@ -138,7 +138,7 @@ namespace chibitronics {
                 },
                 monacoToolbox: {
                     loops: {
-                        name: "Control",
+                        name: lf("{id:category}Control"),
                         icon: "logic",
                         blocks:
                             opts.monacoToolbox.loops.blocks.concat(
