@@ -92,9 +92,6 @@ static void pinPollThread(void *ptr)
 
 static void spawnPinPollThread(void)
 {
-    static int sp = 0;
-    printf("Sp:%d\n", ++sp);
-
     // Don't re-spawn the thread.
     if (events)
         return;
