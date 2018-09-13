@@ -3,7 +3,7 @@
 #include "pins.h"
 #include "ChibiOS.h"
 
-#define POLL_PIN_STACK_SIZE 256
+#define POLL_PIN_STACK_SIZE 400
 
 #define EVENT_TYPE_NONE 0
 #define EVENT_TYPE_FALLING 1
@@ -92,9 +92,6 @@ static void pinPollThread(void *ptr)
 
 static void spawnPinPollThread(void)
 {
-    static int sp = 0;
-    printf("Sp:%d\n", ++sp);
-
     // Don't re-spawn the thread.
     if (events)
         return;
