@@ -21,6 +21,7 @@ namespace pxsim.rgb {
 namespace pxsim {
     export class RGBStickerState {
         protected buffers: Uint8Array[] = [];
+        protected lengths: number[] = [];
         protected colors: Map<RGBW[]> = {};
         protected dirty: Map<boolean> = {};
 
@@ -35,6 +36,8 @@ namespace pxsim {
             buf[start + 1] = r;
             buf[start + 2] = b;
 
+            this.lengths[pin] = Math.max(this.lengths[pin] || 0, index + 1);
+
             this.updateBuffer(buf, pin);
         }
 
@@ -42,7 +45,7 @@ namespace pxsim {
             let outColors = this.colors[pin] || (this.colors[pin] = []);
             if (this.dirty[pin]) {
                 let buf = this.buffers[pin] || (this.buffers[pin] = new Uint8Array([]));
-                this.readNeoPixelBuffer(buf, outColors, NeoPixelMode.RGB);
+                this.readNeoPixelBuffer(buf, outColors, NeoPixelMode.RGB, this.lengths[pin]);
                 this.dirty[pin] = false;
             }
             return outColors;
@@ -61,10 +64,10 @@ namespace pxsim {
             this.dirty[pin] = true;
         }
 
-        private readNeoPixelBuffer(inBuffer: Uint8Array, outColors: RGBW[], mode: NeoPixelMode) {
+        private readNeoPixelBuffer(inBuffer: Uint8Array, outColors: RGBW[], mode: NeoPixelMode, pixelCount = 0) {
             let buf = inBuffer;
             let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
-            let pixelCount = Math.floor(buf.length / stride);
+            pixelCount = pixelCount || Math.floor(buf.length / stride);
             for (let i = 0; i < pixelCount; i++) {
                 // NOTE: for whatever reason, NeoPixels pack GRB not RGB
                 let r = buf[i * stride + 1]

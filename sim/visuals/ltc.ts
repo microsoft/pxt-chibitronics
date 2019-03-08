@@ -261,7 +261,7 @@ namespace pxsim.visuals {
         private scopeTextNode2: SVGTextElement;
         private scopeTextNode3: SVGTextElement;
 
-        private ledStickers: RGBSticker[];
+        private ledStickers: RGBStickerStrip[];
 
         constructor(public props: IBoardProps) {
             this.recordPinCoords();
@@ -484,10 +484,10 @@ namespace pxsim.visuals {
         private updateRGBStickers() {
             const state = this.board.rgbStickerState;
             state.usedPins().forEach(pin => {
-                let sticker = this.ledStickers[pin];
-                if (!sticker) {
-                    sticker = (this.ledStickers[pin] = new RGBSticker());
-                    this.g.appendChild(sticker.getSVG());
+                let rgbStrip = this.ledStickers[pin];
+                if (!rgbStrip) {
+                    rgbStrip = (this.ledStickers[pin] = new RGBStickerStrip());
+                    this.g.appendChild(rgbStrip.getSVG());
                     svg.hydrate(this.element, {
                         "version": "1.0",
                         "viewBox": `0 0 230 250`,
@@ -498,13 +498,15 @@ namespace pxsim.visuals {
                         "height": "100%"
                     });
 
-                    sticker.moveTo(50, 140);
-                    this.g.appendChild(sticker.createDataPath([20 + 24 * (pin + 1), 110]));
+                    rgbStrip.moveTo(45, 140);
+                    rgbStrip.setDataPinLocation([20 + 24 * (pin + 1), 110])
+                    rgbStrip.setGroundPinLocation([20, 110])
+                    rgbStrip.setPowerPinLocation([208, 110])
                 }
                 const colors = state.getColors(pin);
                 for (let i = 0; i < colors.length; i++) {
                     const color = colors[i];
-                    sticker.setLED(i, color)
+                    rgbStrip.setLED(i, color)
                 }
             });
         }
