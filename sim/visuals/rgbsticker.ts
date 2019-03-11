@@ -16,7 +16,6 @@ namespace pxsim.visuals {
         }
 
         setLED(color: [number, number, number]) {
-
             let hsl = visuals.rgbToHsl(color);
             let [h, s, l] = hsl;
             let lx = Math.max(l * 1.3, 85);
@@ -139,7 +138,9 @@ namespace pxsim.visuals {
             const end = this.groundLocation();
             const path: [number, number][] = [
                 this.groundSourceLocation,
-                [this.groundSourceLocation[0], end[1]],
+                [this.groundSourceLocation[0], this.groundSourceLocation[1] - 18],
+                [this.left - 25, this.groundSourceLocation[1] - 18],
+                [this.left - 25, end[1]],
                 end
             ];
 
@@ -152,12 +153,12 @@ namespace pxsim.visuals {
             if (this.dataWire) this.wireRoot.removeChild(this.dataWire);
 
             const end = this.dataLocation();
-            const bendY = this.dataSourceLocation[1] + ((this.top - this.dataSourceLocation[1]) / 2);
             const path: [number, number][] = [
                 this.dataSourceLocation,
-                [this.dataSourceLocation[0], bendY],
-                [this.left - 10, bendY],
-                [this.left - 10, end[1]],
+                [this.dataSourceLocation[0] + 15, this.dataSourceLocation[1]],
+                [this.dataSourceLocation[0] + 15, this.dataSourceLocation[1] + 100],
+                [this.left - 5, this.dataSourceLocation[1] + 100],
+                [this.left - 5, end[1]],
                 end
             ];
 
@@ -170,12 +171,11 @@ namespace pxsim.visuals {
             if (this.powerWire) this.wireRoot.removeChild(this.powerWire);
 
             const end = this.powerLocation();
-            const bendY = this.powerSourceLocation[1] + ((this.top - this.powerSourceLocation[1]) / 2);
             const path: [number, number][] = [
                 this.powerSourceLocation,
-                [this.powerSourceLocation[0], bendY],
-                [this.right + 20, bendY],
-                [this.right + 20, end[1]],
+                [this.powerSourceLocation[0], this.powerSourceLocation[1] - 12],
+                [this.left - 15, this.powerSourceLocation[1] - 12],
+                [this.left - 15, end[1]],
                 end
             ];
 

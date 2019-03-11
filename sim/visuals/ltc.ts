@@ -498,10 +498,10 @@ namespace pxsim.visuals {
                         "height": "100%"
                     });
 
-                    rgbStrip.moveTo(45, 140);
-                    rgbStrip.setDataPinLocation([20 + 24 * (pin + 1), 110])
-                    rgbStrip.setGroundPinLocation([20, 110])
-                    rgbStrip.setPowerPinLocation([208, 110])
+                    rgbStrip.moveTo(5, 130);
+                    rgbStrip.setDataPinLocation([211, 19]);
+                    rgbStrip.setGroundPinLocation([192, 19])
+                    rgbStrip.setPowerPinLocation([166, 19])
                 }
                 const colors = state.getColors(pin);
                 for (let i = 0; i < colors.length; i++) {
