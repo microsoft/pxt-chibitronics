@@ -35,18 +35,48 @@ namespace rgb {
         ledShow(LED_BUILTIN_RGB, pixels, 1);
     }
 
+    static unsigned char rgb_led_count;
+    static struct pixels *rgb_buffer;
+
     /**
      * Sets an RGB sticker led to a specific red, green, blue color.
-     * @param name the pin name
-     * @param index the lef index
+     * @param index the led index
      * @param red the red color
      * @param green the green color
      * @param blue the blue color
      */
     //% parts="rgbled"
-    void setRGBStickerLed(int name, int index, int r, int g, int b) {
+    void setRGBStickerLed(uint32_t index, int r, int g, int b) {
+        // Add more LEDs to our back buffer, if necessary
+        if ((index+1) > rgb_led_count) {
+
+            // [Re-]allocate the pixel buffer
+            rgb_buffer = (struct pixels *)realloc((void *)rgb_buffer, (index + 1) * 3);
+            if (!rgb_buffer) {
+                return;
+            }
+
+            // Ensure any gaps in LEDs are turned off, and not filled
+            // with random uninitialized memory.
+            unsigned int clear_idx;
+            for (clear_idx = rgb_led_count; clear_idx < index; clear_idx++) {
+                rgb_buffer[clear_idx].r = 0;
+                rgb_buffer[clear_idx].g = 0;
+                rgb_buffer[clear_idx].b = 0;
+            }
+
+            // Update the total LED count.
+            rgb_led_count = index + 1;
+        }
+
         if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
             return;
         }
+
+        rgb_buffer[index].r = r;
+        rgb_buffer[index].g = g;
+        rgb_buffer[index].b = b;
+
+        ledShow(LED_BUILTIN_RGB, rgb_buffer, rgb_led_count);
     }
 }
