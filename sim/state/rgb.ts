@@ -11,8 +11,9 @@ namespace pxsim.rgb {
         runtime.queueDisplayUpdate();
     }
 
-    export function setRGBStickerLed(name: number, index: number, r: number, g: number, b: number): void {
+    export function setRGBStickerLed(index: number, r: number, g: number, b: number): void {
         const state = board().rgbStickerState;
+        const name = 1;
         state.setLED(name, index, r, g, b);
         runtime.queueDisplayUpdate();
     }
