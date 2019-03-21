@@ -1,5 +1,8 @@
 # chibitronics target for PXT
 
+[![Build Status](https://travis-ci.org/Microsoft/pxt-chibitronics.svg)](https://travis-ci.org/Microsoft/pxt-chibitronics)
+[![Community Discord](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
+
 This target allow to program a [Chibi Chip](https://chibitronics.com/lovetocode/) using
 PXT ([Microsoft Programming Experience Toolkit](https://github.com/Microsoft/pxt)).
 
@@ -31,7 +34,7 @@ npm install
 * install platformio command line:
 
 ```
-npm install -g platformio
+python2 -m pip install -U platformio
 ```
 
 * install the ltc platform:
@@ -62,6 +65,3 @@ pxt update
 ```
 
 More instructions at https://github.com/Microsoft/pxt#running-a-target-from-localhost
-
-## Jenkins build
-https://ci2.dot.net/job/Private/job/pxt_project_yellow/job/master/

@@ -62,10 +62,10 @@ namespace chibitronics {
             buttons: [docUrl ? {
                 label: lf("Help"),
                 icon: "help",
-                class: "lightgrey focused",
+                className: "lightgrey focused",
                 url: docUrl
             } : undefined]
-}).then(() => { });
+        }).then(() => { });
     }
     function showIEUploadInstructionsAsync(confirmAsync: (confirmOptions: {}) => Promise<number>, fn: string, url: string): Promise<void> {
         if (!confirmAsync) {
@@ -89,287 +89,81 @@ namespace chibitronics {
     export function initExtensionsAsync(opts: pxt.editor.ExtensionOptions): Promise<pxt.editor.ExtensionResult> {
         pxt.debug("loading chibitronics target extensions...")
 
-        const baseXml = `
-        <xml id="blocklyToolboxDefinition" style="display: none">
-            <category name="Control" nameid="loops" colour="#FFAB19" category="50" web-icon="\uf01e" iconclass="blocklyTreeIconlogic">
-                <block type="controls_repeat_ext">
-                    <value name="TIMES">
-                        <shadow type="math_number">
-                            <field name="NUM">4</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_if" gap="8">
-                    <mutation else="1"></mutation>
-                    <value name="IF0">
-                        <shadow type="logic_boolean">
-                            <field name="BOOL">TRUE</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="device_while">
-                    <value name="COND">
-                        <shadow type="logic_boolean"></shadow>
-                    </value>
-                </block>
-                <block type="controls_simple_for">
-                    <value name="TO">
-                        <shadow type="math_number">
-                            <field name="NUM">4</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="controls_for_of">
-                    <value name="LIST">
-                        <shadow type="variables_get">
-                            <field name="VAR">list</field>
-                        </shadow>
-                    </value>
-                </block>
-            </category>
-            <category name="Math" nameid="math" colour="#59C059" category="47" web-icon="\uf1ec" iconclass="blocklyTreeIconmath" expandedclass="blocklyTreeIconmath">
-                <block type="math_arithmetic" gap="8">
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="math_arithmetic" gap="8">
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <field name="OP">MINUS</field>
-                </block>
-                <block type="math_arithmetic" gap="8">
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <field name="OP">MULTIPLY</field>
-                </block>
-                <block type="math_arithmetic" gap="8">
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <field name="OP">DIVIDE</field>
-                </block>
-                <block type="math_number" gap="8">
-                    <field name="NUM">0</field>
-                </block>
-                <block type="logic_compare" gap="8">
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="logic_compare">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="B">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="logic_operation" gap="8"></block>
-                <block type="logic_operation" gap="8">
-                    <field name="OP">OR</field>
-                </block>
-                <block type="logic_negate"></block>
-                <block type="logic_boolean" gap="8"></block>
-                <block type="logic_boolean">
-                    <field name="BOOL">FALSE</field>
-                </block>
-                <block type="math_modulo">
-                <value name="DIVIDEND">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-                <value name="DIVISOR">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                </block>
-                <block type="math_op2" gap="8">
-                    <value name="x">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="y">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="math_op2" gap="8">
-                    <value name="x">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <value name="y">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                    <field name="op">max</field>
-                </block>
-                <block type="math_op3">
-                    <value name="x">
-                        <shadow type="math_number">
-                            <field name="NUM">0</field>
-                        </shadow>
-                    </value>
-                </block>
-            </category>
-            <category name="Variables" nameid="variables" colour="#FF6680" custom="VARIABLE" category="48" iconclass="blocklyTreeIconvariables"></category>
-            <category name="Functions" nameid="functions" colour="#005a9e" custom="PROCEDURE" category="46" iconclass="blocklyTreeIconfunctions" advanced="true"></category>
-            <category colour="#996600" name="Text" advanced="true" nameid="text" category="46" web-icon="\uf035" iconclass="blocklyTreeIcontext" expandedclass="blocklyTreeIcontext">
-                <block type="text"></block>
-                <block type="text_length">
-                    <value name="VALUE">
-                        <shadow type="text">
-                            <field name="TEXT">abc</field>
-                        </shadow>
-                    </value>
-                </block>
-                <block type="text_join">
-                    <mutation items="2"></mutation>
-                    <value name="ADD0">
-                        <shadow type="text">
-                            <field name="TEXT"></field>
-                        </shadow>
-                    </value>
-                    <value name="ADD1">
-                        <shadow type="text">
-                            <field name="TEXT"></field>
-                        </shadow>
-                    </value>
-                </block>
-            </category>
-            <category colour="#66672C" name="Arrays" nameid="arrays" category="45" web-icon="\uf0cb" iconclass="blocklyTreeIconarrays" expandedclass="blocklyTreeIconarrays" advanced="true">
-            <block type="lists_create_with">
-                <mutation items="1"></mutation>
-                <value name="ADD0">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="lists_create_with">
-                <mutation items="2"></mutation>
-                <value name="ADD0">
-                    <shadow type="text">
-                        <field name="TEXT"></field>
-                    </shadow>
-                </value>
-                <value name="ADD1">
-                    <shadow type="text">
-                        <field name="TEXT"></field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="lists_length"></block>
-            <block type="lists_index_get">
-                <value name="LIST">
-                    <block type="variables_get">
-                        <field name="VAR">${lf("{id:var}list")}</field>
-                    </block>
-                </value>
-                <value name="INDEX">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-            <block type="lists_index_set">
-                <value name="LIST">
-                    <block type="variables_get">
-                        <field name="VAR">${lf("{id:var}list")}</field>
-                    </block>
-                </value>
-                <value name="INDEX">
-                    <shadow type="math_number">
-                        <field name="NUM">0</field>
-                    </shadow>
-                </value>
-            </block>
-        </category>            
-        </xml>`;
+        let logicBlockWeight = 85.9;
+        let logicMonacoBlockWeight = 40;
         const res: pxt.editor.ExtensionResult = {
             toolboxOptions: {
-                blocklyXml: baseXml,
-                monacoToolbox: {
+                blocklyToolbox: {
                     loops: {
-                        name: "Control",
-                        appendBlocks: true,
-                        blocks: [
-                            {
-                                name: "if",
-                                snippet: `if (true) {\n\n}`,
-                                jsDoc: lf("Runs code if the condition is true")
-                            },
-                            {
-                                name: "if",
-                                snippet: `if (true) {\n\n} else {\n\n}`,
-                                jsDoc: lf("Runs code if the condition is true; else run other code")
-                            }
-                        ]
+                        name: lf("{id:category}Control"),
+                        icon: "logic",
+                        blocks:
+                            opts.blocklyToolbox.loops.blocks.concat(
+                                opts.blocklyToolbox.logic.blocks
+                                    .filter(block => block.name == 'controls_if'
+                                        || block.name == 'controls_if_else')
+                                    .map(b => {
+                                        b.weight = 49;
+                                        b.group = undefined;
+                                        return b;
+                                    }))
                     },
                     logic: {
-                        removed: true
                     },
                     variables: {
                         weight: 50.06
                     },
                     maths: {
-                        weight: 50.07
+                        weight: 50.07,
+                        blocks:
+                            opts.blocklyToolbox.maths.blocks
+                                .filter(block => block.name != 'math_js_op')
+                                .concat(
+                                    opts.blocklyToolbox.logic.blocks
+                                        .filter(block => block.name != 'controls_if'
+                                            && block.name != 'controls_if_else')
+                                        .map(b => {
+                                            b.weight = logicBlockWeight;
+                                            logicBlockWeight -= 0.1;
+                                            b.group = undefined;
+                                            return b;
+                                        }))
+                    },
+                    text: {
+                        advanced: true
+                    },
+                    functions: {
+                        advanced: true
+                    }
+                },
+                monacoToolbox: {
+                    loops: {
+                        name: lf("{id:category}Control"),
+                        icon: "logic",
+                        blocks:
+                            opts.monacoToolbox.loops.blocks.concat(
+                                opts.monacoToolbox.logic.blocks
+                                    .filter(block => block.name == 'logic_if'
+                                        || block.name == 'logic_if_else')
+                                    .map(block => {
+                                        block.weight = logicMonacoBlockWeight--;
+                                        return block;
+                                    }))
+                    },
+                    logic: {
+                    },
+                    variables: {
+                        weight: 50.06
+                    },
+                    maths: {
+                        weight: 50.07,
+                        blocks:
+                            opts.monacoToolbox.maths.blocks
+                                .concat(
+                                    opts.monacoToolbox.logic.blocks
+                                        .filter(block => block.name != 'logic_if'
+                                            && block.name != 'logic_if_else'
+                                            && block.name != 'logic_switch'))
                     },
                     text: {
                         advanced: true
@@ -576,7 +370,6 @@ namespace chibitronics {
                 } else {
                     showUploadInstructionsAsync(resp.confirmAsync)
                         .then((confirm) => {
-                            console.log(confirm);
                             // For all other browsers, play the sound directly in the browser
                             modController.transcodeToAudioTag(bin, audio);
                             resp.saveOnly = true;

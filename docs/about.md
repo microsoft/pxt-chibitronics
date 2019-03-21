@@ -1,12 +1,12 @@
 # About
 
-Welcome to the **Microsoft MakeCode** editor for the **@boardname@**!
+Welcome to the **Microsoft MakeCode** for **@boardname@**!
 
 ## @boardname@
 
 Here's the amazing new **Love to Code** system with the @boardname@ from **[chibitronics.com](https://chibitronics.com/lovetocode/)**!
 
-![](https://chibitronics.com/wp-content/uploads/2017/05/09_doneprogramming.png)
+![Chibi:bit picture](https://chibitronics.com/wp-content/uploads/2017/05/09_doneprogramming.png)
 
 ## Programming: [Blocks](/blocks) or [JavaScript](/javascript)
 

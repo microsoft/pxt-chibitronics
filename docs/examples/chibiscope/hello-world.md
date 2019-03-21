@@ -77,3 +77,8 @@ scope.writeLine(" ")
 ## Finished
 
 Good work! Congratulations on finishing your first Chibi Scope activity. 
+
+
+```package
+scope
+```
