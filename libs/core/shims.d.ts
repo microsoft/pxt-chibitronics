@@ -106,6 +106,17 @@ declare namespace rgb {
      */
     //% parts="rgbled" shim=rgb::setRGBLed
     function setRGBLed(r: int32, g: int32, b: int32): void;
+
+    /**
+     * Sets an RGB sticker led to a specific red, green, blue color.
+     * @param name the pin name
+     * @param index the lef index
+     * @param red the red color
+     * @param green the green color
+     * @param blue the blue color
+     */
+    //% parts="rgbled" shim=rgb::setRGBStickerLed
+    function setRGBStickerLed(name: int32, index: int32, r: int32, g: int32, b: int32): void;
 }
 
 // Auto-generated. Do not edit. Really.

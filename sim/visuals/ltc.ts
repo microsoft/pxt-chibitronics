@@ -243,31 +243,15 @@ namespace pxsim.visuals {
         private style: SVGStyleElement;
         private defs: SVGDefsElement;
         private g: SVGGElement;
-
-        private logos: SVGElement[];
-        private head: SVGGElement; private headInitialized = false;
-        private headText: SVGTextElement;
-        private display: SVGElement;
-        private buttons: SVGElement[];
-        private buttonsOuter: SVGElement[];
-        private buttonABText: SVGTextElement;
         private pins: SVGElement[];
-        private pinLabels: SVGElement[];
         private pinGradients: SVGLinearGradientElement[];
         private pinTexts: SVGTextElement[];
-        private ledsOuter: SVGElement[];
         private leds: SVGRectElement[];
         private rgbLed: SVGCircleElement;
         private systemLed: SVGCircleElement;
-        private antenna: SVGPolylineElement;
-        private lightLevelButton: SVGCircleElement;
-        private lightLevelGradient: SVGLinearGradientElement;
-        private lightLevelText: SVGTextElement;
         private thermometerGradient: SVGLinearGradientElement;
         private thermometer: SVGRectElement;
         private thermometerText: SVGTextElement;
-        private shakeButton: SVGCircleElement;
-        private shakeText: SVGTextElement;
         public board: pxsim.LtcBoard;
         private pinNmToCoord: Map<Coord> = {};
 
@@ -276,6 +260,8 @@ namespace pxsim.visuals {
         private scopeTextNode1: SVGTextElement;
         private scopeTextNode2: SVGTextElement;
         private scopeTextNode3: SVGTextElement;
+
+        private ledStickers: RGBStickerStrip[];
 
         constructor(public props: IBoardProps) {
             this.recordPinCoords();
@@ -345,6 +331,7 @@ namespace pxsim.visuals {
             this.updateTemperature();
             this.updateRgbLed();
             this.updateSerial();
+            this.updateRGBStickers();
 
             if (!runtime || runtime.dead) svg.addClass(this.element, "grayscale");
             else svg.removeClass(this.element, "grayscale");
@@ -492,6 +479,36 @@ namespace pxsim.visuals {
                     this.rgbLed.style.transformOrigin = "211.30725px 43.049255px";
                 }
             }
+        }
+
+        private updateRGBStickers() {
+            const state = this.board.rgbStickerState;
+            state.usedPins().forEach(pin => {
+                let rgbStrip = this.ledStickers[pin];
+                if (!rgbStrip) {
+                    rgbStrip = (this.ledStickers[pin] = new RGBStickerStrip());
+                    this.g.appendChild(rgbStrip.getSVG());
+                    svg.hydrate(this.element, {
+                        "version": "1.0",
+                        "viewBox": `0 0 230 250`,
+                        "class": "sim",
+                        "x": "112.5px",
+                        "y": "0px",
+                        "width": "100%",
+                        "height": "100%"
+                    });
+
+                    rgbStrip.moveTo(45, 140);
+                    rgbStrip.setDataPinLocation([20 + 24 * (pin + 1), 110])
+                    rgbStrip.setGroundPinLocation([20, 110])
+                    rgbStrip.setPowerPinLocation([208, 110])
+                }
+                const colors = state.getColors(pin);
+                for (let i = 0; i < colors.length; i++) {
+                    const color = colors[i];
+                    rgbStrip.setLED(i, color)
+                }
+            });
         }
 
         private updateSerial() {
@@ -663,6 +680,10 @@ namespace pxsim.visuals {
             svg.child(neopixelmerge, "feMergeNode", { in: "coloredBlur" })
             svg.child(neopixelmerge, "feMergeNode", { in: "SourceGraphic" })
 
+            let smallerNeopixelGlow = svg.child(this.defs, "filter", { id: "smallneopixelglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
+            svg.child(smallerNeopixelGlow, "feGaussianBlur", { stdDeviation: "2", result: "coloredBlur" });
+            smallerNeopixelGlow.appendChild(neopixelmerge.cloneNode(true));
+
             let ledglow = svg.child(this.defs, "filter", { id: "ledglow", x: "-200%", y: "-200%", width: "400%", height: "400%" });
             svg.child(ledglow, "feGaussianBlur", { stdDeviation: "3", result: "coloredBlur" });
             let ledglowmerge = svg.child(ledglow, "feMerge", {});
@@ -707,6 +728,8 @@ namespace pxsim.visuals {
                 133,
                 157
             ].map(x => <SVGTextElement>svg.child(this.g, "text", { class: "sim-text-pin no-drag", x: x + 7, y: 125, textAnchor: "middle" }));
+
+            this.ledStickers = [];
         }
 
         private attachEvents() {
