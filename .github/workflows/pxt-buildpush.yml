@@ -27,9 +27,9 @@ jobs:
           sudo apt-get install xvfb
           sudo npm install -g pxt
           npm install
-      - name: pxt ci
+      - name: pxt travis
         run: |
-          pxt ci
+          pxt travis
         env:
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
