@@ -34,4 +34,19 @@ namespace rgb {
         pixels[0].b = b;
         ledShow(LED_BUILTIN_RGB, pixels, 1);
     }
+
+    /**
+     * Sets an RGB sticker led to a specific red, green, blue color.
+     * @param name the pin name
+     * @param index the lef index
+     * @param red the red color
+     * @param green the green color
+     * @param blue the blue color
+     */
+    //% parts="rgbled"
+    void setRGBStickerLed(int name, int index, int r, int g, int b) {
+        if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+            return;
+        }
+    }
 }

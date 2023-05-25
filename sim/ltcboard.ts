@@ -60,6 +60,7 @@ namespace pxsim {
         serialState: LtcSerialState;
         // TODO: not singletons
         neopixelState: NeoPixelState;
+        rgbStickerState: RGBStickerState;
 
         constructor() {
             super()
@@ -94,6 +95,8 @@ namespace pxsim {
 
             this.builtinPartVisuals["buttonpair"] = (xy: visuals.Coord) => visuals.mkBtnSvg(xy);
             this.builtinPartVisuals["neopixel"] = (xy: visuals.Coord) => visuals.mkNeoPixelPart(xy);
+
+            this.rgbStickerState = new RGBStickerState();
         }
 
         receiveMessage(msg: SimulatorMessage) {
