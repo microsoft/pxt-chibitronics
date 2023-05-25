@@ -66,6 +66,8 @@
   "rgb.rgb|block": "red %red|green %green|blue %blue",
   "rgb.setBrightness|block": "set brightness %brightness",
   "rgb.setColor|block": "set rgb to %rgb=colorNumberPicker",
+  "rgb.setStickerColor|block": "set rgb sticker with index %index| to %rgb=colorNumberPicker",
+  "rgb.setStickerUniformColor|block": "set %count| rgb stickers to to %rgb=colorNumberPicker",
   "rgb.wheel|block": "color slider %wheelPos=colorWheelPicker",
   "rgb|block": "rgb",
   "sensing.onPinEvent|block": "when %name=digital_pin|is %event",

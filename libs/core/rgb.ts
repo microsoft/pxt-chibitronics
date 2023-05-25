@@ -114,6 +114,47 @@ namespace rgb {
     }
 
     /**
+     * Set all RGB LEDs to a specified color (range 0-255 for r, g, b).
+     * @param rgb RGB color of the LEDs, eg: 0xff0000
+     */
+    //% blockId="rgb_sticker_set_uniform_colors" block="set %count| rgb stickers to to %rgb=colorNumberPicker"
+    //% weight=90 help="rgb/set-color"
+    export function setStickerUniformColor(count: number, rgb: number) {
+        if (_brightness == undefined) {
+            _brightness = 20;
+        }
+
+        rgb = fade(rgb, _brightness);
+        let red = unpackR(rgb);
+        let green = unpackG(rgb);
+        let blue = unpackB(rgb);
+
+        let index = 0;
+        for (index = 0; index < count; index++) {
+            setRGBStickerLed(index, red, green, blue);
+        }
+    }
+
+    /**
+     * Make an RGB sticker LED show an RGB color (range 0-255 for r, g, b).
+     * @param rgb RGB color of the LED, eg: 0xff0000
+     */
+    //% blockId="rgb_sticker_set_color" block="set rgb sticker with index %index| to %rgb=colorNumberPicker"
+    //% weight=90 help="rgb/set-color"
+    export function setStickerColor(index: number, rgb: number) {
+        if (_brightness == undefined) {
+            _brightness = 20;
+        }
+
+        rgb = fade(rgb, _brightness);
+        let red = unpackR(rgb);
+        let green = unpackG(rgb);
+        let blue = unpackB(rgb);
+
+        setRGBStickerLed(index, red, green, blue);
+    }
+
+    /**
      * Get the RGB value of a known color
     */
     //% weight=10 blockGap=8
